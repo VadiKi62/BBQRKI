@@ -1,0 +1,35 @@
+{
+  "menu": {
+    "Menu": "Speisekarte",
+    "call1": "Rufen Sie den Kellner",
+    "call2": "Rufen Sie die Rechnung",
+    "table": "Tisch",
+    "run": "Tjeneren løber hen til dig!",
+    "About": "Über"
+  },
+  "hero":{
+    "wellcome":"Willkommen im",
+    "argo":"Restaurant Ara...zo",
+    "menu":"Speisekarte",
+    "about":"Über uns"
+  },
+  "about":
+  {"about": "Mit exquisiter Küche aus den Schätzen des Meeres und panoramischem Blick auf endlose blaue Gewässer verspricht Ara...zo ein unvergessliches Erlebnis beim Meeresfrüchte-Essen."},
+  "bill": {
+    "payment": "Wird bar bezahlt?"
+  },
+  "header": {
+    "table": "Ihr Tisch ist",
+    "call": "Um den Kellner zu rufen, drücken Sie die Taste"
+  },
+  "alert": {
+    "got":"Erfolg! Der Kellner hat's bekommen!",
+    "oops":"Hoppla. Etwas lief schief. Ihre Nachricht wurde nicht gesendet. Bitte versuchen Sie es erneut.",
+    "run":"Der Kellner läuft bereits zu Ihnen.",
+    "inside":"Sie müssen sich im Restaurant befinden um den Kellner rufen zu können.",
+    "geoError":"Geolokalisierungsfehler:",
+    "else": "Möchten Sie noch etwas bestellen, anstatt die Rechnung zu verlangen?",
+    "enableLoc": "Aktivieren Sie die Ortungsdienste, um den Kellner rufen zu können. Unsere App muss überprüfen, ob Sie sich innerhalb des Restaurants befinden, da Sie sonst den Kellner nicht rufen können."
+  }
+  
+}
