@@ -1,4 +1,5 @@
 import "./globals.css";
+import "../common/animations.css";
 import Link from "next/link";
 import generateStylesheetObject from "@/common/generateStylesheetsObject";
 

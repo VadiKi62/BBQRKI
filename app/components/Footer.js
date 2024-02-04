@@ -21,7 +21,10 @@ const Section = styled("section")(({ theme }) => ({
   padding: theme.spacing(5),
   borderTop: `1px solid ${theme.palette.secondary.grey}`,
   textAlign: "center",
-  background: theme.palette.secondary.background,
+  background: theme.palette.secondary.background1
+    ? theme.palette.secondary.background1
+    : theme.palette.secondary.background,
+  backdropFilter: blur("50px"),
   color: theme.palette.text.dark,
 }));
 

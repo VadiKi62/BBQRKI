@@ -8,6 +8,7 @@ import useGeo from "@common/useGeo";
 import useHighSeason from "@common/useHighSeason";
 import { I18nextProvider } from "react-i18next";
 import i from "@locales/i18n";
+import { useRouter } from "next/navigation";
 
 const MainContext = createContext();
 
@@ -16,6 +17,7 @@ export function useMainContext() {
 }
 
 export const MainContextProvider = ({ children, rest, umbrella, r }) => {
+  const router = useRouter();
   const [restData, setRest] = useState(rest);
   const isHighSeason = useHighSeason(rest);
   const countTimer = rest.buttonTimer || 60;
@@ -133,6 +135,7 @@ export const MainContextProvider = ({ children, rest, umbrella, r }) => {
         } else {
           showModal(`${messageInside}`);
           history?.replaceState({}, document.title, window?.location.pathname);
+          // router?.replace(router.asPath, undefined, { shallow: true });
           setShowInitialHeader(false);
         }
       } else {
@@ -167,7 +170,8 @@ export const MainContextProvider = ({ children, rest, umbrella, r }) => {
         } else {
           showModal(`${messageInside}`);
           history?.replaceState({}, document.title, window.location.pathname);
-          setShowInitialHeader(false);
+          // router?.replace(router?.asPath, undefined, { shallow: true });
+          // setShowInitialHeader(false);
         }
       } else {
         showModal(messageRun, false, true);
@@ -271,11 +275,12 @@ export const MainContextProvider = ({ children, rest, umbrella, r }) => {
       setShowInitialHeader(true);
       setTimeout(() => {
         history.replaceState({}, document.title, window.location.pathname);
+        // router?.replace(router.asPath, undefined, { shallow: true });
       }, 5 * 60 * 1000);
     } else {
       setShowInitialHeader(false);
     }
-  }, [zont, history]);
+  }, [zont]);
 
   const contextValue = {
     countdownWaiter,

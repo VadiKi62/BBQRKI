@@ -1,6 +1,7 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import { styled } from "@mui/system";
+import { useMainContext } from "@app/components/Context";
 import {
   AppBar,
   Button,
@@ -13,7 +14,6 @@ import {
   MenuItem,
 } from "@mui/material";
 import LanguageIcon from "@mui/icons-material/Language";
-import { useMainContext } from "@app/components/Context";
 import { useTranslation } from "react-i18next";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import Link from "next/link";
@@ -36,6 +36,7 @@ const Logo = styled(Typography)(({ theme }) => ({
   fontWeight: 1000,
   display: "flex",
   fontSize: theme.typography.h1.fontSize,
+  fontFamily: theme.typography.h1.fontFamily,
   color: theme.palette.text.red,
 }));
 
@@ -64,9 +65,9 @@ const LanguagePopover = styled(Popover)(({ theme }) => ({
   fontFamily: theme.typography.fontFamily,
 }));
 
-export default function Header({ rest }) {
+export default function Header() {
   const headerRef = useRef();
-  const { setLang } = useMainContext();
+  const { setLang, restData } = useMainContext();
   const [languageAnchor, setLanguageAnchor] = useState(null);
   const { i18n, t } = useTranslation();
   // const distanceToRest = Math.round(currentPosition?.distanceToRest);
@@ -107,7 +108,7 @@ export default function Header({ rest }) {
             justifyContent="space-between"
             sx={{ width: "100%" }}
           >
-            <Logo component="h1">{rest?.name}</Logo>
+            <Logo component="h1">{restData?.name}</Logo>
             <Stack direction="row" spacing={2} alignItems="center">
               {appMenu && (
                 <AboutButton

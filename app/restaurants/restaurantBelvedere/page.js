@@ -1,15 +1,19 @@
 import React from "react";
 import Feed from "@app/components/Feed";
+import { Suspense } from "react";
+import { unstable_noStore } from "next/cache";
+import Loading from "@app/components/Loading";
+import { fetchRest } from "@utils/actions";
 
 const RestPage = async () => {
-  const r = "65bbf57ca3fd4816b800829c";
-  const apiUrl = `http://localhost:3000/api/rests/${r}`;
+  unstable_noStore();
+  const restData = await fetchRest("65bbf57ca3fd4816b800829c");
 
-  const data = await fetch(apiUrl);
-  const restData = await data.json();
-  console.log("restData", restData);
-
-  return <Feed rest={restData}> </Feed>;
+  return (
+    <Suspense fallback={<Loading />}>
+      <Feed rest={restData}> </Feed>
+    </Suspense>
+  );
 };
 
 export default RestPage;

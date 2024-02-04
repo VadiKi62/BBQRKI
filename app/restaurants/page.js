@@ -2,12 +2,15 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "@app/page.module.css";
+import { getRestaurants } from "@utils/actions";
 
 async function RestaurantsPage() {
-  const data = await fetch("http://localhost:3000/api/rests/all", {
-    cache: "no-store",
-  });
-  const rests = await data.json();
+  // const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/rests/all`;
+  // const data = await fetch(apiUrl, {
+  //   cache: "no-store",
+  // });
+  // const rests = await data.json();
+  const rests = await getRestaurants();
   const menuRests = [
     { Argo: "http://dusha-roan.vercel.app/?zont=test" },
     { Arazo: "https://arazo.netlify.app/?zont=test" },
@@ -44,7 +47,7 @@ async function RestaurantsPage() {
         })}
       </div>
       <div className="centered-container slide-in-blurred-top">
-        <h1 className="custom-heading">Apps with buttons only</h1>
+        <h1 className="custom-heading">Apps with BUTTONS only</h1>
       </div>
       <div className={styles.grid}>
         {rests.map((rest) => (

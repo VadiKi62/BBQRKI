@@ -14,7 +14,9 @@ export default createTheme({
       light: "#Fde989",
       beige: "#e6eaee",
       background:
-        "linear-gradient(to top, rgba(42,84,255,0.4),  rgba(253, 233, 137,0.4),#d8dee0)",
+        "linear-gradient(to top, rgba(42,84,255,0.4),  rgba(253, 233, 137,0.3),#d8dee0)",
+      background1:
+        "linear-gradient(to bottom, rgba(42,84,255,0.4),  rgba(253, 233, 137,0.4),#d8dee0)",
     },
     text: {
       light: "white",
@@ -52,7 +54,7 @@ export default createTheme({
     fontFamily: ["Josefin Sans", "sans-serif"].join(","),
     h1: {
       fontSize: "65px",
-      fontFamily: ["Mrs Saint Delafield", "cursive"].join(","),
+      fontFamily: ["B612 Mono", "monospace"].join(","),
     },
     allVariants: {
       fontFamily: ["B612 Mono", "monospace"].join(","),

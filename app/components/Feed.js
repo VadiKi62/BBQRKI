@@ -21,10 +21,7 @@ const returnTheme = (themeName) => {
 };
 
 function Feed({ children, ...props }) {
-  console.log(props);
   const rest = props.rest;
-
-  console.log("1!!!", rest.themeName);
 
   const theme = returnTheme(rest.themeName);
   const searchParams = useSearchParams();
