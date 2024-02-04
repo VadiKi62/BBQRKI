@@ -24,7 +24,7 @@ const Section = styled("section")(({ theme }) => ({
   background: theme.palette.secondary.background1
     ? theme.palette.secondary.background1
     : theme.palette.secondary.background,
-  backdropFilter: blur("50px"),
+  backdropFilter: "blur(50px)",
   color: theme.palette.text.dark,
 }));
 

@@ -4,6 +4,17 @@ import Image from "next/image";
 import styles from "@app/page.module.css";
 import { getRestaurants } from "@utils/actions";
 
+export const generateMetadata = async () => {
+  const rests = await getRestaurants();
+  const one = rests[0].name;
+
+  return {
+    title:
+      "Examples of apps for different restaurants and different purposes like QR Menu and Bulltons for calling waiter",
+    description: one,
+  };
+};
+
 async function RestaurantsPage() {
   // const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/rests/all`;
   // const data = await fetch(apiUrl, {
@@ -50,20 +61,21 @@ async function RestaurantsPage() {
         <h1 className="custom-heading">Apps with BUTTONS only</h1>
       </div>
       <div className={styles.grid}>
-        {rests.map((rest) => (
-          <Link key={rest._id} href={`/restaurants/${rest.pathName}`}>
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <Image
-                src="/favicon.png"
-                alt="bb qr code ki"
-                className="spinning-icon bounce-in-left"
-                width={39}
-                height={39}
-              />
-              <h2>{rest.name}</h2>
-            </div>
-          </Link>
-        ))}
+        {rests &&
+          rests.map((rest) => (
+            <Link key={rest._id} href={`/restaurants/${rest.pathName}`}>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <Image
+                  src="/favicon.png"
+                  alt="bb qr code ki"
+                  className="spinning-icon bounce-in-left"
+                  width={39}
+                  height={39}
+                />
+                <h2>{rest.name}</h2>
+              </div>
+            </Link>
+          ))}
       </div>
     </>
   );

@@ -4,10 +4,12 @@ import { Suspense } from "react";
 import { unstable_noStore } from "next/cache";
 import Loading from "@app/components/Loading";
 import { fetchRest } from "@utils/actions";
+import { getOne } from "@lib/actions";
 
 const RestPage = async () => {
   unstable_noStore();
   const restData = await fetchRest("65bbf57ca3fd4816b800829c");
+  console.log("hthis is from page restaurant Belvedere", restData);
 
   return (
     <Suspense fallback={<Loading />}>

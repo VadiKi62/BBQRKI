@@ -4,7 +4,10 @@ import Link from "next/link";
 import generateStylesheetObject from "@/common/generateStylesheetsObject";
 
 export const metadata = {
-  title: "BBQ=>KI",
+  title: {
+    default: "BB QR => KI homepage",
+    template: "%s | BB QR Code ",
+  },
   description: "BBQ=>QR for everything you need!",
   icons: {
     icon: "/favicon.png",
