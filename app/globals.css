@@ -30,13 +30,16 @@ body {
 #root-layout {
   font-family: "Odibee Sans", sans-serif;
   text-align: center;
-  padding: 1px;
+  padding-bottom: -10;
 }
 
-/* H1 component */
 #root-layout h1 {
-  margin-top: 0;
+  /* margin: 3; */
   color: #333;
+}
+
+.pt-10 {
+  padding-top: 220;
 }
 
 .centered-container {

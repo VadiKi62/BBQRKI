@@ -50,7 +50,7 @@ export default createTheme({
   typography: {
     fontFamily: ["Josefin Sans", "sans-serif"].join(","),
     h1: {
-      fontSize: "65px",
+      fontSize: "45px",
       fontFamily: ["Mrs Saint Delafield", "cursive"].join(","),
     },
     allVariants: {

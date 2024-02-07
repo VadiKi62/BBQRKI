@@ -50,7 +50,7 @@ const HeroTitle = styled(Typography)(({ theme }) => ({
   fontWeight: 450,
   // marginBottom: 5,
   // marginTop: 10,
-  lineHeight: "57px",
+  lineHeight: "2.5rem",
   color: theme.palette.text.dark,
   fontFamily: theme.typography.fontFamily,
   fontSize: theme.typography.h1.fontSize,
@@ -62,7 +62,7 @@ const HighlightedText = styled("span")(({ theme }) => ({
   color: theme.palette.text.red,
   fontWeight: 800,
   fontFamily: theme.typography.fontFamily,
-  fontSize: 65,
+  fontSize: theme.typography.h1.fontSize,
 }));
 
 const CallButtonWrapper = styled("div")(({ theme, isSticky }) => ({
@@ -80,7 +80,6 @@ const CallButtonWrapper = styled("div")(({ theme, isSticky }) => ({
 
 const CallContainer = styled("div")`
   z-index: 111;
-
   width: 100%;
   display: flex;
   flex-direction: column;

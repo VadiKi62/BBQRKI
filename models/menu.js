@@ -1,7 +1,8 @@
 import { Schema, model, models } from "mongoose";
+import { Rest } from "./rest";
 
 const menuItemSchema = new Schema({
-  id: { type: Number, required: true },
+  menuNumber: { type: Number, required: true },
   image: { type: String },
   title: { type: String, required: true },
   price: { type: String, required: true },
@@ -14,8 +15,12 @@ const menuItemSchema = new Schema({
 const MenuSchema = new Schema({
   items: {
     type: Map,
-    of: [menuItemSchema],
-    required: true,
+    of: [
+      {
+        langKey: { type: String, required: true }, // Key for the language
+        items: [menuItemSchema], // Array of menu items
+      },
+    ],
   },
   rest: { type: Schema.Types.ObjectId, ref: "Rest", required: true },
 });

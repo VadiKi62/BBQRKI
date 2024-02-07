@@ -163,7 +163,7 @@ export const POST = async (request) => {
   };
 
   //   const rest = (await request.json());
-  const rest = genesisData;
+  const rest = arazoData;
   try {
     await connectToDB();
     const { name, pathName } = rest;

@@ -44,7 +44,8 @@ export default function Button({
           border: "0px solid white",
           marginBottom: 0.5,
           // maxWidth: "200px",
-          minWidth: "50vh",
+          minWidth: "45vh",
+          maxWidth: "100vh",
           zIndex: 41001,
           color: "white",
           bgcolor: disabled

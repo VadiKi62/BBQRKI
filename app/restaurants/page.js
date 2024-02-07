@@ -2,16 +2,16 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "@app/page.module.css";
-import { getRestaurants } from "@utils/actions";
+import { fetchRestaurants } from "@utils/actions";
 
 export const generateMetadata = async () => {
-  const rests = await getRestaurants();
+  const rests = await fetchRestaurants();
   const one = rests[0].name;
 
   return {
     title:
       "Examples of apps for different restaurants and different purposes like QR Menu and Bulltons for calling waiter",
-    description: one,
+    description: { one },
   };
 };
 
@@ -21,7 +21,7 @@ async function RestaurantsPage() {
   //   cache: "no-store",
   // });
   // const rests = await data.json();
-  const rests = await getRestaurants();
+  const rests = await fetchRestaurants();
   const menuRests = [
     { Argo: "http://dusha-roan.vercel.app/?zont=test" },
     { Arazo: "https://arazo.netlify.app/?zont=test" },

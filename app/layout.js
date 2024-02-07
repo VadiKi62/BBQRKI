@@ -27,12 +27,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         {" "}
+        {children}{" "}
         <div style={{ paddingTop: 1 }}>
+          <p id="root-layout">BB QR Code</p>
           <Link href="/">
-            <p id="root-layout">BB QR Code</p>
+            <p id="root-layout">Povered by Nataliaki</p>
           </Link>
         </div>
-        {children}
       </body>
     </html>
   );

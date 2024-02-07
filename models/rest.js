@@ -64,7 +64,6 @@ const RestSchema = new Schema({
   themeName: { type: String, required: true },
   app: {
     type: {
-      menu: { type: Boolean, default: false },
       about: { type: Boolean, default: false },
       buttonWaiter: { type: Boolean, default: true },
       buttonBill: { type: Boolean, default: true },

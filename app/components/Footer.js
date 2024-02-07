@@ -30,13 +30,15 @@ const Section = styled("section")(({ theme }) => ({
 
 const SectionTitle = styled(Typography)(({ theme }) => ({
   fontFamily: theme.typography.h1.fontFamily,
-  fontSize: "54px",
+  lineHeight: "2rem",
+  fontSize: "2.9rem",
   marginBottom: theme.spacing(2),
 }));
 
 const Slogan = styled(Typography)(({ theme }) => ({
   fontFamily: theme.typography.fontFamily,
-  fontSize: "32px",
+  fontSize: "1.8rem",
+  lineHeight: "1.8rem",
   marginBottom: theme.spacing(2),
 }));
 
@@ -52,7 +54,7 @@ const SocialLinks = styled("div")(({ theme }) => ({
 
 const ContactInfo = styled(Grid)(({ theme }) => ({
   fontFamily: theme.typography.fontFamily,
-  fontSize: "17px",
+  fontSize: "1rem",
 }));
 
 const ContactIcon = styled("span")(({ theme }) => ({
@@ -62,7 +64,7 @@ const ContactIcon = styled("span")(({ theme }) => ({
 
 const CopyrightInfo = styled("div")(({ theme }) => ({
   marginTop: theme.spacing(2),
-  fontSize: "14px",
+  fontSize: "1rem",
   opacity: 0.8,
 }));
 
@@ -121,13 +123,17 @@ function Footer({ rest }) {
             <ContactIcon>
               <EmailIcon />
             </ContactIcon>
-            <a href={`mailto:${email}`}>{email}</a>
+            <a style={{ fontSize: "1.3rem" }} href={`mailto:${email}`}>
+              {email}
+            </a>
           </Grid>
           <Grid item xs={12} md={4}>
             <ContactIcon>
               <CallIcon />
             </ContactIcon>
-            <a href={`tel:${tel}`}>{tel}</a>
+            <a style={{ fontSize: "1.3rem" }} href={`tel:${tel}`}>
+              {tel}
+            </a>
           </Grid>
         </ContactInfo>
         <CopyrightInfo>{/* <Copyright /> */}</CopyrightInfo>

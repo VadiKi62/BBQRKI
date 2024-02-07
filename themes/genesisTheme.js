@@ -31,7 +31,7 @@ const genesisTheme = {
     // fontFamily: ["Oxygen Mono", "monospace"].join(","),
     fontFamily: ["Gruppo", "sans-serif"].join(","),
     h1: {
-      fontSize: "60px",
+      fontSize: "49px",
       // fontFamily: [ "B612 Mono", "monospace" ].join( "," ),
       fontFamily: ["Gruppo", "sans-serif"].join(","),
     },

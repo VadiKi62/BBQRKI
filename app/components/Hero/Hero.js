@@ -18,7 +18,7 @@ const Icon = styled("img")(({ theme }) => ({
       transform: "translateY(-8px)",
     },
     "60%": {
-      transform: "translateY(-5px)", // Bounce down
+      transform: "translateY(-5px)",
     },
   },
 }));
@@ -38,14 +38,14 @@ export default function Hero({ zonti, isSticky, showCallWaiterButton }) {
       <Typography
         align="center"
         color="primary.main"
-        sx={{ marginTop: "0.9rem", fontSize: "1.3rem", fontWeight: 900 }}
+        sx={{ marginTop: "-0.9rem", fontSize: "1.3rem", fontWeight: 900 }}
       >
         {t("header.table")} {zonti}
       </Typography>
       <Typography
         color="text.dark"
         align="center"
-        sx={{ fontSize: "1.2rem", lineHeight: "1.6rem" }}
+        sx={{ fontSize: "1.2rem", lineHeight: "1.4rem" }}
       >
         {t("header.call")}
       </Typography>
