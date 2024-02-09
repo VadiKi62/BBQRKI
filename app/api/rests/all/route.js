@@ -16,6 +16,8 @@ export const GET = async (request, { params }) => {
 
     return new Response(JSON.stringify(restaurants), { status: 200 });
   } catch (error) {
-    return new Response(`Internal Server Error : ${error}`, { status: 500 });
+    return new Response(`Internal Server Error : ${JSON.stringify(error)}`, {
+      status: 500,
+    });
   }
 };

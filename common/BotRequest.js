@@ -1,15 +1,14 @@
 import axios from "axios";
 
-export const sendWaiter = (message, zont) => {
+export const sendWaiter = (message, zont, endpoint, chat_id) => {
   return new Promise((resolve, reject) => {
     const data = {
-      chat_id: -4074718635,
+      chat_id: `${chat_id}`,
       table: zont,
       message: message,
     };
-    console.log("message!!! ", message);
     axios
-      .post("https://button.hopto.org/waiter", data)
+      .post(`https://button.hopto.org/${endpoint}`, data)
       .then((response) => {
         console.log(`Table ${data.table} called the waiter`, response.data);
         resolve(response.data);
@@ -22,16 +21,16 @@ export const sendWaiter = (message, zont) => {
       });
   });
 };
-export const sendBill = (message, zont) => {
+export const sendBill = (message, zont, endpoint, chat_id) => {
   return new Promise((resolve, reject) => {
     const data = {
-      chat_id: -4074718635,
+      chat_id: `${chat_id}`,
       table: zont,
       message: message,
     };
     console.log("message!!! ", message);
     axios
-      .post("https://button.hopto.org/bill", data)
+      .post(`https://button.hopto.org/${endpoint}`, data)
       .then(function (response) {
         resolve(response.data);
       })

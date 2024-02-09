@@ -2,43 +2,45 @@ import { Rest } from "@models/rest";
 import { Menu } from "@models/menu";
 import { menuArazo } from "@utils/initialMenus";
 import { connectToDB } from "@utils/database";
-import { NextResponse } from "next/server";
 
-// export const POST = async (request) => {
-//   try {
-//     await connectToDB();
+export const POST = async (request) => {
+  console.log("Helo");
+  try {
+    await connectToDB();
 
-//     const restaurantId = "65c250c08e563cf4e96da60b";
-//     const lang = "en";
-//     const menuItems = menuArazo[lang];
+    const menuData = menuArazo.menu.map((menuItem) => ({
+      langKey: menuItem.langKey,
+      items: menuItem.items.map((item) => ({
+        menuNumber: item.id,
+        image: item.image,
+        title: item.title,
+        price: item.price,
+        category: item.category,
+        ingredients: item.ingredients,
+      })),
+    }));
 
-//     const mappedMenuItems = menuItems.reduce((acc, item) => {
-//       acc[item.id] = [item];
-//       return acc;
-//     }, {});
+    const data = {
+      menu: menuData,
+      restId: menuArazo.restId,
+    };
 
-//     const createdMenu = await Menu.create({
-//       items: mappedMenuItems,
-//       rest: restaurantId,
-//     });
-//     // Retrieve the restaurant
-//     const restaurant = await Rest.findById(restaurantId);
+    console.log("data.restId:", data.restId);
 
-//     // Update the restaurant's menu field with the new menu ID
-//     restaurant.menu = createdMenu;
+    const isMenuForRestexist = await Menu.findOne({ restId: data.restId });
+    if (isMenuForRestexist) {
+      console.log("this menu seems to exist");
+      return new Response("this menu exist", {
+        status: 300,
+      });
+    }
+    const createdMenu = new Menu(data);
+    await createdMenu.save();
 
-//     // Save the updated restaurant document
-//     await restaurant.save();
-
-//     return NextResponse.json(
-//       { message: "Menu items added successfully", menu: createdMenu },
-//       { status: 201 }
-//     );
-//   } catch (error) {
-//     console.error("Error adding menu items:", error);
-//     return NextResponse.json(
-//       { message: `Internal Server Error : ${error}` },
-//       { status: 500 }
-//     );
-//   }
-// };
+    return new Response("SUCCESSSSSS", { status: 200 });
+  } catch (error) {
+    return new Response(`Internal Server Error: ${JSON.stringify(error)} `, {
+      status: 500,
+    });
+  }
+};

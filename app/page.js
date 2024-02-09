@@ -10,14 +10,14 @@ export default function Home() {
           className={styles.logo}
           src="/bb-qr-code-w.svg"
           alt="BBQ qr code ki"
-          width={280}
-          height={219}
+          width={230}
+          height={200}
           priority
         />
       </div>
       <div className={styles.centered}>
         <Link href="/restaurants">RESTAURANTS </Link>
-        <Link href="/about">ABOUT </Link>
+        {/* <Link href="/about">ABOUT </Link> */}
       </div>
     </main>
   );

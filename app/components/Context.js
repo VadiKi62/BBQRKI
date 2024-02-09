@@ -17,7 +17,6 @@ export function useMainContext() {
 }
 
 export const MainContextProvider = ({ children, rest, umbrella, r }) => {
-  const router = useRouter();
   const [restData, setRest] = useState(rest);
   const isHighSeason = useHighSeason(rest);
   const countTimer = rest.buttonTimer || 60;
@@ -130,7 +129,12 @@ export const MainContextProvider = ({ children, rest, umbrella, r }) => {
           Number(radius) + currentPosition.accuracy
         ) {
           performActionWaiter(() => {
-            sendWaiter(messageWaiter1, zont);
+            sendWaiter(
+              messageWaiter1,
+              zont,
+              restData.backendEndpoints.waiter,
+              restData.chat_id
+            );
           });
         } else {
           showModal(`${messageInside}`);
@@ -165,7 +169,12 @@ export const MainContextProvider = ({ children, rest, umbrella, r }) => {
           // Include the payment method in the message
           messageBill1 = `${rest.name}.Table ${zont} asks for Bill. Payment Method: ${paymentMethod}. Language - ${language}.\nΤραπέζι ${zont} ζητά τον λογαριασμό. Τρόπος Πληρωμής:${paymentMethod}. Γλώσσα - ${language}.`;
           performActionBill(() => {
-            sendBill(messageBill1, zont);
+            sendBill(
+              messageBill1,
+              zont,
+              restData.backendEndpoints.waiter,
+              restData.chat_id
+            );
           });
         } else {
           showModal(`${messageInside}`);

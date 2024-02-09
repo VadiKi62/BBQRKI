@@ -10,8 +10,8 @@ function loading() {
         src="/logo-white.png"
         alt="bb qr code ki"
         className="spinning-icon loop-spinning"
-        width={130}
-        height={130}
+        width={70}
+        height={70}
       />
       <Image
         src="/logo-white.png"
@@ -24,8 +24,8 @@ function loading() {
         src="/logo-white.png"
         alt="bb qr code ki"
         className="spinning-icon loop-spinning"
-        width={90}
-        height={90}
+        width={70}
+        height={70}
       />
     </div>
   );

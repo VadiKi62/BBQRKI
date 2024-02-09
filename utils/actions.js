@@ -9,8 +9,6 @@ export const API_URL =
 
 export const fetchRestaurants = async () => {
   try {
-    console.log(process.env.NODE_ENV);
-
     const apiUrl = `${API_URL}/api/rests/all`;
 
     const data = await fetch(apiUrl, {
@@ -38,6 +36,21 @@ export const fetchRest = async (id) => {
     return restData;
   } catch (error) {
     console.error(`Error fetching restaurant with ID ${id}:`, error);
+    throw error;
+  }
+};
+
+export const fetchRestByPath = async (path) => {
+  try {
+    const apiUrl = `${API_URL}/api/rests/findpathname/${path}`;
+    const data = await fetch(apiUrl);
+    if (!data.ok) {
+      throw new Error(`Failed to fetch restaurant with pathname ${path}`);
+    }
+    const restData = await data.json();
+    return restData;
+  } catch (error) {
+    console.error(`Error fetching restaurant with path ${path}:`, error);
     throw error;
   }
 };

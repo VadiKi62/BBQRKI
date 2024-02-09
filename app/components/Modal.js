@@ -43,9 +43,10 @@ const ModalComponent = ({ loading, content, onClose, run = false }) => {
             {run && (
               <div style={{ marginTop: "15px" }}>
                 <Image
-                  src={"/icons/sonic.gif"}
+                  src={"/assets/icons/sonic.gif"}
                   alt="Running Man"
-                  style={{ width: "40px", height: "40px" }}
+                  width={40}
+                  height={40}
                 />
               </div>
             )}

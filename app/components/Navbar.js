@@ -33,9 +33,8 @@ const Logo = styled(Typography)(({ theme }) => ({
   marginBottom: "-5px",
   marginTop: "-4px",
   marginLeft: "-16px",
-  fontWeight: 1000,
+  // fontWeight: 1000,
   display: "flex",
-  fontSize: theme.typography.h1.fontSize,
   fontFamily: theme.typography.h1.fontFamily,
   color: theme.palette.text.red,
 }));
@@ -67,7 +66,7 @@ const LanguagePopover = styled(Popover)(({ theme }) => ({
 
 export default function Header() {
   const headerRef = useRef();
-  const { setLang, restData } = useMainContext();
+  const { setLang, restData, isSmallScreen } = useMainContext();
   const [languageAnchor, setLanguageAnchor] = useState(null);
   const { i18n, t } = useTranslation();
   // const distanceToRest = Math.round(currentPosition?.distanceToRest);
@@ -108,7 +107,9 @@ export default function Header() {
             justifyContent="space-between"
             sx={{ width: "100%" }}
           >
-            <Logo component="h1">{restData?.name}</Logo>
+            <Logo fontSize={isSmallScreen ? "h1.fontSize" : 65} component="h1">
+              {restData?.name}
+            </Logo>
             <Stack direction="row" spacing={2} alignItems="center">
               {appMenu && (
                 <AboutButton
