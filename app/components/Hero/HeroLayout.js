@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { styled } from "@mui/system";
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
-// import Typography from "@mui/material/Typography";
+import { Container, Stack } from "@mui/material";
 import Typography from "../common/Typography";
-import Button from "@mui/material/Button";
-import { Link as ScrollLink } from "react-scroll";
 import { useTranslation } from "react-i18next";
+import Loading from "../common/Loading";
 import { useMediaQuery } from "@mui/material";
+import LoadingScreen from "@app/components/common/Loader";
 import Hero from "./Hero";
-import { CallWaiterButton, CallBillButton } from "../CallButtons";
+import { CallWaiterButton, CallBillButton } from "../common/CallButtons";
 import { useMainContext } from "../Context";
-import ModalComponent from "../Modal";
+import ModalComponent from "../common/Modal";
+import SloganRotator from "../Slogans";
 
 const Overlay = styled("div")(({ theme }) => ({
   position: "absolute",
@@ -65,8 +64,9 @@ const HighlightedText = styled("span")(({ theme }) => ({
   fontSize: theme.typography.h1.fontSize,
 }));
 
-const CallButtonWrapper = styled("div")(({ theme, isSticky }) => ({
+const CallButtonWrapper = styled(Stack)(({ theme }) => ({
   position: "sticky",
+  marginTop: 5,
   bottom: 0,
   zIndex: 12,
   display: "flex",
@@ -91,6 +91,7 @@ export default function HeroLayout({ rest }) {
 
   const {
     lang,
+    restData,
     isSmallScreen,
     showInitialHeader,
     zont,
@@ -110,69 +111,61 @@ export default function HeroLayout({ rest }) {
 
   const [isSticky, setIsSticky] = useState(true);
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const scrollY = window.scrollY || window.pageYOffset;
-  //     // Get the offset top of the callBillRef
-  //     // const callBillOffsetTop = callBillRef.current.offsetTop;
-  //     // // Check if the user has scrolled past the callBill button
-  //     // console.log(callBillOffsetTop);
-  //     const viewportHeight = window.innerHeight * 0.75;
-  //     if (scrollY > viewportHeight) {
-  //       setIsSticky(false);
-  //     } else {
-  //       setIsSticky(true);
-  //     }
-  //   };
+  const [showLoading, setShowLoading] = useState(true);
 
-  //   // Attach the scroll event listener
-  //   window.addEventListener("scroll", handleScroll);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowLoading(false);
+    }, 2000);
 
-  //   // Cleanup the event listener on component unmount
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <HeroSection id="hero" background={bg}>
       <Overlay />
-      <TitleContainer>
-        <HeroTitle>
-          Wellcome to
-          <HighlightedText> {rest?.name} Restaurant</HighlightedText>
-        </HeroTitle>
-      </TitleContainer>
-      {modalVisible && (
-        <ModalComponent
-          loading={loadingModal}
-          content={modalContent}
-          onClose={hideModal}
-          run={run}
-        />
+      {showLoading ? (
+        <LoadingScreen restData={restData} />
+      ) : (
+        <>
+          <TitleContainer className="tracking-in-contract">
+            <HeroTitle>
+              Wellcome to
+              <HighlightedText> {rest?.name}</HighlightedText>
+            </HeroTitle>
+          </TitleContainer>
+          {modalVisible && (
+            <ModalComponent
+              loading={loadingModal}
+              content={modalContent}
+              onClose={hideModal}
+              run={run}
+            />
+          )}
+          <CallContainer>
+            {showInitialHeader && (
+              <>
+                <Hero zonti={zont} isSmallScreen={isSmallScreen} />
+                <CallButtonWrapper>
+                  <CallWaiterButton
+                    isSticky={isSticky}
+                    showCallWaiterButton={true}
+                    isWaiterButtonActive={isWaiterButtonActive}
+                    handleCallWaiter={handleCallWaiter}
+                  />
+                  <CallBillButton
+                    isSticky={isSticky}
+                    showCallWaiterButton={true}
+                    isButtonBillActive={isButtonBillActive}
+                    handleCallBill={handleCallBill}
+                  />
+                </CallButtonWrapper>
+              </>
+            )}
+          </CallContainer>{" "}
+        </>
       )}
-      <CallContainer>
-        {showInitialHeader && (
-          <>
-            <Hero zonti={zont} isSmallScreen={isSmallScreen} />
-
-            <CallButtonWrapper isSticky={isSticky}>
-              <CallWaiterButton
-                isSticky={isSticky}
-                showCallWaiterButton={true}
-                isWaiterButtonActive={isWaiterButtonActive}
-                handleCallWaiter={handleCallWaiter}
-              />
-              <CallBillButton
-                isSticky={isSticky}
-                showCallWaiterButton={true}
-                isButtonBillActive={isButtonBillActive}
-                handleCallBill={handleCallBill}
-              />
-            </CallButtonWrapper>
-          </>
-        )}
-      </CallContainer>
+      {restData.slogans && <SloganRotator strings={restData.slogans} />}
     </HeroSection>
   );
 }

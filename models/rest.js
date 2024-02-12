@@ -6,6 +6,8 @@ const RestSchema = new Schema({
     type: String,
     required: true,
   },
+  slogans: [{ type: String }],
+  logoSrc: { type: String, default: null },
   address: {
     type: String,
     required: true,

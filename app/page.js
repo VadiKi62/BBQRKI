@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Script from "next/script";
 import Link from "next/link";
 import styles from "./page.module.css";
 
@@ -11,14 +12,15 @@ export default function Home() {
           src="/bb-qr-code-w.svg"
           alt="BBQ qr code ki"
           width={230}
-          height={200}
+          height={230}
           priority
         />
       </div>
       <div className={styles.centered}>
         <Link href="/restaurants">RESTAURANTS </Link>
-        {/* <Link href="/about">ABOUT </Link> */}
+        <Link href="/about">ABOUT </Link>
       </div>
+      {/* <Script strategy="lazyOnload" src="/js/pace.min.js"></Script> */}
     </main>
   );
 }

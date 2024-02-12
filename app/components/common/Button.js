@@ -35,6 +35,7 @@ export default function Button({
         size="large"
         sx={{
           p: 2,
+          marginTop: "0.5rem",
           fontSize: "1.25rem",
           lineHeight: "1.4rem",
           fontWeight: 500,

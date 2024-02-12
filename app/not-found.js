@@ -12,7 +12,7 @@ function notfound() {
         alt="bb qr code ki"
         className="vibrate-1"
         width={130}
-        height={130}
+        height={100}
       />
       <Link style={{ marginTop: 10 }} href="/">
         Come back home

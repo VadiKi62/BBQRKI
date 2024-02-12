@@ -3,7 +3,7 @@ import { fetchRestByPath } from "@utils/actions";
 import Feed from "@app/components/Feed";
 import { Suspense } from "react";
 import { unstable_noStore } from "next/cache";
-import Loading from "@app/components/Loading";
+import Loading from "@app/components/common/Loading";
 
 export const generateMetadata = async ({ params }) => {
   const { name } = params;
@@ -20,9 +20,8 @@ async function page({ params }) {
   unstable_noStore();
   const restData = await fetchRestByPath(params.name);
 
-  console.log("this is from the NAME");
   return (
-    <Suspense fallback={<Loading />}>
+    <Suspense fallback={<Loading restData={restData} />}>
       <Feed rest={restData}> </Feed>
     </Suspense>
   );

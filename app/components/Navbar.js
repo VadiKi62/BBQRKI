@@ -14,13 +14,14 @@ import {
   MenuItem,
 } from "@mui/material";
 import LanguageIcon from "@mui/icons-material/Language";
+import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 const HeaderStyling = styled(AppBar)(({ theme }) => ({
-  backgroundColor: theme.palette.primary.main,
+  // backgroundColor: theme.palette.primary.main,
   fontFamily: theme.typography.h1.fontFamily,
   zIndex: 996,
   position: "sticky",
@@ -37,6 +38,13 @@ const Logo = styled(Typography)(({ theme }) => ({
   display: "flex",
   fontFamily: theme.typography.h1.fontFamily,
   color: theme.palette.text.red,
+}));
+
+const LogoImg = styled(Image)(({ theme }) => ({
+  marginBottom: "-5px",
+  marginTop: "-4px",
+  marginLeft: "-16px",
+  display: "flex",
 }));
 
 const AboutButton = styled(ScrollLink)(({ theme, lang }) => ({
@@ -69,6 +77,7 @@ export default function Header() {
   const { setLang, restData, isSmallScreen } = useMainContext();
   const [languageAnchor, setLanguageAnchor] = useState(null);
   const { i18n, t } = useTranslation();
+  const isJukebox = restData.name === "Jukebox";
   // const distanceToRest = Math.round(currentPosition?.distanceToRest);
   // const { accuracy } = currentPosition;
 
@@ -98,7 +107,10 @@ export default function Header() {
   };
 
   return (
-    <HeaderStyling ref={headerRef}>
+    <HeaderStyling
+      ref={headerRef}
+      sx={{ backgroundColor: isJukebox ? "secondary.dark" : "primary.main" }}
+    >
       <Container>
         <Toolbar>
           <Stack
@@ -107,9 +119,22 @@ export default function Header() {
             justifyContent="space-between"
             sx={{ width: "100%" }}
           >
-            <Logo fontSize={isSmallScreen ? "h1.fontSize" : 65} component="h1">
-              {restData?.name}
-            </Logo>
+            {restData.logoSrc ? (
+              <LogoImg
+                src={restData.logoSrc}
+                width={167}
+                height={56}
+                alt={`${restData.name} logo`}
+                priority
+              ></LogoImg>
+            ) : (
+              <Logo
+                fontSize={isSmallScreen ? "h1.fontSize" : 65}
+                component="h1"
+              >
+                {restData?.name}
+              </Logo>
+            )}
             <Stack direction="row" spacing={2} alignItems="center">
               {appMenu && (
                 <AboutButton

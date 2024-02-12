@@ -17,7 +17,6 @@ export function CallWaiterButton({
     <Element name="callWaiterButton">
       <Button
         // bottom={0}
-
         isSticky={isSticky}
         disabled={!isWaiterButtonActive}
         visibility={showCallWaiterButton}

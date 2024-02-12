@@ -1,26 +1,22 @@
 import React from "react";
+import Script from "next/script";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "@app/page.module.css";
 import { fetchRestaurants } from "@utils/actions";
 
-export const generateMetadata = async () => {
-  const rests = await fetchRestaurants();
-  const one = rests[0].name;
+// export const generateMetadata = async () => {
+//   // const rests = await fetchRestaurants();
+//   // const one = rests[0].name;
 
-  return {
-    title:
-      "Examples of apps for different restaurants and different purposes like QR Menu and Bulltons for calling waiter",
-    description: { one },
-  };
-};
+//   return {
+//     title:
+//       "Examples of apps for different restaurants and different purposes like QR Menu and Bulltons for calling waiter",
+//     description: { one },
+//   };
+// };
 
 async function RestaurantsPage() {
-  // const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/rests/all`;
-  // const data = await fetch(apiUrl, {
-  //   cache: "no-store",
-  // });
-  // const rests = await data.json();
   const rests = await fetchRestaurants();
   const menuRests = [
     { Argo: "http://dusha-roan.vercel.app/?zont=test" },
@@ -30,6 +26,26 @@ async function RestaurantsPage() {
 
   return (
     <>
+      <div className="centered-container slide-in-blurred-top">
+        <h1 className="custom-heading">Apps with BUTTONS only</h1>
+      </div>
+      <div className={styles.grid}>
+        {rests &&
+          rests.map((rest) => (
+            <Link key={rest._id} href={`/restaurants/${rest.pathName}`}>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <Image
+                  src="/favicon.png"
+                  alt="bb qr code ki"
+                  className="spinning-icon bounce-in-left"
+                  width={39}
+                  height={39}
+                />
+                <h2>{rest.name}</h2>
+              </div>
+            </Link>
+          ))}
+      </div>
       <div className="centered-container">
         <h1 className="custom-heading slide-in-blurred-top ">
           Apps with menus and buttons
@@ -57,26 +73,7 @@ async function RestaurantsPage() {
           );
         })}
       </div>
-      <div className="centered-container slide-in-blurred-top">
-        <h1 className="custom-heading">Apps with BUTTONS only</h1>
-      </div>
-      <div className={styles.grid}>
-        {rests &&
-          rests.map((rest) => (
-            <Link key={rest._id} href={`/restaurants/${rest.pathName}`}>
-              <div style={{ display: "flex", alignItems: "center" }}>
-                <Image
-                  src="/favicon.png"
-                  alt="bb qr code ki"
-                  className="spinning-icon bounce-in-left"
-                  width={39}
-                  height={39}
-                />
-                <h2>{rest.name}</h2>
-              </div>
-            </Link>
-          ))}
-      </div>
+      <Script strategy="lazyOnload" src="/js/pace.min.js"></Script>
     </>
   );
 }

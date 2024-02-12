@@ -12,7 +12,7 @@ export const fetchRestaurants = async () => {
     const apiUrl = `${API_URL}/api/rests/all`;
 
     const data = await fetch(apiUrl, {
-      cache: "no-store",
+      next: { revalidate: 8600 },
     });
     if (!data.ok) {
       throw new Error("Failed to fetch restaurants");

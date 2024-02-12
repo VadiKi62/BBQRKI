@@ -14,7 +14,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CallIcon from "@mui/icons-material/Call";
 import EmailIcon from "@mui/icons-material/Email";
-import DefaultButton from "@app/components/DefaultButton";
+import DefaultButton from "@app/components/common/DefaultButton";
 import DirectionsIcon from "@mui/icons-material/Directions";
 
 const Section = styled("section")(({ theme }) => ({

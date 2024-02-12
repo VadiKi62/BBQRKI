@@ -27,6 +27,19 @@ body {
   );
 }
 
+body.hideX #preloader {
+  display: none !important;
+  z-index: -1111111;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+body.hideX .pace {
+  display: none !important;
+  background-color: transparent;
+}
+
 #root-layout {
   font-family: "Odibee Sans", sans-serif;
   text-align: center;

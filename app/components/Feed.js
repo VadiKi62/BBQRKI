@@ -1,9 +1,11 @@
 "use client";
 import React from "react";
+import "@common/preloader.css";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import genesisTheme from "@themes/genesisTheme";
 import arazoTheme from "@themes/arazoTheme";
 import corleoneTheme from "@themes/corleoneTheme";
+import jukeboxTheme from "@themes/jukeboxTheme";
 import argoTheme from "@themes/argoTheme";
 import belvedereTheme from "@themes/belvedereTheme";
 import { MainContextProvider } from "./Context";
@@ -18,6 +20,7 @@ const returnTheme = (themeName) => {
   if (themeName === "themeBelvedere") return createTheme(belvedereTheme);
   if (themeName === "themeGenesis") return createTheme(genesisTheme);
   if (themeName === "corleoneTheme") return createTheme(corleoneTheme);
+  if (themeName === "jukeboxTheme") return createTheme(jukeboxTheme);
   return createTheme(argoTheme);
 };
 
