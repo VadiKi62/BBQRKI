@@ -3,31 +3,94 @@
     "Menu": "Menu",
     "call1": "Call the waiter",
     "call2": "Call the bill",
-    "table":"Table",
-    "run":"The Waiter is running to you!",
-    "About":"About"
+    "table": "Table",
+    "run": "The Waiter is running to you!",
+    "About": "About"
   },
-  "hero":{
-    "wellcome":"Welcome to",
-    "argo":"Αρα...ζω Restaurant",
-    "menu":"Our Menu",
-    "about":"About Us"
+  "hero": {
+    "wellcome": "Welcome to",
+    "argo": "Αρα...ζω Restaurant",
+    "menu": "Our Menu",
+    "about": "About Us"
   },
-  "about":
-  {"about": "With exquisite cuisine made from the bounty of the sea and panoramic views of endless blue waters, Ara...zo promises an unforgettable oceanfront dining experience."},
-  "bill":{
+  "about": {
+    "about": "With exquisite cuisine made from the bounty of the sea and panoramic views of endless blue waters, Ara...zo promises an unforgettable oceanfront dining experience."
+  },
+  "bill": {
     "payment": "Is the payment with cash?"
   },
-  "header": 
-  {"table":"Your table is",
-  "call": "For calling waiter click the button"},
+  "header": {
+    "table": "Your table is",
+    "call": "For calling waiter click the button"
+  },
   "alert": {
-    "got":"Success! Waiter got it!",
+    "got": "Success! Waiter got it!",
     "oops": "oooops. Something got wrong. Your message wasn't sent. Please, try again.",
-    "run":" Waiter is already running to you.",
-    "inside":"You need to be inside the restaurant to call the waiter.",
+    "run": " Waiter is already running to you.",
+    "inside": "You need to be inside the restaurant to call the waiter.",
     "geoError": "GeoLocation Error:",
     "else": "Do you want to order something more instead of Bill?",
-    "enableLoc":"Please enable location services to be able to call waiter.Our app need to check if you are inside the restaurant, otherwise you won't be able to call the waiter."
+    "enableLoc": "Please enable location services to be able to call waiter.Our app need to check if you are inside the restaurant, otherwise you won't be able to call the waiter."
+  },
+  "pres": {
+    "page1": {
+      "1": "REVOLUTIONIZING THE BEACH BAR EXPERIENCE",
+      "2": "QR Codes for Beach Bars: Increasing Profits and Customer Satisfaction",
+      "3": "QR Codes - The Future of Beach Bar Service"
+    },
+    "page2": {
+      "1": "Imagine relaxing on the beach while receiving fast, seamless service without ever waving down a waiter.",
+      "2": "I'm excited to share a solution that solves common pain points for customers and beach bar owners alike."
+    },
+    "page3": {
+      "1": "Pain Points",
+      "2": "Focus on what?",
+      "3": "Long wait times mean customers order less",
+      "4": "Difficult for waiters to quickly serve all customers",
+      "5": "Delays in ordering and paying reduce sales"
+    },
+    "page4": {
+      "1": "Beach-Bar QR-CODE",
+      "2": "Unique QR- code for each umbrella.",
+      "3": "Order shisha",
+      "3a": "Customers can easily order shisha by scanning the QR code",
+      "4": "Call the waiter.",
+      "4a": "Customers can scan the QR code to directly call their waiter",
+      "5": "Request the bill.",
+      "5a": "The QR code allows customers to request their bill",
+      "6": "Repeat last drink.",
+      "6a": "Scanning the code allows customers to instantly reorder their last drink",
+      "7": "A custom option CREATED for your business."
+    },
+    "page5": {
+      "1": "What does it look like?",
+      "2": "CUSTOMER'S DEVICE  ",
+      "2a": "Scan QR-code, open app, press button, wait for waiter. It's just that simple.",
+      "3": "WAITER'S DEVICE",
+      "3a": "Get notifications about new orders, bill requests, etc., in a group chat, where staff can also communicate."
+    },
+    "page6": {
+      "1": "Benefits For Waiters",
+      "2": "Tips. ",
+      "2a": "Happy clients tend to No rush. No need to keep leave more tips.",
+      "3": "No rush.",
+      "3a": "No need to keep leave more tips. track of all hands waving to you, or clients calling you - just keep your phone switched on.",
+      "4": "No misunderstanding.",
+      "4a": "The waiter can see whether it's his table number calling him or not."
+    },
+    "page7": {
+      "1": "Benefits For Customers",
+      "2": "Get service without waving down waiters.",
+      "3": "Order more with faster service time.",
+      "4": "Relax instead of looking for waiter",
+      "5": "No need to keep leave more tips. track of all hands waving to you, or clients calling you - just keep your phone switched on"
+    },
+    "page8": {
+      "1": "Benefits For Beach Bars",
+      "2": "It's a win-win! More sales and happier customers.",
+      "3": "Increase sales and order sizes.",
+      "4": "Reduce waiters needed through automation.",
+      "5": "Save costs and boost efficiency."
+    }
   }
 }

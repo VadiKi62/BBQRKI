@@ -11,7 +11,7 @@ function error() {
         alt="bb qr code ki"
         className="vibrate-1"
         width={130}
-        height={130}
+        height={100}
       />
     </div>
   );

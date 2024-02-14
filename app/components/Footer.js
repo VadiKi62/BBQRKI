@@ -3,12 +3,10 @@
 import React, { useState } from "react";
 import { Grid, ButtonBase, Link as MuiLink, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { animateScroll as scroll } from "react-scroll";
-import { useRouter } from "next/router";
-import NextLink from "next/link";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import Slogans from "./Slogans";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
@@ -85,7 +83,11 @@ function Footer({ rest }) {
     <Section>
       <FooterContainer>
         <SectionTitle variant="h3">{name}</SectionTitle>
-        <Slogan>{slogan}</Slogan>
+        {rest.slogans ? (
+          <Slogans strings={rest.slogans} />
+        ) : (
+          <Slogan>{slogan}</Slogan>
+        )}
         <SocialLinks>
           <MuiLink href="#" color="inherit" target="_blank">
             <FacebookIcon fontSize="large" />

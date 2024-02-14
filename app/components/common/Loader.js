@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import loadingPace from "@common/loadingPace";
 
-function LoadingScreen({ restData }) {
+function LoadingScreen({ restData = null }) {
   useEffect(() => {
     setTimeout(() => {
       if (typeof Pace !== "undefined") loadingPace();
@@ -18,7 +18,7 @@ function LoadingScreen({ restData }) {
   return (
     <div className="hideX">
       <div className="loading">
-        {toTurnstringintoSpansOfEachLetter(restData.name)}
+        {restData && toTurnstringintoSpansOfEachLetter(restData?.name)}
       </div>
       <div id="preloader"></div>
     </div>

@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
-import "@common/preloader.css";
+import "@styles/preloader.css";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import genesisTheme from "@themes/genesisTheme";
-import arazoTheme from "@themes/arazoTheme";
 import corleoneTheme from "@themes/corleoneTheme";
 import jukeboxTheme from "@themes/jukeboxTheme";
+import gelissimoTheme from "@themes/gelissimoTheme";
 import argoTheme from "@themes/argoTheme";
 import belvedereTheme from "@themes/belvedereTheme";
 import { MainContextProvider } from "./Context";
@@ -21,6 +21,7 @@ const returnTheme = (themeName) => {
   if (themeName === "themeGenesis") return createTheme(genesisTheme);
   if (themeName === "corleoneTheme") return createTheme(corleoneTheme);
   if (themeName === "jukeboxTheme") return createTheme(jukeboxTheme);
+  if (themeName === "gelissimoTheme") return createTheme(gelissimoTheme);
   return createTheme(argoTheme);
 };
 
@@ -29,7 +30,7 @@ function Feed({ children, ...props }) {
 
   const theme = returnTheme(rest.themeName);
   const searchParams = useSearchParams();
-  const umbrella = searchParams.get("zont") || 7;
+  const umbrella = searchParams.get("zont") || "test";
   const r = searchParams.get("r");
 
   return (

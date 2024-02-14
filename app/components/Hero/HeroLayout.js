@@ -3,7 +3,7 @@ import { styled } from "@mui/system";
 import { Container, Stack } from "@mui/material";
 import Typography from "../common/Typography";
 import { useTranslation } from "react-i18next";
-import Loading from "../common/Loading";
+// import Loading from "../common/Loading";
 import { useMediaQuery } from "@mui/material";
 import LoadingScreen from "@app/components/common/Loader";
 import Hero from "./Hero";
@@ -34,7 +34,7 @@ const HeroSection = styled("section")(({ theme }) => ({
 }));
 
 const TitleContainer = styled(Container)(({ theme }) => ({
-  paddingTop: 50,
+  paddingTop: -5,
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
@@ -105,6 +105,7 @@ export default function HeroLayout({ rest }) {
     hideModal,
     run,
     showCallWaiterButton,
+    headerRef,
   } = useMainContext();
 
   const bg = `url("/assets/images/${rest.name}/hero-bg.jpg") top center`;
@@ -121,51 +122,61 @@ export default function HeroLayout({ rest }) {
     return () => clearTimeout(timer);
   }, []);
 
+  const renderHeader = () => {
+    if (showLoading) {
+      return <LoadingScreen restData={restData} />;
+    }
+
+    if (!showInitialHeader && restData.slogans) {
+      return <SloganRotator strings={restData.slogans} />;
+    }
+
+    return (
+      <>
+        <Hero zonti={zont} isSmallScreen={isSmallScreen} />
+
+        <CallButtonWrapper>
+          <CallWaiterButton
+            isSticky={isSticky}
+            showCallWaiterButton={true}
+            isWaiterButtonActive={isWaiterButtonActive}
+            handleCallWaiter={handleCallWaiter}
+          />
+
+          <CallBillButton
+            isSticky={isSticky}
+            showCallWaiterButton={true}
+            isButtonBillActive={isButtonBillActive}
+            handleCallBill={handleCallBill}
+          />
+        </CallButtonWrapper>
+      </>
+    );
+  };
+
   return (
     <HeroSection id="hero" background={bg}>
       <Overlay />
-      {showLoading ? (
-        <LoadingScreen restData={restData} />
-      ) : (
-        <>
-          <TitleContainer className="tracking-in-contract">
-            <HeroTitle>
-              Wellcome to
-              <HighlightedText> {rest?.name}</HighlightedText>
-            </HeroTitle>
-          </TitleContainer>
-          {modalVisible && (
-            <ModalComponent
-              loading={loadingModal}
-              content={modalContent}
-              onClose={hideModal}
-              run={run}
-            />
-          )}
-          <CallContainer>
-            {showInitialHeader && (
-              <>
-                <Hero zonti={zont} isSmallScreen={isSmallScreen} />
-                <CallButtonWrapper>
-                  <CallWaiterButton
-                    isSticky={isSticky}
-                    showCallWaiterButton={true}
-                    isWaiterButtonActive={isWaiterButtonActive}
-                    handleCallWaiter={handleCallWaiter}
-                  />
-                  <CallBillButton
-                    isSticky={isSticky}
-                    showCallWaiterButton={true}
-                    isButtonBillActive={isButtonBillActive}
-                    handleCallBill={handleCallBill}
-                  />
-                </CallButtonWrapper>
-              </>
-            )}
-          </CallContainer>{" "}
-        </>
+
+      {!showLoading && (
+        <TitleContainer className="tracking-in-contract">
+          <HeroTitle>
+            Wellcome to
+            <HighlightedText> {rest?.name}</HighlightedText>
+          </HeroTitle>
+        </TitleContainer>
       )}
-      {restData.slogans && <SloganRotator strings={restData.slogans} />}
+
+      <CallContainer>{renderHeader()}</CallContainer>
+
+      {modalVisible && (
+        <ModalComponent
+          loading={loadingModal}
+          content={modalContent}
+          onClose={hideModal}
+          run={run}
+        />
+      )}
     </HeroSection>
   );
 }

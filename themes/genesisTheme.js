@@ -13,7 +13,8 @@ const genesisTheme = {
       grey: "#a8bac1",
       main: "#004660",
       light: "#eff2f4",
-      background: "rgba(239,239,242, 1)",
+      background: "rgba(239,239,242,0.95)",
+      backgroundDark: "rgba(202, 213, 217)",
     },
     text: {
       light: "#eff2f4",

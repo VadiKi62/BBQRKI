@@ -21,8 +21,9 @@ const SloganRotator = ({ strings }) => {
         textAlign: "center",
         zIndex: 1000,
       }}
+     className="fade-in"
     >
-      <GradientTypography className="heartbeat" text={strings[currentIndex]} />
+      <GradientTypography text={strings[currentIndex]} />
     </Container>
   );
 };

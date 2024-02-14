@@ -17,6 +17,7 @@ export function useMainContext() {
 }
 
 export const MainContextProvider = ({ children, rest, umbrella, r }) => {
+  const [headerRef,setHeaderRef]=useState(null)
   const [restData, setRest] = useState(rest);
   const isHighSeason = useHighSeason(rest);
   const countTimer = rest.buttonTimer || 60;
@@ -316,6 +317,8 @@ export const MainContextProvider = ({ children, rest, umbrella, r }) => {
     run,
     restData,
     setRest,
+    setHeaderRef,
+    headerRef
   };
 
   return (

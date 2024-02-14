@@ -74,10 +74,14 @@ const LanguagePopover = styled(Popover)(({ theme }) => ({
 
 export default function Header() {
   const headerRef = useRef();
-  const { setLang, restData, isSmallScreen } = useMainContext();
+  const { setLang, restData, isSmallScreen, setHeaderRef } = useMainContext();
   const [languageAnchor, setLanguageAnchor] = useState(null);
   const { i18n, t } = useTranslation();
   const isJukebox = restData.name === "Jukebox";
+  const isGelissimo = restData.name === "Gelissimo";
+  const width = isJukebox ? 167 : 90;
+  const h = isJukebox ? 56 : 55;
+
   // const distanceToRest = Math.round(currentPosition?.distanceToRest);
   // const { accuracy } = currentPosition;
 
@@ -109,7 +113,10 @@ export default function Header() {
   return (
     <HeaderStyling
       ref={headerRef}
-      sx={{ backgroundColor: isJukebox ? "secondary.dark" : "primary.main" }}
+      sx={{
+        backgroundColor:
+          isJukebox || isGelissimo ? "secondary.dark" : "primary.main",
+      }}
     >
       <Container>
         <Toolbar>
@@ -122,8 +129,8 @@ export default function Header() {
             {restData.logoSrc ? (
               <LogoImg
                 src={restData.logoSrc}
-                width={167}
-                height={56}
+                width={width}
+                height={h}
                 alt={`${restData.name} logo`}
                 priority
               ></LogoImg>
@@ -151,7 +158,10 @@ export default function Header() {
                   {t("menu.Menu")}
                 </AboutButton>
               )}
-              <LanguageSwitcher color="inherit" onClick={handleLanguageClick}>
+              <LanguageSwitcher
+                color={isGelissimo ? "secondary.dark" : "inherit"}
+                onClick={handleLanguageClick}
+              >
                 <LanguageIcon />
               </LanguageSwitcher>
             </Stack>
