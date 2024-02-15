@@ -3,9 +3,8 @@ import { styled } from "@mui/system";
 import { Container, Stack } from "@mui/material";
 import Typography from "../common/Typography";
 import { useTranslation } from "react-i18next";
-// import Loading from "../common/Loading";
 import { useMediaQuery } from "@mui/material";
-import LoadingScreen from "@app/components/common/Loader";
+import LoadingScreen from "@app/components/common/Loaders/LoadingScreen";
 import Hero from "./Hero";
 import { CallWaiterButton, CallBillButton } from "../common/CallButtons";
 import { useMainContext } from "../Context";
@@ -34,7 +33,7 @@ const HeroSection = styled("section")(({ theme }) => ({
 }));
 
 const TitleContainer = styled(Container)(({ theme }) => ({
-  paddingTop: -5,
+  paddingTop: -50,
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
@@ -124,12 +123,12 @@ export default function HeroLayout({ rest }) {
 
   const renderHeader = () => {
     if (showLoading) {
-      return <LoadingScreen restData={restData} />;
+      return <LoadingScreen rest={restData} />;
     }
 
-    if (!showInitialHeader && restData.slogans) {
-      return <SloganRotator strings={restData.slogans} />;
-    }
+    // if (!showInitialHeader && restData.slogans) {
+    //   return <SloganRotator strings={restData.slogans} />;
+    // }
 
     return (
       <>
@@ -159,12 +158,19 @@ export default function HeroLayout({ rest }) {
       <Overlay />
 
       {!showLoading && (
-        <TitleContainer className="tracking-in-contract">
+        <TitleContainer
+          className="tracking-in-contract"
+          sx={{ mt: -9, mb: -5 }}
+        >
           <HeroTitle>
             Wellcome to
             <HighlightedText> {rest?.name}</HighlightedText>
           </HeroTitle>
         </TitleContainer>
+      )}
+
+      {!showLoading && restData.slogans && (
+        <SloganRotator strings={restData.slogans} />
       )}
 
       <CallContainer>{renderHeader()}</CallContainer>

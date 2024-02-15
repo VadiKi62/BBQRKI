@@ -1,6 +1,6 @@
 import Script from "next/script";
 //= Scripts
-import LoadingScreen from "@app/components/common/Loader";
+import LoadingScreen from "@app/components/common/Loaders/Loader";
 import ProgressScroll from "@app/components/common/ProgressScroll";
 //= Page Components
 import CircleBg from "@app/components/Pres/CircleBg";

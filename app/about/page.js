@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 //= Page components
-import Loading from "@app/components/common/Loader";
+import Loading from "@app/components/common/Loaders/Loader";
 // import Navbar from "@app/components/Common/Navbar";
 import Header from "@app/components/Pres/Header";
 import Navbar from "@app/components/Pres/NavBarPres";
