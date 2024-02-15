@@ -126,9 +126,9 @@ export default function HeroLayout({ rest }) {
       return <LoadingScreen rest={restData} />;
     }
 
-    // if (!showInitialHeader && restData.slogans) {
-    //   return <SloganRotator strings={restData.slogans} />;
-    // }
+    if (!showInitialHeader && restData.slogans) {
+      return <SloganRotator strings={restData.slogans} />;
+    }
 
     return (
       <>
@@ -167,10 +167,6 @@ export default function HeroLayout({ rest }) {
             <HighlightedText> {rest?.name}</HighlightedText>
           </HeroTitle>
         </TitleContainer>
-      )}
-
-      {!showLoading && restData.slogans && (
-        <SloganRotator strings={restData.slogans} />
       )}
 
       <CallContainer>{renderHeader()}</CallContainer>
