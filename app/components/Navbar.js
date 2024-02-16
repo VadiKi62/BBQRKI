@@ -34,7 +34,7 @@ const Logo = styled(Typography)(({ theme }) => ({
   marginBottom: "-5px",
   marginTop: "-4px",
   marginLeft: "-16px",
-  // fontWeight: 1000,
+  fontWeight: theme.typography.h1?.fontWeight || 400,
   display: "flex",
   fontFamily: theme.typography.h1.fontFamily,
   color: theme.palette.text.red,
@@ -62,7 +62,7 @@ const AboutButton = styled(ScrollLink)(({ theme, lang }) => ({
 }));
 
 const LanguageSwitcher = styled(IconButton)(({ theme }) => ({
-  color: theme.palette.text.light,
+  color: theme.palette.text?.black || theme.palette.text?.light,
   display: "flex",
   alignItems: "center",
 }));
@@ -159,7 +159,7 @@ export default function Header() {
                 </AboutButton>
               )}
               <LanguageSwitcher
-                color={isGelissimo ? "secondary.dark" : "inherit"}
+                // color={isGelissimo ? "secondary.dark" : "inherit"}
                 onClick={handleLanguageClick}
               >
                 <LanguageIcon />

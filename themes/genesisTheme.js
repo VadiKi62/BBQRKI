@@ -33,7 +33,7 @@ const genesisTheme = {
     fontFamily: ["Gruppo", "sans-serif"].join(","),
     h1: {
       fontSize: "49px",
-      // fontFamily: [ "B612 Mono", "monospace" ].join( "," ),
+      fontWeight: 1000,
       fontFamily: ["Gruppo", "sans-serif"].join(","),
     },
     allVariants: {

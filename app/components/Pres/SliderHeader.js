@@ -58,25 +58,17 @@ const intro1Data = [
 ];
 
 const IntroWithSlider2 = () => {
-  const [load, setLoad] = React.useState(true);
-  React.useEffect(() => {
-    fadeWhenScroll();
-    setTimeout(() => {
-      setLoad(false);
-      removeSlashFromPagination();
-    }, 1000);
-  }, []);
-  useEffect(() => {
-    removeSlashFromPagination();
-    fadeWhenScroll(document.querySelectorAll(".fixed-slider .caption"));
-  }, []);
-
   const fixedSlider = React.useRef();
 
   useEffect(() => {
     const MainContent = document.querySelector(".main-content");
     const slideHeight = fixedSlider.current.offsetHeight;
     MainContent.style.marginTop = slideHeight + "px";
+  }, []);
+
+  useEffect(() => {
+    removeSlashFromPagination();
+    fadeWhenScroll(document.querySelectorAll(".fixed-slider .caption"));
   }, []);
 
   return (

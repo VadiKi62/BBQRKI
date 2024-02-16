@@ -1,7 +1,6 @@
 import { Box, Container, Grid, Typography, Button } from "@mui/material";
 
 export default function BgImage({ slide }) {
-  console.log("slide", slide.title);
   return (
     // <Box sx={{ position: "relative", minHeight: "100vh" }}>
     <Box
@@ -32,13 +31,23 @@ export default function BgImage({ slide }) {
           <Grid item xs={12} md={10} lg={8}>
             <Box className="caption" sx={{ textAlign: "center", mt: 10 }}>
               <Typography
-                variant="h1"
-                sx={{ color: "white", textTransform: "uppercase" }}
+                variant="h2"
+                sx={{
+                  color: "white",
+                  textTransform: "uppercase",
+                  fontSize: { xs: "2rem", md: "3rem" }, // Adjust font size for xs and md screens
+                }}
               >
                 {slide.title}
               </Typography>
               {slide.content && (
-                <Typography variant="h4" sx={{ mt: 2 }}>
+                <Typography
+                  variant="body1"
+                  sx={{
+                    mt: 2,
+                    fontSize: { xs: "1rem", md: "1.5rem" }, // Adjust font size for xs and md screens
+                  }}
+                >
                   {slide?.content}
                 </Typography>
               )}

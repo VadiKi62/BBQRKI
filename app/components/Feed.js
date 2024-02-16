@@ -15,15 +15,16 @@ import MainContent from "./MainContent";
 import ScrollButton from "./common/ScrollButton";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
+import returnTheme from "@theme/themePicker";
 
-const returnTheme = (themeName) => {
-  if (themeName === "themeBelvedere") return createTheme(belvedereTheme);
-  if (themeName === "themeGenesis") return createTheme(genesisTheme);
-  if (themeName === "corleoneTheme") return createTheme(corleoneTheme);
-  if (themeName === "jukeboxTheme") return createTheme(jukeboxTheme);
-  if (themeName === "gelissimoTheme") return createTheme(gelissimoTheme);
-  return createTheme(argoTheme);
-};
+// const returnTheme = (themeName) => {
+//   if (themeName === "themeBelvedere") return createTheme(belvedereTheme);
+//   if (themeName === "themeGenesis") return createTheme(genesisTheme);
+//   if (themeName === "corleoneTheme") return createTheme(corleoneTheme);
+//   if (themeName === "jukeboxTheme") return createTheme(jukeboxTheme);
+//   if (themeName === "gelissimoTheme") return createTheme(gelissimoTheme);
+//   return createTheme(argoTheme);
+// };
 
 function Feed({ children, ...props }) {
   const rest = props.rest;

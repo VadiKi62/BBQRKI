@@ -33,7 +33,7 @@ export default function Home() {
       <FullTestimonials classText="pb-0" />
       <Team />
       <Blogs /> */}
-        <CallToAction />
+        {/* <CallToAction /> */}
         {/* <Footer /> */}
       </div>
     </ThemeProvider>

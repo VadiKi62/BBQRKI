@@ -15,8 +15,7 @@ import MuiAppBar from "@mui/material/AppBar";
 const TransparentAppBar = styled(AppBar)(({ theme, scrolled }) => {
   const getHeight = () => (scrolled ? "50px" : "60px");
 
-  const getBackgroundColor = () =>
-    scrolled ? "transparent" : "secondary.beige";
+  const getBackgroundColor = () => (scrolled ? "transparent" : "primary.red");
 
   const getFontSize = () => (scrolled ? "1rem" : "1.1rem");
 
@@ -71,8 +70,8 @@ function AppAppBar({ setLanguage, language }) {
         <Toolbar
           sx={{
             justifyContent: "space-between",
-            mt: scrolled ? -1 : 0,
-            color: scrolled ? "secondary.main" : "white",
+            mt: scrolled ? "-5px" : 0,
+            color: scrolled ? "secondary.dark" : "primary.blue",
           }}
         >
           <Box sx={{ flex: 1 }} />

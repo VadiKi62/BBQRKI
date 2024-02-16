@@ -267,7 +267,11 @@ button:hover {
   width: 500px;
   height: 500px;
   border-radius: 70%;
-  background-image: -webkit-linear-gradient(45deg, #059dff, #36c6f0);
+  background-image: -webkit-linear-gradient(
+    45deg,
+    rgba(var(--background-end-rgb)),
+    rgba(var(--background-end-rgb), 0.9)
+  );
   background-image: -o-linear-gradient(45deg, #059dff, #36c6f0);
   background-image: linear-gradient(45deg, #059dff, #36c6f0);
   opacity: 0.25;
@@ -283,4 +287,98 @@ button:hover {
   background-image: -webkit-linear-gradient(45deg, #fb5343, #6549d5);
   background-image: -o-linear-gradient(45deg, #fb5343, #6549d5);
   background-image: linear-gradient(45deg, #fb5343, #6549d5);
+}
+.main-content {
+  background: #111215;
+  position: relative;
+  z-index: 3;
+  overflow-x: hidden !important;
+}
+
+.line {
+  position: absolute;
+  height: 1px;
+  width: 65%;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#12c2e9),
+    color-stop(#c471ed),
+    to(#f64f59)
+  );
+  background: -webkit-linear-gradient(left, #12c2e9, #c471ed, #f64f59);
+  background: -o-linear-gradient(left, #12c2e9, #c471ed, #f64f59);
+  background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+}
+
+.line.top {
+  top: 0;
+}
+
+.line.bottom {
+  bottom: 0;
+}
+
+.line.left {
+  left: 0;
+}
+
+.line.right {
+  right: 0;
+}
+
+.line-v {
+  position: absolute;
+  height: 80px;
+  width: 1px;
+  background: #c5a47e;
+  left: 50%;
+  opacity: 0.3;
+}
+
+.line-v.top {
+  top: -30px;
+}
+
+.line-v.bottom {
+  bottom: -30px;
+}
+
+.particles {
+  min-height: 100vh;
+  position: relative;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.particles .cont h1 {
+  font-size: 90px;
+  font-weight: 800;
+}
+
+.particles .animation-wrapper {
+  opacity: 0.5;
+}
+
+svg.CircularProgressbar {
+  width: 110px;
+}
+section.testimonials.section-padding {
+  overflow: hidden !important;
+}
+.slick-prev,
+.slick-next {
+  display: none !important;
+}
+header.particles.circle-bg.valign {
+  overflow: hidden;
+}
+.valign {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
