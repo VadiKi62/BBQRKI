@@ -15,7 +15,7 @@ import MainContent from "./MainContent";
 import ScrollButton from "./common/ScrollButton";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
-import returnTheme from "@theme/themePicker";
+import { returnTheme } from "@theme/themePicker";
 
 // const returnTheme = (themeName) => {
 //   if (themeName === "themeBelvedere") return createTheme(belvedereTheme);

@@ -35,7 +35,7 @@ export default function BgImage({ slide }) {
                 sx={{
                   color: "white",
                   textTransform: "uppercase",
-                  fontSize: { xs: "2rem", md: "3rem" }, // Adjust font size for xs and md screens
+                  fontSize: { xs: "2rem", md: "3rem" },
                 }}
               >
                 {slide.title}
@@ -45,7 +45,7 @@ export default function BgImage({ slide }) {
                   variant="body1"
                   sx={{
                     mt: 2,
-                    fontSize: { xs: "1rem", md: "1.5rem" }, // Adjust font size for xs and md screens
+                    fontSize: { xs: "1rem", md: "1.5rem" },
                   }}
                 >
                   {slide?.content}

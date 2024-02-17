@@ -121,7 +121,7 @@ export const POST = async (request) => {
     pathName: "restaurantYour",
     themeName: "themeGenesis",
     app: {
-      menu: true,
+      menu: false,
       about: true,
       buttonWaiter: true,
       buttonBill: true,
@@ -257,7 +257,7 @@ export const POST = async (request) => {
   };
 
   //   const rest = (await request.json());
-  const rest = gelissimoData;
+  const rest = defaultData;
   try {
     await connectToDB();
     const { name, pathName } = rest;
