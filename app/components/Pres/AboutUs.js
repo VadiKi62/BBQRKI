@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 //= Scripts
 import { thumparallax, thumparallaxDown } from "@common/thumparallax";
@@ -44,7 +45,7 @@ const AboutUs3 = () => {
                       className="imgone big-bord wow fadeInDown"
                       data-wow-delay=".8s"
                     >
-                      <img
+                      <Image
                         className="thumparallax-down"
                         src={AboutUs3date.image1}
                         alt=""
@@ -62,7 +63,7 @@ const AboutUs3 = () => {
                       className="imgtwo big-bord wow fadeInUp"
                       data-wow-delay=".6s"
                     >
-                      <img
+                      <Image
                         className="thumparallax"
                         src={AboutUs3date.image2}
                         alt=""

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 //= Modules
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper";
@@ -67,7 +68,7 @@ function Works() {
                     <div className="img">
                       <span className="imgio">
                         <div className="wow cimgio" data-delay="500"></div>
-                        <img src="/img/portfolio/2.jpg" alt="" />
+                        <Image src="/img/portfolio/2.jpg" alt="" />
                       </span>
                     </div>
                     <div className="cont">
@@ -89,7 +90,7 @@ function Works() {
                     <div className="img">
                       <span className="imgio">
                         <div className="wow cimgio" data-delay="500"></div>
-                        <img src="/img/portfolio/1.jpg" alt="" />
+                        <Image src="/img/portfolio/1.jpg" alt="" />
                       </span>
                     </div>
                     <div className="cont">
@@ -111,7 +112,7 @@ function Works() {
                     <div className="img">
                       <span className="imgio">
                         <div className="wow cimgio" data-delay="500"></div>
-                        <img src="/img/portfolio/3.jpg" alt="" />
+                        <Image src="/img/portfolio/3.jpg" alt="" />
                       </span>
                     </div>
                     <div className="cont">
@@ -133,7 +134,7 @@ function Works() {
                     <div className="img">
                       <span className="imgio">
                         <div className="wow cimgio" data-delay="500"></div>
-                        <img src="/img/portfolio/4.jpg" alt="" />
+                        <Image src="/img/portfolio/4.jpg" alt="" />
                       </span>
                     </div>
                     <div className="cont">
@@ -155,7 +156,7 @@ function Works() {
                     <div className="img">
                       <span className="imgio">
                         <div className="wow cimgio" data-delay="500"></div>
-                        <img src="/img/portfolio/5.jpg" alt="" />
+                        <Image src="/img/portfolio/5.jpg" alt="" />
                       </span>
                     </div>
                     <div className="cont">
@@ -177,7 +178,7 @@ function Works() {
                     <div className="img">
                       <span className="imgio">
                         <div className="wow cimgio" data-delay="500"></div>
-                        <img src="/img/portfolio/6.jpg" alt="" />
+                        <Image src="/img/portfolio/6.jpg" alt="" />
                       </span>
                     </div>
                     <div className="cont">

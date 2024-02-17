@@ -1,8 +1,9 @@
-import React from 'react';
+import React from "react";
+import Image from "next/image";
 
 function Footer({ hideBGCOLOR }) {
   return (
-    <footer className={`${!hideBGCOLOR ? 'sub-bg' : ''}`}>
+    <footer className={`${!hideBGCOLOR ? "sub-bg" : ""}`}>
       <div className="container">
         <div className="row">
           <div className="col-lg-4">
@@ -44,7 +45,7 @@ function Footer({ hideBGCOLOR }) {
                 <li>
                   <div className="img">
                     <a href="#">
-                      <img src="/img/blog/1.jpg" alt="" />
+                      <Image src="/img/blog/1.jpg" alt="" />
                     </a>
                   </div>
                   <div className="sm-post">
@@ -60,7 +61,7 @@ function Footer({ hideBGCOLOR }) {
                 <li>
                   <div className="img">
                     <a href="#">
-                      <img src="/img/blog/2.jpg" alt="" />
+                      <Image src="/img/blog/2.jpg" alt="" />
                     </a>
                   </div>
                   <div className="sm-post">
@@ -85,7 +86,7 @@ function Footer({ hideBGCOLOR }) {
           <div className="col-lg-4">
             <div className="item">
               <div className="logo">
-                <img src="/img/logo-light.png" alt="logo" />
+                <Image src="/img/logo-light.png" alt="logo" />
               </div>
               <div className="social">
                 <a href="#0">
@@ -103,7 +104,8 @@ function Footer({ hideBGCOLOR }) {
               </div>
               <div className="copy-right">
                 <p>
-                  © 2023, Vie Template. Made with passion by <a href="#0">ThemesCamp</a>.
+                  © 2023, Vie Template. Made with passion by{" "}
+                  <a href="#0">ThemesCamp</a>.
                 </p>
               </div>
             </div>
@@ -111,7 +113,7 @@ function Footer({ hideBGCOLOR }) {
         </div>
       </div>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;
