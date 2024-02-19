@@ -15,6 +15,7 @@ const genesisTheme = {
       light: "#eff2f4",
       background: "rgba(239,239,242,0.95)",
       backgroundDark: "rgba(202, 213, 217)",
+      complement: "rgba(20,160,117)",
     },
     text: {
       light: "#eff2f4",

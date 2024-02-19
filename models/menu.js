@@ -23,12 +23,12 @@ import { Rest } from "./rest";
 // });
 
 const menuItemSchema = new Schema({
-  menuNumber: { type: Number },
+  menuNumber: { type: Number, required: true },
   image: { type: String },
   title: { type: String, required: true },
   price: { type: String, required: true },
   category: { type: String, required: true },
-  subCategory: { type: String },
+  subCategory: { type: String, default: null },
   ingredients: { type: String },
 });
 

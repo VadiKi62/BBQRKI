@@ -64,9 +64,8 @@ const HighlightedText = styled("span")(({ theme }) => ({
 }));
 
 const CallButtonWrapper = styled(Stack)(({ theme }) => ({
-  position: "sticky",
   marginTop: 5,
-  bottom: 0,
+
   zIndex: 12,
   display: "flex",
   flexDirection: "column",
@@ -121,6 +120,26 @@ export default function HeroLayout({ rest }) {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY || window.pageYOffset;
+
+      const viewportHeight = window.innerHeight * 0.75;
+      if (scrollY > viewportHeight) {
+        setIsSticky(false);
+      } else {
+        setIsSticky(true);
+      }
+    };
+    // Attach the scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const renderHeader = () => {
     if (showLoading) {
       return <LoadingScreen rest={restData} />;
@@ -134,16 +153,21 @@ export default function HeroLayout({ rest }) {
       <>
         <Hero zonti={zont} isSmallScreen={isSmallScreen} />
 
-        <CallButtonWrapper>
+        <CallButtonWrapper
+          sx={{
+            position: isSticky ? "sticky" : "fixed",
+            bottom: isSticky ? "0px" : "-70px",
+          }}
+        >
           <CallWaiterButton
-            isSticky={isSticky}
+            // isSticky={isSticky}
             showCallWaiterButton={true}
             isWaiterButtonActive={isWaiterButtonActive}
             handleCallWaiter={handleCallWaiter}
           />
 
           <CallBillButton
-            isSticky={isSticky}
+            // isSticky={isSticky}
             showCallWaiterButton={true}
             isButtonBillActive={isButtonBillActive}
             handleCallBill={handleCallBill}

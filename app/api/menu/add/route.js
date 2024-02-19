@@ -17,6 +17,7 @@ export const POST = async (request) => {
         title: item.title,
         price: item.price,
         category: item.category,
+        subCategory: item?.subCategory,
         ingredients: item.ingredients,
       })),
     }));
@@ -59,7 +60,7 @@ export const POST = async (request) => {
 export const GET = async () => {
   try {
     await connectToDB();
-    const menu = await Menu.findById("65cf7e67a88acf9100b6d8b2").exec();
+    const menu = await Menu.findById("65d08cf6a4f11da6ca9efa1e").exec();
     if (!menu) {
       return new Response("menu wasn't found", { status: 404 });
     }

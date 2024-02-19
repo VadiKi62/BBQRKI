@@ -14,6 +14,7 @@ export default createTheme({
       light: "#302f2b",
       beige: "#F5EDE0",
       background: "rgba(239,239,242, 0.70)",
+      complement: "	#35aa7f",
     },
     text: {
       light: "white",

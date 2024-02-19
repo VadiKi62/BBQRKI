@@ -17,22 +17,19 @@ import LanguageIcon from "@mui/icons-material/Language";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
-import Link from "next/link";
-import { useRouter } from "next/router";
 
-const HeaderStyling = styled(AppBar)(({ theme }) => ({
-  // backgroundColor: theme.palette.primary.main,
+const AppStyling = styled(AppBar)(({ theme }) => ({
+  backgroundColor: theme.palette.primary.main,
   fontFamily: theme.typography.h1.fontFamily,
   zIndex: 996,
   position: "sticky",
   top: 0,
   minWidth: "100%",
-  minHeight: "100%",
 }));
 
 const Logo = styled(Typography)(({ theme }) => ({
-  marginBottom: "-5px",
-  marginTop: "-4px",
+  // marginBottom: "-5px",
+  // marginTop: "-4px",
   marginLeft: "-16px",
   fontWeight: theme.typography.h1?.fontWeight || 400,
   display: "flex",
@@ -73,7 +70,7 @@ const LanguagePopover = styled(Popover)(({ theme }) => ({
 }));
 
 export default function Header() {
-  const headerRef = useRef();
+  const headerRef = useRef(0);
   const { setLang, restData, isSmallScreen, setHeaderRef } = useMainContext();
   const [languageAnchor, setLanguageAnchor] = useState(null);
   const { i18n, t } = useTranslation();
@@ -81,11 +78,10 @@ export default function Header() {
   const isGelissimo = restData.name === "Gelissimo";
   const width = isJukebox ? 167 : 90;
   const h = isJukebox ? 56 : 55;
-
   // const distanceToRest = Math.round(currentPosition?.distanceToRest);
   // const { accuracy } = currentPosition;
 
-  const appMenu = false;
+  const appMenu = Boolean(restData.menu);
   const lang = i18n.language;
   //   const router = useRouter();
 
@@ -104,18 +100,27 @@ export default function Header() {
     handleLanguageClose();
   };
 
-  const scrollToTopFunc = () => {
-    scroll.scrollToTop({
-      smooth: true,
-    });
+  const [scrolled, setScrolled] = useState(false);
+
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+    setScrolled(scrollPosition > 80);
   };
 
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <HeaderStyling
+    <AppStyling
       ref={headerRef}
       sx={{
         backgroundColor:
           isJukebox || isGelissimo ? "secondary.dark" : "primary.main",
+        height: scrolled ? "59px" : "100%",
       }}
     >
       <Container>
@@ -135,10 +140,7 @@ export default function Header() {
                 priority
               ></LogoImg>
             ) : (
-              <Logo
-                fontSize={isSmallScreen ? "h1.fontSize" : 65}
-                component="h1"
-              >
+              <Logo fontSize={scrolled ? "3rem" : "4.5rem"} component="h1">
                 {restData?.name}
               </Logo>
             )}
@@ -195,6 +197,6 @@ export default function Header() {
           </LanguagePopover>
         </Toolbar>
       </Container>
-    </HeaderStyling>
+    </AppStyling>
   );
 }

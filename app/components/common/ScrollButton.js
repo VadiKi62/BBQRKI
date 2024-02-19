@@ -1,6 +1,7 @@
 import React from "react";
 import { styled } from "@mui/material/styles";
 import { Fab } from "@mui/material";
+import useScrollTrigger from "@mui/material/useScrollTrigger";
 import { Link, animateScroll as scroll } from "react-scroll";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Zoom from "@mui/material/Zoom";
@@ -12,6 +13,11 @@ const ScrollTop = styled(Fab)(({ theme }) => ({
 }));
 
 export default function ScrollButton({ onClick }) {
+  const trigger = useScrollTrigger({
+    target: window,
+    disableHysteresis: true,
+    threshold: 100,
+  });
   const handleScroll = () => {
     if (onClick) {
       // If an onClick callback is provided, call it
@@ -25,7 +31,7 @@ export default function ScrollButton({ onClick }) {
   };
 
   return (
-    <Zoom in>
+    <Zoom in={trigger}>
       <ScrollTop
         onClick={handleScroll}
         color="primary"

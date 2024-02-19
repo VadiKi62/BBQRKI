@@ -1,6 +1,4 @@
-// import { Rest } from "@models/rest";
-// import { connectToDB } from "@utils/database";
-// import { unstable_noStore } from "next/cache";
+import { generateCategories } from "@utils/functions";
 
 export const API_URL =
   process.env.NODE_ENV === "development"
@@ -49,6 +47,21 @@ export const fetchRestByPath = async (path) => {
     }
     const restData = await data.json();
     return restData;
+  } catch (error) {
+    console.error(`Error fetching restaurant with path ${path}:`, error);
+    throw error;
+  }
+};
+
+export const fetchMenu = async (restId) => {
+  try {
+    const apiUrl = `${API_URL}/api/menu/${restId}`;
+    const data = await fetch(apiUrl);
+    if (!data.ok) {
+      throw new Error(`Failed to fetch menu of the rest with id ${restId}`);
+    }
+    const menuData = await data.json();
+    return menuData;
   } catch (error) {
     console.error(`Error fetching restaurant with path ${path}:`, error);
     throw error;
