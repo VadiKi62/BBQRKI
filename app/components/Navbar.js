@@ -140,7 +140,7 @@ export default function Header() {
                 priority
               ></LogoImg>
             ) : (
-              <Logo fontSize={scrolled ? "3rem" : "4.5rem"} component="h1">
+              <Logo fontSize={scrolled ? "3rem" : "3.5rem"} component="h1">
                 {restData?.name}
               </Logo>
             )}

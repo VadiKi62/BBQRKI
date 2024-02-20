@@ -183,11 +183,11 @@ export default function HeroLayout({ rest }) {
 
       {!showLoading && (
         <TitleContainer
-          className="tracking-in-contract"
+          // className="tracking-in-contract"
           sx={{ mt: -9, mb: -5 }}
         >
           <HeroTitle>
-            Wellcome to
+            {t("hero.wellcome")}
             <HighlightedText> {rest?.name}</HighlightedText>
           </HeroTitle>
         </TitleContainer>
