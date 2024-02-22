@@ -4,6 +4,7 @@ import React from "react";
 import Loader from "@app/components/common/Loaders/Loader";
 // import Navbar from "@app/components/Common/Navbar";
 import Header from "@app/components/Pres/Header";
+import ShowcaseCircleSide from "@app/components/Pres/ShowcaseCircleSide";
 import Navbar from "@app/components/Pres/NavBarPres";
 import SliderHeader from "@app/components/Pres/SliderHeader";
 import AboutUs from "@app/components/Pres/AboutUs";
@@ -27,6 +28,7 @@ export default function Home() {
       <SliderHeader />
       <div className="main-content">
         <Services />
+        <ShowcaseCircleSide />
         {/* <AboutUs /> */}
         {/* <Works />
 

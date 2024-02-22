@@ -12,7 +12,8 @@ import BgImage from "./Slider/BgImage";
 
 const swiperOptions = {
   modules: [Parallax, Navigation, Pagination],
-  speed: 1000,
+  speed: 3000,
+  autoplay: true,
   navigation: {
     prevEl: ".swiper-button-prev",
     nextEl: ".swiper-button-next",
@@ -24,7 +25,7 @@ const swiperOptions = {
     el: ".swiper-pagination",
   },
   onSwiper: (swiper) => {
-    for (var i = 0; i < swiper.slides.length; i++) {
+    for (var i = 0; i < swiper.slides?.length; i++) {
       swiper.slides[i].childNodes[0].setAttribute(
         "data-swiper-parallax",
         0.75 * swiper.width
