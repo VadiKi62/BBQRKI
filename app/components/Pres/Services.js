@@ -1,13 +1,13 @@
-'use client';
+"use client";
 import React, { useEffect } from "react";
 import Link from "next/link";
 //= Scripts
-import cardMouseEffect from "@/common/cardMouseEffect";
+// import cardMouseEffect from "@/common/cardMouseEffect";
 
 function Services3() {
-  useEffect(() => {
-    cardMouseEffect(document.querySelectorAll(".feat .items"));
-  }, []);
+  // useEffect(() => {
+  //   cardMouseEffect(document.querySelectorAll(".feat .items"));
+  // }, []);
 
   return (
     <section className="feat sub-bg section-padding">
@@ -89,6 +89,6 @@ function Services3() {
       </div>
     </section>
   );
-};
+}
 
 export default Services3;

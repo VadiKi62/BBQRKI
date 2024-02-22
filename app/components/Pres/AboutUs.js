@@ -49,6 +49,8 @@ const AboutUs3 = () => {
                         className="thumparallax-down"
                         src={AboutUs3date.image1}
                         alt=""
+                        width={200}
+                        height={200}
                       />
                     </div>
                     <div className="exp">
@@ -66,6 +68,8 @@ const AboutUs3 = () => {
                       <Image
                         className="thumparallax"
                         src={AboutUs3date.image2}
+                        width={200}
+                        height={200}
                         alt=""
                       />
                     </div>

@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { styled, keyframes, useTheme } from "@mui/system";
+"use client";
+import React from "react";
+import { styled, keyframes } from "@mui/system";
 
 const spin = keyframes`
   0% {

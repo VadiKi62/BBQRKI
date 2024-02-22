@@ -69,15 +69,15 @@ const LanguagePopover = styled(Popover)(({ theme }) => ({
   fontFamily: theme.typography.fontFamily,
 }));
 
-export default function Header() {
+export default function App() {
   const headerRef = useRef(0);
   const { setLang, restData, isSmallScreen, setHeaderRef } = useMainContext();
   const [languageAnchor, setLanguageAnchor] = useState(null);
   const { i18n, t } = useTranslation();
   const isJukebox = restData.name === "Jukebox";
   const isGelissimo = restData.name === "Gelissimo";
-  const width = isJukebox ? 167 : 90;
-  const h = isJukebox ? 56 : 55;
+  const width = isJukebox ? 115 : 90;
+  const h = isJukebox ? 90 : 55;
   // const distanceToRest = Math.round(currentPosition?.distanceToRest);
   // const { accuracy } = currentPosition;
 
@@ -100,11 +100,11 @@ export default function Header() {
     handleLanguageClose();
   };
 
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState("false");
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
-    setScrolled(scrollPosition > 80);
+    setScrolled((scrollPosition > 80).toString());
   };
 
   useEffect(() => {
@@ -120,7 +120,7 @@ export default function Header() {
       sx={{
         backgroundColor:
           isJukebox || isGelissimo ? "secondary.dark" : "primary.main",
-        height: scrolled ? "59px" : "100%",
+        height: scrolled === "true" ? "59px" : "100%",
       }}
     >
       <Container>

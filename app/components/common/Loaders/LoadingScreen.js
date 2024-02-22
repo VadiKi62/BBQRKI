@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Spinning from "./Spinning";
 import Pulsating from "./Pulsating";

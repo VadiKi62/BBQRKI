@@ -21,16 +21,7 @@ const AnimatedLogo = styled("img")({
 
 function Pulsating({ logo }) {
   return (
-    // <div
-    //   style={{
-    //     display: "flex",
-    //     justifyContent: "center",
-    //     alignItems: "center",
-    //     height: "100vh",
-    //   }}
-    // >
     <AnimatedLogo style={{ transform: `scale(0.5)` }} src={logo} alt="logo" />
-    // </div>
   );
 }
 

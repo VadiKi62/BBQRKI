@@ -18,6 +18,7 @@ function Feed({ children, ...props }) {
   const searchParams = useSearchParams();
   const umbrella = searchParams.get("zont") || "test";
   const r = searchParams.get("r");
+  // const dev = searchParams.get("dev");
 
   return (
     <ThemeProvider theme={theme}>

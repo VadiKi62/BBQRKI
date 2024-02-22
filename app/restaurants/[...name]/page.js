@@ -3,7 +3,7 @@ import { fetchRestByPath } from "@utils/actions";
 import Feed from "@app/components/Feed";
 import { Suspense } from "react";
 import { unstable_noStore } from "next/cache";
-import Loading from "@app/components/common/Loaders/Loading";
+import Loading from "@app/components/common/Loaders/LoadingScreen";
 
 export const generateMetadata = async ({ params }) => {
   const { name } = params;

@@ -6,7 +6,7 @@ function LoadingScreen({ restData }) {
   useEffect(() => {
     setTimeout(() => {
       if (typeof Pace !== "undefined") loadingPace();
-    }, 1000);
+    }, 1500);
   });
 
   function toTurnstringintoSpansOfEachLetter(string) {
@@ -17,7 +17,9 @@ function LoadingScreen({ restData }) {
   return (
     <div className="hideX">
       <div className="loading">
-        {restData && toTurnstringintoSpansOfEachLetter(restData?.name)}
+        {restData
+          ? toTurnstringintoSpansOfEachLetter(restData?.name)
+          : toTurnstringintoSpansOfEachLetter("loading")}
       </div>
       <div id="preloader"></div>
     </div>

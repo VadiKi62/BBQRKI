@@ -14,7 +14,7 @@ const ScrollTop = styled(Fab)(({ theme }) => ({
 
 export default function ScrollButton({ onClick }) {
   const trigger = useScrollTrigger({
-    target: window,
+    // target: window || null,
     disableHysteresis: true,
     threshold: 100,
   });
