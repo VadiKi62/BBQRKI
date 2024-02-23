@@ -24,7 +24,7 @@ const fullScreenData = [
   },
   {
     id: 3,
-    title: { first: "Waiters run ", second: "fewer kilometers" },
+    title: { first: "Waiters ", second: "Order fewer km" },
     image: "/assets/pres/cir/3.png",
     sub: "Design",
   },
@@ -36,7 +36,7 @@ const fullScreenData = [
   },
   {
     id: 5,
-    title: { first: "Clients", second: "Order more" },
+    title: { first: "More", second: "satisfaction" },
     image: "/assets/pres/cir/5.png",
     sub: "Design",
   },

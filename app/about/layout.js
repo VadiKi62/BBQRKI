@@ -19,7 +19,7 @@ export const metadata = {
 export default function LayoutAbout({ children }) {
   return (
     <>
-      <LoadingScreen />
+      {/* <LoadingScreen /> */}
       {/* <ProgressScroll /> */}
       <CircleBg />
       {children}

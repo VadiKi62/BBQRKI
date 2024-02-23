@@ -23,12 +23,14 @@ export default function Home() {
   const theme = createTheme(bbqrTheme);
   return (
     <ThemeProvider theme={theme}>
-      <Loader />
-      <Navbar />
-      <SliderHeader />
+      {/* <Loader /> */}
+      {/* <Navbar />
+      <SliderHeader /> */}
       <div className="main-content">
-        <Services />
+        <Header />
         <ShowcaseCircleSide />
+        <Services />
+
         {/* <AboutUs /> */}
         {/* <Works />
 

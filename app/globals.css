@@ -632,7 +632,7 @@ header.particles.circle-bg.valign {
 
 .showcase-carus .swiper-slide .bg-img {
   margin: 0;
-  height: 300vh;
+  height: 100vh;
   background-position: center center;
 }
 
@@ -664,8 +664,8 @@ header.particles.circle-bg.valign {
   visibility: visible;
 }
 .circle-slide .swiper-slide .bg-img {
-  height: 680px !important;
-  width: 680px !important;
+  height: 380px !important;
+  width: 380px !important;
 }
 .showstyle {
   height: 100vh;
@@ -677,7 +677,7 @@ header.particles.circle-bg.valign {
 
 .showstyle .swiper-slide .bg-img {
   height: 75vh;
-  margin: -1vh 0 0;
+  margin: -3vh 0 0;
 }
 .ontop {
   position: relative;
