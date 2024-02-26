@@ -49,13 +49,13 @@ export default createTheme({
   },
 
   typography: {
-    fontFamily: ["Hind Siliguri", "sans-serif"].join(","),
+    fontFamily: ["Josefin Sans", "sans-serif"].join(","),
     h1: {
       fontSize: "45px",
       fontFamily: ["Hind Siliguri", "sans-serif"].join(","),
     },
     allVariants: {
-      fontFamily: ["Hind Siliguri", "sans-serif"].join(","),
+      fontFamily: ["Josefin Sans", "sans-serif"].join(","),
     },
   },
 });

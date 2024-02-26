@@ -10,7 +10,7 @@ export const fetchRestaurants = async () => {
     const apiUrl = `${API_URL}/api/rests/all`;
 
     const data = await fetch(apiUrl, {
-      next: { revalidate: 8600 },
+      next: { revalidate: 3600 },
     });
     if (!data.ok) {
       throw new Error("Failed to fetch restaurants");

@@ -3,7 +3,7 @@ import { createTheme } from "@mui/material/styles";
 const genesisTheme = {
   palette: {
     primary: {
-      // main: "#004660",
+      main: "#004660",
       green: "#57c1bc",
       main: "#a8bac1",
       fiolet: "#a45ecd",
@@ -40,12 +40,6 @@ const genesisTheme = {
     allVariants: {
       // fontFamily: [ "B612 Mono", "monospace" ].join( "," ),
       fontFamily: ["Tenor Sans", "sans-serif"].join(","),
-    },
-    genesis: {
-      logo: ["Gruppo", "sans-serif"].join(","),
-      menu: ["Gruppo", "sans-serif"].join(","),
-      buttons: ["Tenor Sans", "sans-serif"].join(","),
-      others: ["Gruppo", "sans-serif"].join(","),
     },
   },
 };

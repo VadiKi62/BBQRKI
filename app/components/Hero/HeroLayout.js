@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { styled } from "@mui/system";
 import { Container, Stack } from "@mui/material";
 import Typography from "../common/Typography";
@@ -141,12 +142,19 @@ export default function HeroLayout({ rest }) {
   }, []);
 
   const renderHeader = () => {
-    if (showLoading) {
-      return <LoadingScreen rest={restData} />;
-    }
+    // if (showLoading) {
+    //   return <LoadingScreen rest={restData} />;
+    // }
 
-    if (!showInitialHeader && restData.slogans) {
-      return <SloganRotator strings={restData.slogans} />;
+    // if (!showInitialHeader && restData.slogans) {
+    //   return <SloganRotator strings={restData.slogans} />;
+    // }
+
+    if (!showInitialHeader && restData.animLogo) {
+      const altName = `${restData.name} logo gif`;
+      return (
+        <Image src={restData.animLogo} alt={altName} width={478} height={478} />
+      );
     }
 
     return (
@@ -179,7 +187,11 @@ export default function HeroLayout({ rest }) {
 
   return (
     <HeroSection id="hero" background={bg}>
-      <Overlay />
+      <Overlay
+        background={
+          !showInitialHeader ? "primary.main" : "secondary.background"
+        }
+      />
 
       {!showLoading && (
         <TitleContainer

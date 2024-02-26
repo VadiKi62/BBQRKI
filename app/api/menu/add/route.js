@@ -5,7 +5,6 @@ import { menuArazo } from "@utils/initialMenus";
 import { connectToDB } from "@utils/database";
 
 export const POST = async (request) => {
-  console.log("Helo");
   try {
     await connectToDB();
 

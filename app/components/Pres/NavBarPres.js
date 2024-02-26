@@ -2,6 +2,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
+import Image from "next/image";
 import Link from "@mui/material/Link";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -13,9 +14,9 @@ import Toolbar from "./Toolbar";
 import MuiAppBar from "@mui/material/AppBar";
 
 const TransparentAppBar = styled(AppBar)(({ theme, scrolled }) => {
-  const getHeight = () => (scrolled ? "50px" : "60px");
+  const getHeight = () => (scrolled ? "65px" : "65px");
 
-  const getBackgroundColor = () => (scrolled ? "transparent" : "primary.red");
+  const getBackgroundColor = () => (scrolled ? "transparent" : "transparent");
 
   const getFontSize = () => (scrolled ? "1rem" : "1.1rem");
 
@@ -70,46 +71,15 @@ function AppAppBar({ setLanguage, language }) {
         <Toolbar
           sx={{
             justifyContent: "space-between",
-            mt: scrolled ? "-5px" : 0,
-            color: scrolled ? "secondary.dark" : "primary.blue",
           }}
         >
-          <Box sx={{ flex: 1 }} />
-          <Link
-            variant="h6"
-            underline="none"
-            color="inherit"
-            href="/"
-            sx={{
-              fontSize: {
-                xs: scrolled ? 15 : 18,
-                sm: scrolled ? 17 : 24,
-              },
-              textTransform: "uppercase",
-            }}
-          >
-            Beach Bar QR-Code
-          </Link>
-          <Box sx={{ flex: 1, display: "flex", justifyContent: "flex-end" }}>
-            <IconButton
-              onClick={handleClick}
-              sx={{ mt: scrolled ? -1 : 0, color: "inherit" }}
-            >
-              <LanguageIcon fontSize="small" />
-            </IconButton>
-            <Menu
-              anchorEl={anchorEl}
-              open={Boolean(anchorEl)}
-              onClose={handleClose}
-            >
-              <MenuItem onClick={() => handleLanguageChange("en")}>
-                English
-              </MenuItem>
-              <MenuItem onClick={() => handleLanguageChange("el")}>
-                Ελληνικά
-              </MenuItem>
-            </Menu>
-          </Box>
+          <Image
+            src="/logo_white1.png"
+            alt="BBQ qr code ki"
+            width={78}
+            height={47}
+            priority
+          />
         </Toolbar>
       </TransparentAppBar>
       <Toolbar />

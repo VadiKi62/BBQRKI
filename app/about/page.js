@@ -24,8 +24,8 @@ export default function Home() {
   return (
     <ThemeProvider theme={theme}>
       {/* <Loader /> */}
-      {/* <Navbar />
-      <SliderHeader /> */}
+      <Navbar />
+      {/* <SliderHeader /> */}
       <div className="main-content">
         <Header />
         <ShowcaseCircleSide />

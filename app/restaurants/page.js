@@ -18,6 +18,7 @@ import { fetchRestaurants } from "@utils/actions";
 
 async function RestaurantsPage() {
   const rests = await fetchRestaurants();
+  console.log(rests);
   const menuRests = [
     { Argo: "http://dusha-roan.vercel.app/?zont=test" },
     { Arazo: "https://arazo.netlify.app/?zont=test" },
