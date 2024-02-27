@@ -69,7 +69,7 @@ const MenuIngredients = styled("div")(({ theme }) => ({
 
 function MenuItemComponent({ item }) {
   return (
-    <StyledMenuItem minWidth="xs">
+    <StyledMenuItem>
       <MenuImage src={item.image} alt={item.title} />
       <MenuContent>
         <MenuLink href="#">{item.title}</MenuLink>

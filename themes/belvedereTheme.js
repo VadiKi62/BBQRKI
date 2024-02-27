@@ -5,7 +5,7 @@ export default createTheme({
   palette: {
     primary: {
       main: "#002a54",
-      green: "#7b8c71",
+      green: "	#00b7e5",
       fiolet: "#540054",
       red: " #f7ad46",
     },
@@ -13,6 +13,7 @@ export default createTheme({
       main: "#041c34",
       light: "#Fde989",
       beige: "#e6eaee",
+      // background: "#002a54",
       background:
         "linear-gradient(to bottom, rgba(42,84,255,0.4),  rgba(253, 233, 137,0.3),#d8dee0)",
       background1:

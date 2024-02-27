@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { styled } from "@mui/system";
+import { styled, textAlign } from "@mui/system";
 import { Container, Stack } from "@mui/material";
 import Typography from "../common/Typography";
 import { useTranslation } from "react-i18next";
@@ -8,7 +8,7 @@ import { useMediaQuery } from "@mui/material";
 import LoadingScreen from "@app/components/common/Loaders/LoadingScreen";
 import Hero from "./Hero";
 import { CallWaiterButton, CallBillButton } from "../common/CallButtons";
-import { useMainContext } from "../Context";
+import { useMainContext } from "../MainContextProvider";
 import ModalComponent from "../common/Modal";
 import SloganRotator from "../Slogans";
 
@@ -90,6 +90,8 @@ export default function HeroLayout({ rest }) {
 
   const {
     lang,
+    devel,
+    currentPosition,
     restData,
     isSmallScreen,
     showInitialHeader,
@@ -107,6 +109,9 @@ export default function HeroLayout({ rest }) {
     headerRef,
   } = useMainContext();
 
+  const distanceToRest = Math.round(currentPosition?.distanceToRest);
+  const { accuracy } = currentPosition;
+
   const bg = `url("/assets/images/${rest.name}/hero-bg.jpg") top center`;
 
   const [isSticky, setIsSticky] = useState(true);
@@ -123,10 +128,10 @@ export default function HeroLayout({ rest }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY || window.pageYOffset;
+      const scrollY = window.scrollY;
 
       const viewportHeight = window.innerHeight * 0.75;
-      if (scrollY > viewportHeight) {
+      if (scrollY > viewportHeight && rest.menu) {
         setIsSticky(false);
       } else {
         setIsSticky(true);
@@ -142,19 +147,29 @@ export default function HeroLayout({ rest }) {
   }, []);
 
   const renderHeader = () => {
-    // if (showLoading) {
-    //   return <LoadingScreen rest={restData} />;
-    // }
+    if (showLoading) {
+      return <LoadingScreen rest={restData} />;
+    }
 
     // if (!showInitialHeader && restData.slogans) {
     //   return <SloganRotator strings={restData.slogans} />;
     // }
 
-    if (!showInitialHeader && restData.animLogo) {
+    if (!showInitialHeader) {
       const altName = `${restData.name} logo gif`;
-      return (
-        <Image src={restData.animLogo} alt={altName} width={478} height={478} />
-      );
+      if (restData.animLogo) {
+        return (
+          <div className="slide-in-blurred-top">
+            <Image
+              src={restData.animLogo}
+              alt={altName}
+              width={278}
+              height={278}
+            />
+          </div>
+        );
+      }
+      return;
     }
 
     return (
@@ -168,14 +183,12 @@ export default function HeroLayout({ rest }) {
           }}
         >
           <CallWaiterButton
-            // isSticky={isSticky}
             showCallWaiterButton={true}
             isWaiterButtonActive={isWaiterButtonActive}
             handleCallWaiter={handleCallWaiter}
           />
 
           <CallBillButton
-            // isSticky={isSticky}
             showCallWaiterButton={true}
             isButtonBillActive={isButtonBillActive}
             handleCallBill={handleCallBill}
@@ -187,11 +200,14 @@ export default function HeroLayout({ rest }) {
 
   return (
     <HeroSection id="hero" background={bg}>
-      <Overlay
-        background={
-          !showInitialHeader ? "primary.main" : "secondary.background"
-        }
-      />
+      {devel && (
+        <div style={devStyle}>
+          {" "}
+          <h4>Distance to Rest is {distanceToRest}</h4>
+          <h4>Accuracy is {accuracy}</h4>
+        </div>
+      )}
+      <Overlay />
 
       {!showLoading && (
         <TitleContainer
@@ -218,3 +234,11 @@ export default function HeroLayout({ rest }) {
     </HeroSection>
   );
 }
+
+const devStyle = {
+  marginTop: "-80px",
+  textAlign: "center",
+  color: "black",
+  borderColor: "red",
+  borderBlockStyle: "groove",
+};

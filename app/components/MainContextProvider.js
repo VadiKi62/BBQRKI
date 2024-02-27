@@ -8,7 +8,6 @@ import useGeo from "@common/useGeo";
 import useHighSeason from "@common/useHighSeason";
 import { I18nextProvider } from "react-i18next";
 import i from "@locales/i18n";
-import { useRouter } from "next/navigation";
 
 const MainContext = createContext();
 
@@ -16,11 +15,12 @@ export function useMainContext() {
   return useContext(MainContext);
 }
 
-export const MainContextProvider = ({ children, rest, umbrella, r }) => {
+export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
   const [headerRef, setHeaderRef] = useState(null);
+  const [devel, setDev] = useState(dev);
   const [restData, setRest] = useState(rest);
   const isHighSeason = useHighSeason(rest);
-  const countTimer = rest.buttonTimer || 60;
+  const countTimer = rest.buttonTimer || 10;
   const [zont, setZont] = useState(umbrella);
   const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 
@@ -30,7 +30,7 @@ export const MainContextProvider = ({ children, rest, umbrella, r }) => {
   const [countdownWaiter, setCountdownWaiter] = useState(0);
   const [countdownBill, setCountdownBill] = useState(0);
   // Function to introduce a delay for proper upload of Geolocation
-  const ms = 1600;
+  const ms = 1900;
   const delay = () => new Promise((resolve) => setTimeout(resolve, ms));
 
   const [isWaiterButtonActive, setWaiterButtonActive] = useState(true);
@@ -52,6 +52,7 @@ export const MainContextProvider = ({ children, rest, umbrella, r }) => {
     radius,
     setRadius,
   } = useGeo(r, rest, zont, isHighSeason);
+  console.log("isGeolocationAvailable", isGeolocationAvailable);
 
   const messageWaiter1 = `${rest.name}.Table ${zont} called the Waiter.  Language - ${language}.\nΤραπέζι ${zont} κάλεσε τον σερβιτόρο. Γλώσσα - ${language}.`;
   let messageBill1 = `${rest.name}. Table ${zont} asks for Bill. Language - ${language}.\nΤραπέζι ${zont} ζητά τον λογαριασμό.  Γλώσσα - ${language}. `;
@@ -60,7 +61,11 @@ export const MainContextProvider = ({ children, rest, umbrella, r }) => {
   const [loadingModal, setLoading] = useState(true);
   const [modalContent, setModalContent] = useState("");
   const [run, setRun] = useState(false);
-  const showModal = (content, loading = false, run = false) => {
+  const showModal = (
+    content = "sending your message...",
+    loading = true,
+    run = false
+  ) => {
     setModalVisible(true);
     setModalContent(content);
     if (loading) {
@@ -93,7 +98,7 @@ export const MainContextProvider = ({ children, rest, umbrella, r }) => {
       );
       await action();
       hideModal();
-      showModal(messageGot);
+      showModal();
     } catch (error) {
       alert(
         `${messageOops}.Error in performActionBill: ${JSON.stringify(error)}`
@@ -109,17 +114,22 @@ export const MainContextProvider = ({ children, rest, umbrella, r }) => {
         "Waiter"
       );
       await action();
-      // Hide loading spinner and update modal content
       hideModal();
-      showModal(messageGot, false, true);
+      showModal();
     } catch (error) {
       showModal(
-        `${messageOops}.Error in performActionBill: ${JSON.stringify(error)}`
+        `${messageOops}.Error in performActionWaiter: ${JSON.stringify(error)}`,
+        false,
+        true
       );
     }
   };
   const handleCallWaiter = async () => {
-    await delay();
+    if (!isGeolocationAvailable) {
+      updateGeolocation();
+      await delay();
+    }
+
     if (isGeolocationAvailable) {
       if (isWaiterButtonActive) {
         if (!isButtonBillActive && !confirmAction(messageElse)) {
@@ -134,11 +144,20 @@ export const MainContextProvider = ({ children, rest, umbrella, r }) => {
               messageWaiter1,
               zont,
               restData.backendEndpoints.waiter,
-              restData.chat_id
+              restData.chat_id,
+              (responseData) => {
+                // Success callback
+                showModal(messageGot, false, true);
+              },
+              (error) => {
+                // Error callback
+                showModal(messageOops);
+              }
             );
           });
         } else {
-          showModal(`${messageInside}`);
+          updateGeolocation();
+          showModal(`${messageInside}`, false, true);
           history?.replaceState({}, document.title, window?.location.pathname);
           // router?.replace(router.asPath, undefined, { shallow: true });
           setShowInitialHeader(false);
@@ -148,7 +167,7 @@ export const MainContextProvider = ({ children, rest, umbrella, r }) => {
       }
     } else {
       // Handle case where geolocation was rejected
-      showModal(messageEnable);
+      showModal(messageEnable, false, true);
     }
   };
   const handleCallBill = async () => {
@@ -174,21 +193,30 @@ export const MainContextProvider = ({ children, rest, umbrella, r }) => {
               messageBill1,
               zont,
               restData.backendEndpoints.waiter,
-              restData.chat_id
+              restData.chat_id,
+              (responseData) => {
+                // Success callback
+                showModal(messageGot, false, true);
+              },
+              (error) => {
+                // Error callback
+                showModal(messageOops);
+              }
             );
           });
         } else {
-          showModal(`${messageInside}`);
+          updateGeolocation();
+          showModal(`${messageInside}`, false, true);
           history?.replaceState({}, document.title, window.location.pathname);
           // router?.replace(router?.asPath, undefined, { shallow: true });
-          // setShowInitialHeader(false);
+          setShowInitialHeader(false);
         }
       } else {
         showModal(messageRun, false, true);
       }
     } else {
       // Handle case where geolocation was rejected
-      showModal(messageEnable);
+      showModal(messageEnable, false, true);
     }
   };
   // Periodically update the Waiter countdown timer using setInterval
@@ -319,6 +347,7 @@ export const MainContextProvider = ({ children, rest, umbrella, r }) => {
     setRest,
     setHeaderRef,
     headerRef,
+    devel,
   };
 
   return (

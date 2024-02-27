@@ -30,8 +30,8 @@ const ModalComponent = ({ loading, content, onClose, run = false }) => {
       >
         {loading ? (
           <div>
-            <Typography variant="inherit">
-              {content} fontSize={"2rem"}
+            <Typography variant="inherit" fontSize={"2rem"}>
+              {content}
             </Typography>
             <CircularProgress color="primary" />
           </div>

@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Container, Grid, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Element, Link } from "react-scroll";
-import { useMainContext } from "@app/components/Context";
+import { useMainContext } from "@app/components/MainContextProvider";
 import MenuItemComponent from "./MenuItemComponent";
 import {
   menuItems,

@@ -21,7 +21,7 @@ export default createTheme({
       dark: "rgba(34, 34, 27)",
       main: "rgba(92, 229, 221)",
       red: "#ffffff",
-      green: "#58958a",
+      green: "rgba(92, 229, 221)",
     },
   },
   components: {

@@ -1,7 +1,7 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import { styled } from "@mui/system";
-import { useMainContext } from "@app/components/Context";
+import { useMainContext } from "@app/components/MainContextProvider";
 import {
   AppBar,
   Button,
@@ -76,8 +76,15 @@ export default function App() {
   const { i18n, t } = useTranslation();
   const isJukebox = restData.name === "Jukebox";
   const isGelissimo = restData.name === "Gelissimo";
-  const width = isJukebox ? 115 : 90;
-  const h = isJukebox ? 90 : 55;
+  const isBelvedere = restData.name === "Belvedere";
+  let width = isJukebox ? 150 : 90;
+  let h = isJukebox ? 52 : 55;
+
+  if (isBelvedere) {
+    width = 270;
+    h = 60;
+  }
+
   // const distanceToRest = Math.round(currentPosition?.distanceToRest);
   // const { accuracy } = currentPosition;
 
@@ -120,7 +127,7 @@ export default function App() {
       sx={{
         backgroundColor:
           isJukebox || isGelissimo ? "secondary.dark" : "primary.main",
-        height: scrolled === "true" ? "59px" : "100%",
+        height: scrolled === "true" && appMenu ? "59px" : "100%",
       }}
     >
       <Container>

@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { List, ListItem } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { useMainContext } from "../Context";
+import { useMainContext } from "../MainContextProvider";
 import { scroller } from "react-scroll";
 
 const FilterListContainer = styled(List)(({ theme }) => ({

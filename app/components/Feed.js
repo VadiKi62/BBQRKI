@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import "@styles/preloader.css";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { MainContextProvider } from "./Context";
+import { ThemeProvider } from "@mui/material/styles";
+import { MainContextProvider } from "./MainContextProvider";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import MainContent from "./MainContent";
@@ -18,12 +18,12 @@ function Feed({ children, ...props }) {
   const searchParams = useSearchParams();
   const umbrella = searchParams.get("zont") || "test";
   const r = searchParams.get("r");
-  // const dev = searchParams.get("dev");
+  const dev = searchParams.get("dev") || null;
 
   return (
     <ThemeProvider theme={theme}>
       <Suspense>
-        <MainContextProvider rest={rest} umbrella={umbrella} r={r}>
+        <MainContextProvider rest={rest} umbrella={umbrella} r={r} dev={dev}>
           <Navbar rest={rest} />
           <MainContent rest={rest} />
           {children} <Footer rest={rest} />

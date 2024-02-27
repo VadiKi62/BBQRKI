@@ -1,6 +1,13 @@
 import axios from "axios";
 
-export const sendWaiter = (message, zont, endpoint, chat_id) => {
+export const sendWaiter = (
+  message,
+  zont,
+  endpoint,
+  chat_id,
+  onSuccess,
+  onError
+) => {
   return new Promise((resolve, reject) => {
     const data = {
       chat_id: `${chat_id}`,
@@ -11,17 +18,30 @@ export const sendWaiter = (message, zont, endpoint, chat_id) => {
       .post(`https://button.hopto.org/${endpoint}`, data)
       .then((response) => {
         console.log(`Table ${data.table} called the waiter`, response.data);
+        // Call the success callback function if provided
+        if (typeof onSuccess === "function") {
+          onSuccess();
+        }
         resolve(response.data);
       })
       .catch((error) => {
         console.error("Error sending Call Waiter:", error);
-        // const err = JSON.stringify(error);
-        // alert(messageOops + `ERROR : ${err}`);
+        // Call the error callback function if provided
+        if (typeof onError === "function") {
+          onError();
+        }
         reject(error);
       });
   });
 };
-export const sendBill = (message, zont, endpoint, chat_id) => {
+export const sendBill = (
+  message,
+  zont,
+  endpoint,
+  chat_id,
+  onSuccess,
+  onError
+) => {
   return new Promise((resolve, reject) => {
     const data = {
       chat_id: `${chat_id}`,
@@ -32,12 +52,17 @@ export const sendBill = (message, zont, endpoint, chat_id) => {
     axios
       .post(`https://button.hopto.org/${endpoint}`, data)
       .then(function (response) {
+        // Call the success callback function if provided
+        if (typeof onSuccess === "function") {
+          onSuccess();
+        }
         resolve(response.data);
       })
       .catch(function (error) {
         console.error("Error sending Bill:", error);
-        // const err = JSON.stringify(error);
-        // alert(messageOops + `ERROR : ${err}`);
+        if (typeof onError === "function") {
+          onError();
+        }
         reject(error);
       });
   });

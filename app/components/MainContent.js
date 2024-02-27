@@ -14,12 +14,13 @@ async function MainContent({ rest }) {
     menuData = await fetchMenu(rest._id);
   }
   return (
-    // <div>
-    <Suspense fallback={<Loading restData={rest} />}>
+    <div>
+      {/* <Suspense fallback={<Loading restData={rest} />}> */}
       <HeroLayout rest={rest} />
       {isMenu && <Menu menuData={menuData} />}
-    </Suspense>
-    // </div>
+
+      {/* </Suspense> */}
+    </div>
   );
 }
 
