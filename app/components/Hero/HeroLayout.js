@@ -157,7 +157,9 @@ export default function HeroLayout({ rest }) {
 
     if (!showInitialHeader) {
       const altName = `${restData.name} logo gif`;
-      if (restData.animLogo) {
+      const styleForGenesis = { borderRadius: "50%" };
+
+      if (restData.animLogo && restData.name == "Genesis") {
         return (
           <div className="slide-in-blurred-top">
             <Image
@@ -165,11 +167,19 @@ export default function HeroLayout({ rest }) {
               alt={altName}
               width={278}
               height={278}
+              style={{ styleForGenesis }}
             />
           </div>
         );
       }
-      return;
+      return (
+        <Image
+          src={restData.animLogo ? restData.animLogo : "/bb.png"}
+          alt={altName}
+          width={278}
+          height={218}
+        />
+      );
     }
 
     return (

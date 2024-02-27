@@ -39,6 +39,7 @@ function LoadingSpinner({ logo }) {
       <AnimatedLogo
         style={{
           zIndex: 999,
+          borderRadius: "50%",
         }}
         src={logo}
         alt="logo"
