@@ -57,7 +57,6 @@ function Menu({ menuRef, headerRef, menuData }) {
 
   useEffect(() => {
     if (activeFilter === "*") {
-      console.log("activeFilter", activeFilter);
       setFilteredMenuItems(getLangMenu(menuData.menuUpd, i18n.language));
     } else {
       const filteredItemsId = filterMenuItemsId(
@@ -87,8 +86,6 @@ function Menu({ menuRef, headerRef, menuData }) {
   ]);
 
   const [subCatLen, setSubCatLen] = useState(subCategories?.length || 0);
-  console.log("subCategories", subCategories);
-
   const uniqueCategories = getUniqueCategories(
     menuData.menuUpd,
     i18n.language,
