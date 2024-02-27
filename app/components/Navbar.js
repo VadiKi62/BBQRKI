@@ -81,7 +81,7 @@ export default function App() {
   let h = isJukebox ? 52 : 55;
 
   if (isBelvedere) {
-    width = 270;
+    width = 240;
     h = 60;
   }
 
