@@ -1,6 +1,7 @@
 import "./globals.css";
 import "@styles/animations.css";
 import "@styles/slider.css";
+import Image from "next/image";
 import Link from "next/link";
 import generateStylesheetObject from "@common/generateStylesheetsObject";
 
@@ -26,7 +27,7 @@ export default function RootLayout({ children }) {
       <body style={{ position: "relative", minHeight: "100vh" }}>
         {" "}
         {children}{" "}
-        <div
+        <footer
           style={{
             position: "absolute",
             bottom: 0,
@@ -35,11 +36,10 @@ export default function RootLayout({ children }) {
             textAlign: "center",
           }}
         >
-          <p id="root-layout">BB QR Code</p>
           <Link href="/">
-            <p id="root-layout">Povered by Nataliaki</p>
+            <p id="root-layout">Powered by Nataliaki</p>
           </Link>
-        </div>
+        </footer>
       </body>
     </html>
   );

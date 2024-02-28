@@ -3,7 +3,11 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { sendWaiter, sendBill } from "@common/BotRequest";
 import { useMediaQuery } from "@mui/material";
-import { getLongLanguageName, handleButtonSpecificLogic } from "@common/index";
+import {
+  getLongLanguageName,
+  handleButtonSpecificLogic,
+  findPreferredLanguage,
+} from "@common/index";
 import useGeo from "@common/useGeo";
 import useHighSeason from "@common/useHighSeason";
 import { I18nextProvider } from "react-i18next";
@@ -16,6 +20,13 @@ export function useMainContext() {
 }
 
 export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
+  const { i18n, t } = useTranslation();
+  const [lang, setLang] = useState(i18n.language);
+  useEffect(() => {
+    const selectedLanguage = findPreferredLanguage();
+    setLang(selectedLanguage);
+    i18n.changeLanguage(selectedLanguage);
+  }, [i18n, setLang]);
   const [headerRef, setHeaderRef] = useState(null);
   const [devel, setDev] = useState(dev);
   const [restData, setRest] = useState(rest);
@@ -36,8 +47,6 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
   const [isWaiterButtonActive, setWaiterButtonActive] = useState(true);
   const [isButtonBillActive, setButtonBillActive] = useState(true);
 
-  const { i18n, t } = useTranslation();
-  const [lang, setLang] = useState(i18n.language);
   const language = getLongLanguageName(lang);
   const messageRun = t("alert.run");
   const messageOops = t("alert.oops");
@@ -157,7 +166,7 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
           });
         } else {
           updateGeolocation();
-          showModal(`${messageInside}`, false, true);
+          showModal(`${messageInside}`, false, false);
           history?.replaceState({}, document.title, window?.location.pathname);
           // router?.replace(router.asPath, undefined, { shallow: true });
           setShowInitialHeader(false);
@@ -167,7 +176,7 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
       }
     } else {
       // Handle case where geolocation was rejected
-      showModal(messageEnable, false, true);
+      showModal(messageEnable, false, false);
     }
   };
   const handleCallBill = async () => {
@@ -206,7 +215,7 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
           });
         } else {
           updateGeolocation();
-          showModal(`${messageInside}`, false, true);
+          showModal(`${messageInside}`, false, false);
           history?.replaceState({}, document.title, window.location.pathname);
           // router?.replace(router?.asPath, undefined, { shallow: true });
           setShowInitialHeader(false);
@@ -216,7 +225,7 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
       }
     } else {
       // Handle case where geolocation was rejected
-      showModal(messageEnable, false, true);
+      showModal(messageEnable, false, false);
     }
   };
   // Periodically update the Waiter countdown timer using setInterval

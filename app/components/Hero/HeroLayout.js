@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { styled, textAlign } from "@mui/system";
+import { styled } from "@mui/system";
 import { Container, Stack } from "@mui/material";
 import Typography from "../common/Typography";
 import { useTranslation } from "react-i18next";
@@ -11,6 +11,7 @@ import { CallWaiterButton, CallBillButton } from "../common/CallButtons";
 import { useMainContext } from "../MainContextProvider";
 import ModalComponent from "../common/Modal";
 import SloganRotator from "../Slogans";
+import Dev from "../Dev";
 
 const Overlay = styled("div")(({ theme }) => ({
   position: "absolute",
@@ -211,13 +212,7 @@ export default function HeroLayout({ rest }) {
 
   return (
     <HeroSection id="hero" background={bg}>
-      {devel && (
-        <div style={devStyle}>
-          {" "}
-          <h4>Distance to Rest is {distanceToRest}</h4>
-          <h4>Accuracy is {accuracy}</h4>
-        </div>
-      )}
+      {devel && <Dev rest={rest} />}
       <Overlay />
 
       {!showLoading && (
@@ -245,12 +240,3 @@ export default function HeroLayout({ rest }) {
     </HeroSection>
   );
 }
-
-const devStyle = {
-  marginTop: "-80px",
-  textAlign: "center",
-  color: "black",
-  borderColor: "red",
-  borderBlockStyle: "groove",
-  zIndex: "1999",
-};

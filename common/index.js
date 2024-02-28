@@ -28,7 +28,7 @@ export function findPreferredLanguage() {
   console.log("navigator", navigator);
   console.log("PrefLanguages", preferredLanguages);
 
-  const appLanguages = ["ua", "el", "ru", "de", "en"];
+  const appLanguages = ["el", "ru", "de"];
 
   let lastMatchedLanguage = null;
 
@@ -43,8 +43,9 @@ export function findPreferredLanguage() {
       lastMatchedLanguage = matchedLanguage;
     }
   }
+
   // If no match is found, return a default language (e.g., 'en' for English).
-  return lastMatchedLanguage || "en";
+  return lastMatchedLanguage || "el";
 }
 
 export function getLongLanguageName(shortCode) {

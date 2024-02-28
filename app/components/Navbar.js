@@ -81,8 +81,8 @@ export default function App() {
   let h = isJukebox ? 52 : 55;
 
   if (isBelvedere) {
-    width = 240;
-    h = 60;
+    width = 220;
+    h = 50;
   }
 
   // const distanceToRest = Math.round(currentPosition?.distanceToRest);

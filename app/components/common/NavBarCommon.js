@@ -10,29 +10,8 @@ import IconButton from "@mui/material/IconButton";
 import LanguageIcon from "@mui/icons-material/Language";
 import { useTranslation } from "react-i18next";
 import { styled } from "@mui/system";
-import Toolbar from "./Toolbar";
+import Toolbar from "../Pres/Toolbar";
 import MuiAppBar from "@mui/material/AppBar";
-
-const TransparentAppBar = styled(AppBar)(({ theme, scrolled }) => {
-  const getHeight = () => (scrolled ? "65px" : "65px");
-
-  const getBackgroundColor = () => (scrolled ? "transparent" : "transparent");
-
-  const getFontSize = () => (scrolled ? "1rem" : "1.1rem");
-
-  return {
-    transition: theme?.transitions.create(["height", "background-color"], {
-      duration: theme?.transitions.duration.standard,
-      easing: theme?.transitions.easing.easeInOut,
-    }),
-    willChange: "height, background-color",
-    height: getHeight(),
-    backgroundColor: getBackgroundColor(),
-    boxShadow: scrolled ? theme?.shadows[2] : "none",
-    backdropFilter: scrolled ? "blur(10px)" : "none",
-    fontSize: getFontSize(),
-  };
-});
 
 function AppAppBar({ setLanguage, language }) {
   const [scrolled, setScrolled] = useState(false);
@@ -67,21 +46,19 @@ function AppAppBar({ setLanguage, language }) {
 
   return (
     <div>
-      <TransparentAppBar scrolled={scrolled}>
-        <Toolbar
-          sx={{
-            justifyContent: "space-between",
-          }}
-        >
-          <Image
-            src="/logo_white1.png"
-            alt="BBQ qr code ki"
-            width={78}
-            height={47}
-            priority
-          />
-        </Toolbar>
-      </TransparentAppBar>
+      <Toolbar
+        sx={{
+          justifyContent: "space-between",
+        }}
+      >
+        <Image
+          src="/logo_white1.png"
+          alt="BBQ qr code ki"
+          width={78}
+          height={47}
+          priority
+        />
+      </Toolbar>
       <Toolbar />
     </div>
   );

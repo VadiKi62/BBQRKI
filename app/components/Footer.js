@@ -14,9 +14,10 @@ import CallIcon from "@mui/icons-material/Call";
 import EmailIcon from "@mui/icons-material/Email";
 import DefaultButton from "@app/components/common/DefaultButton";
 import DirectionsIcon from "@mui/icons-material/Directions";
+import Image from "next/image";
 
 const Section = styled("section")(({ theme }) => ({
-  padding: theme.spacing(5),
+  padding: theme.spacing(3, 5, 1, 5),
   borderTop: `1px solid ${theme.palette.secondary.grey}`,
   textAlign: "center",
   background: theme.palette.secondary.background1
@@ -139,6 +140,12 @@ function Footer({ rest }) {
           </Grid>
         </ContactInfo>
         <CopyrightInfo>{/* <Copyright /> */}</CopyrightInfo>
+        <Image
+          src="/logo.gif"
+          alt="gif-bbqr-code-nataliaki"
+          width={80}
+          height={80}
+        />
       </FooterContainer>
     </Section>
   );

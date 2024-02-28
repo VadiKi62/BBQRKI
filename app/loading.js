@@ -11,21 +11,21 @@ function loading() {
         alt="bb qr code ki"
         className="spinning-icon loop-spinning"
         width={70}
-        height={50}
+        height={55}
       />
       <Image
         src="/logo-white.png"
         alt="bb qr code ki"
         className="spinning-icon loop-spinning"
         width={70}
-        height={50}
+        height={55}
       />
       <Image
         src="/logo-white.png"
         alt="bb qr code ki"
         className="spinning-icon loop-spinning"
         width={70}
-        height={50}
+        height={55}
       />
     </div>
   );

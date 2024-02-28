@@ -14,7 +14,7 @@ export default createTheme({
       dark: "rgba(255, 255, 255)",
       light: "rgba(24, 102, 106, 0.5)",
       beige: "#2f7578 ",
-      background: "#155b5f",
+      background: "rgba(21,91,95,0.85)",
     },
     text: {
       light: "#ffffff",

@@ -30,7 +30,7 @@
     "inside": "You need to be inside the restaurant to call the waiter.",
     "geoError": "GeoLocation Error:",
     "else": "Do you want to order something more instead of Bill?",
-    "enableLoc": "Please enable location services to be able to call waiter.Our app need to check if you are inside the restaurant, otherwise you won't be able to call the waiter."
+    "enableLoc": "Please enable location services (OR RELOAD THE PAGE) to be able to call waiter. Our app need to check if you are inside the restaurant, otherwise you won't be able to call the waiter."
   },
   "pres": {
     "page1": {
