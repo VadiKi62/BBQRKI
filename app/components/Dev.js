@@ -5,8 +5,11 @@ import { styled } from "@mui/system";
 // import Typography from "./common/Typography";
 
 const BoxContainer = styled(Box)(({ theme }) => ({
-  marginTop: "-80px",
-  textAlign: "center",
+  marginTop: "-75px",
+  display: "flex",
+  padding: 5,
+  flexDirection: "row",
+  justifyContent: "space-evenly",
   color: theme.palette.text.main,
   borderColor: theme.palette.primary.fiolet,
   borderBlockStyle: "groove",
@@ -15,7 +18,7 @@ const BoxContainer = styled(Box)(({ theme }) => ({
 
 const Span = styled("span")(({ theme }) => ({
   color: theme.palette.primary.fiolet,
-  fontSize: "30px",
+  fontSize: "1rem",
 }));
 
 function Dev({ rest }) {
@@ -103,34 +106,43 @@ function Dev({ rest }) {
     .catch(handlePositionError);
 
   return (
-    <BoxContainer>
-      {" "}
-      <h4>
-        D1: <Span> {distanceToRest.d}</Span>
-      </h4>
-      <h4>R1: {mainSpot}</h4>
-      <Divider color="primary.blue" />
-      {beachSpot1 && (
-        <>
-          <h4>
-            D2: <Span>{distanceToBS1.d}</Span>
-          </h4>
-          <h4>R2: {beachSpot1}</h4>
-        </>
-      )}
-      <Divider color="primary.blue" />
-      {beachSpot2 && (
-        <>
-          <h4>
-            D3: <Span> {distanceToBS2.d}</Span>
-          </h4>
-          <h4>R3: {beachSpot2}</h4>
-        </>
-      )}
-      <h4>
-        Acc: <Span>{distanceToRest.ac}</Span>
-      </h4>
-    </BoxContainer>
+    <>
+      <BoxContainer>
+        {" "}
+        <h5>
+          D1: <Span> {distanceToRest.d}</Span>
+        </h5>
+        <h5>
+          R1: <Span> {mainSpot}</Span>{" "}
+        </h5>
+        {beachSpot1 && (
+          <>
+            <h5>
+              D2: <Span>{distanceToBS1.d}</Span>
+            </h5>
+            <h5>
+              R2: <Span>{beachSpot1}</Span>
+            </h5>
+          </>
+        )}
+      </BoxContainer>
+      <BoxContainer>
+        {beachSpot2 && (
+          <>
+            <h5>
+              D3: <Span> {distanceToBS2.d}</Span>
+            </h5>
+            <h5>
+              R3: <Span> {beachSpot2}</Span>
+            </h5>
+          </>
+        )}
+        <Divider color="primary.blue" />
+        <h5>
+          Acc: <Span>{distanceToRest.ac}</Span>
+        </h5>
+      </BoxContainer>
+    </>
   );
 }
 

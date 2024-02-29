@@ -138,7 +138,7 @@ export default function App() {
             justifyContent="space-between"
             sx={{ width: "100%" }}
           >
-            {restData.logoSrc ? (
+            {restData.logoSrc && restData.name !== "Genesis" ? (
               <LogoImg
                 src={restData.logoSrc}
                 width={width}
