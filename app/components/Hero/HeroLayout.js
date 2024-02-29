@@ -59,7 +59,7 @@ const HeroTitle = styled(Typography)(({ theme }) => ({
 }));
 
 const HighlightedText = styled("span")(({ theme }) => ({
-  color: theme.palette.text.red,
+  // color: theme.palette.text.red,
   fontWeight: 800,
   fontFamily: theme.typography.fontFamily,
   fontSize: theme.typography.h1.fontSize,
@@ -89,6 +89,7 @@ const CallContainer = styled("div")`
 export default function HeroLayout({ rest }) {
   const { t } = useTranslation();
 
+  const isGenesis = rest.name === "Genesis";
   const {
     lang,
     devel,
@@ -158,35 +159,39 @@ export default function HeroLayout({ rest }) {
 
     if (!showInitialHeader) {
       const altName = `${restData.name} logo gif`;
-      const styleForGenesis = { borderRadius: "50%" };
       const isBelvedere = restData.name == "Belvedere";
 
-      if (restData.animLogo && restData.name == "Genesis") {
-        return (
-          <div className="slide-in-blurred-top">
+      // if (restData.animLogo) {
+      //   return (
+      //     <div className="slide-in-blurred-top">
+      //       <Image
+      //         src={restData.animLogo}
+      //         alt={altName}
+      //         width={268}
+      //         height={isBelvedere ? 268 : 190}
+      //       />
+      //     </div>
+      //   );
+      // }
+
+      if (!showInitialHeader)
+        if (restData.slogans) {
+          return <SloganRotator strings={restData.slogans} />;
+        } else
+          return (
             <Image
-              src={restData.animLogo}
+              src={restData.animLogo ? restData.animLogo : "/bb.png"}
               alt={altName}
-              width={278}
-              height={278}
-              style={{ styleForGenesis }}
+              width={268}
+              height={isBelvedere ? 268 : 190}
             />
-          </div>
-        );
-      }
-      return (
-        <Image
-          src={restData.animLogo ? restData.animLogo : "/bb.png"}
-          alt={altName}
-          width={268}
-          height={isBelvedere ? 268 : 190}
-        />
-      );
+          );
+      else return null;
     }
 
     return (
       <>
-        <Hero zonti={zont} isSmallScreen={isSmallScreen} />
+        <Hero zonti={zont} name={rest.name} />
 
         <CallButtonWrapper
           sx={{
@@ -222,7 +227,12 @@ export default function HeroLayout({ rest }) {
         >
           <HeroTitle>
             {t("hero.wellcome")}
-            <HighlightedText> {rest?.name}</HighlightedText>
+            <HighlightedText
+              sx={{ color: isGenesis ? "text.main" : "primary.red" }}
+            >
+              {" "}
+              {rest?.name}
+            </HighlightedText>
           </HeroTitle>
         </TitleContainer>
       )}

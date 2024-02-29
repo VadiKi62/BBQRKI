@@ -8,7 +8,7 @@ import { Navigation, Pagination, Parallax, Autoplay } from "swiper";
 //= Scripts
 import removeSlashFromPagination from "@/common/removeSlashpagination";
 import fadeWhenScroll from "@/common/fadeWhenScroll";
-import { fontFamily } from "@mui/system";
+import "swiper/css";
 
 const fullScreenData = [
   {

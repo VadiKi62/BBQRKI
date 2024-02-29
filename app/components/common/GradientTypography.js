@@ -6,11 +6,13 @@ const GradientTypography = ({ text }) => {
       component="span"
       sx={{
         background: (theme) =>
-          `linear-gradient(to right, ${theme.palette.primary.red}, ${theme.palette.secondary.main}, ${theme.palette.primary.red})`,
+          `linear-gradient(to right, ${theme.palette.primary.green}, ${theme.palette.secondary.light}, ${theme.palette.text.dark})`,
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
         textTransform: "uppercase",
+        fontSize: "1.45rem",
       }}
+      // className="text-flicker-in-glow"
     >
       {text}
     </Typography>

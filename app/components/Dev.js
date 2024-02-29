@@ -106,40 +106,32 @@ function Dev({ rest }) {
     <BoxContainer>
       {" "}
       <h4>
-        Distance to Rest is <Span> {distanceToRest.d}</Span>
+        D1: <Span> {distanceToRest.d}</Span>
       </h4>
-      <h4>Radius to Rest is {mainSpot}</h4>
-      <h4>
-        Accuracy is <Span>{distanceToRest.ac}</Span>
-      </h4>
+      <h4>R1: {mainSpot}</h4>
       <Divider color="primary.blue" />
       {beachSpot1 && (
         <>
           <h4>
-            Distance to beachSpot1 is <Span>{distanceToBS1.d}</Span>
+            D2: <Span>{distanceToBS1.d}</Span>
           </h4>
-          <h4>Radius to beachSpot1 is {beachSpot1}</h4>
-          <h4>
-            Accuracy is <Span>{distanceToBS1.ac}</Span>
-          </h4>
+          <h4>R2: {beachSpot1}</h4>
         </>
       )}
       <Divider color="primary.blue" />
       {beachSpot2 && (
         <>
           <h4>
-            Distance to beachSpot2 is <Span> {distanceToBS2.d}</Span>
+            D3: <Span> {distanceToBS2.d}</Span>
           </h4>
-          <h4>Radius to beachSpot2 is {beachSpot2}</h4>
-          <h4>
-            Accuracy is <Span>{distanceToBS2.ac}</Span>
-          </h4>
+          <h4>R3: {beachSpot2}</h4>
         </>
       )}
+      <h4>
+        Acc: <Span>{distanceToRest.ac}</Span>
+      </h4>
     </BoxContainer>
   );
 }
 
 export default Dev;
-
-const devStyle = {};

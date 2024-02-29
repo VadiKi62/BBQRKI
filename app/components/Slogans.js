@@ -1,18 +1,32 @@
 import React, { useState, useEffect } from "react";
 import { Typography, Container } from "@mui/material";
 import GradientTypography from "./common/GradientTypography";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Parallax, Autoplay } from "swiper";
+import "swiper/css";
+
+const swiperOptions = {
+  modules: [Parallax, Navigation, Pagination, Autoplay],
+  speed: 2000,
+  mousewheel: true,
+  parallax: true,
+  centeredSlides: true,
+  slidesPerView: 1,
+  autoplay: true,
+  spaceBetween: 800,
+  onSwiper: (swiper) => {
+    setTimeout(() => {
+      for (var i = 0; i < swiper.slides?.length; i++) {
+        swiper?.slides[i]?.childNodes[0]?.setAttribute(
+          "data-swiper-parallax",
+          0.99 * swiper.width
+        );
+      }
+    });
+  },
+};
 
 const SloganRotator = ({ strings }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % strings.length);
-    }, 1 * 60 * 100);
-
-    return () => clearInterval(intervalId);
-  }, [strings]);
-
   return (
     <Container
       sx={{
@@ -21,9 +35,16 @@ const SloganRotator = ({ strings }) => {
         textAlign: "center",
         zIndex: 1000,
       }}
-     className="fade-in"
     >
-      <GradientTypography text={strings[currentIndex]} />
+      <div className="swiper-container">
+        <Swiper {...swiperOptions} className="swiper-wrapper">
+          {strings.map((slogan, i) => (
+            <SwiperSlide key={`slogan_${i}`} className="SwiperSlide">
+              <GradientTypography text={slogan} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </Container>
   );
 };

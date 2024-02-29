@@ -23,8 +23,12 @@ const Icon = styled("img")(({ theme }) => ({
   },
 }));
 
-export default function Hero({ zonti, isSticky, showCallWaiterButton }) {
+export default function Hero({ zonti, name }) {
   const { t } = useTranslation();
+  const isGenesis = name === "Genesis";
+  const iconSRC = isGenesis
+    ? "/assets/icons/down4.png"
+    : "/assets/icons/down1.png";
   return (
     <Container
       sx={{
@@ -49,7 +53,7 @@ export default function Hero({ zonti, isSticky, showCallWaiterButton }) {
       >
         {t("header.call")}
       </Typography>
-      <Icon src="/assets/icons/down1.png" alt="icon_hand_down" />
+      <Icon src={iconSRC} alt="icon_hand_down" />
     </Container>
   );
 }

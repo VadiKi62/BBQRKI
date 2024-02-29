@@ -68,8 +68,6 @@ function FilterList({
 }) {
   const containerRef = useRef(null);
   const handleFilterClick = (category, id) => {
-    console.log("!!!!!Filter clicked!!!!!!category is ", category);
-    console.log("!!!!!Filter clicked!!!!!!id is ", id);
     setActiveFilter(category);
     setActiveFilterId(id);
     if (gridRef.current && containerRef.current) {
