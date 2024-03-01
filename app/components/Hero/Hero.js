@@ -4,6 +4,7 @@ import { styled } from "@mui/material/styles";
 import { Container } from "@mui/material/";
 import Typography from "../common/Typography";
 import { useTranslation } from "react-i18next";
+import { useMainContext } from "../MainContextProvider";
 
 const Icon = styled("img")(({ theme }) => ({
   width: "50px",
@@ -24,6 +25,8 @@ const Icon = styled("img")(({ theme }) => ({
 }));
 
 export default function Hero({ zonti, name }) {
+  const { isSmallScreen } = useMainContext();
+  console.log("isSmallScreen", isSmallScreen);
   const { t } = useTranslation();
   const isGenesis = name === "Genesis";
   const iconSRC = isGenesis
@@ -32,6 +35,7 @@ export default function Hero({ zonti, name }) {
   return (
     <Container
       sx={{
+        mt: isSmallScreen ? -7 : 0,
         display: "flex",
         minWidth: "100%",
         flexDirection: "column",

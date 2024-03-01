@@ -37,6 +37,9 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
   const countTimer = rest.buttonTimer || 10;
   const [zont, setZont] = useState(umbrella);
   const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isVerySmallScreen = useMediaQuery((theme) =>
+    theme.breakpoints.down("xs")
+  );
 
   const [showInitialHeader, setShowInitialHeader] = useState(false);
   const history = typeof window !== "undefined" ? window?.history : null;
@@ -361,6 +364,7 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
     setHeaderRef,
     headerRef,
     devel,
+    isVerySmallScreen,
   };
 
   return (

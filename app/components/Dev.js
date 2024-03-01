@@ -22,7 +22,7 @@ const BoxContainer = styled(Box)(({ theme }) => ({
 
 const Span = styled("span")(({ theme }) => ({
   color: theme.palette.secondary.light,
-  fontSize: "1rem",
+  fontSize: "1.5rem",
 }));
 
 function Dev({ rest }) {
@@ -119,40 +119,40 @@ function Dev({ rest }) {
     <Suspense>
       <BoxContainer>
         {" "}
-        <h5>
+        <h2>
           D1: <Span> {distanceToRest.d}</Span>
-        </h5>
+        </h2>
         {isWithinRadius(distanceToRest.d, mainSpot, distanceToRest.ac)}
-        <h5>
+        <h2>
           R1: <Span> {mainSpot}</Span>{" "}
-        </h5>
+        </h2>
       </BoxContainer>
       {beachSpot1 && (
         <BoxContainer>
-          <h5>
+          <h2>
             D2: <Span>{distanceToBS1.d}</Span>
-          </h5>
+          </h2>
           {isWithinRadius(distanceToBS1.d, beachSpot1, distanceToRest.ac)}
-          <h5>
+          <h2>
             R2: <Span>{beachSpot1}</Span>
-          </h5>
+          </h2>
         </BoxContainer>
       )}
       {beachSpot2 && (
         <BoxContainer>
-          <h5>
+          <h2>
             D3: <Span> {distanceToBS2.d}</Span>
-          </h5>
+          </h2>
           {isWithinRadius(distanceToBS2.d, beachSpot2, distanceToRest.ac)}
-          <h5>
+          <h2>
             R3: <Span> {beachSpot2}</Span>
-          </h5>
+          </h2>
         </BoxContainer>
       )}
       <BoxContainer>
-        <h5>
+        <h2>
           Acc: <Span>{distanceToRest.ac}</Span>
-        </h5>
+        </h2>
       </BoxContainer>
     </Suspense>
   );

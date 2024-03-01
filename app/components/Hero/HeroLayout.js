@@ -111,11 +111,6 @@ export default function HeroLayout({ rest }) {
     headerRef,
   } = useMainContext();
 
-  const distanceToRest = Math.round(currentPosition?.distanceToRest);
-  const { accuracy } = currentPosition;
-
-  const bg = `url("/assets/images/${rest.name}/hero-bg.jpg") top center`;
-
   const [isSticky, setIsSticky] = useState(true);
 
   const [showLoading, setShowLoading] = useState(true);
@@ -211,15 +206,12 @@ export default function HeroLayout({ rest }) {
   };
 
   return (
-    <HeroSection id="hero" background={bg}>
+    <HeroSection id="hero">
       {devel && <Dev rest={rest} />}
       <Overlay />
 
       {!showLoading && !devel && (
-        <TitleContainer
-          // className="tracking-in-contract"
-          sx={{ mt: -9, mb: -5 }}
-        >
+        <TitleContainer sx={{ mt: isSmallScreen ? -13 : 0, mb: -5 }}>
           <HeroTitle>
             {t("hero.wellcome")}
             <HighlightedText
