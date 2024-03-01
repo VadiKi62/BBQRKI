@@ -8,8 +8,7 @@ export default function useGeo(r, restaurant, zont, isHighSeason) {
     distanceToRest: null,
   });
   const [isGeolocationAvailable, setIsGeolocationAvailable] = useState(false);
-  const [radius, setRadius] = useState(r || restaurant.radiuses.restSpot);
-
+  const [radius, setRadius] = useState(r || restaurant?.radiuses?.restSpot);
   const updateGeolocation = () => {
     const [mainSpot, rest] = getRestCoords(restaurant);
 

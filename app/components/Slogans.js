@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Typography, Container } from "@mui/material";
+import React from "react";
+import { Container } from "@mui/material";
 import GradientTypography from "./common/GradientTypography";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Parallax, Autoplay } from "swiper";

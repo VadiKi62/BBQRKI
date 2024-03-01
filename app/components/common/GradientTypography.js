@@ -6,7 +6,7 @@ const GradientTypography = ({ text }) => {
       component="span"
       sx={{
         background: (theme) =>
-          `linear-gradient(to right, ${theme.palette.primary.green}, ${theme.palette.secondary.light}, ${theme.palette.text.dark})`,
+          `linear-gradient(to right, ${theme.palette.secondary.light}, ${theme.palette.primary.green}, ${theme.palette.text.dark})`,
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
         textTransform: "uppercase",

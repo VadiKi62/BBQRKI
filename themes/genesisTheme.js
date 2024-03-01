@@ -36,8 +36,8 @@ const genesisTheme = {
     fontFamily: ["Gruppo", "sans-serif"].join(","),
     h1: {
       fontSize: "49px",
-      fontWeight: 1000,
-      fontFamily: ["Gruppo", "sans-serif"].join(","),
+      fontWeight: 900,
+      fontFamily: ["Roboto Slab", "serif"].join(","),
     },
     allVariants: {
       // fontFamily: [ "B612 Mono", "monospace" ].join( "," ),

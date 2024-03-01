@@ -17,7 +17,7 @@ function Feed({ children, ...props }) {
   const theme = returnTheme(rest.themeName);
   const searchParams = useSearchParams();
   const umbrella = searchParams.get("zont") || "test";
-  const r = searchParams.get("r");
+  const r = searchParams.get("r") || rest?.radiuses?.mainSpot;
   const dev = searchParams.get("dev") || null;
 
   return (

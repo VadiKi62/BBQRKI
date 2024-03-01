@@ -3,6 +3,9 @@ import { calculateDistance, getRestCoords } from "@common/index";
 import { Box, Divider, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 // import Typography from "./common/Typography";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import ErrorIcon from "@mui/icons-material/Error";
+import { useMainContext } from "./MainContextProvider";
 
 const BoxContainer = styled(Box)(({ theme }) => ({
   marginTop: "-75px",
@@ -11,18 +14,19 @@ const BoxContainer = styled(Box)(({ theme }) => ({
   flexDirection: "row",
   justifyContent: "space-evenly",
   color: theme.palette.text.main,
-  borderColor: theme.palette.primary.fiolet,
-  borderBlockStyle: "groove",
+  borderColor: theme.palette.text.dark,
+  // borderBlockStyle: "groove",
   zIndex: "1999",
 }));
 
 const Span = styled("span")(({ theme }) => ({
-  color: theme.palette.primary.fiolet,
+  color: theme.palette.secondary.light,
   fontSize: "1rem",
 }));
 
 function Dev({ rest }) {
-  const { mainSpot } = rest.radiuses;
+  const { radius } = useMainContext();
+  const mainSpot = radius;
   const { beachSpot1 } = rest.radiuses || null;
   const { beachSpot2 } = rest.radiuses || null;
   const mainSpotCoords = rest.coords.mainSpot;
@@ -105,6 +109,11 @@ function Dev({ rest }) {
     })
     .catch(handlePositionError);
 
+  function isWithinRadius(d, r, a) {
+    if (d > r + a) return <ErrorIcon color="error" />;
+    else return <CheckCircleIcon color="success" />;
+  }
+
   return (
     <>
       <BoxContainer>
@@ -112,32 +121,34 @@ function Dev({ rest }) {
         <h5>
           D1: <Span> {distanceToRest.d}</Span>
         </h5>
+        {isWithinRadius(distanceToRest.d, mainSpot)}
         <h5>
           R1: <Span> {mainSpot}</Span>{" "}
         </h5>
-        {beachSpot1 && (
-          <>
-            <h5>
-              D2: <Span>{distanceToBS1.d}</Span>
-            </h5>
-            <h5>
-              R2: <Span>{beachSpot1}</Span>
-            </h5>
-          </>
-        )}
       </BoxContainer>
+      {beachSpot1 && (
+        <BoxContainer>
+          <h5>
+            D2: <Span>{distanceToBS1.d}</Span>
+          </h5>
+          {isWithinRadius(distanceToBS1.d, beachSpot1)}
+          <h5>
+            R2: <Span>{beachSpot1}</Span>
+          </h5>
+        </BoxContainer>
+      )}
+      {beachSpot2 && (
+        <BoxContainer>
+          <h5>
+            D3: <Span> {distanceToBS2.d}</Span>
+          </h5>
+          {isWithinRadius(distanceToBS2.d, beachSpot2)}
+          <h5>
+            R3: <Span> {beachSpot2}</Span>
+          </h5>
+        </BoxContainer>
+      )}
       <BoxContainer>
-        {beachSpot2 && (
-          <>
-            <h5>
-              D3: <Span> {distanceToBS2.d}</Span>
-            </h5>
-            <h5>
-              R3: <Span> {beachSpot2}</Span>
-            </h5>
-          </>
-        )}
-        <Divider color="primary.blue" />
         <h5>
           Acc: <Span>{distanceToRest.ac}</Span>
         </h5>

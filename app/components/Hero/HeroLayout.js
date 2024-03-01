@@ -153,46 +153,42 @@ export default function HeroLayout({ rest }) {
       return <LoadingScreen rest={restData} />;
     }
 
-    // if (!showInitialHeader && restData.slogans) {
-    //   return <SloganRotator strings={restData.slogans} />;
-    // }
-
     if (!showInitialHeader) {
       const altName = `${restData.name} logo gif`;
-      const isBelvedere = restData.name == "Belvedere";
+      const isBelvedere = restData.name === "Belvedere";
 
-      // if (restData.animLogo) {
-      //   return (
-      //     <div className="slide-in-blurred-top">
-      //       <Image
-      //         src={restData.animLogo}
-      //         alt={altName}
-      //         width={268}
-      //         height={isBelvedere ? 268 : 190}
-      //       />
-      //     </div>
-      //   );
-      // }
-
-      if (!showInitialHeader)
-        if (restData.slogans) {
-          return <SloganRotator strings={restData.slogans} />;
-        } else
-          return (
-            <Image
-              src={restData.animLogo ? restData.animLogo : "/bb.png"}
-              alt={altName}
-              width={268}
-              height={isBelvedere ? 268 : 190}
-            />
-          );
-      else return null;
+      if (restData.slogans) {
+        return <SloganRotator strings={restData.slogans} />;
+      } else if (restData.name === "Genesis") {
+        return (
+          <>
+            <SloganRotator strings={restData.slogans} />
+            {[1, 2, 3].map((el) => (
+              <Image
+                key={el}
+                src={`/assets/images/Genesis/${el}.gif`}
+                alt="genesis"
+                width={200}
+                height={200}
+              />
+            ))}
+          </>
+        );
+      } else {
+        return (
+          <Image
+            src={restData.animLogo ? restData.animLogo : "/bb.png"}
+            alt={altName}
+            width={268}
+            height={isBelvedere ? 268 : 190}
+          />
+        );
+      }
     }
 
     return (
       <>
         <Hero zonti={zont} name={rest.name} />
-
         <CallButtonWrapper
           sx={{
             position: isSticky ? "sticky" : "fixed",
@@ -204,7 +200,6 @@ export default function HeroLayout({ rest }) {
             isWaiterButtonActive={isWaiterButtonActive}
             handleCallWaiter={handleCallWaiter}
           />
-
           <CallBillButton
             showCallWaiterButton={true}
             isButtonBillActive={isButtonBillActive}
@@ -220,7 +215,7 @@ export default function HeroLayout({ rest }) {
       {devel && <Dev rest={rest} />}
       <Overlay />
 
-      {!showLoading && (
+      {!showLoading && !devel && (
         <TitleContainer
           // className="tracking-in-contract"
           sx={{ mt: -9, mb: -5 }}

@@ -27,8 +27,11 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
     setLang(selectedLanguage);
     i18n.changeLanguage(selectedLanguage);
   }, [i18n, setLang]);
+
   const [headerRef, setHeaderRef] = useState(null);
+
   const [devel, setDev] = useState(dev);
+
   const [restData, setRest] = useState(rest);
   const isHighSeason = useHighSeason(rest);
   const countTimer = rest.buttonTimer || 10;
@@ -61,6 +64,7 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
     radius,
     setRadius,
   } = useGeo(r, rest, zont, isHighSeason);
+
   console.log("isGeolocationAvailable", isGeolocationAvailable);
 
   const messageWaiter1 = `${rest.name}.Table ${zont} called the Waiter.  Language - ${language}.\nΤραπέζι ${zont} κάλεσε τον σερβιτόρο. Γλώσσα - ${language}.`;
@@ -89,7 +93,6 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
     setLoading(false);
     setModalVisible(false);
   };
-
   const confirmAction = (message) => {
     const confirmed = window.confirm(message);
     if (confirmed) {
@@ -97,6 +100,7 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
     }
     return false;
   };
+
   const performActionBill = async (action) => {
     try {
       handleButtonSpecificLogic(
@@ -265,57 +269,57 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
     return () => clearInterval(billInterval); // Cleanup when the component unmounts
   }, [isButtonBillActive]);
 
-  // Load countdown start time and button state from localStorage on component mount
-  useEffect(() => {
-    const savedStartTimeWaiter = parseInt(
-      localStorage.getItem("StartTimeWaiter"),
-      10
-    );
-    const savedIsWaiterButtonActive = JSON.parse(
-      localStorage.getItem("isWaiterButtonActive")
-    );
+  // // Load countdown start time and button state from localStorage on component mount
+  // useEffect(() => {
+  //   const savedStartTimeWaiter = parseInt(
+  //     localStorage.getItem("StartTimeWaiter"),
+  //     10
+  //   );
+  //   const savedIsWaiterButtonActive = JSON.parse(
+  //     localStorage.getItem("isWaiterButtonActive")
+  //   );
 
-    if (!isNaN(savedStartTimeWaiter) && savedIsWaiterButtonActive !== null) {
-      const currentTime = Math.floor(new Date().getTime() / 1000);
-      const elapsedSeconds = currentTime - savedStartTimeWaiter;
+  //   if (!isNaN(savedStartTimeWaiter) && savedIsWaiterButtonActive !== null) {
+  //     const currentTime = Math.floor(new Date().getTime() / 1000);
+  //     const elapsedSeconds = currentTime - savedStartTimeWaiter;
 
-      if (elapsedSeconds >= countTimer) {
-        // Timer has expired, set button as active
-        setWaiterButtonActive(true);
-        setCountdownWaiter(0);
-        localStorage.removeItem("StartTimeWaiter");
-      } else {
-        // Timer still active, set button as inactive
-        setWaiterButtonActive(false);
-        setCountdownWaiter(countTimer - elapsedSeconds);
-      }
-    }
-  }, [countTimer]);
-  useEffect(() => {
-    const savedStartTimeBill = parseInt(
-      localStorage.getItem("StartTimeBill"),
-      10
-    );
-    const savedButtonBillActive = JSON.parse(
-      localStorage.getItem("isButtonBillActive")
-    );
+  //     if (elapsedSeconds >= countTimer) {
+  //       // Timer has expired, set button as active
+  //       setWaiterButtonActive(true);
+  //       setCountdownWaiter(0);
+  //       localStorage.removeItem("StartTimeWaiter");
+  //     } else {
+  //       // Timer still active, set button as inactive
+  //       setWaiterButtonActive(false);
+  //       setCountdownWaiter(countTimer - elapsedSeconds);
+  //     }
+  //   }
+  // }, [countTimer]);
+  // useEffect(() => {
+  //   const savedStartTimeBill = parseInt(
+  //     localStorage.getItem("StartTimeBill"),
+  //     10
+  //   );
+  //   const savedButtonBillActive = JSON.parse(
+  //     localStorage.getItem("isButtonBillActive")
+  //   );
 
-    if (!isNaN(savedStartTimeBill) && savedButtonBillActive !== null) {
-      const currentTime = Math.floor(new Date().getTime() / 1000);
-      const elapsedSeconds = currentTime - savedStartTimeBill;
+  //   if (!isNaN(savedStartTimeBill) && savedButtonBillActive !== null) {
+  //     const currentTime = Math.floor(new Date().getTime() / 1000);
+  //     const elapsedSeconds = currentTime - savedStartTimeBill;
 
-      if (elapsedSeconds >= countTimer) {
-        // Timer has expired, set button as active
-        setButtonBillActive(true);
-        setCountdownBill(0);
-        localStorage.removeItem("StartTimeBill");
-      } else {
-        // Timer still active, set button as inactive
-        setButtonBillActive(false);
-        setCountdownBill(countTimer - elapsedSeconds);
-      }
-    }
-  }, [countTimer]);
+  //     if (elapsedSeconds >= countTimer) {
+  //       // Timer has expired, set button as active
+  //       setButtonBillActive(true);
+  //       setCountdownBill(0);
+  //       localStorage.removeItem("StartTimeBill");
+  //     } else {
+  //       // Timer still active, set button as inactive
+  //       setButtonBillActive(false);
+  //       setCountdownBill(countTimer - elapsedSeconds);
+  //     }
+  //   }
+  // }, [countTimer]);
 
   useEffect(() => {
     if (zont !== 0) {
