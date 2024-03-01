@@ -6,6 +6,7 @@ import { styled } from "@mui/system";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ErrorIcon from "@mui/icons-material/Error";
 import { useMainContext } from "./MainContextProvider";
+import { Suspense } from "react";
 
 const BoxContainer = styled(Box)(({ theme }) => ({
   marginTop: "-75px",
@@ -71,7 +72,6 @@ function Dev({ rest }) {
       mainSpotCoords,
       successCallback.coords
     );
-    console.log(`Distance to ${beachSpot}: ${distanceToSpot}`);
     setDistance({
       ac: successCallback.coords.accuracy.toFixed(1),
       d: distanceToSpot.toFixed(1),
@@ -110,18 +110,19 @@ function Dev({ rest }) {
     .catch(handlePositionError);
 
   function isWithinRadius(d, r, a) {
-    if (d > r + a) return <ErrorIcon color="error" />;
+    console.log("d>r+a", Number(d) > r + Number(a));
+    if (Number(d) > r + Number(a)) return <ErrorIcon color="error" />;
     else return <CheckCircleIcon color="success" />;
   }
 
   return (
-    <>
+    <Suspense>
       <BoxContainer>
         {" "}
         <h5>
           D1: <Span> {distanceToRest.d}</Span>
         </h5>
-        {isWithinRadius(distanceToRest.d, mainSpot)}
+        {isWithinRadius(distanceToRest.d, mainSpot, distanceToRest.ac)}
         <h5>
           R1: <Span> {mainSpot}</Span>{" "}
         </h5>
@@ -131,7 +132,7 @@ function Dev({ rest }) {
           <h5>
             D2: <Span>{distanceToBS1.d}</Span>
           </h5>
-          {isWithinRadius(distanceToBS1.d, beachSpot1)}
+          {isWithinRadius(distanceToBS1.d, beachSpot1, distanceToRest.ac)}
           <h5>
             R2: <Span>{beachSpot1}</Span>
           </h5>
@@ -142,7 +143,7 @@ function Dev({ rest }) {
           <h5>
             D3: <Span> {distanceToBS2.d}</Span>
           </h5>
-          {isWithinRadius(distanceToBS2.d, beachSpot2)}
+          {isWithinRadius(distanceToBS2.d, beachSpot2, distanceToRest.ac)}
           <h5>
             R3: <Span> {beachSpot2}</Span>
           </h5>
@@ -153,7 +154,7 @@ function Dev({ rest }) {
           Acc: <Span>{distanceToRest.ac}</Span>
         </h5>
       </BoxContainer>
-    </>
+    </Suspense>
   );
 }
 
