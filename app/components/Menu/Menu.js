@@ -26,7 +26,7 @@ const SectionTitle = styled(Typography)(({ theme }) => ({
 }));
 
 const Section = styled("section")(({ theme }) => ({
-  backgroundColor: theme.palette.secondary.main,
+  backgroundColor: theme.palette.secondary.background,
   padding: theme.spacing(1, 0),
   textAlign: "center",
 }));

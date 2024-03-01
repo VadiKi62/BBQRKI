@@ -55,6 +55,7 @@ const HeroTitle = styled(Typography)(({ theme }) => ({
   fontFamily: theme.typography.fontFamily,
   fontSize: theme.typography.h1.fontSize,
   zIndex: 2,
+
   // position: "relative",
 }));
 
@@ -63,6 +64,7 @@ const HighlightedText = styled("span")(({ theme }) => ({
   fontWeight: 800,
   fontFamily: theme.typography.fontFamily,
   fontSize: theme.typography.h1.fontSize,
+  textTransform: "uppercase",
 }));
 
 const CallButtonWrapper = styled(Stack)(({ theme }) => ({
@@ -90,6 +92,8 @@ export default function HeroLayout({ rest }) {
   const { t } = useTranslation();
 
   const isGenesis = rest.name === "Genesis";
+  const isGelissimo = rest.name === "Gelissimo";
+  const isJukebox = rest.name === "Jukebox";
   const {
     lang,
     devel,
@@ -215,7 +219,12 @@ export default function HeroLayout({ rest }) {
           <HeroTitle>
             {t("hero.wellcome")}
             <HighlightedText
-              sx={{ color: isGenesis ? "text.main" : "primary.red" }}
+              sx={{
+                color:
+                  isGenesis || isGelissimo || isJukebox
+                    ? "text.main"
+                    : "primary.red",
+              }}
             >
               {" "}
               {rest?.name}

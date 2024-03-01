@@ -15,6 +15,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import DefaultButton from "@app/components/common/DefaultButton";
 import DirectionsIcon from "@mui/icons-material/Directions";
 import Image from "next/image";
+import { Link as NextLInk } from "next/link";
 
 const Section = styled("section")(({ theme }) => ({
   padding: theme.spacing(3, 5, 1, 5),

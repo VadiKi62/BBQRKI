@@ -49,7 +49,7 @@ export default createTheme({
   },
 
   typography: {
-    fontFamily: ["Petit Formal Script", "cursive"].join(","),
+    fontFamily: ["Source Code Pro", "monospace"].join(","),
     h1: {
       fontSize: "45px",
       fontFamily: ["Source Code Pro", "monospace"].join(","),

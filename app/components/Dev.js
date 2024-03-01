@@ -73,8 +73,8 @@ function Dev({ rest }) {
       successCallback.coords
     );
     setDistance({
-      ac: successCallback.coords.accuracy.toFixed(1),
-      d: distanceToSpot.toFixed(1),
+      ac: Math.round(successCallback.coords.accuracy),
+      d: Math.round(distanceToSpot),
     });
   };
 
