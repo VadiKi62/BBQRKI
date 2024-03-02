@@ -46,16 +46,16 @@ const Features = () => {
                 letterSpacing: "5px",
               }}
             >
-              Beach-Bar QR-CODE
+              Details
             </Typography>
             <Typography
-              variant="h3"
+              variant="h4"
               align="center"
               color="primary.main"
-              sx={{ fontWeight: 700 }}
+              sx={{ fontWeight: 700, textTransform: "uppercase" }}
               className="color-font"
             >
-              Unique QR - CODE for each umbrella/table.
+              Unique QR-code for each umbrella/table.
             </Typography>
           </Grid>
         </Grid>

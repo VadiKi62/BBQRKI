@@ -55,13 +55,13 @@ const HeroTitle = styled(Typography)(({ theme }) => ({
   fontFamily: theme.typography.fontFamily,
   fontSize: theme.typography.h1.fontSize,
   zIndex: 2,
-
   // position: "relative",
 }));
 
-const HighlightedText = styled("span")(({ theme }) => ({
+const HighlightedText = styled("p")(({ theme }) => ({
   // color: theme.palette.text.red,
   fontWeight: 800,
+  lineHeight: "2.9rem",
   fontFamily: theme.typography.fontFamily,
   fontSize: theme.typography.h1.fontSize,
   textTransform: "uppercase",

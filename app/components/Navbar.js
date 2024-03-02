@@ -136,7 +136,7 @@ export default function App() {
             direction="row"
             alignItems="center"
             justifyContent="space-between"
-            sx={{ width: "100%" }}
+            sx={{ width: "100%", ml: 6, mt: 7 }}
           >
             {restData.logoSrc && restData.name !== "Genesis" ? (
               <LogoImg
@@ -147,7 +147,7 @@ export default function App() {
                 priority
               ></LogoImg>
             ) : (
-              <Logo fontSize={scrolled ? "3rem" : "3.5rem"} component="h1">
+              <Logo fontSize={scrolled ? "3rem" : "3.5rem"}>
                 {restData?.name}
               </Logo>
             )}

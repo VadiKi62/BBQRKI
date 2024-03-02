@@ -6,7 +6,7 @@ import Loading from "./Loading";
 import Loader from "./Loader";
 
 function LoadingScreen({ rest }) {
-  if (rest.name === "Gelissimo" && rest.name === "Genesis") {
+  if (rest.logoSrc || rest.name === "Gelissimo" || rest.name === "Genesis") {
     return <Pulsating logo={rest.logoSrc} />;
   }
   if (rest.animLogo) {

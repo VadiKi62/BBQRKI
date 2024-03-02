@@ -15,43 +15,26 @@ const fullScreenData = [
     id: 1,
     title: { first: "More", second: "Orders" },
     image: "/assets/pres/cir/7.png",
-    sub: "Design",
   },
   {
     id: 2,
     title: { first: "Less", second: "Rush" },
     image: "/assets/pres/cir/2.png",
-    sub: "Design",
   },
   {
     id: 3,
     title: { first: "More", second: "Tips" },
     image: "/assets/pres/cir/3.png",
-    sub: "Design",
   },
   {
     id: 4,
     title: { first: "Less", second: "Wait" },
     image: "/assets/pres/cir/4.png",
-    sub: "Design",
-  },
-  {
-    id: 5,
-    title: { first: "Happy", second: "Clients" },
-    image: "/assets/pres/cir/5.png",
-    sub: "Design",
   },
   {
     id: 5,
     title: { first: "More", second: " Tips" },
     image: "/assets/pres/cir/6.png",
-    sub: "Design",
-  },
-  {
-    id: 5,
-    title: { first: "More", second: "Clients" },
-    image: "/assets/pres/cir/1.png",
-    sub: "Design",
   },
 ];
 
@@ -83,7 +66,7 @@ const swiperOptions = {
       for (var i = 0; i < swiper.slides?.length; i++) {
         swiper?.slides[i]?.childNodes[0]?.setAttribute(
           "data-swiper-parallax",
-          0.75 * swiper.width
+          0.85 * swiper.width
         );
       }
     });
@@ -99,6 +82,34 @@ function ShowcaseCircleSide() {
   return (
     <Container className="slider circle-slide showcase-carus">
       <div id="content-carousel-container-unq-1" className="swiper-container">
+        <Grid container justifyContent="flex-start" mt={5} mb={-10}>
+          <Grid item xs={12} md={8}>
+            <Typography
+              variant="h6"
+              align="start"
+              sx={{
+                mb: 2,
+                fontSize: "22px",
+                lineHeight: "1.5",
+                marginBottom: "20px",
+                letterSpacing: "5px",
+                textTransform: "uppercase",
+              }}
+            >
+              SO
+            </Typography>
+            <Typography
+              variant="h3"
+              align="start"
+              color="primary.main"
+              sx={{ fontWeight: 700, textTransform: "uppercase" }}
+              className="color-font"
+            >
+              This is what you get...
+            </Typography>
+          </Grid>
+        </Grid>
+
         <Swiper {...swiperOptions} className="swiper-wrapper">
           {fullScreenData.map((slide) => (
             <SwiperSlide key={slide.id} className="SwiperSlide">
@@ -110,19 +121,21 @@ function ShowcaseCircleSide() {
                 >
                   <div className="caption ontop valign">
                     <div className="o-hidden">
-                      <h1 data-swiper-parallax="-2000" style={textStyle}>
-                        <div>{slide.title.first}</div>
-                        <div style={{ marginLeft: "-1rem" }}>
-                          {slide.title.second}
-                        </div>
+                      <h1 data-swiper-parallax="-2000">
+                        <Link href="/project-details2/project-details2-dark">
+                          <div className="stroke">{slide.title.first}</div>
+                          <div>{slide.title.second}</div>
+                        </Link>
                       </h1>
                     </div>
                   </div>
                   <div className="copy-cap valign">
                     <div className="cap">
-                      <h1 data-swiper-parallax="-1000" style={textStyle}>
-                        {slide.title.first}
-                        <div>{slide.title.second}</div>
+                      <h1 data-swiper-parallax="-2000">
+                        <Link href="/project-details2/project-details2-dark">
+                          <div className="stroke">{slide.title.first}</div>
+                          <div>{slide.title.second}</div>
+                        </Link>
                       </h1>
                     </div>
                   </div>
@@ -138,29 +151,35 @@ function ShowcaseCircleSide() {
 
 export default ShowcaseCircleSide;
 
-const textStyle = {
-  fontFamily: ["Josefin Sans", "sans-serif"].join(","),
-  lineHeight: "60px",
-  fontSize: "60px",
-  textAlign: "center",
-  "@media (max-width: 767px)": {
-    fontSize: "50px",
-    lineHeight: "40px",
-    textAlign: "center",
-  },
-  "@media (min-width: 768px) and (max-width: 959px)": {
-    fontSize: "60px",
-    lineHeight: "48px",
-    textAlign: "center",
-  },
-  "@media (min-width: 960px) and (max-width: 1279px)": {
-    fontSize: "70px",
-    lineHeight: "60px",
-    textAlign: "center",
-  },
-  "@media (min-width: 1280px)": {
-    fontSize: "135px",
-    lineHeight: "120px",
-    textAlign: "right",
-  },
-};
+// const textStyle = {
+//   fontFamily: ["Josefin Sans", "sans-serif"].join(","),
+//   lineHeight: "70px",
+//   fontSize: "80px",
+//   textAlign: "center",
+//   "@media (max-width: 480px)": {
+//     fontSize: "40px",
+//     lineHeight: "35px",
+//     textAlign: "left",
+//   },
+// "@media (max-width: 767px)": {
+//   fontSize: "50px",
+//   lineHeight: "45px",
+//   textAlign: "center",
+//   marginLeft: "-80px",
+// },
+// "@media (min-width: 768px) and (max-width: 959px)": {
+//   fontSize: "60px",
+//   lineHeight: "48px",
+//   textAlign: "center",
+// },
+// "@media (min-width: 960px) and (max-width: 1279px)": {
+//   fontSize: "70px",
+//   lineHeight: "60px",
+//   textAlign: "center",
+// },
+// "@media (min-width: 1280px)": {
+//   fontSize: "135px",
+//   lineHeight: "120px",
+//   textAlign: "right",
+// },
+// };

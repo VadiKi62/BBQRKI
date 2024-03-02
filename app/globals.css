@@ -1,7 +1,3 @@
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
-
 :root {
   --foreground-rgb: 40, 150, 187;
   --background-start-rgb: 226, 181, 67;
@@ -38,6 +34,20 @@ body.hideX #preloader {
 body.hideX .pace {
   display: none !important;
   background-color: transparent;
+}
+
+a {
+  /* font-size: 1.5rem; */
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.6s, text-decoration 0.4s;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: rgba(154, 210, 203);
+  background-color: rgb(var(--background-end-rgb));
+  /* margin: 11; */
 }
 
 #root-layout {
@@ -327,20 +337,6 @@ h5 {
 
 p {
   font-size: 1rem;
-}
-
-a {
-  font-size: 1.5rem;
-  text-decoration: none;
-  color: inherit;
-  transition: color 0.6s, text-decoration 0.4s;
-}
-
-a:hover {
-  text-decoration: underline;
-  color: rgba(154, 210, 203);
-  background-color: rgba(17, 22, 39);
-  margin: 11;
 }
 
 @keyframes spin {
@@ -953,22 +949,22 @@ header.particles.circle-bg.valign {
 
 .showcase-carus .caption h1,
 .showcase-carus .copy-cap h1 {
-  font-size: 90px;
+  font-size: 80px;
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1;
   position: relative;
 }
 
 .showcase-carus .copy-cap {
   position: absolute;
   top: 0;
-  left: 0;
+  left: -30;
   width: 100%;
   height: 100%;
   z-index: -1;
 }
 
-.showcase-carus .copy-cap .cap h1 span {
+.showcase-carus .copy-cap .cap {
   color: transparent;
   -webkit-text-stroke: 1px #fff;
 }
@@ -1023,7 +1019,7 @@ header.particles.circle-bg.valign {
 
 .showcase-carus.circle-slide .caption h1 span,
 .showcase-carus.circle-slide .copy-cap h1 span {
-  margin-left: auto;
+  margin-left: 1;
   color: transparent;
   -webkit-text-stroke: 1px #fff;
 }
@@ -1050,8 +1046,12 @@ header.particles.circle-bg.valign {
   list-style: none;
 }
 
-.showcase-carus.circle-slide .caption h1 span,
-.showcase-carus.circle-slide .copy-cap h1 span {
+.showcase-carus.circle-slide
+  .caption
+  h1
+  .showcase-carus.circle-slide
+  .copy-cap
+  h1 {
   -webkit-transform: skewX(0) translateX(0);
   -ms-transform: skewX(0) translateX(0);
   transform: skewX(0) translateX(0);
@@ -1060,13 +1060,13 @@ header.particles.circle-bg.valign {
 
 .showcase-carus .caption h1,
 .showcase-carus .copy-cap h1 {
-  font-size: 60px;
+  font-size: 50px;
   left: auto;
-  margin-left: 20px;
+  margin-left: 1px;
 }
 .showcase-carus.circle-slide .caption h1,
 .showcase-carus.circle-slide .copy-cap h1 {
-  font-size: 65px;
+  font-size: 55px;
 }
 .showcase-carus.circle-slide .caption {
   left: 0;
@@ -1079,7 +1079,7 @@ header.particles.circle-bg.valign {
 
 .showcase-carus .swiper-slide .bg-img {
   margin: 0;
-  height: 100vh;
+  height: 90vh;
   background-position: center center;
 }
 
@@ -1616,7 +1616,8 @@ header.particles.circle-bg.valign {
   }
 
   h1 {
-    font-size: 35px;
+    font-size: 35px !important;
+    line-height: 42px !important;
   }
 
   h2 {
@@ -1637,6 +1638,10 @@ header.particles.circle-bg.valign {
 
   h6 {
     font-size: 16px;
+  }
+  .circle-slide .swiper-slide .bg-img {
+    height: 490px !important;
+    width: 490px !important;
   }
 
   .progress-wrap {
@@ -1943,6 +1948,11 @@ header.particles.circle-bg.valign {
     display: none;
   }
 
+  h1 {
+    font-size: 35px !important;
+    line-height: 43px !important;
+  }
+
   .hamenu .menu-links .main-menu > li {
     font-size: 20px;
     padding: 7px;
@@ -1998,8 +2008,8 @@ header.particles.circle-bg.valign {
   }
 
   .circle-slide .swiper-slide .bg-img {
-    height: 280px !important;
-    width: 280px !important;
+    height: 290px !important;
+    width: 290px !important;
   }
 
   .freelancre .cont h1 {

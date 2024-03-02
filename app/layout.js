@@ -1,3 +1,4 @@
+import "@/styles/main.scss";
 import "./globals.css";
 import "@styles/animations.css";
 import "@styles/slider.css";

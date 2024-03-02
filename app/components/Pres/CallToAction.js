@@ -15,19 +15,20 @@ function CallToAction({ img }) {
                 Let’s Talk
               </h6>
               <h2 className="wow words chars splitting" data-splitting>
-                about your <br /> <b className="back-color">next project</b>.
+                about your <br />{" "}
+                <b className="back-color">Beach Bar New Experience</b>.
               </h2>
             </div>
           </div>
 
           <div className="col-md-4 col-lg-3 valign">
-            <Link
-              href={`/contact/contact-dark`}
+            {/* <Link
+              href={"/"}
               className="butn bord curve wow fadeInUp"
               data-wow-delay=".5s"
             >
               <span>Get In Touch</span>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

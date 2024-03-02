@@ -21,7 +21,6 @@ export default function Home() {
         <Link href="/about">ABOUT </Link>
       </div>
       <Script strategy="beforeInteractive" src="/js/wow.min.js"></Script>
-      {/* <Script strategy="beforeInteractive" src="/js/splitting.min.js"></Script> */}
       <Script
         strategy="beforeInteractive"
         src="/js/simpleParallax.min.js"

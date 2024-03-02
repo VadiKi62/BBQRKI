@@ -5,6 +5,7 @@ import Loader from "@app/components/common/Loaders/Loader";
 // import Navbar from "@app/components/Common/Navbar";
 import Header from "@app/components/Pres/Header";
 import ShowcaseCircleSide from "@app/components/Pres/ShowcaseCircleSide";
+import ShowcaseGrid from "@app/components/Pres/ShowcaseGrid";
 import Navbar from "@app/components/Pres/NavBarPres";
 import SliderHeader from "@app/components/Pres/SliderHeader";
 import AboutUs from "@app/components/Pres/AboutUs";
@@ -28,7 +29,9 @@ export default function Home() {
       {/* <SliderHeader /> */}
       <div className="main-content">
         <Header />
+        <ShowcaseGrid />
         <ShowcaseCircleSide />
+
         <Services />
 
         {/* <AboutUs /> */}
@@ -39,7 +42,7 @@ export default function Home() {
       <Team />
       <Blogs /> */}
         {/* <CallToAction /> */}
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </ThemeProvider>
   );
