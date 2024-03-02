@@ -136,7 +136,7 @@ export default function App() {
             direction="row"
             alignItems="center"
             justifyContent="space-between"
-            sx={{ width: "100%", ml: 6, mt: 7 }}
+            sx={{ width: "100%" }}
           >
             {restData.logoSrc && restData.name !== "Genesis" ? (
               <LogoImg
