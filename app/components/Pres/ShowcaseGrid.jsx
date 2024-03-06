@@ -76,7 +76,7 @@ function ShowcaseGrid() {
   return (
     <Container className="slider showcase-grid">
       <div id="content-carousel-container-unq-1">
-        <Grid container justifyContent="flex-start" mt={5} mb={-10}>
+        <Grid container justifyContent="start" mt={5} mb={-10}>
           <Grid item xs={12} md={8}>
             <Typography
               variant="h6"
@@ -105,7 +105,7 @@ function ShowcaseGrid() {
 
         <Swiper {...swiperOptions}>
           {fullScreenData.map((slide) => (
-            <SwiperSlide key={slide.id}>
+            <SwiperSlide key={slide.image}>
               <div
                 className="bg-img"
                 style={{ backgroundImage: `url(${slide.image})` }}

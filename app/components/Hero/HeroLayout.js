@@ -46,11 +46,11 @@ const TitleContainer = styled(Container)(({ theme }) => ({
   zIndex: 99,
 }));
 
-const HeroTitle = styled(Typography)(({ theme }) => ({
+const HeroTitle = styled("div")(({ theme }) => ({
   fontWeight: 450,
   // marginBottom: 5,
   // marginTop: 10,
-  lineHeight: "2.5rem",
+  lineHeight: "2.9rem",
   color: theme.palette.text.dark,
   fontFamily: theme.typography.fontFamily,
   fontSize: theme.typography.h1.fontSize,
@@ -58,7 +58,7 @@ const HeroTitle = styled(Typography)(({ theme }) => ({
   // position: "relative",
 }));
 
-const HighlightedText = styled("p")(({ theme }) => ({
+const HighlightedText = styled(Typography)(({ theme }) => ({
   // color: theme.palette.text.red,
   fontWeight: 800,
   lineHeight: "2.9rem",

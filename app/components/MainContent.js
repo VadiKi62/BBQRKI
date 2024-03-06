@@ -3,7 +3,7 @@ import HeroLayout from "./Hero/HeroLayout";
 import Menu from "./Menu/Menu";
 import { unstable_noStore } from "next/cache";
 import { Suspense } from "react";
-import Loading from "@app/components/common/Loaders/Loading";
+import Loading from "@app/components/common/Loaders/LoadingScreen";
 import { fetchMenu } from "@utils/actions";
 
 async function MainContent({ rest }) {
@@ -14,13 +14,12 @@ async function MainContent({ rest }) {
     menuData = await fetchMenu(rest._id);
   }
   return (
-    <div>
-      {/* <Suspense fallback={<Loading restData={rest} />}> */}
+    // <div>
+    <Suspense fallback={<Loading restData={rest} />}>
       <HeroLayout rest={rest} />
       {isMenu && <Menu menuData={menuData} />}
-
-      {/* </Suspense> */}
-    </div>
+    </Suspense>
+    // </div>
   );
 }
 

@@ -6,11 +6,11 @@ import Loading from "./Loading";
 import Loader from "./Loader";
 
 function LoadingScreen({ rest }) {
-  if (rest.logoSrc || rest.name === "Gelissimo" || rest.name === "Genesis") {
-    return <Pulsating logo={rest.logoSrc} />;
-  }
   if (rest.animLogo) {
     return <Spinning logo={rest.animLogo} />;
+  }
+  if (rest.logoSrc || rest.name === "Gelissimo" || rest.name === "Genesis") {
+    return <Pulsating logo={rest.logoSrc} />;
   }
 
   return <Loader restData={rest} />;

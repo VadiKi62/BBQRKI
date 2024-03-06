@@ -26,7 +26,8 @@ function Feed({ children, ...props }) {
         <MainContextProvider rest={rest} umbrella={umbrella} r={r} dev={dev}>
           <Navbar rest={rest} />
           <MainContent rest={rest} />
-          {children} <Footer rest={rest} />
+          {children}
+          <Footer rest={rest} />
           <ScrollButton />
         </MainContextProvider>
       </Suspense>

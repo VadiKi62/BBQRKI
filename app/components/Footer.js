@@ -16,6 +16,7 @@ import DefaultButton from "@app/components/common/DefaultButton";
 import DirectionsIcon from "@mui/icons-material/Directions";
 import Image from "next/image";
 import { Link as NextLInk } from "next/link";
+import { useRouter } from "next/navigation";
 
 const Section = styled("section")(({ theme }) => ({
   padding: theme.spacing(3, 5, 1, 5),
@@ -72,13 +73,11 @@ function Footer({ rest }) {
   // const { contacts } = useMyContext();
   const { name, slogan, tel, email, address, coords } = rest;
   const loc = coords.mainSpot;
-  // const router = useRouter();
+  const router = useRouter();
 
   const handleClick = () => {
-    window.open(
-      `https://www.google.com/maps/dir/?api=1&destination=${loc.latitude},${loc.longitude}`,
-      "_blank"
-    );
+    const destinationURL = `https://www.google.com/maps/dir/?api=1&destination=${loc.latitude},${loc.longitude}`;
+    router.push(destinationURL);
   };
 
   return (
