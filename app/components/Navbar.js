@@ -22,7 +22,7 @@ const AppStyling = styled(AppBar)(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
   fontFamily: theme.typography.h1.fontFamily,
   zIndex: 996,
-  position: "sticky",
+  // position: "sticky",
   top: 0,
   minWidth: "100%",
 }));
@@ -85,9 +85,6 @@ export default function App() {
     h = 50;
   }
 
-  // const distanceToRest = Math.round(currentPosition?.distanceToRest);
-  // const { accuracy } = currentPosition;
-
   const appMenu = Boolean(restData.menu);
   const lang = i18n.language;
   //   const router = useRouter();
@@ -127,7 +124,7 @@ export default function App() {
       sx={{
         backgroundColor:
           isJukebox || isGelissimo ? "secondary.dark" : "primary.main",
-        height: scrolled === "true" && appMenu ? "59px" : "100%",
+        // height: scrolled === "true" && appMenu ? "59px" : "100%",
       }}
     >
       <Container>
@@ -152,7 +149,7 @@ export default function App() {
               </Logo>
             )}
             <Stack direction="row" spacing={2} alignItems="center">
-              {appMenu && (
+              {/* {appMenu && (
                 <AboutButton
                   lang={lang}
                   to="menu"
@@ -166,7 +163,7 @@ export default function App() {
                 >
                   {t("menu.Menu")}
                 </AboutButton>
-              )}
+              )} */}
               <LanguageSwitcher
                 // color={isGelissimo ? "secondary.dark" : "inherit"}
                 onClick={handleLanguageClick}

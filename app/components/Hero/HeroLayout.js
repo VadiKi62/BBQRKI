@@ -58,7 +58,7 @@ const HeroTitle = styled("div")(({ theme }) => ({
   // position: "relative",
 }));
 
-const HighlightedText = styled(Typography)(({ theme }) => ({
+const HighlightedText = styled("p")(({ theme }) => ({
   // color: theme.palette.text.red,
   fontWeight: 800,
   lineHeight: "2.9rem",

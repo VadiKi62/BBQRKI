@@ -16,10 +16,9 @@ function Feed({ children, ...props }) {
 
   const theme = returnTheme(rest.themeName);
   const searchParams = useSearchParams();
-
+  const umbrella = searchParams.get("zont") || "test";
   const r = searchParams.get("r") || rest?.radiuses?.mainSpot;
   const dev = searchParams.get("dev") || null;
-  const umbrella = dev ? "test" : 0;
 
   return (
     <ThemeProvider theme={theme}>
@@ -27,8 +26,7 @@ function Feed({ children, ...props }) {
         <MainContextProvider rest={rest} umbrella={umbrella} r={r} dev={dev}>
           <Navbar rest={rest} />
           <MainContent rest={rest} />
-          {children}
-          <Footer rest={rest} />
+          {children} <Footer rest={rest} />
           <ScrollButton />
         </MainContextProvider>
       </Suspense>
