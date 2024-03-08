@@ -18,7 +18,7 @@ import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
-const AppStyling = styled(AppBar)(({ theme }) => ({
+const AppStyling = styled("div")(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
   fontFamily: theme.typography.h1.fontFamily,
   zIndex: 996,

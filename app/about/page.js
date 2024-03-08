@@ -15,35 +15,40 @@ import Services from "@app/components/Pres/Services";
 // import FullTestimonials from "@app/components/Testimonials/FullTestimonials";
 // import Team from "@app/components/Team/Team1";
 // import Blogs from "@app/components/Blogs/Blogs4";
+import { Suspense } from "react";
+import { unstable_noStore } from "next/cache";
 import CallToAction from "@app/components/Pres/CallToAction";
 import Footer from "@app/components/Pres/Footer";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import bbqrTheme from "@themes/bbqrTheme";
 
-export default function Home() {
+export default function HomeAbout() {
+  unstable_noStore();
   const theme = createTheme(bbqrTheme);
   return (
-    <ThemeProvider theme={theme}>
-      {/* <Loader /> */}
-      <Navbar />
-      {/* <SliderHeader /> */}
-      <div className="main-content">
-        <Header />
-        <ShowcaseGrid />
-        <ShowcaseCircleSide />
+    <Suspense>
+      <ThemeProvider theme={theme}>
+        {/* <Loader /> */}
+        <Navbar />
+        {/* <SliderHeader /> */}
+        <div className="main-content">
+          <Header />
+          <ShowcaseGrid />
+          <ShowcaseCircleSide />
 
-        <Services />
+          <Services />
 
-        {/* <AboutUs /> */}
-        {/* <Works />
+          {/* <AboutUs /> */}
+          {/* <Works />
 
       <MinimalArea2 />
       <FullTestimonials classText="pb-0" />
       <Team />
       <Blogs /> */}
-        {/* <CallToAction /> */}
-        <Footer />
-      </div>
-    </ThemeProvider>
+          {/* <CallToAction /> */}
+          <Footer />
+        </div>
+      </ThemeProvider>
+    </Suspense>
   );
 }

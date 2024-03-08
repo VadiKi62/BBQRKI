@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { calculateDistance, getRestCoords } from "@common/index";
-import { Box, Divider, Typography } from "@mui/material";
+import { Box, Divider, Typography, Container } from "@mui/material";
 import { styled } from "@mui/system";
 // import Typography from "./common/Typography";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
@@ -9,20 +9,28 @@ import { useMainContext } from "./MainContextProvider";
 import { Suspense } from "react";
 
 const BoxContainer = styled(Box)(({ theme }) => ({
-  marginTop: "-75px",
+  // marginTop: "0.7rem",
+  // marginBottom: "-2rem",
   display: "flex",
-  padding: 5,
+  // padding: "-5rem",
   flexDirection: "row",
   justifyContent: "space-evenly",
   color: theme.palette.text.main,
-  borderColor: theme.palette.text.dark,
+  // borderColor: theme.palette.text.dark,
   // borderBlockStyle: "groove",
-  zIndex: "1999",
+  zIndex: "22",
 }));
 
 const Span = styled("span")(({ theme }) => ({
   color: theme.palette.secondary.light,
-  fontSize: "1.5rem",
+  fontSize: "1.4rem",
+}));
+
+const Text = styled("h4")(({ theme }) => ({
+  color: theme.palette.secondary.light,
+  // marginTop: "-0.5rem",
+  // paddingTop: "-1rem",
+  fontSize: "1rem",
 }));
 
 function Dev({ rest }) {
@@ -119,40 +127,40 @@ function Dev({ rest }) {
     <Suspense>
       <BoxContainer>
         {" "}
-        <h2>
+        <Text>
           D1: <Span> {distanceToRest.d}</Span>
-        </h2>
+        </Text>
         {isWithinRadius(distanceToRest.d, mainSpot, distanceToRest.ac)}
-        <h2>
+        <Text>
           R1: <Span> {mainSpot}</Span>{" "}
-        </h2>
+        </Text>
       </BoxContainer>
       {beachSpot1 && (
         <BoxContainer>
-          <h2>
+          <Text>
             D2: <Span>{distanceToBS1.d}</Span>
-          </h2>
+          </Text>
           {isWithinRadius(distanceToBS1.d, beachSpot1, distanceToRest.ac)}
-          <h2>
+          <Text>
             R2: <Span>{beachSpot1}</Span>
-          </h2>
+          </Text>
         </BoxContainer>
       )}
       {beachSpot2 && (
         <BoxContainer>
-          <h2>
+          <Text>
             D3: <Span> {distanceToBS2.d}</Span>
-          </h2>
+          </Text>
           {isWithinRadius(distanceToBS2.d, beachSpot2, distanceToRest.ac)}
-          <h2>
+          <Text>
             R3: <Span> {beachSpot2}</Span>
-          </h2>
+          </Text>
         </BoxContainer>
       )}
       <BoxContainer>
-        <h2>
+        <Text sx={{ marginTop: "-2rem" }}>
           Acc: <Span>{distanceToRest.ac}</Span>
-        </h2>
+        </Text>
       </BoxContainer>
     </Suspense>
   );

@@ -35,7 +35,7 @@ const HeroSection = styled("section")(({ theme }) => ({
 }));
 
 const TitleContainer = styled(Container)(({ theme }) => ({
-  paddingTop: -50,
+  // paddingTop: -50,
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
@@ -215,7 +215,7 @@ export default function HeroLayout({ rest }) {
       <Overlay />
 
       {!showLoading && !devel && (
-        <TitleContainer sx={{ mt: isSmallScreen ? -13 : 0, mb: -5 }}>
+        <TitleContainer sx={{ mt: isSmallScreen ? -3 : 0, mb: 0 }}>
           <HeroTitle>
             {t("hero.wellcome")}
             <HighlightedText

@@ -35,7 +35,7 @@ export default function Hero({ zonti, name }) {
   return (
     <Container
       sx={{
-        mt: isSmallScreen ? -7 : 0,
+        mt: isSmallScreen ? -3 : 0,
         display: "flex",
         minWidth: "100%",
         flexDirection: "column",

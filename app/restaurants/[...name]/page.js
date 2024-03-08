@@ -16,7 +16,7 @@ export const generateMetadata = async ({ params }) => {
   };
 };
 
-async function page({ params }) {
+async function RestPage({ params }) {
   unstable_noStore();
   const restData = await fetchRestByPath(params.name);
 
@@ -27,4 +27,4 @@ async function page({ params }) {
   );
 }
 
-export default page;
+export default RestPage;

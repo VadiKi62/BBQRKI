@@ -6,20 +6,9 @@ import styles from "@app/page.module.css";
 import { fetchRestaurants } from "@utils/actions";
 import NavBarCommon from "@app/components/common/NavBarCommon";
 
-// export const generateMetadata = async () => {
-//   // const rests = await fetchRestaurants();
-//   // const one = rests[0].name;
-
-//   return {
-//     title:
-//       "Examples of apps for different restaurants and different purposes like QR Menu and Bulltons for calling waiter",
-//     description: { one },
-//   };
-// };
-
 async function RestaurantsPage() {
   const rests = await fetchRestaurants();
-  console.log(rests);
+
   const menuRests = [
     { Argo: "http://dusha-roan.vercel.app/?zont=test" },
     { Arazo: "https://arazo.netlify.app/?zont=test" },
