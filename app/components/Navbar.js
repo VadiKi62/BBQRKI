@@ -81,8 +81,8 @@ export default function App() {
   let h = isJukebox ? 52 : 55;
 
   if (isBelvedere) {
-    width = 220;
-    h = 50;
+    width = 210;
+    h = 55;
   }
 
   const appMenu = Boolean(restData.menu);

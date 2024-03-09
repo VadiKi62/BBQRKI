@@ -183,7 +183,7 @@ export default function HeroLayout({ rest }) {
         return <SloganRotator strings={restData.slogans} />;
       } else
         return (
-          <div style={{ marginTop: "-10rem" }}>
+          <div style={{ marginTop: "-8rem" }}>
             <Image
               src={restData.animLogo ? restData.animLogo : "/bb.png"}
               alt={altName}
