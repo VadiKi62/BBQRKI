@@ -157,7 +157,7 @@ export default function HeroLayout({ rest }) {
       if (restData.slogans.length > 0 && restData.name === "Genesis") {
         return (
           <>
-            <SloganRotator strings={restData.slogans} />
+            <SloganRotator strings={restData.slogans} h={true} />
             <Container
               maxWidth="md"
               sx={{

@@ -26,7 +26,7 @@ const swiperOptions = {
   },
 };
 
-const SloganRotator = ({ strings }) => {
+const SloganRotator = ({ strings, h = false }) => {
   return (
     <Container
       sx={{
@@ -34,7 +34,7 @@ const SloganRotator = ({ strings }) => {
         alignItems: "center",
         textAlign: "center",
         zIndex: 1000,
-        mt: -10,
+        mt: h ? -10 : 0,
       }}
     >
       <div className="swiper-container">
