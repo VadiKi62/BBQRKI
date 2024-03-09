@@ -69,7 +69,6 @@ const HighlightedText = styled("span")(({ theme }) => ({
 
 const CallButtonWrapper = styled(Stack)(({ theme }) => ({
   marginTop: 5,
-
   zIndex: 12,
   display: "flex",
   flexDirection: "column",
@@ -146,6 +145,8 @@ export default function HeroLayout({ rest }) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const altName = `${restData.name} logo gif`;
+  const isBelvedere = restData.name === "Belvedere";
 
   const renderHeader = () => {
     if (showLoading) {
@@ -153,36 +154,42 @@ export default function HeroLayout({ rest }) {
     }
 
     if (!showInitialHeader) {
-      const altName = `${restData.name} logo gif`;
-      const isBelvedere = restData.name === "Belvedere";
-
-      if (restData.slogans) {
-        return <SloganRotator strings={restData.slogans} />;
-      } else if (restData.name === "Genesis") {
+      if (restData.slogans.length > 0 && restData.name === "Genesis") {
         return (
           <>
             <SloganRotator strings={restData.slogans} />
-            {[1, 2, 3].map((el) => (
-              <Image
-                key={el}
-                src={`/assets/images/Genesis/${el}.gif`}
-                alt="genesis"
-                width={200}
-                height={200}
-              />
-            ))}
+            <Container
+              maxWidth="md"
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              {[2, 3].map((el) => (
+                <Image
+                  key={el}
+                  src={`/assets/images/Genesis/${el}.gif`}
+                  alt="genesis"
+                  width={160}
+                  height={160}
+                />
+              ))}
+            </Container>
           </>
         );
-      } else {
+      }
+      if (restData.slogans.length > 0) {
+        return <SloganRotator strings={restData.slogans} />;
+      } else
         return (
           <Image
             src={restData.animLogo ? restData.animLogo : "/bb.png"}
             alt={altName}
-            width={268}
-            height={isBelvedere ? 268 : 190}
+            width={228}
+            height={isBelvedere ? 228 : 160}
           />
         );
-      }
     }
 
     return (
@@ -216,7 +223,7 @@ export default function HeroLayout({ rest }) {
       <Overlay />
 
       {!showLoading && !devel && (
-        <TitleContainer sx={{ mt: isSmallScreen ? -10 : 0, mb: 0 }}>
+        <TitleContainer sx={{ mt: isSmallScreen ? -12 : 0, mb: 0 }}>
           <HeroTitle>
             {t("hero.wellcome")}
             <HighlightedText

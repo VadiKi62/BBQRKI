@@ -34,6 +34,7 @@ const SloganRotator = ({ strings }) => {
         alignItems: "center",
         textAlign: "center",
         zIndex: 1000,
+        mt: -10,
       }}
     >
       <div className="swiper-container">

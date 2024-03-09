@@ -37,7 +37,7 @@ const ModalComponent = ({ loading, content, onClose, run = false }) => {
           </div>
         ) : (
           <div>
-            <Typography variant="inherit" fontSize={"2rem"}>
+            <Typography variant="inherit" fontSize={"1.6rem"}>
               {content}
             </Typography>
             {run && (

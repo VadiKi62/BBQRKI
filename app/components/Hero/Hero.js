@@ -40,20 +40,20 @@ export default function Hero({ zonti, name }) {
         flexDirection: "column",
         justifyContent: "flex-end",
         alignItems: "center",
-        mt: isSmallScreen ? -10 : 0,
+        mt: isSmallScreen ? -13 : 0,
       }}
     >
       <Typography
         align="center"
         color="primary.main"
-        sx={{ fontSize: "1.3rem", fontWeight: 900 }}
+        sx={{ fontSize: "1.3rem", fontWeight: 900, lineHeight: "1.4rem" }}
       >
         {t("header.table")} {zonti}
       </Typography>
       <Typography
         color="text.dark"
         align="center"
-        sx={{ fontSize: "1.2rem", lineHeight: "1.4rem" }}
+        sx={{ fontSize: "1.2rem", lineHeight: "1.3rem" }}
       >
         {t("header.call")}
       </Typography>

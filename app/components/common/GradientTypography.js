@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 
-const GradientTypography = ({ text }) => {
+const GradientTypography = ({ text, ...props }) => {
   return (
     <Typography
       component="span"
@@ -10,8 +10,9 @@ const GradientTypography = ({ text }) => {
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
         textTransform: "uppercase",
-        fontSize: "1.45rem",
+        fontSize: "1.35rem",
       }}
+      {...props}
       // className="text-flicker-in-glow"
     >
       {text}
