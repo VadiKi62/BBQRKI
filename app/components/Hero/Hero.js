@@ -35,18 +35,18 @@ export default function Hero({ zonti, name }) {
   return (
     <Container
       sx={{
-        mt: isSmallScreen ? -5 : 0,
         display: "flex",
         minWidth: "100%",
         flexDirection: "column",
         justifyContent: "flex-end",
         alignItems: "center",
+        mt: isSmallScreen ? -5 : 0,
       }}
     >
       <Typography
         align="center"
         color="primary.main"
-        sx={{ marginTop: "-0.9rem", fontSize: "1.3rem", fontWeight: 900 }}
+        sx={{ fontSize: "1.3rem", fontWeight: 900 }}
       >
         {t("header.table")} {zonti}
       </Typography>

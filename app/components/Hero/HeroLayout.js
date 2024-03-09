@@ -190,6 +190,7 @@ export default function HeroLayout({ rest }) {
         <Hero zonti={zont} name={rest.name} />
         <CallButtonWrapper
           sx={{
+            mt: isSmallScreen ? 2 : 0,
             position: isSticky ? "sticky" : "fixed",
             bottom: isSticky ? "0px" : "-70px",
           }}
@@ -215,7 +216,7 @@ export default function HeroLayout({ rest }) {
       <Overlay />
 
       {!showLoading && !devel && (
-        <TitleContainer sx={{ mt: isSmallScreen ? -5 : 0, mb: 0 }}>
+        <TitleContainer sx={{ mt: isSmallScreen ? -4 : 0, mb: 0 }}>
           <HeroTitle>
             {t("hero.wellcome")}
             <HighlightedText
