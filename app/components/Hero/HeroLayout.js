@@ -183,12 +183,14 @@ export default function HeroLayout({ rest }) {
         return <SloganRotator strings={restData.slogans} />;
       } else
         return (
-          <Image
-            src={restData.animLogo ? restData.animLogo : "/bb.png"}
-            alt={altName}
-            width={228}
-            height={isBelvedere ? 228 : 160}
-          />
+          <div style={{ marginTop: "-10rem" }}>
+            <Image
+              src={restData.animLogo ? restData.animLogo : "/bb.png"}
+              alt={altName}
+              width={208}
+              height={isBelvedere ? 208 : 145}
+            />
+          </div>
         );
     }
 
@@ -223,7 +225,7 @@ export default function HeroLayout({ rest }) {
       <Overlay />
 
       {!showLoading && !devel && (
-        <TitleContainer sx={{ mt: isSmallScreen ? -12 : 0, mb: 0 }}>
+        <TitleContainer sx={{ mt: isSmallScreen ? -10 : 0, mb: 0 }}>
           <HeroTitle>
             {t("hero.wellcome")}
             <HighlightedText
