@@ -18,12 +18,12 @@ export default function DefaultButton({
         aria-label={label}
         size="large"
         sx={{
-          p: 3,
+          p: 2,
           m: 1,
           fontSize: "1.5rem",
           fontWeight: 500,
           position: relative ? "relative" : "absolute",
-          lineHeight: "12px",
+          lineHeight: "1.3rem",
           top: relative ? 0 : 5,
           left: relative ? 0 : 5,
           borderRadius: "15px",

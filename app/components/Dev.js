@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import { calculateDistance, getRestCoords } from "@common/index";
 import { Box, Divider, Typography, Container } from "@mui/material";
@@ -9,7 +10,7 @@ import { useMainContext } from "./MainContextProvider";
 import { Suspense } from "react";
 
 const BoxContainer = styled(Box)(({ theme }) => ({
-  // marginTop: "0.7rem",
+  marginTop: "-5rem",
   // marginBottom: "-2rem",
   display: "flex",
   // padding: "-5rem",
@@ -158,7 +159,7 @@ function Dev({ rest }) {
         </BoxContainer>
       )}
       <BoxContainer>
-        <Text sx={{ marginTop: "-2rem" }}>
+        <Text>
           Acc: <Span>{distanceToRest.ac}</Span>
         </Text>
       </BoxContainer>

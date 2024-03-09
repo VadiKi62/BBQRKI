@@ -19,6 +19,7 @@ export const generateMetadata = async ({ params }) => {
 async function RestPage({ params }) {
   unstable_noStore();
   const restData = await fetchRestByPath(params.name);
+  console.log("rest from page/rest", restData);
 
   return (
     <Suspense fallback={<Loading restData={restData} />}>
