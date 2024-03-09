@@ -43,7 +43,7 @@ const RestSchema = new Schema({
   radiuses: {
     type: {
       mainSpot: { type: Number, required: true, default: 12 },
-      beachSpot1: { type: Number, default: 10 },
+      beachSpot1: { type: Number, default: null },
       beachSpot2: { type: Number, default: null },
     },
     required: true,

@@ -215,7 +215,7 @@ export default function HeroLayout({ rest }) {
       <Overlay />
 
       {!showLoading && !devel && (
-        <TitleContainer sx={{ mt: isSmallScreen ? -3 : 0, mb: 0 }}>
+        <TitleContainer sx={{ mt: isSmallScreen ? -5 : 0, mb: 0 }}>
           <HeroTitle>
             {t("hero.wellcome")}
             <HighlightedText
