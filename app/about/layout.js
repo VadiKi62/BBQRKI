@@ -11,7 +11,7 @@ import Header from "@app/components/Pres/Header";
 export const metadata = {
   title: "BBQR Code => Ki => About",
   icons: {
-    icon: "/bb.png",
+    icon: "/favicon.png",
     shortcut: "/favicon.ia",
   },
 };

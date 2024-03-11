@@ -36,6 +36,8 @@ export const POST = async (request) => {
       });
     }
 
+    data.restName = isRestExist.name;
+
     const isMenuForRestexist = await Menu.findOne({ restId: data.restId });
     if (isMenuForRestexist) {
       console.log("this menu seems to exist");

@@ -11,6 +11,7 @@ const GradientTypography = ({ text, ...props }) => {
         WebkitTextFillColor: "transparent",
         textTransform: "uppercase",
         fontSize: "1.35rem",
+        fontFamily: (theme) => `${theme.typography.fontFamily}`,
       }}
       {...props}
       // className="text-flicker-in-glow"

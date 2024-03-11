@@ -22,7 +22,7 @@ const AppStyling = styled("div")(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
   fontFamily: theme.typography.h1.fontFamily,
   zIndex: 996,
-  // position: "sticky",
+  position: "sticky",
   top: 0,
   minWidth: "100%",
 }));
@@ -31,6 +31,7 @@ const Logo = styled(Typography)(({ theme }) => ({
   // marginBottom: "-5px",
   // marginTop: "-4px",
   marginLeft: "-16px",
+  lineHeight: "1.2rem",
   fontWeight: theme.typography.h1?.fontWeight || 400,
   display: "flex",
   fontFamily: theme.typography.h1.fontFamily,
@@ -77,12 +78,22 @@ export default function App() {
   const isJukebox = restData.name === "Jukebox";
   const isGelissimo = restData.name === "Gelissimo";
   const isBelvedere = restData.name === "Belvedere";
-  let width = isJukebox ? 150 : 90;
-  let h = isJukebox ? 52 : 55;
+  let width, h;
 
-  if (isBelvedere) {
-    width = 210;
-    h = 55;
+  switch (restData.name) {
+    case "Jukebox":
+      width = h = 102;
+      break;
+    case "Belvedere":
+      width = 210;
+      h = 55;
+      break;
+    case "Gelissimo":
+      width = 90;
+      h = 55;
+      break;
+    default: // Default values for other restaurants
+      width = h = 90;
   }
 
   const appMenu = Boolean(restData.menu);
@@ -121,10 +132,10 @@ export default function App() {
   return (
     <AppStyling
       ref={headerRef}
-      sx={{
+      style={{
         backgroundColor:
-          isJukebox || isGelissimo ? "secondary.dark" : "primary.main",
-        // height: scrolled === "true" && appMenu ? "59px" : "100%",
+          isJukebox || isGelissimo ? "secondary.dark" : "secondary.dark",
+        height: scrolled === "true" && appMenu ? "59px" : "100%",
       }}
     >
       <Container>

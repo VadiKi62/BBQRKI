@@ -11,9 +11,7 @@ import { Suspense } from "react";
 
 const BoxContainer = styled(Box)(({ theme }) => ({
   marginTop: "-5rem",
-  // marginBottom: "-2rem",
   display: "flex",
-  // padding: "-5rem",
   flexDirection: "row",
   justifyContent: "space-evenly",
   color: theme.palette.text.main,

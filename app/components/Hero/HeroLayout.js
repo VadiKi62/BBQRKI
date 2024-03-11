@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { styled } from "@mui/system";
-import { Container, Stack } from "@mui/material";
-import Typography from "../common/Typography";
 import { useTranslation } from "react-i18next";
-import { useMediaQuery } from "@mui/material";
+import { Container, Stack } from "@mui/material";
+
 import LoadingScreen from "@app/components/common/Loaders/LoadingScreen";
 import Hero from "./Hero";
 import { CallWaiterButton, CallBillButton } from "../common/CallButtons";
@@ -12,6 +11,7 @@ import { useMainContext } from "../MainContextProvider";
 import ModalComponent from "../common/Modal";
 import SloganRotator from "../Slogans";
 import Dev from "../Dev";
+import LogoGallery from "../common/LogoGallery";
 
 const Overlay = styled("div")(({ theme }) => ({
   position: "absolute",
@@ -146,7 +146,6 @@ export default function HeroLayout({ rest }) {
     };
   }, []);
   const altName = `${restData.name} logo gif`;
-  const isBelvedere = restData.name === "Belvedere";
 
   const renderHeader = () => {
     if (showLoading) {
@@ -158,40 +157,27 @@ export default function HeroLayout({ rest }) {
         return (
           <>
             <SloganRotator strings={restData.slogans} h={true} />
-            <Container
-              maxWidth="md"
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              {[2, 3].map((el) => (
-                <Image
-                  key={el}
-                  src={`/assets/images/Genesis/${el}.gif`}
-                  alt="genesis"
-                  width={160}
-                  height={160}
-                />
-              ))}
-            </Container>
+            <LogoGallery images={[1, 2]} folder="Genesis" />
           </>
         );
       }
+
+      if (restData.name === "Jukebox") {
+        return <LogoGallery images={[1, 2, 3]} folder="Jukebox" />;
+      }
       if (restData.slogans.length > 0) {
         return <SloganRotator strings={restData.slogans} />;
-      } else
-        return (
-          <div style={{ marginTop: "-8rem" }}>
-            <Image
-              src={restData.animLogo ? restData.animLogo : "/bb.png"}
-              alt={altName}
-              width={208}
-              height={isBelvedere ? 208 : 145}
-            />
-          </div>
-        );
+      }
+      return (
+        <div style={{ marginTop: "-8rem", borderRadius: "50%" }}>
+          <Image
+            src={restData.animLogo ? restData.animLogo : "/bb.png"}
+            alt={altName}
+            width={208}
+            height={208}
+          />
+        </div>
+      );
     }
 
     return (

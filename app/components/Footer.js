@@ -84,11 +84,7 @@ function Footer({ rest }) {
     <Section>
       <FooterContainer>
         <SectionTitle variant="h3">{name}</SectionTitle>
-        {rest.slogans ? (
-          <Slogans strings={rest.slogans} />
-        ) : (
-          <Slogan>{slogan}</Slogan>
-        )}
+        <Slogan>{slogan}</Slogan>
         <SocialLinks>
           <MuiLink href="#" color="inherit" target="_blank">
             <FacebookIcon fontSize="large" />

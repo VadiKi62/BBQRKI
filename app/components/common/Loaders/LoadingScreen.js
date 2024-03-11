@@ -6,11 +6,18 @@ import Loading from "./Loading";
 import Loader from "./Loader";
 
 function LoadingScreen({ rest }) {
-  if (rest.animLogo) {
-    return <Spinning logo={rest.animLogo} />;
+  const { name, animLogo, logoSrc } = rest;
+
+  if (name === "Jukebox") {
+    return <Pulsating logo={animLogo} />;
   }
-  if (rest.logoSrc || rest.name === "Gelissimo" || rest.name === "Genesis") {
-    return <Pulsating logo={rest.logoSrc} />;
+
+  if (animLogo) {
+    return <Spinning logo={animLogo} />;
+  }
+
+  if (logoSrc || ["Gelissimo", "Genesis"].includes(name)) {
+    return <Pulsating logo={logoSrc} />;
   }
 
   return <Loader restData={rest} />;

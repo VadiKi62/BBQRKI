@@ -7,7 +7,7 @@ import "swiper/css";
 
 const swiperOptions = {
   modules: [Parallax, Navigation, Pagination, Autoplay],
-  speed: 2000,
+  speed: 3000,
   mousewheel: true,
   parallax: true,
   centeredSlides: true,
@@ -17,9 +17,10 @@ const swiperOptions = {
   onSwiper: (swiper) => {
     setTimeout(() => {
       for (var i = 0; i < swiper.slides?.length; i++) {
+        console.log("!!!!!!!!!!!!swiper!!", swiper);
         swiper?.slides[i]?.childNodes[0]?.setAttribute(
           "data-swiper-parallax",
-          0.99 * swiper.width
+          6.99 * swiper.width
         );
       }
     });

@@ -40,6 +40,7 @@ const itemsSchema = new Schema({
 const MenuSchema = new Schema({
   menu: [itemsSchema],
   restId: { type: Schema.Types.ObjectId, ref: "Rest", required: true },
+  restName: { type: String, required: true },
 });
 
 const Menu = models.Menu || model("Menu", MenuSchema);
