@@ -8,7 +8,11 @@ import "swiper/css";
 const swiperOptions = {
   modules: [Parallax, Navigation, Pagination, Autoplay],
   speed: 3000,
-  mousewheel: true,
+  loop: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
   parallax: true,
   centeredSlides: true,
   slidesPerView: 1,

@@ -6,6 +6,7 @@ import Loader from "@app/components/common/Loaders/Loader";
 import Header from "@app/components/Pres/Header";
 import ShowcaseCircleSide from "@app/components/Pres/ShowcaseCircleSide";
 import ShowcaseGrid from "@app/components/Pres/ShowcaseGrid";
+import ShowCase from "@app/components/Pres/ShowCase";
 import Navbar from "@app/components/Pres/NavBarPres";
 import SliderHeader from "@app/components/Pres/SliderHeader";
 import AboutUs from "@app/components/Pres/AboutUs";
@@ -33,7 +34,8 @@ export default function HomeAbout() {
         {/* <SliderHeader /> */}
         <div className="main-content">
           <Header />
-          <ShowcaseGrid />
+          <ShowCase />
+          {/* <ShowcaseGrid /> */}
           <ShowcaseCircleSide />
 
           <Services />

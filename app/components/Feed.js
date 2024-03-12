@@ -25,6 +25,7 @@ function Feed({ children, ...props }) {
   if (dev && !umbrella) {
     umbrella = "test";
   }
+  console.log("zont", umbrella);
   return (
     <ThemeProvider theme={theme}>
       <Suspense>

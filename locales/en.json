@@ -11,7 +11,9 @@
     "wellcome": "Welcome to",
     "argo": "Αρα...ζω Restaurant",
     "menu": "Our Menu",
-    "about": "About Us"
+    "about": "About Us",
+    "want": "Want to call the waiter ?",
+    "scan": "Simply scan the QR code on your table."
   },
   "about": {
     "about": "With exquisite cuisine made from the bounty of the sea and panoramic views of endless blue waters, Ara...zo promises an unforgettable oceanfront dining experience."

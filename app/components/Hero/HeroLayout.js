@@ -6,7 +6,11 @@ import { Container, Stack } from "@mui/material";
 
 import LoadingScreen from "@app/components/common/Loaders/LoadingScreen";
 import Hero from "./Hero";
-import { CallWaiterButton, CallBillButton } from "../common/CallButtons";
+import {
+  CallWaiterButton,
+  CallBillButton,
+  CallCustomButton,
+} from "../common/CallButtons";
 import { useMainContext } from "../MainContextProvider";
 import ModalComponent from "../common/Modal";
 import SloganRotator from "../Slogans";
@@ -156,6 +160,7 @@ export default function HeroLayout({ rest }) {
       if (restData.slogans.length > 0 && restData.name === "Genesis") {
         return (
           <>
+            <Hero zonti={zont} name={rest.name} />
             <SloganRotator strings={restData.slogans} h={true} />
             <LogoGallery images={[1, 2]} folder="Genesis" />
           </>
@@ -163,20 +168,35 @@ export default function HeroLayout({ rest }) {
       }
 
       if (restData.name === "Jukebox") {
-        return <LogoGallery images={[1, 2, 3]} folder="Jukebox" />;
+        return (
+          <>
+            {" "}
+            <Hero zonti={zont} name={rest.name} />
+            <LogoGallery images={[1, 2, 3]} folder="Jukebox" />
+          </>
+        );
       }
       if (restData.slogans.length > 0) {
-        return <SloganRotator strings={restData.slogans} />;
+        return (
+          <>
+            {" "}
+            <Hero zonti={zont} name={rest.name} />
+            <SloganRotator strings={restData.slogans} />;
+          </>
+        );
       }
       return (
-        <div style={{ marginTop: "-8rem", borderRadius: "50%" }}>
-          <Image
-            src={restData.animLogo ? restData.animLogo : "/bb.png"}
-            alt={altName}
-            width={208}
-            height={208}
-          />
-        </div>
+        <>
+          <Hero zonti={zont} name={rest.name} />
+          <div style={{ marginTop: "-8rem", borderRadius: "50%" }}>
+            <Image
+              src={restData.animLogo ? restData.animLogo : "/bb.png"}
+              alt={altName}
+              width={208}
+              height={208}
+            />
+          </div>
+        </>
       );
     }
 

@@ -29,6 +29,7 @@ export default function Hero({ zonti, name }) {
   console.log("isSmallScreen", isSmallScreen);
   const { t } = useTranslation();
   const isGenesis = name === "Genesis";
+
   const iconSRC = isGenesis
     ? "/assets/icons/down4.png"
     : "/assets/icons/down1.png";
@@ -48,16 +49,16 @@ export default function Hero({ zonti, name }) {
         color="primary.main"
         sx={{ fontSize: "1.3rem", fontWeight: 900, lineHeight: "1.4rem" }}
       >
-        {t("header.table")} {zonti}
+        {zonti ? `${t("header.table")} ${zonti}` : t("hero.want")}
       </Typography>
       <Typography
         color="text.dark"
         align="center"
         sx={{ fontSize: "1.2rem", lineHeight: "1.3rem" }}
       >
-        {t("header.call")}
+        {zonti ? t("header.call") : t("hero.scan")}
       </Typography>
-      <Icon src={iconSRC} alt="icon_hand_down" />
+      {zonti && <Icon src={iconSRC} alt="icon_hand_down" />}
     </Container>
   );
 }

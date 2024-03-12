@@ -25,7 +25,6 @@ const AppStyling = styled("div")(({ theme }) => ({
   alignContent: "center",
   justifyContent: "center",
   alignItems: "center",
-
   fontFamily: theme.typography.h1.fontFamily,
   zIndex: 996,
   position: "sticky",
