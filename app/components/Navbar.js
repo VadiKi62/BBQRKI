@@ -17,9 +17,15 @@ import LanguageIcon from "@mui/icons-material/Language";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+import { useTheme } from "@mui/material/styles";
 
 const AppStyling = styled("div")(({ theme }) => ({
   backgroundColor: theme.palette.primary.main,
+  display: "flex",
+  alignContent: "center",
+  justifyContent: "center",
+  alignItems: "center",
+
   fontFamily: theme.typography.h1.fontFamily,
   zIndex: 996,
   position: "sticky",
@@ -30,7 +36,8 @@ const AppStyling = styled("div")(({ theme }) => ({
 const Logo = styled(Typography)(({ theme }) => ({
   // marginBottom: "-5px",
   // marginTop: "-4px",
-  marginLeft: "-16px",
+
+  marginLeft: "16px",
   lineHeight: "1.2rem",
   fontWeight: theme.typography.h1?.fontWeight || 400,
   display: "flex",
@@ -68,6 +75,7 @@ const LanguageSwitcher = styled(IconButton)(({ theme }) => ({
 const LanguagePopover = styled(Popover)(({ theme }) => ({
   width: "150px",
   fontFamily: theme.typography.fontFamily,
+  marginRight: "16px",
 }));
 
 export default function App() {
@@ -79,10 +87,12 @@ export default function App() {
   const isGelissimo = restData.name === "Gelissimo";
   const isBelvedere = restData.name === "Belvedere";
   let width, h;
+  const theme = useTheme();
 
   switch (restData.name) {
     case "Jukebox":
-      width = h = 102;
+      width = 210;
+      h = 75;
       break;
     case "Belvedere":
       width = 210;
@@ -94,6 +104,16 @@ export default function App() {
       break;
     default: // Default values for other restaurants
       width = h = 90;
+  }
+
+  function determineBackgroundColor() {
+    if (isJukebox) {
+      return "black";
+    } else if (isGelissimo) {
+      return theme.palette.secondary.dark;
+    }
+
+    return theme.palette.primary.main;
   }
 
   const appMenu = Boolean(restData.menu);
@@ -129,38 +149,39 @@ export default function App() {
     };
   }, []);
 
+  console.log("isJukebox", isJukebox);
+
   return (
     <AppStyling
       ref={headerRef}
       style={{
-        backgroundColor:
-          isJukebox || isGelissimo ? "secondary.dark" : "secondary.dark",
-        height: scrolled === "true" && appMenu ? "59px" : "100%",
+        backgroundColor: determineBackgroundColor(),
+        height: scrolled === "true" && appMenu ? "55px" : "57px",
       }}
     >
       <Container>
-        <Toolbar>
-          <Stack
-            direction="row"
-            alignItems="center"
-            justifyContent="space-between"
-            sx={{ width: "100%" }}
-          >
-            {restData.logoSrc && restData.name !== "Genesis" ? (
-              <LogoImg
-                src={restData.logoSrc}
-                width={width}
-                height={h}
-                alt={`${restData.name} logo`}
-                priority
-              ></LogoImg>
-            ) : (
-              <Logo fontSize={scrolled ? "3rem" : "3.5rem"}>
-                {restData?.name}
-              </Logo>
-            )}
-            <Stack direction="row" spacing={2} alignItems="center">
-              {/* {appMenu && (
+        {/* <Toolbar> */}
+        <Stack
+          direction="row"
+          alignItems="center"
+          justifyContent="space-between"
+          sx={{ width: "100%" }}
+        >
+          {restData.logoSrc && restData.name !== "Genesis" ? (
+            <LogoImg
+              src={restData.logoSrc}
+              width={width}
+              height={h}
+              alt={`${restData.name} logo`}
+              priority
+            ></LogoImg>
+          ) : (
+            <Logo fontSize={scrolled ? "3rem" : "3.5rem"}>
+              {restData?.name}
+            </Logo>
+          )}
+          <Stack direction="row" spacing={2} alignItems="center">
+            {/* {appMenu && (
                 <AboutButton
                   lang={lang}
                   to="menu"
@@ -175,42 +196,42 @@ export default function App() {
                   {t("menu.Menu")}
                 </AboutButton>
               )} */}
-              <LanguageSwitcher
-                // color={isGelissimo ? "secondary.dark" : "inherit"}
-                onClick={handleLanguageClick}
-              >
-                <LanguageIcon />
-              </LanguageSwitcher>
-            </Stack>
+            <LanguageSwitcher
+              // color={isGelissimo ? "secondary.dark" : "inherit"}
+              onClick={handleLanguageClick}
+            >
+              <LanguageIcon />
+            </LanguageSwitcher>
           </Stack>
-          <LanguagePopover
-            open={Boolean(languageAnchor)}
-            anchorEl={languageAnchor}
-            onClose={handleLanguageClose}
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "right",
-            }}
-            transformOrigin={{
-              vertical: "top",
-              horizontal: "right",
-            }}
-          >
-            <MenuItem onClick={() => handleLanguageSelect("en")}>
-              English
-            </MenuItem>
-            <MenuItem onClick={() => handleLanguageSelect("el")}>
-              Ελληνικά
-            </MenuItem>
-            <MenuItem onClick={() => handleLanguageSelect("ru")}>
-              Русский
-            </MenuItem>
-            <MenuItem onClick={() => handleLanguageSelect("de")}>
-              {" "}
-              Deutsch
-            </MenuItem>
-          </LanguagePopover>
-        </Toolbar>
+        </Stack>
+        <LanguagePopover
+          open={Boolean(languageAnchor)}
+          anchorEl={languageAnchor}
+          onClose={handleLanguageClose}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "right",
+          }}
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "right",
+          }}
+        >
+          <MenuItem onClick={() => handleLanguageSelect("en")}>
+            English
+          </MenuItem>
+          <MenuItem onClick={() => handleLanguageSelect("el")}>
+            Ελληνικά
+          </MenuItem>
+          <MenuItem onClick={() => handleLanguageSelect("ru")}>
+            Русский
+          </MenuItem>
+          <MenuItem onClick={() => handleLanguageSelect("de")}>
+            {" "}
+            Deutsch
+          </MenuItem>
+        </LanguagePopover>
+        {/* </Toolbar> */}
       </Container>
     </AppStyling>
   );
