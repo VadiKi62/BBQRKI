@@ -163,10 +163,12 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
               restData.chat_id,
               (responseData) => {
                 // Success callback
+                console.log(responseData);
                 showModal(messageGot, false, true);
               },
               (error) => {
                 // Error callback
+                console.error(error);
                 showModal(messageOops);
               }
             );
@@ -180,8 +182,12 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
         }
       } else {
         showModal(messageRun, false, true);
+        setTimeout(function () {
+          hideModal(); // Call hideModal function after 10 seconds
+        }, 10000); // 10 seconds in milliseconds
       }
     } else {
+      updateGeolocation();
       // Handle case where geolocation was rejected
       showModal(messageEnable, false, false);
     }
@@ -229,8 +235,12 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
         }
       } else {
         showModal(messageRun, false, true);
+        setTimeout(function () {
+          hideModal(); // Call hideModal function after 10 seconds
+        }, 10000);
       }
     } else {
+      updateGeolocation();
       // Handle case where geolocation was rejected
       showModal(messageEnable, false, false);
     }

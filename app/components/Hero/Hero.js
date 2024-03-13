@@ -26,7 +26,7 @@ const Icon = styled("img")(({ theme }) => ({
 
 export default function Hero({ zonti, name }) {
   const { isSmallScreen } = useMainContext();
-  console.log("isSmallScreen", isSmallScreen);
+
   const { t } = useTranslation();
   const isGenesis = name === "Genesis";
 

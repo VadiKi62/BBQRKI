@@ -120,7 +120,6 @@ export default function HeroLayout({ rest }) {
   } = useMainContext();
 
   const [isSticky, setIsSticky] = useState(true);
-
   const [showLoading, setShowLoading] = useState(true);
 
   useEffect(() => {
@@ -162,8 +161,8 @@ export default function HeroLayout({ rest }) {
         return (
           <>
             {" "}
-            <SloganRotator strings={restData.slogans} h={true} />
-            <div style={{ marginTop: "2rem", borderRadius: "50%" }}>
+            <SloganRotator strings={restData.slogans} />
+            <div style={{ marginTop: "1rem", borderRadius: "50%" }}>
               <Image
                 src={restData.animLogo ? restData.animLogo : "/bb.png"}
                 alt={altName}

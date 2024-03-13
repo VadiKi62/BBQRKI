@@ -48,7 +48,7 @@ export const sendBill = (
       table: zont,
       message: message,
     };
-    console.log("message!!! ", message);
+    console.log("chat_id!!! ", chat_id);
     axios
       .post(`https://button.hopto.org/${endpoint}`, data)
       .then(function (response) {

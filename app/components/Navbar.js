@@ -148,8 +148,6 @@ export default function App() {
     };
   }, []);
 
-  console.log("isJukebox", isJukebox);
-
   return (
     <AppStyling
       ref={headerRef}

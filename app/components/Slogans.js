@@ -6,8 +6,8 @@ import { Navigation, Pagination, Parallax, Autoplay } from "swiper";
 import "swiper/css";
 
 const swiperOptions = {
-  modules: [Parallax, Navigation, Pagination, Autoplay],
-  speed: 3000,
+  modules: [Parallax, Navigation, Autoplay],
+  speed: 4000,
   loop: true,
   autoplay: {
     delay: 2500,

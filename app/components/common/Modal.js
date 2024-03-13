@@ -6,7 +6,7 @@ import DefaultButton from "./DefaultButton";
 import Typography from "@app/components/common/Typography";
 import { useTheme } from "@mui/material/styles";
 
-const ModalComponent = ({ loading, content, onClose, run = false }) => {
+const ModalComponent = ({ content, onClose, loading, run = false }) => {
   const theme = useTheme();
   return (
     <Modal
@@ -37,7 +37,7 @@ const ModalComponent = ({ loading, content, onClose, run = false }) => {
           </div>
         ) : (
           <div>
-            <Typography variant="inherit" fontSize={"1.6rem"}>
+            <Typography variant="inherit" fontSize={"1.5rem"}>
               {content}
             </Typography>
             {run && (

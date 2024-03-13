@@ -20,7 +20,6 @@ export default function useGeo(r, restaurant, zont, isHighSeason) {
       navigator.geolocation.watchPosition(resolve, reject, options);
     })
       .then((successCallback) => {
-        console.log("successCallback", successCallback);
         if (Object.keys(rest).length === 0 || !isHighSeason) {
           // If rest is empty, calculate distance for restSpot only
           const distanceToRest = calculateDistance(
@@ -56,7 +55,7 @@ export default function useGeo(r, restaurant, zont, isHighSeason) {
                 : successCallback.coords.accuracy,
             distanceToRest: minDistanceSpot.distance,
           });
-          console.log("Nearest spot:", minDistanceSpot.key);
+
           setRadius(restaurant.radiuses[minDistanceSpot.key]);
         }
 
@@ -69,7 +68,7 @@ export default function useGeo(r, restaurant, zont, isHighSeason) {
   };
 
   useEffect(() => {
-    if (zont !== 0) {
+    if (zont) {
       // Fetch geolocation on mount or when zont changes
       updateGeolocation();
     }
