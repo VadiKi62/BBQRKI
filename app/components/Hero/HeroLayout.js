@@ -117,6 +117,9 @@ export default function HeroLayout({ rest }) {
     run,
     showCallWaiterButton,
     headerRef,
+    showScan,
+    showInside,
+    messageInside,
   } = useMainContext();
 
   const [isSticky, setIsSticky] = useState(true);
@@ -157,30 +160,24 @@ export default function HeroLayout({ rest }) {
     }
 
     if (!showInitialHeader) {
-      if (restData.slogans.length > 0) {
-        return (
-          <>
-            {" "}
-            <SloganRotator strings={restData.slogans} />
-            <div style={{ marginTop: "1rem", borderRadius: "50%" }}>
-              <Image
-                src={restData.animLogo ? restData.animLogo : "/bb.png"}
-                alt={altName}
-                width={208}
-                height={208}
-              />
-            </div>
-          </>
-        );
-      }
       return (
         <>
-          <div style={{ marginTop: "-5rem", borderRadius: "50%" }}>
+          {showScan && <ScanInfo t={t} isSmallScreen={isSmallScreen} />}
+          {showInside && (
+            <InsideInfo
+              isSmallScreen={isSmallScreen}
+              messageInside={messageInside}
+            />
+          )}
+          {restData.slogans.length > 0 && (
+            <SloganRotator strings={restData.slogans} />
+          )}
+          <div style={{ marginTop: "1rem", borderRadius: "50%" }}>
             <Image
               src={restData.animLogo ? restData.animLogo : "/bb.png"}
               alt={altName}
               width={208}
-              height={restData.animLogo ? 208 : 140}
+              height={208}
             />
           </div>
         </>
@@ -217,7 +214,7 @@ export default function HeroLayout({ rest }) {
       {devel && <Dev rest={rest} />}
       <Overlay />
 
-      {!showInitialHeader && !showLoading && (
+      {/* {!showInitialHeader && !showLoading && (
         <TitleContainer>
           <Typography
             align="center"
@@ -243,9 +240,9 @@ export default function HeroLayout({ rest }) {
             {t("hero.scan")}
           </Typography>
         </TitleContainer>
-      )}
+      )} */}
 
-      {!showLoading && !devel && showInitialHeader && (
+      {!showLoading && !devel && (
         <TitleContainer sx={{ mt: isSmallScreen ? -8 : 0, mb: 0 }}>
           <HeroTitle>
             {t("hero.wellcome")}
@@ -277,3 +274,51 @@ export default function HeroLayout({ rest }) {
     </HeroSection>
   );
 }
+
+const ScanInfo = ({ t, isSmallScreen }) => {
+  return (
+    <TitleContainer>
+      <Typography
+        align="center"
+        color="primary.main"
+        sx={{
+          fontSize: isSmallScreen ? "1.7rem" : "2.4rem",
+          fontWeight: 900,
+          lineHeight: isSmallScreen ? "1.7rem" : "2.4rem",
+          zIndex: 111,
+        }}
+      >
+        {t("hero.want")}
+      </Typography>
+      <Typography
+        color="text.dark"
+        align="center"
+        sx={{
+          fontSize: isSmallScreen ? "1.8rem" : "2.2rem",
+          lineHeight: isSmallScreen ? "1.9rem" : "2.3rem",
+          zIndex: 111,
+        }}
+      >
+        {t("hero.scan")}
+      </Typography>
+    </TitleContainer>
+  );
+};
+
+const InsideInfo = ({ isSmallScreen, messageInside }) => {
+  return (
+    <TitleContainer sx={{ mb: 4 }}>
+      <Typography
+        color="text.dark"
+        align="center"
+        sx={{
+          fontSize: isSmallScreen ? "1.3rem" : "1.6rem",
+          lineHeight: isSmallScreen ? "1.3rem" : "1.6rem",
+          zIndex: 111,
+        }}
+      >
+        {messageInside}
+      </Typography>
+    </TitleContainer>
+  );
+};

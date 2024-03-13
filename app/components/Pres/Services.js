@@ -3,6 +3,7 @@ import { Container, Grid, Typography, Fade } from "@mui/material";
 import { styled } from "@mui/system";
 import { useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 //= Scripts
 import cardMouseEffect from "@/common/cardMouseEffect";
 
@@ -34,23 +35,24 @@ const Features = () => {
     <Section className="feat">
       <Container>
         <Grid container justifyContent="center">
-          <Grid item xs={12} md={8}>
+          <Grid item xs={12}>
             <Typography
               variant="h6"
-              align="center"
+              align="start"
               sx={{
                 mb: 2,
                 fontSize: "22px",
                 lineHeight: "1.5",
                 marginBottom: "20px",
                 letterSpacing: "5px",
+                textTransform: "uppercase",
               }}
             >
               Details
             </Typography>
             <Typography
               variant="h4"
-              align="center"
+              align="start"
               color="primary.main"
               sx={{ fontWeight: 700, textTransform: "uppercase" }}
               className="color-font"
@@ -59,26 +61,34 @@ const Features = () => {
             </Typography>
           </Grid>
         </Grid>
-        <Grid container spacing={3}>
+        <Grid container spacing={2}>
           {features.map((feature, index) => (
-            <Grid item xs={12} sm={6} md={3} key={index} className="items">
-              <Fade
-                in
-                timeout={500}
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
-                <Item className="item">
-                  <span className="icon">{feature.icon}</span>
-                  <Typography variant="h5" sx={{ mt: 2, mb: 1 }}>
-                    {feature.title}
-                  </Typography>
-                  <Typography>{feature.description}</Typography>
-                  {/* <Link href={feature.link} className="more-stroke">
+            <>
+              <Grid item xs={6} md={4} key={index} className="items">
+                <Fade
+                  in
+                  timeout={500}
+                  style={{ transitionDelay: `${index * 100}ms` }}
+                >
+                  <Item className="item">
+                    <Image
+                      src="/favicon.png"
+                      alt="logo_bbqr"
+                      width={49}
+                      height={45}
+                      className="spinning-icon"
+                    />
+                    <Typography variant="h5" sx={{ mt: 2, mb: 1 }}>
+                      {feature.title}
+                    </Typography>
+                    <Typography>{feature.description}</Typography>
+                    {/* <Link href={feature.link} className="more-stroke">
                     <span></span>
                   </Link> */}
-                </Item>
-              </Fade>
-            </Grid>
+                  </Item>
+                </Fade>
+              </Grid>
+            </>
           ))}
         </Grid>
       </Container>
@@ -88,32 +98,33 @@ const Features = () => {
 
 const features = [
   {
-    icon: <i className="ion-ios-monitor"></i>,
     title: "Call the waiter.",
     description:
       "Client can directly call waiter with only clicking one button.",
-    link: "/about/about-dark",
   },
   {
-    icon: <i className="ion-ios-bolt-outline"></i>,
     title: "Request the bill.",
     description:
       "Client can request bill doing just 2 actions - scanning code and pressing button.",
-    link: "/about/about-dark",
   },
   {
-    icon: <i className="ion-cube"></i>,
+    title: "Get cash info upfront",
+    description:
+      "Skip the back and forth: know if they're paying by card upfront. Less running around for the waiters!",
+  },
+  {
     title: "Repeat last drink.",
     description:
       "Client can instantly reorder the last drink, pressing one button.",
-    link: "/about/about-dark",
   },
   {
-    icon: <i className="ion-ios-color-wand"></i>,
     title: "Order shisha.",
     description:
       "You do not need to come to the customer first, then call the shisha guy. Waiters run fewer kilometers, clients wait less.",
-    link: "/about/about-dark",
+  },
+  {
+    title: "Get the client's language immediately ",
+    description: "And send a waiter who speaks it like a pro! ",
   },
 ];
 

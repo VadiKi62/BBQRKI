@@ -99,7 +99,7 @@ function ShowcaseCircleSide() {
               SO
             </Typography>
             <Typography
-              variant="h3"
+              variant="h4"
               align="start"
               color="primary.main"
               sx={{ fontWeight: 700, textTransform: "uppercase" }}
@@ -122,20 +122,20 @@ function ShowcaseCircleSide() {
                   <div className="caption ontop valign">
                     <div className="o-hidden">
                       <h1 data-swiper-parallax="-2000">
-                        <Link href="/project-details2/project-details2-dark">
-                          <div className="stroke">{slide.title.first}</div>
-                          <div>{slide.title.second}</div>
-                        </Link>
+                        {/* <Link> */}
+                        <div className="stroke">{slide.title.first}</div>
+                        <div>{slide.title.second}</div>
+                        {/* </Link> */}
                       </h1>
                     </div>
                   </div>
                   <div className="copy-cap valign">
                     <div className="cap">
                       <h1 data-swiper-parallax="-2000">
-                        <Link href="/project-details2/project-details2-dark">
-                          <div className="stroke">{slide.title.first}</div>
-                          <div>{slide.title.second}</div>
-                        </Link>
+                        {/* <Link> */}
+                        <div className="stroke">{slide.title.first}</div>
+                        <div>{slide.title.second}</div>
+                        {/* </Link> */}
                       </h1>
                     </div>
                   </div>
@@ -150,36 +150,3 @@ function ShowcaseCircleSide() {
 }
 
 export default ShowcaseCircleSide;
-
-// const textStyle = {
-//   fontFamily: ["Josefin Sans", "sans-serif"].join(","),
-//   lineHeight: "70px",
-//   fontSize: "80px",
-//   textAlign: "center",
-//   "@media (max-width: 480px)": {
-//     fontSize: "40px",
-//     lineHeight: "35px",
-//     textAlign: "left",
-//   },
-// "@media (max-width: 767px)": {
-//   fontSize: "50px",
-//   lineHeight: "45px",
-//   textAlign: "center",
-//   marginLeft: "-80px",
-// },
-// "@media (min-width: 768px) and (max-width: 959px)": {
-//   fontSize: "60px",
-//   lineHeight: "48px",
-//   textAlign: "center",
-// },
-// "@media (min-width: 960px) and (max-width: 1279px)": {
-//   fontSize: "70px",
-//   lineHeight: "60px",
-//   textAlign: "center",
-// },
-// "@media (min-width: 1280px)": {
-//   fontSize: "135px",
-//   lineHeight: "120px",
-//   textAlign: "right",
-// },
-// };

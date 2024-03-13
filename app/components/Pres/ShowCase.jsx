@@ -46,10 +46,10 @@ const swiperOptions = {
   autoPlay: true,
   spaceBetween: 0,
   //   loop: true,
-  navigation: {
-    prevEl: ".swiper-button-prev",
-    nextEl: ".swiper-button-next",
-  },
+  // navigation: {
+  //   prevEl: ".swiper-button-prev",
+  //   nextEl: ".swiper-button-next",
+  // },
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,
@@ -84,20 +84,21 @@ function Works3() {
           <Grid item xs={12} md={8}>
             <Typography
               variant="h6"
-              align="left"
+              align="start"
               sx={{
                 mb: 2,
                 fontSize: "22px",
                 lineHeight: "1.5",
                 marginBottom: "20px",
                 letterSpacing: "5px",
+                textTransform: "uppercase",
               }}
             >
-              How it looks like
+              How it looks
             </Typography>
             <Typography
-              variant="h5"
-              align="left"
+              variant="h4"
+              align="start"
               color="primary.main"
               sx={{ fontWeight: 700, textTransform: "uppercase" }}
               className="color-font"

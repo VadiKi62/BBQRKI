@@ -42,6 +42,8 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
   );
 
   const [showInitialHeader, setShowInitialHeader] = useState(false);
+  const [showInside, setShowInside] = useState(false);
+  const [showScan, setShowScan] = useState(false);
   const history = typeof window !== "undefined" ? window?.history : null;
 
   const [countdownWaiter, setCountdownWaiter] = useState(0);
@@ -67,8 +69,6 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
     radius,
     setRadius,
   } = useGeo(r, rest, zont, isHighSeason);
-
-  console.log("isGeolocationAvailable", isGeolocationAvailable);
 
   const messageWaiter1 = `${rest.name}.Table ${zont} called the Waiter.  Language - ${language}.\nΤραπέζι ${zont} κάλεσε τον σερβιτόρο. Γλώσσα - ${language}.`;
   let messageBill1 = `${rest.name}. Table ${zont} asks for Bill. Language - ${language}.\nΤραπέζι ${zont} ζητά τον λογαριασμό.  Γλώσσα - ${language}. `;
@@ -165,20 +165,31 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
                 // Success callback
                 console.log(responseData);
                 showModal(messageGot, false, true);
+                setShowInitialHeader(false);
+                setShowInside(false);
+                setShowScan(true);
               },
               (error) => {
                 // Error callback
                 console.error(error);
                 showModal(messageOops);
+                setShowInitialHeader(false);
+                setShowInside(false);
+                setShowScan(true);
               }
             );
           });
         } else {
           updateGeolocation();
           showModal(`${messageInside}`, false, false);
+          setTimeout(function () {
+            hideModal(); // Call hideModal function after 10 seconds
+          }, 30000);
           history?.replaceState({}, document.title, window?.location.pathname);
           // router?.replace(router.asPath, undefined, { shallow: true });
           setShowInitialHeader(false);
+          setShowScan(false);
+          setShowInside(true);
         }
       } else {
         showModal(messageRun, false, true);
@@ -192,6 +203,7 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
       showModal(messageEnable, false, false);
     }
   };
+
   const handleCallBill = async () => {
     await delay();
     if (isGeolocationAvailable) {
@@ -219,10 +231,14 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
               (responseData) => {
                 // Success callback
                 showModal(messageGot, false, true);
+                setShowInitialHeader(false);
+                setShowScan(true);
               },
               (error) => {
                 // Error callback
                 showModal(messageOops);
+                setShowInitialHeader(false);
+                setShowScan(true);
               }
             );
           });
@@ -232,12 +248,17 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
           history?.replaceState({}, document.title, window.location.pathname);
           // router?.replace(router?.asPath, undefined, { shallow: true });
           setShowInitialHeader(false);
+          setShowScan(false);
+          setShowInside(true);
         }
       } else {
         showModal(messageRun, false, true);
         setTimeout(function () {
           hideModal(); // Call hideModal function after 10 seconds
         }, 10000);
+        setShowInitialHeader(false);
+        setShowScan(false);
+        setShowInside(true);
       }
     } else {
       updateGeolocation();
@@ -375,6 +396,9 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
     headerRef,
     devel,
     isVerySmallScreen,
+    showScan,
+    showInside,
+    messageInside,
   };
 
   return (
