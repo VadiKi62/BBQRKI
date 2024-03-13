@@ -55,10 +55,10 @@ const HeroTitle = styled(Typography)(({ theme }) => ({
   fontWeight: 450,
   // marginBottom: 5,
   // marginTop: 10,
-  lineHeight: "2.9rem",
+  lineHeight: "2.2rem",
   color: theme.palette.text.dark,
   fontFamily: theme.typography.fontFamily,
-  fontSize: "2.6rem",
+  fontSize: "2.1rem",
   zIndex: 2,
   // position: "relative",
 }));
@@ -243,7 +243,7 @@ export default function HeroLayout({ rest }) {
       )} */}
 
       {!showLoading && !devel && (
-        <TitleContainer sx={{ mt: isSmallScreen ? -5 : 0, mb: 0 }}>
+        <TitleContainer sx={{ mt: isSmallScreen ? -4 : 0, mb: 0 }}>
           <HeroTitle>
             {t("hero.wellcome")}
             <HighlightedText
@@ -282,9 +282,9 @@ const ScanInfo = ({ t, isSmallScreen }) => {
         align="center"
         color="primary.main"
         sx={{
-          fontSize: isSmallScreen ? "1.7rem" : "2.4rem",
+          fontSize: isSmallScreen ? "1.2rem" : "2rem",
           fontWeight: 900,
-          lineHeight: isSmallScreen ? "1.7rem" : "2.4rem",
+          lineHeight: isSmallScreen ? "1.2rem" : "2rem",
           zIndex: 111,
         }}
       >
