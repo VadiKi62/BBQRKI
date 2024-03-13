@@ -58,7 +58,7 @@ const HeroTitle = styled(Typography)(({ theme }) => ({
   lineHeight: "2.9rem",
   color: theme.palette.text.dark,
   fontFamily: theme.typography.fontFamily,
-  fontSize: { xs: "40px", sm: theme.typography.h1.fontSize },
+  fontSize: "2.6rem",
   zIndex: 2,
   // position: "relative",
 }));
