@@ -21,7 +21,7 @@ export default function LayoutAbout({ children }) {
     <>
       {/* <LoadingScreen /> */}
       {/* <ProgressScroll /> */}
-      <CircleBg />
+      {/* <CircleBg /> */}
       {children}
       {/* 
       <Header />

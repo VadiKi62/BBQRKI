@@ -325,7 +325,7 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
   // }, [countTimer]);
 
   useEffect(() => {
-    if (zont !== 0) {
+    if (zont) {
       setShowInitialHeader(true);
       setTimeout(() => {
         history.replaceState({}, document.title, window.location.pathname);

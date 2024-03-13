@@ -49,16 +49,16 @@ export default function Hero({ zonti, name }) {
         color="primary.main"
         sx={{ fontSize: "1.3rem", fontWeight: 900, lineHeight: "1.4rem" }}
       >
-        {zonti ? `${t("header.table")} ${zonti}` : t("hero.want")}
+        {`${t("header.table")} ${zonti}`}
       </Typography>
       <Typography
         color="text.dark"
         align="center"
         sx={{ fontSize: "1.2rem", lineHeight: "1.3rem" }}
       >
-        {zonti ? t("header.call") : t("hero.scan")}
+        {t("header.call")}
       </Typography>
-      {zonti && <Icon src={iconSRC} alt="icon_hand_down" />}
+      <Icon src={iconSRC} alt="icon_hand_down" />
     </Container>
   );
 }

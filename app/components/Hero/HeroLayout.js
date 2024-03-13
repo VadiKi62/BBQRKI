@@ -1,8 +1,9 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { styled } from "@mui/system";
 import { useTranslation } from "react-i18next";
-import { Container, Stack } from "@mui/material";
+import { Container, Stack, Typography } from "@mui/material";
 
 import LoadingScreen from "@app/components/common/Loaders/LoadingScreen";
 import Hero from "./Hero";
@@ -46,18 +47,18 @@ const TitleContainer = styled(Container)(({ theme }) => ({
   alignItems: "center",
   alignContent: "center",
   textAlign: "center",
-  position: "relative",
+  // position: "relative",
   zIndex: 99,
 }));
 
-const HeroTitle = styled("div")(({ theme }) => ({
+const HeroTitle = styled(Typography)(({ theme }) => ({
   fontWeight: 450,
   // marginBottom: 5,
   // marginTop: 10,
   lineHeight: "2.9rem",
   color: theme.palette.text.dark,
   fontFamily: theme.typography.fontFamily,
-  fontSize: theme.typography.h1.fontSize,
+  fontSize: { xs: "40px", sm: theme.typography.h1.fontSize },
   zIndex: 2,
   // position: "relative",
 }));
@@ -157,43 +158,30 @@ export default function HeroLayout({ rest }) {
     }
 
     if (!showInitialHeader) {
-      if (restData.slogans.length > 0 && restData.name === "Genesis") {
-        return (
-          <>
-            <Hero zonti={zont} name={rest.name} />
-            <SloganRotator strings={restData.slogans} h={true} />
-            <LogoGallery images={[1, 2]} folder="Genesis" />
-          </>
-        );
-      }
-
-      if (restData.name === "Jukebox") {
-        return (
-          <>
-            {" "}
-            <Hero zonti={zont} name={rest.name} />
-            <LogoGallery images={[1, 2, 3]} folder="Jukebox" />
-          </>
-        );
-      }
       if (restData.slogans.length > 0) {
         return (
           <>
             {" "}
-            <Hero zonti={zont} name={rest.name} />
-            <SloganRotator strings={restData.slogans} />;
+            <SloganRotator strings={restData.slogans} h={true} />
+            <div style={{ marginTop: "2rem", borderRadius: "50%" }}>
+              <Image
+                src={restData.animLogo ? restData.animLogo : "/bb.png"}
+                alt={altName}
+                width={208}
+                height={208}
+              />
+            </div>
           </>
         );
       }
       return (
         <>
-          <Hero zonti={zont} name={rest.name} />
-          <div style={{ marginTop: "-8rem", borderRadius: "50%" }}>
+          <div style={{ marginTop: "-5rem", borderRadius: "50%" }}>
             <Image
               src={restData.animLogo ? restData.animLogo : "/bb.png"}
               alt={altName}
               width={208}
-              height={208}
+              height={restData.animLogo ? 208 : 140}
             />
           </div>
         </>
@@ -230,8 +218,36 @@ export default function HeroLayout({ rest }) {
       {devel && <Dev rest={rest} />}
       <Overlay />
 
-      {!showLoading && !devel && (
-        <TitleContainer sx={{ mt: isSmallScreen ? -10 : 0, mb: 0 }}>
+      {!showInitialHeader && !showLoading && (
+        <TitleContainer>
+          <Typography
+            align="center"
+            color="primary.main"
+            sx={{
+              fontSize: isSmallScreen ? "1.7rem" : "2.4rem",
+              fontWeight: 900,
+              lineHeight: isSmallScreen ? "1.7rem" : "2.4rem",
+              zIndex: 111,
+            }}
+          >
+            {t("hero.want")}
+          </Typography>
+          <Typography
+            color="text.dark"
+            align="center"
+            sx={{
+              fontSize: isSmallScreen ? "1.8rem" : "2.2rem",
+              lineHeight: isSmallScreen ? "1.9rem" : "2.3rem",
+              zIndex: 111,
+            }}
+          >
+            {t("hero.scan")}
+          </Typography>
+        </TitleContainer>
+      )}
+
+      {!showLoading && !devel && showInitialHeader && (
+        <TitleContainer sx={{ mt: isSmallScreen ? -8 : 0, mb: 0 }}>
           <HeroTitle>
             {t("hero.wellcome")}
             <HighlightedText
