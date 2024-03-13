@@ -364,6 +364,7 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
       }, 5 * 60 * 1000);
     } else {
       setShowInitialHeader(false);
+      setShowScan(true);
     }
   }, [zont, history]);
 

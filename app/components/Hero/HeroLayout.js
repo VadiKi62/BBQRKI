@@ -243,7 +243,7 @@ export default function HeroLayout({ rest }) {
       )} */}
 
       {!showLoading && !devel && (
-        <TitleContainer sx={{ mt: isSmallScreen ? -8 : 0, mb: 0 }}>
+        <TitleContainer sx={{ mt: isSmallScreen ? -5 : 0, mb: 0 }}>
           <HeroTitle>
             {t("hero.wellcome")}
             <HighlightedText
