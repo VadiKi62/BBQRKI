@@ -126,6 +126,11 @@ const features = [
     title: "Get the client's language immediately ",
     description: "And send a waiter who speaks it like a pro! ",
   },
+  {
+    title: "No spam messages",
+    description:
+      "Client could only call the waiter once they're inside the restaurant ",
+  },
 ];
 
 export default Features;

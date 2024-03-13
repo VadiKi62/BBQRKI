@@ -294,8 +294,8 @@ const ScanInfo = ({ t, isSmallScreen }) => {
         color="text.dark"
         align="center"
         sx={{
-          fontSize: isSmallScreen ? "1.8rem" : "2.2rem",
-          lineHeight: isSmallScreen ? "1.9rem" : "2.3rem",
+          fontSize: isSmallScreen ? "1.3rem" : "2.2rem",
+          lineHeight: isSmallScreen ? "1.3rem" : "2.3rem",
           zIndex: 111,
         }}
       >
