@@ -1,5 +1,5 @@
 import React from "react";
-import { fetchRestByPath } from "@utils/actions";
+import { fetchRestByPath, fetchMenu } from "@utils/actions";
 import Feed from "@app/components/Feed";
 import { Suspense } from "react";
 import { unstable_noStore } from "next/cache";
@@ -9,9 +9,13 @@ export const generateMetadata = async ({ params }) => {
   const { name } = params;
 
   const rest = await fetchRestByPath(name);
+  let title = `${rest.name}`;
+  if (rest.menu) {
+    title = `${rest.name} with menu`;
+  }
 
   return {
-    title: rest.name,
+    title: { title },
     description: rest.slogan,
   };
 };
@@ -19,11 +23,16 @@ export const generateMetadata = async ({ params }) => {
 async function RestPage({ params }) {
   unstable_noStore();
   const restData = await fetchRestByPath(params.name);
-  console.log("rest from page/rest", restData);
+  let menuData = null;
+  if (restData.menu) {
+    menuData = await fetchMenu(restData._id);
+  }
 
   return (
     <Suspense fallback={<Loading restData={restData} />}>
-      <Feed rest={restData}> </Feed>
+      <Feed rest={restData} menu={menuData}>
+        {" "}
+      </Feed>
     </Suspense>
   );
 }

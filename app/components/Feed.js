@@ -12,7 +12,7 @@ import { Suspense } from "react";
 import { returnTheme } from "@themes/themePicker";
 
 function Feed({ children, ...props }) {
-  const rest = props.rest;
+  const { rest, menu } = props;
 
   const theme = returnTheme(rest.themeName);
   const searchParams = useSearchParams();
@@ -25,13 +25,13 @@ function Feed({ children, ...props }) {
   if (dev && !umbrella) {
     umbrella = "test";
   }
-  console.log("zont", umbrella);
+
   return (
     <ThemeProvider theme={theme}>
       <Suspense>
         <MainContextProvider rest={rest} umbrella={umbrella} r={r} dev={dev}>
           <Navbar rest={rest} />
-          <MainContent rest={rest} />
+          <MainContent rest={rest} menuData={menu} />
           {children}
           <Footer rest={rest} />
           <ScrollButton />
