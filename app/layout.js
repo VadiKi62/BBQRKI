@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
             textAlign: "center",
           }}
         >
-          <Link href="/">
+          <Link href="/about">
             <p id="root-layout">Powered by Nataliaki</p>
           </Link>
         </footer>

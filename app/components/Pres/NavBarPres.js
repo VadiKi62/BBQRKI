@@ -14,11 +14,12 @@ import Toolbar from "./Toolbar";
 import MuiAppBar from "@mui/material/AppBar";
 
 const TransparentAppBar = styled(AppBar)(({ theme, scrolled }) => {
-  const getHeight = () => (scrolled ? "65px" : "65px");
+  const getHeight = () => (scrolled == "true" ? "65px" : "65px");
 
-  const getBackgroundColor = () => (scrolled ? "transparent" : "transparent");
+  const getBackgroundColor = () =>
+    scrolled == "true" ? "transparent" : "transparent";
 
-  const getFontSize = () => (scrolled ? "1rem" : "1.1rem");
+  const getFontSize = () => (scrolled == "true" ? "1rem" : "1.1rem");
 
   return {
     transition: theme?.transitions.create(["height", "background-color"], {
@@ -35,12 +36,7 @@ const TransparentAppBar = styled(AppBar)(({ theme, scrolled }) => {
 });
 
 function AppAppBar({ setLanguage, language }) {
-  const [scrolled, setScrolled] = useState(false);
-
-  const handleScroll = () => {
-    const scrollPosition = window.scrollY;
-    setScrolled(scrollPosition > 80);
-  };
+  const [scrolled, setScrolled] = useState("false");
 
   const [anchorEl, setAnchorEl] = useState(null);
   const { i18n } = useTranslation();
@@ -58,6 +54,11 @@ function AppAppBar({ setLanguage, language }) {
     handleClose();
   };
 
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+    setScrolled((scrollPosition > 80).toString());
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -73,13 +74,15 @@ function AppAppBar({ setLanguage, language }) {
             justifyContent: "space-between",
           }}
         >
-          <Image
-            src="/logo_white1.png"
-            alt="BBQ qr code ki"
-            width={78}
-            height={47}
-            priority
-          />
+          <a href="/">
+            <Image
+              src="/logo_white1.png"
+              alt="BBQ qr code ki"
+              width={78}
+              height={47}
+              priority
+            />
+          </a>
         </Toolbar>
       </TransparentAppBar>
       <Toolbar />

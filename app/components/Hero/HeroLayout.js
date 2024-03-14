@@ -102,7 +102,6 @@ export default function HeroLayout({ rest }) {
     lang,
     devel,
     currentPosition,
-    restData,
     isSmallScreen,
     showInitialHeader,
     zont,
@@ -152,11 +151,11 @@ export default function HeroLayout({ rest }) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  const altName = `${restData.name} logo gif`;
+  const altName = `${rest.name} logo gif`;
 
   const renderHeader = () => {
     if (showLoading) {
-      return <LoadingScreen rest={restData} />;
+      return <LoadingScreen rest={rest} />;
     }
 
     if (!showInitialHeader) {
@@ -169,17 +168,23 @@ export default function HeroLayout({ rest }) {
               messageInside={messageInside}
             />
           )}
-          {restData.slogans.length > 0 && (
-            <SloganRotator strings={restData.slogans} />
-          )}
-          <div style={{ marginTop: "1rem", borderRadius: "50%" }}>
-            <Image
-              src={restData.animLogo ? restData.animLogo : "/bb.png"}
-              alt={altName}
-              width={208}
-              height={208}
+          {rest.slogans.length > 0 && <SloganRotator strings={rest.slogans} />}
+          {rest.slogans.length < 1 && rest.slogan && (
+            <InsideInfo
+              isSmallScreen={isSmallScreen}
+              messageInside={rest.slogan}
             />
-          </div>
+          )}
+          {rest.animLogo && (
+            <div style={{ borderRadius: "50%", marginBottom: "-1.5rem" }}>
+              <Image
+                src={rest.animLogo}
+                alt={altName}
+                width={135}
+                height={135}
+              />
+            </div>
+          )}
         </>
       );
     }
@@ -214,36 +219,8 @@ export default function HeroLayout({ rest }) {
       {devel && <Dev rest={rest} />}
       <Overlay />
 
-      {/* {!showInitialHeader && !showLoading && (
-        <TitleContainer>
-          <Typography
-            align="center"
-            color="primary.main"
-            sx={{
-              fontSize: isSmallScreen ? "1.7rem" : "2.4rem",
-              fontWeight: 900,
-              lineHeight: isSmallScreen ? "1.7rem" : "2.4rem",
-              zIndex: 111,
-            }}
-          >
-            {t("hero.want")}
-          </Typography>
-          <Typography
-            color="text.dark"
-            align="center"
-            sx={{
-              fontSize: isSmallScreen ? "1.8rem" : "2.2rem",
-              lineHeight: isSmallScreen ? "1.9rem" : "2.3rem",
-              zIndex: 111,
-            }}
-          >
-            {t("hero.scan")}
-          </Typography>
-        </TitleContainer>
-      )} */}
-
       {!showLoading && !devel && (
-        <TitleContainer sx={{ mt: isSmallScreen ? -4 : 0, mb: 0 }}>
+        <TitleContainer sx={{ mt: isSmallScreen ? -7 : 0, mb: 0 }}>
           <HeroTitle>
             {t("hero.wellcome")}
             <HighlightedText
@@ -277,7 +254,7 @@ export default function HeroLayout({ rest }) {
 
 const ScanInfo = ({ t, isSmallScreen }) => {
   return (
-    <TitleContainer>
+    <TitleContainer sx={{ mb: 3, mt: -4 }}>
       <Typography
         align="center"
         color="primary.main"
@@ -307,7 +284,7 @@ const ScanInfo = ({ t, isSmallScreen }) => {
 
 const InsideInfo = ({ isSmallScreen, messageInside }) => {
   return (
-    <TitleContainer sx={{ mb: 4 }}>
+    <TitleContainer sx={{ mb: 3, mt: -4 }}>
       <Typography
         color="text.dark"
         align="center"

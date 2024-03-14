@@ -15,10 +15,9 @@ const StyledMenuItem = styled(Paper)(({ theme }) => ({
     boxShadow: theme.shadows[5],
   },
 }));
-
 const MenuImage = styled("img")(({ theme }) => ({
-  maxWidth: "50%",
-  // minWidth: "50%",
+  width: "100%",
+  minWidth: "50%",
   height: "auto",
   borderRadius: "50%",
   float: "left",
@@ -33,12 +32,12 @@ const MenuContent = styled("div")(({ theme }) => ({
 const MenuLink = styled(Typography)(({ theme }) => ({
   paddingRight: theme.spacing(0),
   fontSize: "22px",
-  background: theme.palette.secondary.main,
+  // background: theme.palette.secondary.main,
   fontFamily: theme.typography.fontFamily,
   position: "relative",
   zIndex: 1,
   fontWeight: 700,
-  color: theme.palette.text.light,
+  color: theme.palette.text.dark,
   lineHeight: "24px",
   transition: "color 0.3s",
   "&:hover": {
@@ -47,13 +46,13 @@ const MenuLink = styled(Typography)(({ theme }) => ({
 }));
 
 const MenuPrice = styled("span")(({ theme }) => ({
-  background: theme.palette.secondary.main,
+  // background: theme.palette.secondary.main,
   position: "relative",
   fontSize: "22px",
   zIndex: 1,
   padding: theme.spacing(0, 2),
   fontWeight: 600,
-  color: theme.palette.text.light,
+  color: theme.palette.text.dark,
   "&:hover": {
     color: theme.palette.primary.main,
   },

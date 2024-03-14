@@ -58,10 +58,10 @@ function Dev({ rest }) {
     enableHighAccuracy: true,
   };
 
-  const watchPosition = (options) => {
+  const getCurrentPosition = (options) => {
     return new Promise((resolve, reject) => {
       if (navigator.geolocation) {
-        navigator.geolocation.watchPosition(resolve, reject, options);
+        navigator.geolocation.getCurrentPosition(resolve, reject, options);
       } else {
         reject(new Error("Geolocation is not supported by this browser."));
       }
@@ -74,7 +74,6 @@ function Dev({ rest }) {
     setDistance,
     beachSpot
   ) => {
-    console.log("successCallback", successCallback);
     const distanceToSpot = calculateDistance(
       mainSpotCoords,
       successCallback.coords
@@ -89,7 +88,7 @@ function Dev({ rest }) {
     console.log("Geolocation error:", error);
   };
 
-  watchPosition(options)
+  getCurrentPosition(options)
     .then((successCallback) => {
       handlePositionSuccess(
         successCallback,

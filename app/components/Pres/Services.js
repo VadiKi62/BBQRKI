@@ -64,11 +64,11 @@ const Features = () => {
         <Grid container spacing={2}>
           {features.map((feature, index) => (
             <>
-              <Grid item xs={6} md={4} key={index} className="items">
+              <Grid item xs={12} md={3} key={index} className="items">
                 <Fade
                   in
                   timeout={500}
-                  style={{ transitionDelay: `${index * 100}ms` }}
+                  style={{ transitionDelay: `${index * 150}ms` }}
                 >
                   <Item className="item">
                     <Image
@@ -108,7 +108,7 @@ const features = [
       "Client can request bill doing just 2 actions - scanning code and pressing button.",
   },
   {
-    title: "Get cash info upfront",
+    title: "Get cash info upfront.",
     description:
       "Skip the back and forth: know if they're paying by card upfront. Less running around for the waiters!",
   },
@@ -127,9 +127,14 @@ const features = [
     description: "And send a waiter who speaks it like a pro! ",
   },
   {
-    title: "No spam messages",
+    title: "No spam messages.",
     description:
       "Client could only call the waiter once they're inside the restaurant ",
+  },
+  {
+    title: "Quick and effortless setup.",
+    description:
+      "No complex installation needed. Each waiter simply receives their unique QR code, leading them directly to the app. ",
   },
 ];
 

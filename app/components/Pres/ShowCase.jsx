@@ -37,36 +37,39 @@ const fullScreenData = [
     sub: "it.",
     image: "/assets/pres/grid/5.png",
   },
+  {
+    id: 5,
+    title: "It is ",
+    sub: "win-win!",
+    image: "/assets/pres/grid/6.png",
+  },
 ];
 
 const swiperOptions = {
   modules: [Navigation, Autoplay, Mousewheel],
   centeredSlides: true,
-  slidesPerView: 3,
+  slidesPerView: 4,
   autoPlay: true,
   spaceBetween: 0,
   //   loop: true,
-  // navigation: {
-  //   prevEl: ".swiper-button-prev",
-  //   nextEl: ".swiper-button-next",
-  // },
+  navigation: {
+    prevEl: ".swiper-button-prev",
+    nextEl: ".swiper-button-next",
+  },
   autoplay: {
     delay: 2500,
-    disableOnInteraction: false,
+    disableOnInteraction: true,
   },
   speed: 1000,
   breakpoints: {
     320: {
       slidesPerView: 1,
-      spaceBetween: -10,
     },
     640: {
-      slidesPerView: 1,
-      spaceBetween: 0,
+      slidesPerView: 2,
     },
     767: {
       slidesPerView: 2,
-      spaceBetween: 0,
       centeredSlides: false,
     },
     991: {
@@ -125,8 +128,8 @@ function Works3() {
                             <Image
                               src={slide.image}
                               alt=""
-                              width={280}
-                              height={490}
+                              width={240}
+                              height={455}
                             />
                           </span>
                         </div>

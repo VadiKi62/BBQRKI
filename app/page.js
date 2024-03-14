@@ -29,6 +29,7 @@ export default function Home() {
         strategy="beforeInteractive"
         src="/js/isotope.pkgd.min.js"
       ></Script>
+      <Script strategy="beforeInteractive" src="/js/splitting.min.js"></Script>
       <Script strategy="lazyOnload" src="/js/pace.min.js"></Script>
     </main>
   );

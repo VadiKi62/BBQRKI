@@ -10,7 +10,8 @@ const GradientTypography = ({ text, ...props }) => {
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
         textTransform: "uppercase",
-        fontSize: "1.35rem",
+        fontSize: "1.25rem",
+        lineHeight: "1.35rem",
         fontFamily: (theme) => `${theme.typography.fontFamily}`,
       }}
       {...props}

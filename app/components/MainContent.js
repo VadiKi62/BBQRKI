@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import HeroLayout from "./Hero/HeroLayout";
 import Menu from "./Menu/Menu";

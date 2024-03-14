@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { Grid, ButtonBase, Link as MuiLink, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -135,13 +135,16 @@ function Footer({ rest }) {
             </a>
           </Grid>
         </ContactInfo>
-        <CopyrightInfo>{/* <Copyright /> */}</CopyrightInfo>
-        <Image
-          src="/logo.gif"
-          alt="gif-bbqr-code-nataliaki"
-          width={80}
-          height={80}
-        />
+        <CopyrightInfo></CopyrightInfo>
+
+        <a href="/about">
+          <Image
+            src="/logo.gif"
+            alt="gif-bbqr-code-nataliaki"
+            width={60}
+            height={60}
+          />
+        </a>
       </FooterContainer>
     </Section>
   );

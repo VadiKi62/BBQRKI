@@ -8,6 +8,7 @@ import ShowcaseCircleSide from "@app/components/Pres/ShowcaseCircleSide";
 import ShowcaseGrid from "@app/components/Pres/ShowcaseGrid";
 import ShowCase from "@app/components/Pres/ShowCase";
 import Navbar from "@app/components/Pres/NavBarPres";
+import Screenshots from "@app/components/Pres/Screenshots";
 import SliderHeader from "@app/components/Pres/SliderHeader";
 import AboutUs from "@app/components/Pres/AboutUs";
 // import Works from "@app/components/Works/Works3";
@@ -35,10 +36,10 @@ export default function HomeAbout() {
         <div className="main-content">
           <Header />
           <ShowCase />
+          <Services />
+          <Screenshots />
           {/* <ShowcaseGrid /> */}
           <ShowcaseCircleSide />
-
-          <Services />
 
           {/* <AboutUs /> */}
           {/* <Works />
@@ -47,7 +48,7 @@ export default function HomeAbout() {
       <FullTestimonials classText="pb-0" />
       <Team />
       <Blogs /> */}
-          {/* <CallToAction /> */}
+          <CallToAction />
           <Footer />
         </div>
       </ThemeProvider>

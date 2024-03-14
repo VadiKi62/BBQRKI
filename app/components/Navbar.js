@@ -85,6 +85,8 @@ export default function App() {
   const isJukebox = restData.name === "Jukebox";
   const isGelissimo = restData.name === "Gelissimo";
   const isBelvedere = restData.name === "Belvedere";
+  const appMenu = Boolean(restData.menu);
+  const lang = i18n.language;
   let width, h;
   const theme = useTheme();
 
@@ -114,10 +116,6 @@ export default function App() {
 
     return theme.palette.primary.main;
   }
-
-  const appMenu = Boolean(restData.menu);
-  const lang = i18n.language;
-  //   const router = useRouter();
 
   const handleLanguageClick = (event) => {
     event.preventDefault();
@@ -178,21 +176,21 @@ export default function App() {
             </Logo>
           )}
           <Stack direction="row" spacing={2} alignItems="center">
-            {/* {appMenu && (
-                <AboutButton
-                  lang={lang}
-                  to="menu"
-                  smooth={true}
-                  duration={800}
-                  spy={true}
-                  offset={-headerRef?.current?.offsetTop}
-                  // onClick={(e) => {
-                  //   router.push("/");
-                  // }}
-                >
-                  {t("menu.Menu")}
-                </AboutButton>
-              )} */}
+            {appMenu && (
+              <AboutButton
+                lang={lang}
+                to="menu"
+                smooth={true}
+                duration={800}
+                spy={true}
+                offset={-headerRef?.current?.offsetTop}
+                // onClick={(e) => {
+                //   router.push("/");
+                // }}
+              >
+                {t("menu.Menu")}
+              </AboutButton>
+            )}
             <LanguageSwitcher
               // color={isGelissimo ? "secondary.dark" : "inherit"}
               onClick={handleLanguageClick}
