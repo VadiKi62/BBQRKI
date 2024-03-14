@@ -150,7 +150,7 @@ export default function HeroLayout({ rest }) {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [rest.menu]);
   const altName = `${rest.name} logo gif`;
 
   const renderHeader = () => {
