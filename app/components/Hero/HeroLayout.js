@@ -78,7 +78,7 @@ const HeroTitle = styled(Typography)(({ theme }) => ({
 const HighlightedText = styled("span")(({ theme }) => ({
   // color: theme.palette.text.red,
   fontWeight: 800,
-  lineHeight: "2.2rem",
+  lineHeight: "2.4rem",
   fontFamily: theme.typography.fontFamily,
   fontSize: theme.typography.h1.fontSize,
   textTransform: "uppercase",
@@ -105,6 +105,7 @@ const CallContainer = styled("div")`
 `;
 
 export default function HeroLayout({ rest }) {
+  console.log("rest", rest);
   const { t } = useTranslation();
 
   const isGenesis = rest.name === "Genesis";
@@ -173,7 +174,9 @@ export default function HeroLayout({ rest }) {
     if (!showInitialHeader) {
       return (
         <InfoContainer>
-          {showScan && <ScanInfo t={t} isSmallScreen={isSmallScreen} />}
+          {showScan && (
+            <ScanInfo t={t} isSmallScreen={isSmallScreen} rest={rest} />
+          )}
           {showInside && (
             <InsideInfo
               isSmallScreen={isSmallScreen}
@@ -232,7 +235,9 @@ export default function HeroLayout({ rest }) {
       <Overlay />
 
       {!showLoading && !devel && (
-        <TitleContainer sx={{ mt: isSmallScreen ? -6 : 0 }}>
+        <TitleContainer
+          sx={{ mt: isSmallScreen && rest.slogans.length > 0 ? -6 : -5 }}
+        >
           <HeroTitle>
             {t("hero.wellcome")}
             <HighlightedText
@@ -264,10 +269,13 @@ export default function HeroLayout({ rest }) {
   );
 }
 
-const ScanInfo = ({ t, isSmallScreen }) => {
+const ScanInfo = ({ t, isSmallScreen, rest }) => {
   return (
     <TitleContainer
-      sx={{ mb: isSmallScreen ? 3 : 10, mt: isSmallScreen ? -4 : -8 }}
+      sx={{
+        mb: isSmallScreen && rest.slogans.length > 0 ? 3 : 10,
+        mt: isSmallScreen && rest.slogans.length > 0 ? -4 : -8,
+      }}
     >
       <Typography
         align="center"

@@ -137,14 +137,14 @@ function Footer({ rest }) {
         </ContactInfo>
         <CopyrightInfo></CopyrightInfo>
 
-        <a href="/about">
-          <Image
+        {/* <a href="/about"> */}
+        {/* <Image
             src="/logo.gif"
             alt="gif-bbqr-code-nataliaki"
             width={60}
             height={60}
           />
-        </a>
+        </a> */}
       </FooterContainer>
     </Section>
   );
