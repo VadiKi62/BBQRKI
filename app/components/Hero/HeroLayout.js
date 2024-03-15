@@ -43,7 +43,7 @@ const TitleContainer = styled(Container)(({ theme }) => ({
   // paddingTop: -50,
   display: "flex",
   flexDirection: "column",
-  justifyContent: "center",
+  justifyContent: "flex-start",
   alignItems: "center",
   alignContent: "center",
   textAlign: "center",
@@ -55,7 +55,7 @@ const InfoContainer = styled(Container)(({ theme }) => ({
   // paddingTop: -50,
   display: "flex",
   flexDirection: "column",
-  justifyContent: "space-evenly",
+  justifyContent: "space-between",
   alignItems: "center",
   alignContent: "center",
   textAlign: "center",
@@ -232,7 +232,7 @@ export default function HeroLayout({ rest }) {
       <Overlay />
 
       {!showLoading && !devel && (
-        <TitleContainer sx={{ mt: isSmallScreen ? -7 : 0, mb: 0 }}>
+        <TitleContainer sx={{ mt: isSmallScreen ? -9 : 0, mb: 0 }}>
           <HeroTitle>
             {t("hero.wellcome")}
             <HighlightedText
@@ -266,7 +266,7 @@ export default function HeroLayout({ rest }) {
 
 const ScanInfo = ({ t, isSmallScreen }) => {
   return (
-    <TitleContainer sx={{ mb: 10, mt: -10 }}>
+    <TitleContainer sx={{ mb: 10, mt: -5 }}>
       <Typography
         align="center"
         color="primary.main"
