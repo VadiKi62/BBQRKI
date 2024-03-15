@@ -105,7 +105,6 @@ const CallContainer = styled("div")`
 `;
 
 export default function HeroLayout({ rest }) {
-  console.log("rest", rest);
   const { t } = useTranslation();
 
   const isGenesis = rest.name === "Genesis";
@@ -181,17 +180,19 @@ export default function HeroLayout({ rest }) {
             <InsideInfo
               isSmallScreen={isSmallScreen}
               messageInside={messageInside}
+              rest={rest}
             />
           )}
           {rest.slogans.length > 0 && <SloganRotator strings={rest.slogans} />}
           {rest.slogans.length < 1 && rest.slogan && (
-            <InsideInfo
+            <Slogan
               isSmallScreen={isSmallScreen}
-              messageInside={rest.slogan}
+              slogan={rest.slogan}
+              rest={rest}
             />
           )}
           {rest.animLogo && (
-            <div style={{ borderRadius: "50%", marginBottom: "-2.5rem" }}>
+            <div style={{ borderRadius: "50%", marginBottom: "-1.5rem" }}>
               <Image
                 src={rest.animLogo}
                 alt={altName}
@@ -236,7 +237,7 @@ export default function HeroLayout({ rest }) {
 
       {!showLoading && !devel && (
         <TitleContainer
-          sx={{ mt: isSmallScreen && rest.slogans.length > 0 ? -6 : -5 }}
+          sx={{ mt: isSmallScreen && rest.slogans.length > 0 ? -6 : -4 }}
         >
           <HeroTitle>
             {t("hero.wellcome")}
@@ -273,8 +274,8 @@ const ScanInfo = ({ t, isSmallScreen, rest }) => {
   return (
     <TitleContainer
       sx={{
-        mb: isSmallScreen && rest.slogans.length > 0 ? 3 : 10,
-        mt: isSmallScreen && rest.slogans.length > 0 ? -4 : -8,
+        mb: isSmallScreen && rest.slogans.length > 0 ? 3 : 0,
+        mt: isSmallScreen && rest.slogans.length > 0 ? -4 : -3,
       }}
     >
       <Typography
@@ -304,9 +305,14 @@ const ScanInfo = ({ t, isSmallScreen, rest }) => {
   );
 };
 
-const InsideInfo = ({ isSmallScreen, messageInside }) => {
+const InsideInfo = ({ isSmallScreen, messageInside, rest }) => {
   return (
-    <TitleContainer sx={{ mb: 3, mt: -4 }}>
+    <TitleContainer
+      sx={{
+        mb: isSmallScreen && rest.slogans.length > 0 ? 3 : 15,
+        mt: isSmallScreen && rest.slogans.length > 0 ? -4 : -6,
+      }}
+    >
       <Typography
         color="text.dark"
         align="center"
@@ -317,6 +323,29 @@ const InsideInfo = ({ isSmallScreen, messageInside }) => {
         }}
       >
         {messageInside}
+      </Typography>
+    </TitleContainer>
+  );
+};
+
+const Slogan = ({ isSmallScreen, slogan, rest }) => {
+  return (
+    <TitleContainer
+      sx={{
+        mb: isSmallScreen && rest.slogans.length > 0 ? 3 : 2,
+        mt: isSmallScreen && rest.slogans.length > 0 ? -4 : -10,
+      }}
+    >
+      <Typography
+        color="text.dark"
+        align="center"
+        sx={{
+          fontSize: isSmallScreen ? "1.3rem" : "1.6rem",
+          lineHeight: isSmallScreen ? "1.3rem" : "1.6rem",
+          zIndex: 111,
+        }}
+      >
+        {slogan}
       </Typography>
     </TitleContainer>
   );
