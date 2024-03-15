@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import { Box, Grid, Typography } from "@mui/material";
-import Split from "@app/components/Common/Split";
 
 function CallToAction() {
   return (
