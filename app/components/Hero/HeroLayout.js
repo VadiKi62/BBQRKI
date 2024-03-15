@@ -78,7 +78,7 @@ const HeroTitle = styled(Typography)(({ theme }) => ({
 const HighlightedText = styled("span")(({ theme }) => ({
   // color: theme.palette.text.red,
   fontWeight: 800,
-  lineHeight: "2.9rem",
+  lineHeight: "2.2rem",
   fontFamily: theme.typography.fontFamily,
   fontSize: theme.typography.h1.fontSize,
   textTransform: "uppercase",
@@ -232,7 +232,7 @@ export default function HeroLayout({ rest }) {
       <Overlay />
 
       {!showLoading && !devel && (
-        <TitleContainer sx={{ mt: isSmallScreen ? -9 : 0, mb: 0 }}>
+        <TitleContainer sx={{ mt: isSmallScreen ? -7 : 0 }}>
           <HeroTitle>
             {t("hero.wellcome")}
             <HighlightedText
@@ -266,7 +266,9 @@ export default function HeroLayout({ rest }) {
 
 const ScanInfo = ({ t, isSmallScreen }) => {
   return (
-    <TitleContainer sx={{ mb: 10, mt: -5 }}>
+    <TitleContainer
+      sx={{ mb: isSmallScreen ? 6 : 10, mt: isSmallScree ? -5 : -8 }}
+    >
       <Typography
         align="center"
         color="primary.main"
