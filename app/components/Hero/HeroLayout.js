@@ -51,6 +51,18 @@ const TitleContainer = styled(Container)(({ theme }) => ({
   zIndex: 99,
 }));
 
+const InfoContainer = styled(Container)(({ theme }) => ({
+  // paddingTop: -50,
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-evenly",
+  alignItems: "center",
+  alignContent: "center",
+  textAlign: "center",
+  // position: "relative",
+  zIndex: 99,
+}));
+
 const HeroTitle = styled(Typography)(({ theme }) => ({
   fontWeight: 450,
   // marginBottom: 5,
@@ -160,7 +172,7 @@ export default function HeroLayout({ rest }) {
 
     if (!showInitialHeader) {
       return (
-        <>
+        <InfoContainer>
           {showScan && <ScanInfo t={t} isSmallScreen={isSmallScreen} />}
           {showInside && (
             <InsideInfo
@@ -176,7 +188,7 @@ export default function HeroLayout({ rest }) {
             />
           )}
           {rest.animLogo && (
-            <div style={{ borderRadius: "50%", marginBottom: "-1.5rem" }}>
+            <div style={{ borderRadius: "50%", marginBottom: "-2.5rem" }}>
               <Image
                 src={rest.animLogo}
                 alt={altName}
@@ -185,7 +197,7 @@ export default function HeroLayout({ rest }) {
               />
             </div>
           )}
-        </>
+        </InfoContainer>
       );
     }
 
@@ -254,7 +266,7 @@ export default function HeroLayout({ rest }) {
 
 const ScanInfo = ({ t, isSmallScreen }) => {
   return (
-    <TitleContainer sx={{ mb: 3, mt: -4 }}>
+    <TitleContainer sx={{ mb: 10, mt: -10 }}>
       <Typography
         align="center"
         color="primary.main"
