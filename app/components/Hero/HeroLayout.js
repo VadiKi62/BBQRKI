@@ -232,7 +232,7 @@ export default function HeroLayout({ rest }) {
       <Overlay />
 
       {!showLoading && !devel && (
-        <TitleContainer sx={{ mt: isSmallScreen ? -7 : 0 }}>
+        <TitleContainer sx={{ mt: isSmallScreen ? -6 : 0 }}>
           <HeroTitle>
             {t("hero.wellcome")}
             <HighlightedText
@@ -267,7 +267,7 @@ export default function HeroLayout({ rest }) {
 const ScanInfo = ({ t, isSmallScreen }) => {
   return (
     <TitleContainer
-      sx={{ mb: isSmallScreen ? 6 : 10, mt: isSmallScree ? -5 : -8 }}
+      sx={{ mb: isSmallScreen ? 3 : 10, mt: isSmallScreen ? -4 : -8 }}
     >
       <Typography
         align="center"
