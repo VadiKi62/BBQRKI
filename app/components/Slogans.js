@@ -21,7 +21,6 @@ const swiperOptions = {
   onSwiper: (swiper) => {
     setTimeout(() => {
       for (var i = 0; i < swiper.slides?.length; i++) {
-        console.log("!!!!!!!!!!!!swiper!!", swiper);
         swiper?.slides[i]?.childNodes[0]?.setAttribute(
           "data-swiper-parallax",
           6.99 * swiper.width

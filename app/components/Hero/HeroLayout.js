@@ -214,6 +214,12 @@ export default function HeroLayout({ rest }) {
         </TitleContainer>
       )}
 
+      {!isWorkingTime && !showLoading && (
+        <InfoContainer>
+          <Typography>{rest.name} is closed now.</Typography>
+        </InfoContainer>
+      )}
+
       <InfoContainer>{renderHeader()}</InfoContainer>
 
       {!showLoading && (
@@ -237,10 +243,6 @@ export default function HeroLayout({ rest }) {
             </div>
           )}
         </InfoContainer>
-      )}
-
-      {!isWorkingTime && (
-        <InfoContainer>{rest.name} is not working now.</InfoContainer>
       )}
 
       {modalVisible && (

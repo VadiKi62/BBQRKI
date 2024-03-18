@@ -77,7 +77,6 @@ const RestSchema = new Schema({
   startTime: {
     type: String,
     required: true,
-    default: "11:00",
     validate: {
       validator: function (value) {
         // Validate the time format (HH:mm)
@@ -95,7 +94,6 @@ const RestSchema = new Schema({
   endTime: {
     type: String,
     required: true,
-    default: "21:00",
     validate: {
       validator: function (value) {
         // Validate the time format (HH:mm)

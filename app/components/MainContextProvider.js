@@ -36,7 +36,38 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
   const [restData, setRest] = useState(rest);
   const isHighSeason = useHighSeason(rest);
   const countTimer = rest.buttonTimer || 10;
+
+  const [isWorkingTime, setIsWorkingTime] = useState(true);
   const [zont, setZont] = useState(umbrella);
+  const history = typeof window !== "undefined" ? window?.history : null;
+
+  useEffect(() => {
+    const timeChecker = workingTimeChecker(rest.startTime, rest.endTime);
+    console.log(rest.endTime);
+
+    console.log("timeChecker is", timeChecker);
+
+    if (timeChecker) {
+      setIsWorkingTime(true);
+      if (zont) {
+        setShowInitialHeader(true);
+        const timeoutId = setTimeout(() => {
+          history.replaceState({}, document.title, window.location.pathname);
+        }, 5 * 60 * 1000);
+
+        return () => clearTimeout(timeoutId);
+      } else {
+        setShowInitialHeader(false);
+        setShowScan(true);
+      }
+    } else {
+      setIsWorkingTime(false);
+      setShowInitialHeader(false);
+      setShowScan(true);
+      setZont(null);
+    }
+  }, [zont, history, rest.startTime, rest.endTime]);
+
   const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const isVerySmallScreen = useMediaQuery((theme) =>
     theme.breakpoints.down("xs")
@@ -45,7 +76,6 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
   const [showInitialHeader, setShowInitialHeader] = useState(false);
   const [showInside, setShowInside] = useState(false);
   const [showScan, setShowScan] = useState(false);
-  const history = typeof window !== "undefined" ? window?.history : null;
 
   const [countdownWaiter, setCountdownWaiter] = useState(0);
   const [countdownBill, setCountdownBill] = useState(0);
@@ -355,30 +385,6 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
   //     }
   //   }
   // }, [countTimer]);
-  const [isWorkingTime, setIsWorkingTime] = useState(true);
-
-  useEffect(() => {
-    const timeChecker = workingTimeChecker(rest.startTime, rest.endTime);
-
-    if (timeChecker) {
-      setIsWorkingTime(true);
-      if (zont) {
-        setShowInitialHeader(true);
-        const timeoutId = setTimeout(() => {
-          history.replaceState({}, document.title, window.location.pathname);
-        }, 5 * 60 * 1000);
-
-        return () => clearTimeout(timeoutId);
-      } else {
-        setShowInitialHeader(false);
-        setShowScan(true);
-      }
-    } else {
-      setIsWorkingTime(false);
-      setShowInitialHeader(false);
-      setShowScan(true);
-    }
-  }, [zont, history, rest.startTime, rest.endTime]);
 
   const contextValue = {
     countdownWaiter,

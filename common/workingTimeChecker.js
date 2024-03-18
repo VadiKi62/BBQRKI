@@ -4,7 +4,6 @@ export default function workingTimeChecker(
   timeZone = "Europe/Athens"
 ) {
   // Get the current time in the specified time zone
-  timeZone = "America/New_York";
   const currentTime = new Date().toLocaleString("en-US", {
     hour: "numeric",
     minute: "numeric",
@@ -12,6 +11,8 @@ export default function workingTimeChecker(
     hour12: false,
     timeZone,
   });
+
+  console.log("currentTime", currentTime);
   const currentTimeStamp = getTimestampInTimeZone(timeZone);
 
   // Convert start and end times to 24-hour format
@@ -20,7 +21,9 @@ export default function workingTimeChecker(
 
   // Create Date objects for start and end times
   const startDateTime = new Date().setHours(startHour, startMinute, 0, 0);
+  console.log(intoDate(startDateTime));
   const endDateTime = new Date().setHours(endHour, endMinute, 0, 0);
+  console.log(intoDate(endDateTime));
 
   // Check if the current time is within the start and end times
   return currentTimeStamp >= startDateTime && currentTimeStamp < endDateTime;
@@ -29,4 +32,22 @@ export default function workingTimeChecker(
 function getTimestampInTimeZone(timeZone) {
   const date = new Date().toLocaleString("en-US", { timeZone: timeZone });
   return new Date(date).getTime();
+}
+
+function intoDate(unixTimestamp) {
+  // Create a new Date object from the Unix timestamp
+  const date = new Date(unixTimestamp);
+
+  // You can then access the date and time components
+  console.log("Year:", date.getFullYear()); // Output: 2023
+  console.log("Month:", date.getMonth() + 1); // Output: 3 (Months are zero-indexed)
+  console.log("Day:", date.getDate()); // Output: 16
+  console.log("Hours:", date.getHours()); // Output: 0
+  console.log("Minutes:", date.getMinutes()); // Output: 0
+  console.log("Seconds:", date.getSeconds()); // Output: 0
+
+  // You can also format the date and time as a string
+  const formattedDateTime = date.toLocaleString(); // Output: 3/16/2023, 12:00:00 AM (formatted based on your local time zone)
+  console.log("Formatted Date and Time:", formattedDateTime);
+  return formattedDateTime;
 }

@@ -98,6 +98,8 @@ export const POST = async (request) => {
       numberOfTables: { inside: 10, outside: 50 },
       languages: { eng: true, el: true },
     },
+    startTime: "11:00",
+    endTime: "11:00",
   };
 
   const defaultData = {
@@ -271,6 +273,8 @@ export const POST = async (request) => {
       return new Response("This restaurant already exists", { status: 409 });
     }
 
+    if (!rest.startTime) rest.startTime = "11:00";
+    if (!rest.endTime) rest.endTime = "17:00";
     const newRest = new Rest(rest);
 
     await newRest.save();
