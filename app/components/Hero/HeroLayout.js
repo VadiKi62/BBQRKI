@@ -279,7 +279,7 @@ const ScanInfo = ({ t, isSmallScreen, rest, isGenesis }) => {
   const responsiveStyles = () => {
     let returnValues = { mb: 0, mt: -4 };
     if (isSmallScreen && rest.slogans.length > 0) returnValues.mb = 3;
-    returnValues.mt = -3;
+    returnValues.mt = -2;
 
     if (isSmallScreen) returnValues.mb = 15;
     returnValues.mt = -6;
@@ -318,7 +318,6 @@ const ScanInfo = ({ t, isSmallScreen, rest, isGenesis }) => {
           {t("hero.scan")}
         </Typography>
       </>
-      //{" "}
     </TitleContainer>
   );
 };
