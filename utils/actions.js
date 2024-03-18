@@ -33,6 +33,7 @@ export const fetchRest = async (id) => {
       throw new Error(`Failed to fetch restaurant with ID ${id}`);
     }
     const restData = await data.json();
+    console.log("restData from ACTIONS", restData);
     return restData;
   } catch (error) {
     console.error(`Error fetching restaurant with ID ${id}:`, error);

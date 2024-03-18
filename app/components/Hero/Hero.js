@@ -41,7 +41,6 @@ export default function Hero({ zonti, name }) {
         flexDirection: "column",
         justifyContent: "flex-end",
         alignItems: "center",
-        mt: isSmallScreen ? -11 : 0,
       }}
     >
       <Typography

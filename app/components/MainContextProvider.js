@@ -9,6 +9,7 @@ import {
   findPreferredLanguage,
 } from "@common/index";
 import useGeo from "@common/useGeo";
+import workingTimeChecker from "@common/workingTimeChecker";
 import useHighSeason from "@common/useHighSeason";
 import { I18nextProvider } from "react-i18next";
 import i from "@locales/i18n";
@@ -354,19 +355,30 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
   //     }
   //   }
   // }, [countTimer]);
+  const [isWorkingTime, setIsWorkingTime] = useState(true);
 
   useEffect(() => {
-    if (zont) {
-      setShowInitialHeader(true);
-      setTimeout(() => {
-        history.replaceState({}, document.title, window.location.pathname);
-        // router?.replace(router.asPath, undefined, { shallow: true });
-      }, 5 * 60 * 1000);
+    const timeChecker = workingTimeChecker(rest.startTime, rest.endTime);
+
+    if (timeChecker) {
+      setIsWorkingTime(true);
+      if (zont) {
+        setShowInitialHeader(true);
+        const timeoutId = setTimeout(() => {
+          history.replaceState({}, document.title, window.location.pathname);
+        }, 5 * 60 * 1000);
+
+        return () => clearTimeout(timeoutId);
+      } else {
+        setShowInitialHeader(false);
+        setShowScan(true);
+      }
     } else {
+      setIsWorkingTime(false);
       setShowInitialHeader(false);
       setShowScan(true);
     }
-  }, [zont, history]);
+  }, [zont, history, rest.startTime, rest.endTime]);
 
   const contextValue = {
     countdownWaiter,
@@ -400,6 +412,7 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
     showScan,
     showInside,
     messageInside,
+    isWorkingTime,
   };
 
   return (

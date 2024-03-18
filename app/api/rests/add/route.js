@@ -73,9 +73,9 @@ export const POST = async (request) => {
     slogan:
       "Everyone you meet is fighting a battle you know nothing about. Be kind. Always.",
     tel: "+3010001000",
-    email: "genesis@gmail.com",
+    email: "genesis@genesis.com",
     schedule: "Mon-Sat: 11AM - 23PM",
-    address: "Παρναβέλη 1Β, Nea Kallikratia 63080, Halchidiki, Greece",
+    address: "Antonioy Kelesi, Nea Kallikratia 63080, Halchidiki, Greece",
     coords: {
       mainSpot: { latitude: 40.310434866939566, longitude: 23.06235701312798 },
       beachSpot1: { latitude: 40.3100075, longitude: 23.0628176 },
@@ -257,7 +257,7 @@ export const POST = async (request) => {
   };
 
   //   const rest = (await request.json());
-  const rest = defaultData;
+  const rest = genesisData;
   try {
     await connectToDB();
     const { name, pathName } = rest;

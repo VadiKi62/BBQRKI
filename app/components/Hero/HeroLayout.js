@@ -40,45 +40,27 @@ const HeroSection = styled("section")(({ theme }) => ({
 }));
 
 const TitleContainer = styled(Container)(({ theme }) => ({
-  // paddingTop: -50,
   display: "flex",
   flexDirection: "column",
-  justifyContent: "flex-start",
   alignItems: "center",
-  alignContent: "center",
   textAlign: "center",
-  // position: "relative",
   zIndex: 99,
 }));
 
-const InfoContainer = styled(Container)(({ theme }) => ({
-  // paddingTop: -50,
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "space-between",
-  alignItems: "center",
-  alignContent: "center",
-  textAlign: "center",
-  // position: "relative",
-  zIndex: 99,
-}));
+const InfoContainer = styled(TitleContainer)({});
 
 const HeroTitle = styled(Typography)(({ theme }) => ({
   fontWeight: 450,
-  // marginBottom: 5,
-  // marginTop: 10,
   lineHeight: "2.2rem",
   color: theme.palette.text.dark,
   fontFamily: theme.typography.fontFamily,
   fontSize: "2.1rem",
   zIndex: 2,
-  // position: "relative",
 }));
 
 const HighlightedText = styled("span")(({ theme }) => ({
-  // color: theme.palette.text.red,
   fontWeight: 800,
-  lineHeight: "2.4rem",
+  lineHeight: "2.5rem",
   fontFamily: theme.typography.fontFamily,
   fontSize: theme.typography.h1.fontSize,
   textTransform: "uppercase",
@@ -89,20 +71,9 @@ const CallButtonWrapper = styled(Stack)(({ theme }) => ({
   zIndex: 12,
   display: "flex",
   flexDirection: "column",
-  justifyItems: "flex-end",
   justifyContent: "center",
   alignItems: "center",
-  alignContent: "center",
-  alignItems: "center",
 }));
-
-const CallContainer = styled("div")`
-  z-index: 111;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
 
 export default function HeroLayout({ rest }) {
   const { t } = useTranslation();
@@ -111,9 +82,7 @@ export default function HeroLayout({ rest }) {
   const isGelissimo = rest.name === "Gelissimo";
   const isJukebox = rest.name === "Jukebox";
   const {
-    lang,
     devel,
-    currentPosition,
     isSmallScreen,
     showInitialHeader,
     zont,
@@ -126,11 +95,10 @@ export default function HeroLayout({ rest }) {
     handleCallBill,
     hideModal,
     run,
-    showCallWaiterButton,
-    headerRef,
     showScan,
     showInside,
     messageInside,
+    isWorkingTime,
   } = useMainContext();
 
   const [isSticky, setIsSticky] = useState(true);
@@ -178,7 +146,7 @@ export default function HeroLayout({ rest }) {
               t={t}
               isSmallScreen={isSmallScreen}
               rest={rest}
-              isGenesis={isGenesis}
+              isJukebox={isJukebox}
             />
           )}
           {showInside && (
@@ -187,24 +155,6 @@ export default function HeroLayout({ rest }) {
               messageInside={messageInside}
               rest={rest}
             />
-          )}
-          {rest.slogans.length > 0 && <SloganRotator strings={rest.slogans} />}
-          {rest.slogans.length < 1 && rest.slogan && (
-            <Slogan
-              isSmallScreen={isSmallScreen}
-              slogan={rest.slogan}
-              rest={rest}
-            />
-          )}
-          {rest.animLogo && (
-            <div style={{ borderRadius: "50%", marginBottom: "-1.5rem" }}>
-              <Image
-                src={rest.animLogo}
-                alt={altName}
-                width={110}
-                height={110}
-              />
-            </div>
           )}
         </InfoContainer>
       );
@@ -236,13 +186,16 @@ export default function HeroLayout({ rest }) {
   };
 
   return (
-    <HeroSection id="hero">
+    <HeroSection
+      id="hero"
+      sx={{ justifyContent: isSmallScreen ? "space-around" : "space-evenly" }}
+    >
       {devel && <Dev rest={rest} />}
       <Overlay />
 
       {!showLoading && !devel && (
         <TitleContainer
-          sx={{ mt: isSmallScreen && rest.slogans.length > 0 ? -6 : -4 }}
+        // sx={{ mt: isSmallScreen && rest.slogans.length > 0 ? -5 : -4 }}
         >
           <HeroTitle>
             {t("hero.wellcome")}
@@ -261,7 +214,34 @@ export default function HeroLayout({ rest }) {
         </TitleContainer>
       )}
 
-      <CallContainer>{renderHeader()}</CallContainer>
+      <InfoContainer>{renderHeader()}</InfoContainer>
+
+      {!showLoading && (
+        <InfoContainer>
+          {rest.slogans.length > 0 && <SloganRotator strings={rest.slogans} />}
+          {rest.slogans.length < 1 && rest.slogan && !isSmallScreen && (
+            <Slogan
+              isSmallScreen={isSmallScreen}
+              slogan={rest.slogan}
+              rest={rest}
+            />
+          )}
+          {rest.animLogo && (
+            <div style={{ borderRadius: "50%", marginBottom: "-1.5rem" }}>
+              <Image
+                src={rest.animLogo}
+                alt={altName}
+                width={100}
+                height={100}
+              />
+            </div>
+          )}
+        </InfoContainer>
+      )}
+
+      {!isWorkingTime && (
+        <InfoContainer>{rest.name} is not working now.</InfoContainer>
+      )}
 
       {modalVisible && (
         <ModalComponent
@@ -275,24 +255,23 @@ export default function HeroLayout({ rest }) {
   );
 }
 
-const ScanInfo = ({ t, isSmallScreen, rest, isGenesis }) => {
-  const responsiveStyles = () => {
-    let returnValues = { mb: 19, mt: -5 };
-    if (isSmallScreen && rest.slogans.length > 0) returnValues.mb = 3;
-    returnValues.mt = -3;
+const ScanInfo = ({ t, isSmallScreen, rest, isJukebox }) => {
+  // const responsiveStyles = () => {
+  //   let returnValues = { mb: 19, mt: 0 };
 
-    if (isSmallScreen) returnValues.mb = 16;
-    returnValues.mt = -6;
+  //   if (isSmallScreen) {
+  //     if (rest.slogans.length > 0) {
+  //       returnValues.mb = 3;
+  //     } else {
+  //       returnValues.mb = 16;
+  //     }
+  //     returnValues.mt = 0;
+  //   }
 
-    return returnValues;
-  };
+  //   return returnValues;
+  // };
   return (
-    <TitleContainer
-      sx={{
-        mb: responsiveStyles().mb,
-        mt: responsiveStyles().mt,
-      }}
-    >
+    <TitleContainer>
       <Typography
         align="center"
         color="primary.main"
@@ -309,8 +288,8 @@ const ScanInfo = ({ t, isSmallScreen, rest, isGenesis }) => {
         color="text.dark"
         align="center"
         sx={{
-          fontSize: isSmallScreen ? "1.3rem" : "2.2rem",
-          lineHeight: isSmallScreen ? "1.3rem" : "2.3rem",
+          fontSize: isSmallScreen ? "1.1rem" : "2.2rem",
+          lineHeight: isSmallScreen ? "1.2rem" : "2.3rem",
           zIndex: 111,
         }}
       >
@@ -323,10 +302,10 @@ const ScanInfo = ({ t, isSmallScreen, rest, isGenesis }) => {
 const InsideInfo = ({ isSmallScreen, messageInside, rest }) => {
   return (
     <TitleContainer
-      sx={{
-        mb: isSmallScreen && rest.slogans.length > 0 ? 3 : 15,
-        mt: isSmallScreen && rest.slogans.length > 0 ? -4 : -6,
-      }}
+    // sx={{
+    //   mb: isSmallScreen && rest.slogans.length > 0 ? 3 : 15,
+    //   mt: isSmallScreen && rest.slogans.length > 0 ? -4 : -6,
+    // }}
     >
       <Typography
         color="text.dark"
@@ -346,10 +325,12 @@ const InsideInfo = ({ isSmallScreen, messageInside, rest }) => {
 const Slogan = ({ isSmallScreen, slogan, rest }) => {
   return (
     <TitleContainer
-      sx={{
-        mb: isSmallScreen && rest.slogans.length > 0 ? 3 : 2,
-        mt: isSmallScreen && rest.slogans.length > 0 ? -4 : -10,
-      }}
+      sx={
+        {
+          // mb: isSmallScreen && rest.slogans.length > 0 ? 3 : 2,
+          // mt: isSmallScreen && rest.slogans.length > 0 ? -4 : -10,
+        }
+      }
     >
       <Typography
         color="text.dark"
