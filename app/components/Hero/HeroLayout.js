@@ -201,8 +201,8 @@ export default function HeroLayout({ rest }) {
               <Image
                 src={rest.animLogo}
                 alt={altName}
-                width={135}
-                height={135}
+                width={110}
+                height={110}
               />
             </div>
           )}
@@ -297,9 +297,9 @@ const ScanInfo = ({ t, isSmallScreen, rest, isGenesis }) => {
         align="center"
         color="primary.main"
         sx={{
-          fontSize: isSmallScreen ? "1.2rem" : "2rem",
+          fontSize: isSmallScreen ? "1.4rem" : "2.5rem",
           fontWeight: 900,
-          lineHeight: isSmallScreen ? "1.2rem" : "2rem",
+          lineHeight: isSmallScreen ? "1.4rem" : "2.5rem",
           zIndex: 111,
         }}
       >
