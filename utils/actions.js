@@ -10,7 +10,7 @@ export const fetchRestaurants = async () => {
     const apiUrl = `${API_URL}/api/rests/all`;
 
     const data = await fetch(apiUrl, {
-      next: { revalidate: 60 },
+      next: { revalidate: 1 },
     });
     if (!data.ok) {
       throw new Error("Failed to fetch restaurants");
@@ -27,7 +27,7 @@ export const fetchRest = async (id) => {
   try {
     const apiUrl = `${API_URL}/api/rests/${id}`;
     const data = await fetch(apiUrl, {
-      next: { revalidate: 60 },
+      next: { revalidate: 1 },
     });
     if (!data.ok) {
       throw new Error(`Failed to fetch restaurant with ID ${id}`);
@@ -45,7 +45,7 @@ export const fetchRestByPath = async (path) => {
   try {
     const apiUrl = `${API_URL}/api/rests/findpathname/${path}`;
     const data = await fetch(apiUrl, {
-      next: { revalidate: 60 },
+      next: { revalidate: 1 },
     });
     if (!data.ok) {
       throw new Error(`Failed to fetch restaurant with pathname ${path}`);
