@@ -216,7 +216,10 @@ export default function HeroLayout({ rest }) {
 
       {!isWorkingTime && !showLoading && (
         <InfoContainer>
-          <Typography>{rest.name} is closed now.</Typography>
+          <p>{rest.name} is closed now.</p>
+          <p>
+            We are working from {rest.startTime} till {rest.endTime}.
+          </p>
         </InfoContainer>
       )}
 
