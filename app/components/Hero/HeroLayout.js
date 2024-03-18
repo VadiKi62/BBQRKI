@@ -32,7 +32,7 @@ const HeroSection = styled("section")(({ theme }) => ({
   width: "100%",
   height: "100vh",
   backgroundSize: "cover",
-  position: "relative",
+  // position: "relative",
   padding: 0,
   display: "flex",
   flexDirection: "column",
@@ -52,10 +52,10 @@ const TitleContainer = styled(Container)(({ theme }) => ({
 }));
 
 const InfoContainer = styled(Container)(({ theme }) => ({
-  // paddingTop: -50,
+  // marginTop: "-10rem",
   display: "flex",
   flexDirection: "column",
-  justifyContent: "space-between",
+  justifyContent: "flex-start",
   alignItems: "center",
   alignContent: "center",
   textAlign: "center",
@@ -101,7 +101,7 @@ const CallContainer = styled("div")`
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-items: flex-end;
 `;
 
 export default function HeroLayout({ rest }) {
@@ -174,7 +174,12 @@ export default function HeroLayout({ rest }) {
       return (
         <InfoContainer>
           {showScan && (
-            <ScanInfo t={t} isSmallScreen={isSmallScreen} rest={rest} />
+            <ScanInfo
+              t={t}
+              isSmallScreen={isSmallScreen}
+              rest={rest}
+              isGenesis={isGenesis}
+            />
           )}
           {showInside && (
             <InsideInfo
@@ -270,37 +275,50 @@ export default function HeroLayout({ rest }) {
   );
 }
 
-const ScanInfo = ({ t, isSmallScreen, rest }) => {
+const ScanInfo = ({ t, isSmallScreen, rest, isGenesis }) => {
+  const responsiveStyles = () => {
+    let returnValues = { mb: 0, mt: -4 };
+    if (isSmallScreen && rest.slogans.length > 0) returnValues.mb = 3;
+    returnValues.mt = -3;
+
+    if (isSmallScreen) returnValues.mb = 15;
+    returnValues.mt = -6;
+
+    return returnValues;
+  };
   return (
     <TitleContainer
       sx={{
-        mb: isSmallScreen && rest.slogans.length > 0 ? 3 : 0,
-        mt: isSmallScreen && rest.slogans.length > 0 ? -4 : -3,
+        mb: responsiveStyles().mb,
+        mt: responsiveStyles().mt,
       }}
     >
-      <Typography
-        align="center"
-        color="primary.main"
-        sx={{
-          fontSize: isSmallScreen ? "1.2rem" : "2rem",
-          fontWeight: 900,
-          lineHeight: isSmallScreen ? "1.2rem" : "2rem",
-          zIndex: 111,
-        }}
-      >
-        {t("hero.want")}
-      </Typography>
-      <Typography
-        color="text.dark"
-        align="center"
-        sx={{
-          fontSize: isSmallScreen ? "1.3rem" : "2.2rem",
-          lineHeight: isSmallScreen ? "1.3rem" : "2.3rem",
-          zIndex: 111,
-        }}
-      >
-        {t("hero.scan")}
-      </Typography>
+      <>
+        <Typography
+          align="center"
+          color="primary.main"
+          sx={{
+            fontSize: isSmallScreen ? "1.2rem" : "2rem",
+            fontWeight: 900,
+            lineHeight: isSmallScreen ? "1.2rem" : "2rem",
+            zIndex: 111,
+          }}
+        >
+          {t("hero.want")}
+        </Typography>
+        <Typography
+          color="text.dark"
+          align="center"
+          sx={{
+            fontSize: isSmallScreen ? "1.3rem" : "2.2rem",
+            lineHeight: isSmallScreen ? "1.3rem" : "2.3rem",
+            zIndex: 111,
+          }}
+        >
+          {t("hero.scan")}
+        </Typography>
+      </>
+      //{" "}
     </TitleContainer>
   );
 };

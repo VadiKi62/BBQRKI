@@ -19,7 +19,7 @@ function Feed({ children, ...props }) {
 
   const r = searchParams.get("r") || rest?.radiuses?.mainSpot;
 
-  let umbrella = searchParams.get("zont") || 1;
+  let umbrella = searchParams.get("zont") || null;
   const dev = searchParams.get("dev") || null;
 
   if (dev && !umbrella) {
