@@ -19,9 +19,9 @@ export default function Home() {
       <div className={styles.centered}>
         <Link href="/restaurants">RESTAURANTS </Link>
         <Link href="/about">ABOUT PRODUCT</Link>
-        <Link href="https://portfolio-example-lemon.vercel.app/">
-          ABOUT ME{" "}
-        </Link>
+        {/* <Link href="https://portfolio-example-lemon.vercel.app/">
+            ABOUT ME{" "}
+          </Link> */}
       </div>
       <Script strategy="beforeInteractive" src="/js/wow.min.js"></Script>
       <Script

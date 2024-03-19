@@ -230,8 +230,8 @@ export default function HeroLayout({ rest }) {
               <Image
                 src={rest.animLogo}
                 alt={altName}
-                width={100}
-                height={100}
+                width={isSmallScreen ? 100 : 175}
+                height={isSmallScreen ? 100 : 175}
               />
             </div>
           )}
