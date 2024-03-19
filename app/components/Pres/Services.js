@@ -63,7 +63,7 @@ const Features = () => {
         </Grid>
         <Grid container spacing={2}>
           {features.map((feature, index) => (
-            <>
+            <div key={index}>
               <Grid item xs={12} md={3} key={index} className="items">
                 <Fade
                   in
@@ -88,7 +88,7 @@ const Features = () => {
                   </Item>
                 </Fade>
               </Grid>
-            </>
+            </div>
           ))}
         </Grid>
       </Container>

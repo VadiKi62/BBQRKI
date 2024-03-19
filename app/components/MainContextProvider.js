@@ -9,7 +9,6 @@ import {
   findPreferredLanguage,
 } from "@common/index";
 import useGeo from "@common/useGeo";
-import workingTimeChecker from "@common/workingTimeChecker";
 import useHighSeason from "@common/useHighSeason";
 import { I18nextProvider } from "react-i18next";
 import i from "@locales/i18n";
@@ -42,31 +41,18 @@ export const MainContextProvider = ({ children, rest, umbrella, r, dev }) => {
   const history = typeof window !== "undefined" ? window?.history : null;
 
   useEffect(() => {
-    const timeChecker = workingTimeChecker(rest.startTime, rest.endTime);
-    console.log(rest.endTime);
+    if (zont) {
+      setShowInitialHeader(true);
+      const timeoutId = setTimeout(() => {
+        history.replaceState({}, document.title, window.location.pathname);
+      }, 5 * 60 * 1000);
 
-    console.log("timeChecker is", timeChecker);
-
-    if (timeChecker) {
-      setIsWorkingTime(true);
-      if (zont) {
-        setShowInitialHeader(true);
-        const timeoutId = setTimeout(() => {
-          history.replaceState({}, document.title, window.location.pathname);
-        }, 5 * 60 * 1000);
-
-        return () => clearTimeout(timeoutId);
-      } else {
-        setShowInitialHeader(false);
-        setShowScan(true);
-      }
+      return () => clearTimeout(timeoutId);
     } else {
-      setIsWorkingTime(false);
       setShowInitialHeader(false);
       setShowScan(true);
-      setZont(null);
     }
-  }, [zont, history, rest.startTime, rest.endTime]);
+  }, [zont, history]);
 
   const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const isVerySmallScreen = useMediaQuery((theme) =>

@@ -54,6 +54,48 @@ const RestSchema = new Schema({
       end: { type: Date },
     },
   },
+  workingTimeBeachSpots: {
+    type: {
+      startTime: {
+        type: String,
+        required: true,
+        default: "10:00",
+        validate: {
+          validator: function (value) {
+            // Validate the time format (HH:mm)
+            const pattern = /^([01]?\d|2[0-3]):([0-5]?\d)$/;
+            if (!pattern.test(value)) {
+              return false;
+            }
+
+            const [hours, minutes] = value.split(":").map(Number);
+            return hours >= 0 && hours < 24 && minutes >= 0 && minutes < 60;
+          },
+          message: (props) =>
+            `${props.value} is not a valid time format (HH:mm)!`,
+        },
+      },
+      endTime: {
+        type: String,
+        required: true,
+        default: "21:00",
+        validate: {
+          validator: function (value) {
+            // Validate the time format (HH:mm)
+            const pattern = /^([01]?\d|2[0-3]):([0-5]?\d)$/;
+            if (!pattern.test(value)) {
+              return false;
+            }
+
+            const [hours, minutes] = value.split(":").map(Number);
+            return hours >= 0 && hours < 24 && minutes >= 0 && minutes < 60;
+          },
+          message: (props) =>
+            `${props.value} is not a valid time format (HH:mm)!`,
+        },
+      },
+    },
+  },
   menu: { type: Schema.Types.ObjectId, ref: "Menu", default: null },
   backendEndpoints: {
     type: { waiter: { type: String }, bill: { type: String } },
@@ -72,42 +114,6 @@ const RestSchema = new Schema({
         inside: { type: Number, default: 10 },
         outside: { type: Number, default: 20 },
       },
-    },
-  },
-  startTime: {
-    type: String,
-    required: true,
-    default: "10:00",
-    validate: {
-      validator: function (value) {
-        // Validate the time format (HH:mm)
-        const pattern = /^([01]?\d|2[0-3]):([0-5]?\d)$/;
-        if (!pattern.test(value)) {
-          return false;
-        }
-
-        const [hours, minutes] = value.split(":").map(Number);
-        return hours >= 0 && hours < 24 && minutes >= 0 && minutes < 60;
-      },
-      message: (props) => `${props.value} is not a valid time format (HH:mm)!`,
-    },
-  },
-  endTime: {
-    type: String,
-    required: true,
-    default: "20:00",
-    validate: {
-      validator: function (value) {
-        // Validate the time format (HH:mm)
-        const pattern = /^([01]?\d|2[0-3]):([0-5]?\d)$/;
-        if (!pattern.test(value)) {
-          return false;
-        }
-
-        const [hours, minutes] = value.split(":").map(Number);
-        return hours >= 0 && hours < 24 && minutes >= 0 && minutes < 60;
-      },
-      message: (props) => `${props.value} is not a valid time format (HH:mm)!`,
     },
   },
 });

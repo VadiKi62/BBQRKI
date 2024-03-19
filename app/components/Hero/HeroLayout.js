@@ -98,7 +98,6 @@ export default function HeroLayout({ rest }) {
     showScan,
     showInside,
     messageInside,
-    isWorkingTime,
   } = useMainContext();
 
   const [isSticky, setIsSticky] = useState(true);
@@ -212,15 +211,6 @@ export default function HeroLayout({ rest }) {
             </HighlightedText>
           </HeroTitle>
         </TitleContainer>
-      )}
-
-      {!isWorkingTime && !showLoading && (
-        <InfoContainer>
-          <p>{rest.name} is closed now.</p>
-          <p>
-            We are working from {rest.startTime} till {rest.endTime}.
-          </p>
-        </InfoContainer>
       )}
 
       <InfoContainer>{renderHeader()}</InfoContainer>

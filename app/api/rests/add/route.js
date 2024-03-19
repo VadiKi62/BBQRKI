@@ -85,9 +85,13 @@ export const POST = async (request) => {
       start: new Date(currentYear, 3 - 1, 1),
       end: new Date(currentYear, 10 - 1, 30),
     },
+    workingTimeBeachSpots: {
+      startTime: "09:00",
+      endTime: "20:00",
+    },
     chat_id: "-4011132632",
     backendEndpoints: { waiter: "/waiter3", bill: "/bill3" },
-    pathName: "restaurantGenesis",
+    pathName: "genesis",
     themeName: "themeGenesis",
     app: {
       menu: true,
@@ -98,8 +102,7 @@ export const POST = async (request) => {
       numberOfTables: { inside: 10, outside: 50 },
       languages: { eng: true, el: true },
     },
-    startTime: "11:00",
-    endTime: "11:00",
+    animLogo: "/assets/images/Genesis/logo.png",
   };
 
   const defaultData = {
@@ -108,6 +111,10 @@ export const POST = async (request) => {
     tel: "+3010001000",
     email: "yourrestaurant@gmail.com",
     schedule: "Mon-Sat: 11AM - 23PM",
+    workingTimeBeachSpots: {
+      startTime: "09:00",
+      endTime: "20:00",
+    },
     address: "Παρναβέλη 1Β, Nea Kallikratia 63080, Halchidiki, Greece",
     coords: {
       mainSpot: { latitude: 40.310434866939566, longitude: 23.06235701312798 },
@@ -228,8 +235,12 @@ export const POST = async (request) => {
 
   const gelissimoData = {
     name: "Gelissimo",
-    slogan: "Gelissimo Slogan",
+    slogan: "Taste the sunshine with Gelissimo!",
     logoSrc: "/assets/images/Gelissimo/logo.png",
+    workingTimeBeachSpots: {
+      startTime: "09:00",
+      endTime: "20:00",
+    },
     tel: "+3010001000",
     email: "gelissimo@gelissimo.com",
     schedule: "Mon-Sat: 11AM - 23PM",
@@ -245,7 +256,7 @@ export const POST = async (request) => {
     },
     chat_id: "-4011132632",
     backendEndpoints: { waiter: "/button2607", bill: "/button2607" },
-    pathName: "restaurantGelissimo",
+    pathName: "gelissimo",
     themeName: "gelissimoTheme",
     app: {
       menu: false,
@@ -273,8 +284,6 @@ export const POST = async (request) => {
       return new Response("This restaurant already exists", { status: 409 });
     }
 
-    if (!rest.startTime) rest.startTime = "11:00";
-    if (!rest.endTime) rest.endTime = "17:00";
     const newRest = new Rest(rest);
 
     await newRest.save();

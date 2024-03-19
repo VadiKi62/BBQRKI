@@ -5,18 +5,13 @@ import Loader from "@app/components/common/Loaders/Loader";
 // import Navbar from "@app/components/Common/Navbar";
 import Header from "@app/components/Pres/Header";
 import ShowcaseCircleSide from "@app/components/Pres/ShowcaseCircleSide";
-import ShowcaseGrid from "@app/components/Pres/ShowcaseGrid";
+
 import ShowCase from "@app/components/Pres/ShowCase";
 import Navbar from "@app/components/Pres/NavBarPres";
 import Screenshots from "@app/components/Pres/Screenshots";
-import SliderHeader from "@app/components/Pres/SliderHeader";
-import AboutUs from "@app/components/Pres/AboutUs";
-// import Works from "@app/components/Works/Works3";
+
 import Services from "@app/components/Pres/Services";
-// import MinimalArea2 from "@app/components/Others/MinimalArea2";
-// import FullTestimonials from "@app/components/Testimonials/FullTestimonials";
-// import Team from "@app/components/Team/Team1";
-// import Blogs from "@app/components/Blogs/Blogs4";
+
 import { Suspense } from "react";
 import { unstable_noStore } from "next/cache";
 import CallToAction from "@app/components/Pres/CallToAction";

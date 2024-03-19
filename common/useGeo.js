@@ -1,16 +1,24 @@
 "use client";
 import { cloneElement, useEffect, useState } from "react";
 import { calculateDistance, getRestCoords } from "./index";
+import workingTimeChecker from "./WorkingTimeChecker";
 
 export default function useGeo(r, restaurant, zont, isHighSeason) {
   const [currentPosition, setCurrentPosition] = useState({
     accuracy: null,
     distanceToRest: null,
   });
+
+  console.log(restaurant?.workingTimeBeachSpots.startTime);
+  const { startTime, endTime } = restaurant?.workingTimeBeachSpots;
+
+  const isWorkingTimeForBeach = workingTimeChecker(startTime, endTime);
+  console.log("IS WORKING BEACH ?", isWorkingTimeForBeach);
   const [isGeolocationAvailable, setIsGeolocationAvailable] = useState(false);
   const [radius, setRadius] = useState(r || restaurant?.radiuses?.restSpot);
   const updateGeolocation = () => {
     const [mainSpot, rest] = getRestCoords(restaurant);
+    console.log("rest??", rest);
 
     const options = {
       enableHighAccuracy: true,
@@ -20,7 +28,11 @@ export default function useGeo(r, restaurant, zont, isHighSeason) {
       navigator.geolocation.watchPosition(resolve, reject, options);
     })
       .then((successCallback) => {
-        if (Object.keys(rest).length === 0 || !isHighSeason) {
+        if (
+          Object.keys(rest).length === 0 ||
+          !isHighSeason ||
+          !isWorkingTimeForBeach
+        ) {
           // If rest is empty, calculate distance for restSpot only
           const distanceToRest = calculateDistance(
             mainSpot,
