@@ -225,6 +225,10 @@ export default function App() {
             {" "}
             Deutsch
           </MenuItem>
+          <MenuItem onClick={() => handleLanguageSelect("ua")}>
+            {" "}
+            Українська
+          </MenuItem>
         </LanguagePopover>
         {/* </Toolbar> */}
       </Container>
