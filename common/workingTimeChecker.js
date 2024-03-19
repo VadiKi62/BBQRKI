@@ -11,8 +11,8 @@ export default function workingTimeChecker(
     hour12: false,
     timeZone,
   });
+  console.log("currentTime", currentTime);
 
-  // console.log("currentTime", currentTime);
   const currentTimeStamp = getTimestampInTimeZone(timeZone);
 
   // Convert start and end times to 24-hour format
@@ -21,8 +21,17 @@ export default function workingTimeChecker(
 
   // Create Date objects for start and end times
   const startDateTime = new Date().setHours(startHour, startMinute, 0, 0);
+  let endDateTime = new Date().setHours(endHour, endMinute, 0, 0);
 
-  const endDateTime = new Date().setHours(endHour, endMinute, 0, 0);
+  // If the end hour is less than the start hour, add 1 day to the end time
+  if (endHour < startHour) {
+    endDateTime = new Date(Date.now() + 86400000).setHours(
+      endHour,
+      endMinute,
+      0,
+      0
+    );
+  }
 
   // Check if the current time is within the start and end times
   return currentTimeStamp >= startDateTime && currentTimeStamp < endDateTime;
