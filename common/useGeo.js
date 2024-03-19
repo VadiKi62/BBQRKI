@@ -1,7 +1,7 @@
 "use client";
 import { cloneElement, useEffect, useState } from "react";
 import { calculateDistance, getRestCoords } from "./index";
-import workingTimeChecker from "./WorkingTimeChecker";
+import workingTimeChecker from "./workingTimeChecker";
 
 export default function useGeo(r, restaurant, zont, isHighSeason) {
   const [currentPosition, setCurrentPosition] = useState({
