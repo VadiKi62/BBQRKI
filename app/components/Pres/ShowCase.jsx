@@ -101,7 +101,7 @@ function Works3() {
             </Typography>
             <Typography
               variant="h4"
-              align="start"
+              align="left"
               color="primary.main"
               sx={{ fontWeight: 700, textTransform: "uppercase" }}
               className="color-font"

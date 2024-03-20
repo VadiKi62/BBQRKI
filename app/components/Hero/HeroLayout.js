@@ -36,7 +36,7 @@ const HeroSection = styled("section")(({ theme }) => ({
   padding: 0,
   display: "flex",
   flexDirection: "column",
-  justifyContent: "space-evenly",
+  // justifyContent: "space-evenly",
 }));
 
 const TitleContainer = styled(Container)(({ theme }) => ({
@@ -187,9 +187,8 @@ export default function HeroLayout({ rest }) {
   return (
     <HeroSection
       id="hero"
-      sx={{ justifyContent: isSmallScreen ? "space-around" : "space-evenly" }}
+      sx={{ justifyContent: devel ? "space-around" : "space-evenly" }}
     >
-      {devel && <Dev rest={rest} />}
       <Overlay />
 
       {!showLoading && !devel && (
@@ -215,7 +214,7 @@ export default function HeroLayout({ rest }) {
 
       <InfoContainer>{renderHeader()}</InfoContainer>
 
-      {!showLoading && (
+      {!showLoading && !devel && (
         <InfoContainer>
           {rest.slogans.length > 0 && <SloganRotator strings={rest.slogans} />}
           {rest.slogans.length < 1 && rest.slogan && !isSmallScreen && (
@@ -237,6 +236,8 @@ export default function HeroLayout({ rest }) {
           )}
         </InfoContainer>
       )}
+
+      {devel && <Dev rest={rest} />}
 
       {modalVisible && (
         <ModalComponent
