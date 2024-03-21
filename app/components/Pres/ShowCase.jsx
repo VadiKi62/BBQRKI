@@ -106,7 +106,7 @@ function Works3() {
               sx={{ fontWeight: 700, textTransform: "uppercase" }}
               className="color-font"
             >
-              Client press the button - Waiter go it. Just as easy as it is.
+              Client press the button - Waiter get it. Just as easy as it is.
             </Typography>
           </Grid>
         </Grid>

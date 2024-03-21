@@ -17,8 +17,12 @@ export default function Home() {
         />
       </div>
       <div className={styles.centered}>
-        <Link href="/restaurants">RESTAURANTS </Link>
-        <Link href="/about">ABOUT PRODUCT</Link>
+        <Link className="link-hover-effect" href="/restaurants">
+          RESTAURANTS{" "}
+        </Link>
+        <Link className="link-hover-effect" href="/about">
+          ABOUT PRODUCT
+        </Link>
         {/* <Link href="https://portfolio-example-lemon.vercel.app/">
             ABOUT ME{" "}
           </Link> */}

@@ -83,7 +83,11 @@ const Footer = () => {
 
         <CopyRight>
           <p>
-            © 2023. Made with passion by <a href="">Nataliaki</a>.
+            © 2023. Made with passion by{" "}
+            <a href="https://www.linkedin.com/in/natalia-kirejeva/">
+              Nataliaki
+            </a>
+            .
           </p>
         </CopyRight>
       </FooterContainer>

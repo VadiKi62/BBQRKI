@@ -121,6 +121,7 @@ body.hideX .pace {
     line-height: 1;
     background: linear-gradient(180deg, #fff 0%, rgba(17, 18, 21, 0.2) 70%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: 0.1;
   }
@@ -212,5 +213,17 @@ body.hideX .pace {
 
   .masonery .item-img .cont .sta.new {
     background: #ff4b4b;
+  }
+}
+
+.link-hover-effect {
+  display: inline-block;
+  padding: 15px 17px;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+
+  &:hover {
+    border-color: rgb(var(--border-color-rgb));
+    background: black;
   }
 }

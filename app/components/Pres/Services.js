@@ -63,32 +63,30 @@ const Features = () => {
         </Grid>
         <Grid container spacing={2}>
           {features.map((feature, index) => (
-            <div key={index}>
-              <Grid item xs={12} md={3} key={index} className="items">
-                <Fade
-                  in
-                  timeout={500}
-                  style={{ transitionDelay: `${index * 150}ms` }}
-                >
-                  <Item className="item">
-                    <Image
-                      src="/favicon.png"
-                      alt="logo_bbqr"
-                      width={49}
-                      height={45}
-                      className="spinning-icon"
-                    />
-                    <Typography variant="h5" sx={{ mt: 2, mb: 1 }}>
-                      {feature.title}
-                    </Typography>
-                    <Typography>{feature.description}</Typography>
-                    {/* <Link href={feature.link} className="more-stroke">
+            <Grid item xs={12} sm={4} md={3} key={index} className="items">
+              <Fade
+                in
+                timeout={500}
+                style={{ transitionDelay: `${index * 150}ms` }}
+              >
+                <Item className="item">
+                  <Image
+                    src="/favicon.png"
+                    alt="logo_bbqr"
+                    width={49}
+                    height={45}
+                    className="spinning-icon"
+                  />
+                  <Typography variant="h5" sx={{ mt: 2, mb: 1 }}>
+                    {feature.title}
+                  </Typography>
+                  <Typography>{feature.description}</Typography>
+                  {/* <Link href={feature.link} className="more-stroke">
                     <span></span>
                   </Link> */}
-                  </Item>
-                </Fade>
-              </Grid>
-            </div>
+                </Item>
+              </Fade>
+            </Grid>
           ))}
         </Grid>
       </Container>
