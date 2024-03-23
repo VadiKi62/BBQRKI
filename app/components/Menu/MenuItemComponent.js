@@ -3,11 +3,12 @@ import { styled } from "@mui/material/styles";
 import { Paper, Typography } from "@mui/material";
 
 const StyledMenuItem = styled(Paper)(({ theme }) => ({
-  margin: theme.spacing(0, 0),
-  padding: theme.spacing(3),
+  // margin: theme.spacing(0, 0),
+  padding: theme.spacing(1),
   zIndex: 22,
   display: "flex",
-  alignItems: "center",
+  justifyContent: "space-between",
+  // alignItems: "center",
   boxShadow: theme.shadows[4],
   transition: "transform 0.3s",
   "&:hover": {
@@ -16,22 +17,29 @@ const StyledMenuItem = styled(Paper)(({ theme }) => ({
   },
 }));
 const MenuImage = styled("img")(({ theme }) => ({
-  width: "100%",
-  minWidth: "50%",
-  height: "auto",
+  width: "155px",
+  height: "100%",
   borderRadius: "50%",
-  float: "left",
-  border: `2px solid ${theme.palette.secondary.main}`,
+  objectFit: "cover",
+  border: `3px solid ${theme.palette.secondary.background}`,
+  transition: "transform 0.8s",
+  "&:hover": {
+    transform: "scale(1.1)",
+  },
 }));
 
 const MenuContent = styled("div")(({ theme }) => ({
   marginLeft: theme.spacing(1),
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "flex-end",
+  justifyContent: "flex-start",
   position: "relative",
 }));
 
 const MenuLink = styled(Typography)(({ theme }) => ({
-  paddingRight: theme.spacing(0),
   fontSize: "22px",
+  textAlign: "right",
   // background: theme.palette.secondary.main,
   fontFamily: theme.typography.fontFamily,
   position: "relative",
@@ -50,16 +58,17 @@ const MenuPrice = styled("span")(({ theme }) => ({
   position: "relative",
   fontSize: "22px",
   zIndex: 1,
-  padding: theme.spacing(0, 2),
+  padding: theme.spacing(2, 2),
   fontWeight: 600,
-  color: theme.palette.text.dark,
+  color: theme.palette.primary.main,
   "&:hover": {
-    color: theme.palette.primary.main,
+    color: theme.palette.primary.red,
   },
 }));
 
 const MenuIngredients = styled("div")(({ theme }) => ({
   fontStyle: "italic",
+  textAlign: "right",
   marginLeft: theme.spacing(2),
   fontSize: "16px",
   color: `rgba(0, 0, 0, 0.7)`,
