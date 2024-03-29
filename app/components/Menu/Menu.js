@@ -43,6 +43,7 @@ function Menu({ menuRef, headerRef, menuData }) {
   const gridRef = useRef(null);
   const { lang, showInitialHeader } = useMainContext();
   const { t, i18n } = useTranslation();
+  console.log(menuData);
   const menu = getLangMenu(menuData.menuUpd, i18n.language);
 
   const headerOffset = headerRef?.clientHeight;

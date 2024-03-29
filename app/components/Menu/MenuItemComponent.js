@@ -8,7 +8,7 @@ const StyledMenuItem = styled(Paper)(({ theme }) => ({
   zIndex: 22,
   display: "flex",
   justifyContent: "space-between",
-  // alignItems: "center",
+  alignItems: "center",
   boxShadow: theme.shadows[4],
   transition: "transform 0.3s",
   "&:hover": {
@@ -37,7 +37,7 @@ const MenuContent = styled("div")(({ theme }) => ({
   position: "relative",
 }));
 
-const MenuLink = styled(Typography)(({ theme }) => ({
+const MenuTitle = styled(Typography)(({ theme }) => ({
   fontSize: "22px",
   textAlign: "right",
   // background: theme.palette.secondary.main,
@@ -80,7 +80,7 @@ function MenuItemComponent({ item }) {
     <StyledMenuItem>
       <MenuImage src={item.image} alt={item.title} />
       <MenuContent>
-        <MenuLink href="#">{item.title}</MenuLink>
+        <MenuTitle>{item.title}</MenuTitle>
         <MenuPrice>€{item.price}</MenuPrice>
         <MenuIngredients>{item.ingredients}</MenuIngredients>
       </MenuContent>

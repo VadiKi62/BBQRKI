@@ -10,6 +10,7 @@ import { fetchMenu } from "@utils/actions";
 function MainContent({ rest, menuData }) {
   unstable_noStore();
   const isMenu = Boolean(rest.menu);
+  console.log("rest", rest);
 
   // if (isMenu) {
   //   menuData = await fetchMenu(rest._id);

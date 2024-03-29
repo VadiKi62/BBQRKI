@@ -5,7 +5,7 @@ import React from "react";
 function error() {
   return (
     <div className="loading-container">
-      <h3>Ooops! error...</h3>{" "}
+      <h3>Ooops! error...</h3>
       <Image
         src="/logo-white.png"
         alt="bb qr code ki"

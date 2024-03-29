@@ -1,5 +1,3 @@
-import { generateCategories } from "@utils/functions";
-
 export const API_URL =
   process.env.NODE_ENV === "development"
     ? process.env.NEXT_LOCAL_API_BASE_URL
@@ -61,14 +59,17 @@ export const fetchRestByPath = async (path) => {
 export const fetchMenu = async (restId) => {
   try {
     const apiUrl = `${API_URL}/api/menu/${restId}`;
-    const data = await fetch(apiUrl);
+    const data = await fetch(apiUrl, {
+      next: { revalidate: 1 },
+    });
     if (!data.ok) {
       throw new Error(`Failed to fetch menu of the rest with id ${restId}`);
     }
     const menuData = await data.json();
+
     return menuData;
   } catch (error) {
-    console.error(`Error fetching restaurant with path ${path}:`, error);
+    console.error(`Error fetching menu of the rest with id ${restId}:`, error);
     throw error;
   }
 };

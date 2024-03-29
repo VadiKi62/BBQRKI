@@ -224,7 +224,7 @@ export default function HeroLayout({ rest }) {
               rest={rest}
             />
           )}
-          {rest.animLogo && (
+          {rest.animLogo && !isSmallScreen && (
             <div style={{ borderRadius: "50%", marginBottom: "-1.5rem" }}>
               <Image
                 src={rest.animLogo}

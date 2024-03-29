@@ -13,6 +13,7 @@ import { returnTheme } from "@themes/themePicker";
 
 function Feed({ children, ...props }) {
   const { rest, menu } = props;
+  console.log(menu);
 
   const theme = returnTheme(rest.themeName);
   const searchParams = useSearchParams();

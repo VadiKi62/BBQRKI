@@ -1,14 +1,14 @@
 import { Rest } from "@models/rest";
 import { Menu } from "@models/menu";
 import { generateCategories } from "@utils/functions";
-import { menuArazo } from "@utils/initialMenus";
+import { initialMenu } from "@utils/initialMenus";
 import { connectToDB } from "@utils/database";
 
 export const POST = async (request) => {
   try {
     await connectToDB();
 
-    const menuData = menuArazo.menu.map((menuItem) => ({
+    const menuData = initialMenu.menu.map((menuItem) => ({
       langKey: menuItem.langKey,
       items: menuItem.items.map((item) => ({
         menuNumber: item.id,
@@ -23,7 +23,7 @@ export const POST = async (request) => {
 
     const data = {
       menu: menuData,
-      restId: menuArazo.restId,
+      restId: initialMenu.restId,
     };
 
     console.log("data.restId:", data.restId);

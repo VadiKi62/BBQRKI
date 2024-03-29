@@ -7,7 +7,7 @@ import Loader from "./Loader";
 import Image from "next/image";
 
 function LoadingScreen({ rest }) {
-  const { name, animLogo, logoSrc } = rest;
+  const { animLogo, logoSrc } = rest;
 
   if (animLogo) {
     return <Spinning logo={animLogo} />;
