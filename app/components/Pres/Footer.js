@@ -7,6 +7,8 @@ import DefaultButton from "@app/components/common/DefaultButton";
 import EmailIcon from "@mui/icons-material/Email";
 import CallIcon from "@mui/icons-material/Call";
 import HistoryEduIcon from "@mui/icons-material/HistoryEdu";
+import { useTranslation } from "react-i18next";
+
 const Section = styled("section")(({ theme }) => ({
   padding: theme.spacing(3, 5, 1, 5),
   borderTop: `1px solid ${theme.palette.secondary.grey}`,
@@ -47,6 +49,9 @@ const ContactIcon = styled("span")(({ theme }) => ({
 const Footer = () => {
   const email = "nataliakireewa@gmail.com";
   const tel = "+38 068 100 3771";
+
+  const { t } = useTranslation();
+
   return (
     <Section>
       <FooterContainer>
@@ -55,7 +60,7 @@ const Footer = () => {
         </Logo>
         <ContactInfo container spacing={2}>
           <DefaultButton
-            label="Write us"
+            label={t("pres.footer.1")}
             relative={true}
             minWidth="100%"
             startIcon={<HistoryEduIcon />}

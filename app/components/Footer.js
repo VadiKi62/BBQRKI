@@ -17,6 +17,7 @@ import DirectionsIcon from "@mui/icons-material/Directions";
 import Image from "next/image";
 import { Link as NextLInk } from "next/link";
 import { useRouter } from "next/navigation";
+import { useTranslation } from "react-i18next";
 
 const Section = styled("section")(({ theme }) => ({
   padding: theme.spacing(3, 5, 1, 5),
@@ -70,6 +71,7 @@ const CopyrightInfo = styled("div")(({ theme }) => ({
 }));
 
 function Footer({ rest }) {
+  const { t } = useTranslation();
   // const { contacts } = useMyContext();
   const { name, slogan, tel, email, address, coords } = rest;
   const loc = coords.mainSpot;

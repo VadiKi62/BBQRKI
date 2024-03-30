@@ -1,17 +1,36 @@
 /* eslint-disable no-unused-vars */
 "use client";
 import React, { useState, useEffect } from "react";
-import Box from "@mui/material/Box";
 import Image from "next/image";
-import Link from "@mui/material/Link";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import IconButton from "@mui/material/IconButton";
+import {
+  Button,
+  Typography,
+  Stack,
+  Toolbar,
+  Container,
+  IconButton,
+  Popover,
+  MenuItem,
+  Link,
+  Menu,
+  Box,
+} from "@mui/material";
 import LanguageIcon from "@mui/icons-material/Language";
 import { useTranslation } from "react-i18next";
 import { styled } from "@mui/system";
-import Toolbar from "./Toolbar";
 import MuiAppBar from "@mui/material/AppBar";
+
+const LanguageSwitcher = styled(IconButton)(({ theme }) => ({
+  color: theme.palette.text?.black || theme.palette.text?.light,
+  display: "flex",
+  alignItems: "center",
+}));
+
+const LanguagePopover = styled(Popover)(({ theme }) => ({
+  width: "150px",
+  fontFamily: theme.typography.fontFamily,
+  marginRight: "16px",
+}));
 
 const TransparentAppBar = styled(AppBar)(({ theme, scrolled }) => {
   const getHeight = () => (scrolled == "true" ? "65px" : "65px");
@@ -35,23 +54,24 @@ const TransparentAppBar = styled(AppBar)(({ theme, scrolled }) => {
   };
 });
 
-function AppAppBar({ setLanguage, language }) {
+function AppAppBar() {
   const [scrolled, setScrolled] = useState("false");
 
-  const [anchorEl, setAnchorEl] = useState(null);
+  const [languageAnchor, setLanguageAnchor] = useState(null);
   const { i18n } = useTranslation();
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+
+  const handleLanguageClose = () => {
+    setLanguageAnchor(null);
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
+  const handleLanguageClick = (event) => {
+    event.preventDefault();
+    setLanguageAnchor(event.currentTarget);
   };
 
   const handleLanguageChange = (event) => {
-    setLanguage(event);
     i18n.changeLanguage(event);
-    handleClose();
+    handleLanguageClose();
   };
 
   const handleScroll = () => {
@@ -83,8 +103,33 @@ function AppAppBar({ setLanguage, language }) {
               priority
             />
           </a>
+
+          <LanguageSwitcher
+            // color={isGelissimo ? "secondary.dark" : "inherit"}
+            onClick={handleLanguageClick}
+          >
+            <LanguageIcon />
+          </LanguageSwitcher>
         </Toolbar>
       </TransparentAppBar>
+
+      <LanguagePopover
+        open={Boolean(languageAnchor)}
+        anchorEl={languageAnchor}
+        onClose={handleLanguageClose}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "right",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+      >
+        <MenuItem onClick={() => handleLanguageChange("en")}>English</MenuItem>
+        <MenuItem onClick={() => handleLanguageChange("el")}>Ελληνικά</MenuItem>
+      </LanguagePopover>
+
       <Toolbar />
     </div>
   );

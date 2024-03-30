@@ -1,8 +1,11 @@
 import React from "react";
 import Link from "next/link";
 import { Box, Grid, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 function CallToAction() {
+  const { t } = useTranslation();
+
   return (
     <section
       className="call-action section-padding sub-bg bg-img"
@@ -18,14 +21,15 @@ function CallToAction() {
                 className="wow words chars splitting"
                 data-splitting
               >
-                Let us Talk
+                {t("pres.callToAct.1")}
               </Typography>
               <Typography
                 variant="h2"
                 className="wow words chars splitting"
                 data-splitting
               >
-                about your <br />
+                {t("pres.callToAct.2")}
+                <br />
                 <a href={`mailto: {nataliakireewa@gmail.com}`}>
                   <Box
                     component="span"
@@ -38,7 +42,7 @@ function CallToAction() {
                       },
                     }}
                   >
-                    Beach Bar New Experience
+                    {t("pres.callToAct.3")}
                   </Box>
                   .
                 </a>

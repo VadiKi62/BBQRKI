@@ -33,7 +33,6 @@ const MenuContent = styled("div")(({ theme }) => ({
   flexDirection: "column",
   alignItems: "flex-end",
   justifyContent: "flex-start",
-  maxWidth: "55px",
 }));
 
 const MenuTitle = styled(Typography)(({ theme }) => ({
@@ -74,11 +73,11 @@ const MenuIngredients = styled("div")(({ theme }) => ({
   marginTop: theme.spacing(1),
 }));
 
-function MenuItemComponent({ item }) {
+function MenuItemComponent({ item, isSmallScreen }) {
   return (
     <StyledMenuItem>
       <MenuImage src={item.image} alt={item.title} />
-      <MenuContent>
+      <MenuContent sx={{ maxWidth: isSmallScreen ? "85px" : "auto" }}>
         <MenuTitle>{item.title}</MenuTitle>
         <MenuPrice>€{item.price}</MenuPrice>
         <MenuIngredients>{item.ingredients}</MenuIngredients>

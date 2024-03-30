@@ -8,35 +8,8 @@ import { Navigation, Pagination, Parallax, Autoplay } from "swiper";
 //= Scripts
 import removeSlashFromPagination from "@/common/removeSlashpagination";
 import fadeWhenScroll from "@/common/fadeWhenScroll";
+import { useTranslation } from "react-i18next";
 import "swiper/css";
-
-const fullScreenData = [
-  {
-    id: 1,
-    title: { first: "More", second: "Orders" },
-    image: "/assets/pres/cir/7.png",
-  },
-  {
-    id: 2,
-    title: { first: "Less", second: "Rush" },
-    image: "/assets/pres/cir/2.png",
-  },
-  {
-    id: 3,
-    title: { first: "More", second: "Tips" },
-    image: "/assets/pres/cir/3.png",
-  },
-  {
-    id: 4,
-    title: { first: "Less", second: "Wait" },
-    image: "/assets/pres/cir/4.png",
-  },
-  {
-    id: 5,
-    title: { first: "More", second: " Tips" },
-    image: "/assets/pres/cir/6.png",
-  },
-];
 
 const swiperOptions = {
   modules: [Parallax, Navigation, Pagination, Autoplay],
@@ -74,10 +47,40 @@ const swiperOptions = {
 };
 
 function ShowcaseCircleSide() {
+  const { t } = useTranslation();
+
   useEffect(() => {
     removeSlashFromPagination();
     fadeWhenScroll(document.querySelectorAll(".fixed-slider .caption"));
   }, []);
+
+  const fullScreenData = [
+    {
+      id: 1,
+      title: { first: t("pres.page5.3"), second: t("pres.page5.3a") },
+      image: "/assets/pres/cir/7.png",
+    },
+    {
+      id: 2,
+      title: { first: t("pres.page5.4"), second: t("pres.page5.4a") },
+      image: "/assets/pres/cir/2.png",
+    },
+    {
+      id: 3,
+      title: { first: t("pres.page5.5"), second: t("pres.page5.5a") },
+      image: "/assets/pres/cir/3.png",
+    },
+    {
+      id: 4,
+      title: { first: t("pres.page5.6"), second: t("pres.page5.6a") },
+      image: "/assets/pres/cir/4.png",
+    },
+    {
+      id: 5,
+      title: { first: t("pres.page5.7"), second: t("pres.page5.7a") },
+      image: "/assets/pres/cir/6.png",
+    },
+  ];
 
   return (
     <Container className="slider circle-slide showcase-carus">
@@ -96,7 +99,7 @@ function ShowcaseCircleSide() {
                 textTransform: "uppercase",
               }}
             >
-              SO
+              {t("pres.page5.1")}
             </Typography>
             <Typography
               variant="h4"
@@ -105,7 +108,7 @@ function ShowcaseCircleSide() {
               sx={{ fontWeight: 700, textTransform: "uppercase" }}
               className="color-font"
             >
-              This is what you get...
+              {t("pres.page5.2")}
             </Typography>
           </Grid>
         </Grid>

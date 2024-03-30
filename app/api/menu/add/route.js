@@ -23,7 +23,7 @@ export const POST = async (request) => {
 
     const data = {
       menu: menuData,
-      restId: initialMenu.restId,
+      restId: "660810b782656ad68e5aca75",
     };
 
     console.log("data.restId:", data.restId);

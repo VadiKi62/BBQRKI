@@ -5,6 +5,8 @@ import jukeboxTheme from "@themes/jukeboxTheme";
 import gelissimoTheme from "@themes/gelissimoTheme";
 import argoTheme from "@themes/argoTheme";
 import belvedereTheme from "@themes/belvedereTheme";
+import twinsTheme from "@themes/twinsTheme";
+import saharaTheme from "@themes/saharaTheme";
 
 export const returnTheme = (themeName) => {
   if (themeName === "themeBelvedere") return createTheme(belvedereTheme);
@@ -12,5 +14,7 @@ export const returnTheme = (themeName) => {
   if (themeName === "corleoneTheme") return createTheme(corleoneTheme);
   if (themeName === "jukeboxTheme") return createTheme(jukeboxTheme);
   if (themeName === "gelissimoTheme") return createTheme(gelissimoTheme);
+  if (themeName === "twinsTheme") return createTheme(twinsTheme);
+  if (themeName === "saharaTheme") return createTheme(saharaTheme);
   return createTheme(argoTheme);
 };

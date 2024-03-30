@@ -41,7 +41,7 @@ const FilterListContainer = styled("div")(({ showCallWaiterButton }) => ({
 
 function Menu({ menuRef, headerRef, menuData }) {
   const gridRef = useRef(null);
-  const { lang, showInitialHeader } = useMainContext();
+  const { lang, showInitialHeader, isSmallScreen } = useMainContext();
   const { t, i18n } = useTranslation();
   console.log(menuData);
   const menu = getLangMenu(menuData.menuUpd, i18n.language);
@@ -148,7 +148,10 @@ function Menu({ menuRef, headerRef, menuData }) {
               <Grid container spacing={2} ref={gridRef}>
                 {filteredMenuItems.map((menuItem, index) => (
                   <Grid item xs={12} md={6} key={index}>
-                    <MenuItemComponent item={menuItem} />
+                    <MenuItemComponent
+                      item={menuItem}
+                      isSmallScreen={isSmallScreen}
+                    />
                   </Grid>
                 ))}
               </Grid>

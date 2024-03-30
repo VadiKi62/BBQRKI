@@ -269,8 +269,94 @@ export const POST = async (request) => {
     },
   };
 
+  const twinsData = {
+    name: "Twins",
+    slogan: "Double the Fun, Twice the Chill!",
+    logoSrc: "/assets/images/Twins/logo.png",
+    workingTimeBeachSpots: {
+      startTime: "09:00",
+      endTime: "20:00",
+    },
+    tel: "+3010001000",
+    email: "twins@twins.com",
+    schedule: "Mon-Sat: 11AM - 23PM",
+    address: "Παρναβέλη 1Β, Nea Kallikratia 63080, Halchidiki, Greece",
+    coords: {
+      mainSpot: { latitude: 40.310434866939566, longitude: 23.06235701312798 },
+      beachSpot1: { latitude: 40.3100075, longitude: 23.0628176 },
+      beachSpot2: { latitude: 40.3100075, longitude: 23.0628176 },
+    },
+    radiuses: { mainSpot: 12, beachSpot1: 12, beachSpot2: 12 },
+    datesBeachSpot: {
+      start: new Date(currentYear, 3 - 1, 1),
+      end: new Date(currentYear, 10 - 1, 30),
+    },
+    chat_id: "-4088789673",
+    backendEndpoints: { waiter: "/button2607", bill: "/button2607" },
+    pathName: "twins",
+    themeName: "twinsTheme",
+    app: {
+      menu: true,
+      about: false,
+      buttonWaiter: true,
+      buttonBill: true,
+      buttonSisha: false,
+      numberOfTables: { inside: 10, outside: 50 },
+      languages: { eng: true, el: true },
+    },
+  };
+  const saharaData = {
+    name: "Sahara",
+    slogan: "Much more than a Beach bar...",
+    workingTimeBeachSpots: {
+      startTime: "09:00",
+      endTime: "20:00",
+    },
+    tel: "+3010001000",
+    email: "sahara@sahara.com",
+    schedule: "Mon-Sat: 11AM - 23PM",
+    address: "Παρναβέλη 1Β, Nea Kallikratia 63080, Halchidiki, Greece",
+    coords: {
+      mainSpot: { latitude: 40.310434866939566, longitude: 23.06235701312798 },
+      beachSpot1: { latitude: 40.3100075, longitude: 23.0628176 },
+      beachSpot2: { latitude: 40.3100075, longitude: 23.0628176 },
+      beachSpot3: { latitude: 40.3100075, longitude: 23.0628176 },
+      beachSpot4: { latitude: 40.3100075, longitude: 23.0628176 },
+      beachSpot5: { latitude: 40.3100075, longitude: 23.0628176 },
+      beachSpot6: { latitude: 40.3100075, longitude: 23.0628176 },
+      beachSpot7: { latitude: 40.3100075, longitude: 23.0628176 },
+    },
+    radiuses: {
+      mainSpot: 12,
+      beachSpot1: 12,
+      beachSpot2: 12,
+      beachSpot3: 12,
+      beachSpot4: 12,
+      beachSpot5: 12,
+      beachSpot6: 12,
+      beachSpot7: 12,
+    },
+    datesBeachSpot: {
+      start: new Date(currentYear, 3 - 1, 1),
+      end: new Date(currentYear, 10 - 1, 30),
+    },
+    chat_id: "-4088789673",
+    backendEndpoints: { waiter: "/button2607", bill: "/button2607" },
+    pathName: "sahara",
+    themeName: "saharaTheme",
+    app: {
+      menu: true,
+      about: false,
+      buttonWaiter: true,
+      buttonBill: true,
+      buttonSisha: false,
+      numberOfTables: { inside: 10, outside: 50 },
+      languages: { eng: true, el: true },
+    },
+  };
+
   //   const rest = (await request.json());
-  const rest = genesisData;
+  const rest = saharaData;
   try {
     await connectToDB();
     const { name, pathName } = rest;

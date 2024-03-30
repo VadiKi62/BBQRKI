@@ -5,7 +5,7 @@ import { Container, Grid, Typography, Box } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import Image from "next/image";
-
+import { useTranslation } from "react-i18next";
 const screenshots = [
   "/assets/pres/screens/1.png",
   "/assets/pres/screens/2.png",
@@ -49,6 +49,7 @@ const swiperOptions = {
 };
 
 function Screenshots() {
+  const { t } = useTranslation();
   useEffect(() => {
     let swiperContainer = document.querySelector(
       ".secreen-shots .swiper-container"
@@ -79,7 +80,7 @@ function Screenshots() {
                   textTransform: "uppercase",
                 }}
               >
-                App Screenshowts
+                {t("pres.page4.1")}
               </Typography>
               <Typography
                 variant="h4"
@@ -88,7 +89,7 @@ function Screenshots() {
                 sx={{ fontWeight: 700, textTransform: "uppercase" }}
                 className="color-font"
               >
-                Screenshorts
+                {t("pres.page4.2")}
               </Typography>
             </Grid>
           </Grid>

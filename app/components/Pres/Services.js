@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 //= Scripts
 import cardMouseEffect from "@/common/cardMouseEffect";
+import { useTranslation } from "react-i18next";
 
 // Styled component for the section
 const Section = styled("section")({
@@ -30,6 +31,42 @@ const Features = () => {
   useEffect(() => {
     cardMouseEffect(document.querySelectorAll(".feat .items"));
   }, []);
+  const { t } = useTranslation();
+
+  const features = [
+    {
+      title: t("pres.page3.3"),
+      description: t("pres.page3.3a"),
+    },
+    {
+      title: t("pres.page3.4"),
+      description: t("pres.page3.4a"),
+    },
+    {
+      title: t("pres.page3.6"),
+      description: t("pres.page3.6a"),
+    },
+    {
+      title: t("pres.page3.7"),
+      description: t("pres.page3.7a"),
+    },
+    {
+      title: t("pres.page3.8"),
+      description: t("pres.page3.8a"),
+    },
+    {
+      title: t("pres.page3.9"),
+      description: t("pres.page3.9a"),
+    },
+    {
+      title: t("pres.page3.10"),
+      description: t("pres.page3.10a"),
+    },
+    {
+      title: t("pres.page3.11"),
+      description: t("pres.page3.11a"),
+    },
+  ];
 
   return (
     <Section className="feat">
@@ -48,7 +85,7 @@ const Features = () => {
                 textTransform: "uppercase",
               }}
             >
-              Details
+              {t("pres.page3.1")}
             </Typography>
             <Typography
               variant="h4"
@@ -57,7 +94,7 @@ const Features = () => {
               sx={{ fontWeight: 700, textTransform: "uppercase" }}
               className="color-font"
             >
-              Unique QR-code for each umbrella/table.
+              {t("pres.page3.2")}
             </Typography>
           </Grid>
         </Grid>
@@ -93,47 +130,5 @@ const Features = () => {
     </Section>
   );
 };
-
-const features = [
-  {
-    title: "Call the waiter.",
-    description:
-      "Client can directly call waiter with only clicking one button.",
-  },
-  {
-    title: "Request the bill.",
-    description:
-      "Client can request bill doing just 2 actions - scanning code and pressing button.",
-  },
-  {
-    title: "Get cash info upfront.",
-    description:
-      "Skip the back and forth: know if they're paying by card upfront. Less running around for the waiters!",
-  },
-  {
-    title: "Repeat last drink.",
-    description:
-      "Client can instantly reorder the last drink, pressing one button.",
-  },
-  {
-    title: "Order shisha.",
-    description:
-      "You do not need to come to the customer first, then call the shisha guy. Waiters run fewer kilometers, clients wait less.",
-  },
-  {
-    title: "Get the client's language immediately ",
-    description: "And send a waiter who speaks it like a pro! ",
-  },
-  {
-    title: "No spam messages.",
-    description:
-      "Client could only call the waiter once they're inside the restaurant ",
-  },
-  {
-    title: "Quick and effortless setup.",
-    description:
-      "No complex installation needed. Each waiter simply receives their unique QR code, leading them directly to the app. ",
-  },
-];
 
 export default Features;

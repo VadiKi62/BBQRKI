@@ -5,45 +5,7 @@ import { Container, Grid, Typography, Fade, Row } from "@mui/material";
 //= Modules
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Mousewheel } from "swiper";
-
-const fullScreenData = [
-  {
-    id: 1,
-    title: "Client ",
-    sub: "Scan QR-code.",
-    image: "/assets/pres/grid/1.png",
-  },
-  {
-    id: 2,
-    title: "Client ",
-    sub: "Open app.",
-    image: "/assets/pres/grid/2.png",
-  },
-  {
-    id: 3,
-    title: "Client ",
-    sub: "Press Button.",
-    image: "/assets/pres/grid/3.png",
-  },
-  {
-    id: 4,
-    title: "Waiter",
-    sub: " Get it.",
-    image: "/assets/pres/grid/4.png",
-  },
-  {
-    id: 4,
-    title: "Just ",
-    sub: "it.",
-    image: "/assets/pres/grid/5.png",
-  },
-  {
-    id: 5,
-    title: "It is ",
-    sub: "win-win!",
-    image: "/assets/pres/grid/6.png",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const swiperOptions = {
   modules: [Navigation, Autoplay, Mousewheel],
@@ -79,6 +41,46 @@ const swiperOptions = {
 };
 
 function Works3() {
+  const { i18n, t } = useTranslation();
+
+  const fullScreenData = [
+    {
+      id: 1,
+      title: t("pres.page2.3"),
+      sub: t("pres.page2.3a"),
+      image: "/assets/pres/grid/1.png",
+    },
+    {
+      id: 2,
+      title: t("pres.page2.3"),
+      sub: t("pres.page2.4a"),
+      image: "/assets/pres/grid/2.png",
+    },
+    {
+      id: 3,
+      title: t("pres.page2.6"),
+      sub: t("pres.page2.6a"),
+      image: "/assets/pres/grid/3.png",
+    },
+    {
+      id: 4,
+      title: t("pres.page2.7"),
+      sub: t("pres.page2.7a"),
+      image: "/assets/pres/grid/4.png",
+    },
+    {
+      id: 4,
+      title: t("pres.page2.8"),
+      sub: t("pres.page2.8a"),
+      image: "/assets/pres/grid/5.png",
+    },
+    {
+      id: 5,
+      title: t("pres.page2.9"),
+      sub: t("pres.page2.9a"),
+      image: "/assets/pres/grid/6.png",
+    },
+  ];
   return (
     <div>
       {/* <Container className="slider showcase-grid"> */}
@@ -97,7 +99,7 @@ function Works3() {
                 textTransform: "uppercase",
               }}
             >
-              How it looks
+              {t("pres.page2.1")}
             </Typography>
             <Typography
               variant="h4"
@@ -106,7 +108,7 @@ function Works3() {
               sx={{ fontWeight: 700, textTransform: "uppercase" }}
               className="color-font"
             >
-              Client press the button - Waiter get it. Just as easy as it is.
+              {t("pres.page2.2")}
             </Typography>
           </Grid>
         </Grid>
