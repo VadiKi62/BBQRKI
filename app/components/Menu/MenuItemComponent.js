@@ -29,12 +29,11 @@ const MenuImage = styled("img")(({ theme }) => ({
 }));
 
 const MenuContent = styled("div")(({ theme }) => ({
-  marginLeft: theme.spacing(1),
   display: "flex",
   flexDirection: "column",
   alignItems: "flex-end",
   justifyContent: "flex-start",
-  position: "relative",
+  maxWidth: "55px",
 }));
 
 const MenuTitle = styled(Typography)(({ theme }) => ({

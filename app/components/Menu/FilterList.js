@@ -24,7 +24,7 @@ const FilterListContainer = styled(List)(({ theme }) => ({
 
 const FilterItem = styled(ListItem)(({ theme, isactive }) => ({
   cursor: "pointer",
-  whiteSpace: "nowrap",
+  whiteSpace: "normal",
   padding: theme.spacing(0, 1),
   fontSize: isactive == "true" ? "1.4rem" : "1.1rem",
   color:
