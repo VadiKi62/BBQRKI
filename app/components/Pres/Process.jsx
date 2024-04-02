@@ -14,6 +14,7 @@ import { GiReceiveMoney } from "react-icons/gi";
 
 const StyledGridItem = styled(Grid)({
   minHeight: 375,
+  width: "100%",
 });
 
 const Title = styled(Typography)({

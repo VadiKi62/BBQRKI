@@ -1,11 +1,12 @@
 import React from "react";
+import Image from "next/image";
 
 function SectionLeft() {
   return (
     <div className="row">
       <div className="col-lg-5">
         <div className="serv-img md-mb50">
-          <img src="/assets/pres/2.jpg" width={200} height={300} alt="" />
+          <Image src="/assets/pres/2.jpg" width={200} height={300} alt="" />
         </div>
       </div>
       <div className="col-lg-6 offset-lg-1 valign">

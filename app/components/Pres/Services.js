@@ -11,14 +11,15 @@ import { useTranslation } from "react-i18next";
 // Styled component for the section
 const Section = styled("section")({
   backgroundColor: "transparent",
-  padding: "120px 0",
+  padding: "50px 0",
   overflow: "hidden",
 });
 
 // Styled component for the item
 const Item = styled("div")(({ theme }) => ({
   textAlign: "center",
-  padding: "40px 20px",
+  paddingTop: 15,
+  margin: 0,
   borderRadius: "10px",
   boxShadow: theme.palette.primary.main,
   transition: "all 0.3s ease",
@@ -98,9 +99,17 @@ const Features = () => {
             </Typography>
           </Grid>
         </Grid>
-        <Grid container spacing={2}>
+        <Grid container spacing={1}>
           {features.map((feature, index) => (
-            <Grid item xs={12} sm={4} md={3} key={index} className="items">
+            <Grid
+              item
+              xs={12}
+              sm={4}
+              md={3}
+              key={index}
+              className="items"
+              columnSpacing={0}
+            >
               <Fade
                 in
                 timeout={500}

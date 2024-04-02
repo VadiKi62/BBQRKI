@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 function SectionRight({ theme = "dark" }) {
   return (
@@ -41,7 +42,7 @@ function SectionRight({ theme = "dark" }) {
       </div>
       <div className="col-lg-5 offset-lg-1">
         <div className="serv-img">
-          <img
+          <Image
             src={
               theme === "light"
                 ? "/mobile-app/img/app-img/s2-light.png"
