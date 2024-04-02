@@ -354,9 +354,50 @@ export const POST = async (request) => {
       languages: { eng: true, el: true },
     },
   };
+  const justData = {
+    name: "Just",
+    slogan: "Just Bar : Where Every Moment is Just Right.",
+    workingTimeBeachSpots: {
+      startTime: "09:00",
+      endTime: "22:00",
+    },
+    tel: "+3010001000",
+    email: "just@just.com",
+    schedule: "Mon-Sat: 11AM - 23PM",
+    address: "Παρναβέλη 1Β, Nea Kallikratia 63080, Halchidiki, Greece",
+    coords: {
+      mainSpot: { latitude: 40.310434866939566, longitude: 23.06235701312798 },
+      beachSpot1: { latitude: 40.3100075, longitude: 23.0628176 },
+      beachSpot2: { latitude: 40.3100075, longitude: 23.0628176 },
+      beachSpot3: { latitude: 40.3100075, longitude: 23.0628176 },
+    },
+    radiuses: {
+      mainSpot: 12,
+      beachSpot1: 12,
+      beachSpot2: 12,
+      beachSpot3: 12,
+    },
+    datesBeachSpot: {
+      start: new Date(currentYear, 3 - 1, 1),
+      end: new Date(currentYear, 10 - 1, 30),
+    },
+    chat_id: "-4088789673",
+    backendEndpoints: { waiter: "/button2607", bill: "/button2607" },
+    pathName: "just",
+    themeName: "justTheme",
+    app: {
+      menu: true,
+      about: false,
+      buttonWaiter: true,
+      buttonBill: true,
+      buttonSisha: false,
+      numberOfTables: { inside: 10, outside: 50 },
+      languages: { eng: true, el: true },
+    },
+  };
 
   //   const rest = (await request.json());
-  const rest = saharaData;
+  const rest = justData;
   try {
     await connectToDB();
     const { name, pathName } = rest;

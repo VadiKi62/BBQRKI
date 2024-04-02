@@ -91,18 +91,18 @@ function Footer({ rest }) {
           <MuiLink href="#" color="inherit" target="_blank">
             <FacebookIcon fontSize="large" />
           </MuiLink>
-          <MuiLink href="#" color="inherit" target="_blank">
+          {/* <MuiLink href="#" color="inherit" target="_blank">
             <TwitterIcon fontSize="large" />
-          </MuiLink>
+          </MuiLink> */}
           <MuiLink href="#" color="inherit" target="_blank">
             <InstagramIcon fontSize="large" />
           </MuiLink>
           <MuiLink href="#" color="inherit" target="_blank">
             <LinkedInIcon fontSize="large" />
           </MuiLink>
-          <MuiLink href="#" color="inherit" target="_blank">
+          {/* <MuiLink href="#" color="inherit" target="_blank">
             <GitHubIcon fontSize="large" />
-          </MuiLink>
+          </MuiLink> */}
         </SocialLinks>
         <ContactInfo container spacing={2}>
           <DefaultButton

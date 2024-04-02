@@ -202,7 +202,7 @@ export default function HeroLayout({ rest }) {
                 color:
                   isGenesis || isGelissimo || isJukebox
                     ? "text.main"
-                    : "primary.red",
+                    : "text.red",
               }}
             >
               {" "}

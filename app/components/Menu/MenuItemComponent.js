@@ -43,7 +43,9 @@ const MenuTitle = styled(Typography)(({ theme }) => ({
   position: "relative",
   zIndex: 1,
   fontWeight: 700,
-  color: theme.palette.text.dark,
+  color: theme.palette.text.menutitle
+    ? theme.palette.text.menutitle
+    : theme.palette.text.dark,
   lineHeight: "24px",
   transition: "color 0.3s",
   "&:hover": {
