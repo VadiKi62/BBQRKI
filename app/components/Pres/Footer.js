@@ -6,6 +6,8 @@ import { Grid, ButtonBase, Link as MuiLink, Typography } from "@mui/material";
 import DefaultButton from "@app/components/common/DefaultButton";
 import EmailIcon from "@mui/icons-material/Email";
 import CallIcon from "@mui/icons-material/Call";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import TelegramIcon from "@mui/icons-material/Telegram";
 import HistoryEduIcon from "@mui/icons-material/HistoryEdu";
 import { useTranslation } from "react-i18next";
 
@@ -42,13 +44,13 @@ const ContactInfo = styled(Grid)(({ theme }) => ({
   fontSize: "1rem",
 }));
 const ContactIcon = styled("span")(({ theme }) => ({
-  marginRight: theme.spacing(1),
-  verticalAlign: "middle",
+  margin: theme.spacing(13, 1),
+  verticalAlign: "center",
 }));
 
 const Footer = () => {
-  const email = "nataliakireewa@gmail.com";
-  const tel = "+38 068 100 3771";
+  const emails = ["nataliakireewa@gmail.com", "ntf.elcor@gmail.com"];
+  const tels = ["+38 068 100 3771", "+38 050 358 7211", "+30 697 566 1908"];
 
   const { t } = useTranslation();
 
@@ -64,25 +66,43 @@ const Footer = () => {
             relative={true}
             minWidth="100%"
             startIcon={<HistoryEduIcon />}
-            href={`mailto:${email}`}
+            href={`mailto:${emails[0]}`}
             target="_blank"
             rel="noopener noreferrer"
           />
           <Grid item xs={12} sm={6}>
             <ContactIcon>
-              <EmailIcon />
+              <EmailIcon style={{ marginBottom: 19 }} />
             </ContactIcon>
-            <a style={{ fontSize: "1.3rem" }} href={`mailto:${email}`}>
-              {email}
-            </a>
+            <Grid container direction="column" spacing={2}>
+              {emails.map((email, index) => (
+                <a
+                  key={index}
+                  style={{ fontSize: "1.3rem" }}
+                  href={`mailto:${email}`}
+                >
+                  {email}
+                </a>
+              ))}
+            </Grid>
           </Grid>
           <Grid item xs={12} sm={6}>
             <ContactIcon>
-              <CallIcon />
+              <CallIcon style={{ marginBottom: 19, marginRight: 5 }} />
+              <WhatsAppIcon style={{ marginBottom: 19, marginRight: 5 }} />
+              <TelegramIcon style={{ marginBottom: 19 }} />
             </ContactIcon>
-            <a style={{ fontSize: "1.3rem" }} href={`tel:${tel}`}>
-              {tel}
-            </a>
+            <Grid container direction="column" spacing={2}>
+              {tels.map((tel, index) => (
+                <a
+                  key={index}
+                  style={{ fontSize: "1.3rem" }}
+                  href={`tel:${tel}`}
+                >
+                  {tel}
+                </a>
+              ))}
+            </Grid>
           </Grid>
         </ContactInfo>
 

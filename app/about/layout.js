@@ -1,3 +1,4 @@
+import "@/styles/mobile-app-dark.css";
 import Script from "next/script";
 //= Scripts
 import LoadingScreen from "@app/components/common/Loaders/Loader";

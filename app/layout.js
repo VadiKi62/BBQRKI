@@ -11,7 +11,7 @@ export const metadata = {
     default: "BB QR => KI homepage",
     template: "%s | BB QR Code ",
   },
-  description: "BB=>QR for everything you need!",
+  description: "BB QR Code for everything you need!",
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.ai",

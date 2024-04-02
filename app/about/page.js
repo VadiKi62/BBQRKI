@@ -5,10 +5,12 @@ import Loader from "@app/components/common/Loaders/Loader";
 // import Navbar from "@app/components/Common/Navbar";
 import Header from "@app/components/Pres/Header";
 import ShowcaseCircleSide from "@app/components/Pres/ShowcaseCircleSide";
+import ServicesDesc from "@app/components/Pres/ServicesDesc";
 
 import ShowCase from "@app/components/Pres/ShowCase";
 import Navbar from "@app/components/Pres/NavBarPres";
 import Screenshots from "@app/components/Pres/Screenshots";
+import Process from "@app/components/Pres/Process";
 
 import Services from "@app/components/Pres/Services";
 
@@ -34,8 +36,9 @@ export default function HomeAbout() {
           <div className="main-content">
             <Header />
             <ShowCase />
+            {/* <ServicesDesc /> */}
             <Services />
-            <Screenshots />
+            <Process />
             {/* <ShowcaseGrid /> */}
             <ShowcaseCircleSide />
 
@@ -46,6 +49,7 @@ export default function HomeAbout() {
       <FullTestimonials classText="pb-0" />
       <Team />
       <Blogs /> */}
+            <Screenshots />
             <CallToAction />
             <Footer />
           </div>
