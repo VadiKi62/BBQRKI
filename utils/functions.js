@@ -148,13 +148,9 @@ export const menuWithIds = (menu, categories) => {
 export function getSubcategories(menu, categories, categoryId, lang) {
   const menuLang = getLangMenu(menu, lang);
   const subCategoriesArray = menuLang.reduce(function (acc, cur) {
-    console.log("categoryId from SubCat function", categoryId);
     if (cur.category_id == categoryId) {
       const subCategory = cur?.subCategory || "others";
-      console.log(
-        "!!!!!!!subCategory from SubCat function should be others",
-        subCategory
-      );
+
       if (!acc.includes(subCategory)) {
         acc.push(subCategory);
       }

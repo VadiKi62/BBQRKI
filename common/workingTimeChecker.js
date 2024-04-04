@@ -11,7 +11,6 @@ export default function workingTimeChecker(
     hour12: false,
     timeZone,
   });
-  console.log("currentTime", currentTime);
 
   const currentTimeStamp = getTimestampInTimeZone(timeZone);
 

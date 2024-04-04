@@ -25,8 +25,6 @@ export function isLocationWithinRadius(lat1, lon1, lat2, lon2, radiusInMeters) {
 
 export function findPreferredLanguage() {
   const preferredLanguages = navigator.languages;
-  console.log("navigator", navigator);
-  console.log("PrefLanguages", preferredLanguages);
 
   const appLanguages = ["el", "ru", "de"];
 

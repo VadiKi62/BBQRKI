@@ -17,6 +17,7 @@ import ModalComponent from "../common/Modal";
 import SloganRotator from "../Slogans";
 import Dev from "../Dev";
 import LogoGallery from "../common/LogoGallery";
+import MenuButton from "./MenuButton";
 
 const Overlay = styled("div")(({ theme }) => ({
   position: "absolute",
@@ -78,6 +79,9 @@ const CallButtonWrapper = styled(Stack)(({ theme }) => ({
 export default function HeroLayout({ rest }) {
   const { t } = useTranslation();
 
+  let isOnlyMenu = false;
+  if (!rest.app.buttonWaiter && !rest.app.buttonBill) isOnlyMenu = true;
+
   const isGenesis = rest.name === "Genesis";
   const isGelissimo = rest.name === "Gelissimo";
   const isJukebox = rest.name === "Jukebox";
@@ -98,7 +102,11 @@ export default function HeroLayout({ rest }) {
     showScan,
     showInside,
     messageInside,
+    menuOnly,
   } = useMainContext();
+
+  console.log("menuOnly", menuOnly);
+  console.log("isOnlyMenu", isOnlyMenu);
 
   const [isSticky, setIsSticky] = useState(true);
   const [showLoading, setShowLoading] = useState(true);
@@ -136,6 +144,8 @@ export default function HeroLayout({ rest }) {
     if (showLoading) {
       return <LoadingScreen rest={rest} />;
     }
+
+    if (isOnlyMenu || menuOnly) return <MenuButton />;
 
     if (!showInitialHeader) {
       return (

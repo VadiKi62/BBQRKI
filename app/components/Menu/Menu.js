@@ -43,7 +43,7 @@ function Menu({ menuRef, headerRef, menuData }) {
   const gridRef = useRef(null);
   const { lang, showInitialHeader, isSmallScreen } = useMainContext();
   const { t, i18n } = useTranslation();
-  console.log(menuData);
+
   const menu = getLangMenu(menuData.menuUpd, i18n.language);
 
   const headerOffset = headerRef?.clientHeight;
@@ -71,7 +71,6 @@ function Menu({ menuRef, headerRef, menuData }) {
         activeFilterId,
         i18n.language
       );
-      console.log("subcategoriesResult", subcategoriesResult);
       const subCategories = subcategoriesResult.name;
       const subCategoriesIds = subcategoriesResult.ids;
       setFilteredMenuItems(filteredItemsId);

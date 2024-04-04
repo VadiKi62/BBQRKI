@@ -9,16 +9,14 @@ export default function useGeo(r, restaurant, zont, isHighSeason) {
     distanceToRest: null,
   });
 
-  console.log(restaurant?.workingTimeBeachSpots.startTime);
   const { startTime, endTime } = restaurant?.workingTimeBeachSpots;
 
   const isWorkingTimeForBeach = workingTimeChecker(startTime, endTime);
-  console.log("IS WORKING BEACH ?", isWorkingTimeForBeach);
+
   const [isGeolocationAvailable, setIsGeolocationAvailable] = useState(false);
   const [radius, setRadius] = useState(r || restaurant?.radiuses?.restSpot);
   const updateGeolocation = () => {
     const [mainSpot, rest] = getRestCoords(restaurant);
-    console.log("rest??", rest);
 
     const options = {
       enableHighAccuracy: true,
@@ -38,7 +36,6 @@ export default function useGeo(r, restaurant, zont, isHighSeason) {
             mainSpot,
             successCallback.coords
           );
-          console.log("!!!!!distanceToRest", distanceToRest);
 
           setCurrentPosition({
             accuracy:
