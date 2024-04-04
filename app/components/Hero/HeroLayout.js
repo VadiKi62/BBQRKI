@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { styled } from "@mui/system";
 import { useTranslation } from "react-i18next";
+import { scroller } from "react-scroll";
 import { Container, Stack, Typography } from "@mui/material";
 
 import LoadingScreen from "@app/components/common/Loaders/LoadingScreen";
@@ -18,6 +19,7 @@ import SloganRotator from "../Slogans";
 import Dev from "../Dev";
 import LogoGallery from "../common/LogoGallery";
 import MenuButton from "./MenuButton";
+import { scrollMore } from "react-scroll/modules/mixins/animate-scroll";
 
 const Overlay = styled("div")(({ theme }) => ({
   position: "absolute",
@@ -105,9 +107,6 @@ export default function HeroLayout({ rest }) {
     menuOnly,
   } = useMainContext();
 
-  console.log("menuOnly", menuOnly);
-  console.log("isOnlyMenu", isOnlyMenu);
-
   const [isSticky, setIsSticky] = useState(true);
   const [showLoading, setShowLoading] = useState(true);
 
@@ -139,6 +138,17 @@ export default function HeroLayout({ rest }) {
     };
   }, [rest.menu]);
   const altName = `${rest.name} logo gif`;
+
+  useEffect(() => {
+    if (menuOnly || isOnlyMenu) {
+      scroller.scrollTo("menu", {
+        duration: 800,
+        delay: 0,
+        smooth: "easeInOutQuart",
+        offset: -50,
+      });
+    }
+  });
 
   const renderHeader = () => {
     if (showLoading) {

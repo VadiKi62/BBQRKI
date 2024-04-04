@@ -62,7 +62,7 @@
       "1": "Application Features",
       "2": "UNIQUE QR-CODE FOR EACH UMBRELLA/TABLE.",
       "3": "Call the waiter.",
-      "3a": "Client can directly call waiter with only clicking one button.   ",
+      "3a": "Client can directly call waiter with only clicking one button.",
       "4": "Request the bill.",
       "4a": "Client can request bill doing just 2 actions - scanning code and pressing button.",
       "6": "Repeat last drink.",
@@ -103,9 +103,9 @@
       "3": "Download App",
       "3a": "Simply download the app to your smartphone using the link we provide.",
       "4": "Get Your Fully Customized Webpage",
-      "4a": "We will create a fully customized webpage for your beach bar,tailored to your specific needs, similar to these examples:",
+      "4a": "We will create a fully customized webpage for your beach bar,tailored to your specific needs.",
       "5": "Get Printed QR Codes",
-      "5a": " We will print all the QR codes you need for your tables and umbrellas. Just let us know the quantity required.",
+      "5a": "We will print all the QR codes you need for your tables and umbrellas. Just let us know the quantity required.",
       "6": "Affix the QR Codes to Tables",
       "6a": "Attach the QR codes to your tables and/or menus. Your customers just need to scan them to access the service.",
       "7": "Get results",
@@ -114,7 +114,7 @@
     "callToAct": {
       "1": "Let us Talk",
       "2": "about your",
-      "3": " Beach Bar New Experience"
+      "3": "Beach Bar New Experience"
     },
     "footer": {
       "1": "write us"
