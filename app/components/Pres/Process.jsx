@@ -13,8 +13,15 @@ import { GiTakeMyMoney } from "react-icons/gi";
 import { GiReceiveMoney } from "react-icons/gi";
 
 const StyledGridItem = styled(Grid)({
-  minHeight: 375,
+  height: 335,
   width: "100%",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  textAlign: "center",
+  color: "#fff",
+  fontSize: "35px",
+  zIndex: 224,
 });
 
 const Title = styled(Typography)({
@@ -86,17 +93,7 @@ const Progress = () => {
       <Container>
         <Grid container spacing={3}>
           {items.map(({ index, icon }) => (
-            <Grid
-              item
-              key={index}
-              lg={3}
-              sx={{
-                display: " flex",
-                flexDirection: "column",
-                alignItems: " center",
-                textAlign: "center",
-              }}
-            >
+            <Grid item key={index} lg={4}>
               <StyledGridItem className="item text-center">
                 {icon}
                 <Title variant="body">{t(`pres.page6.${index}`)}</Title>
