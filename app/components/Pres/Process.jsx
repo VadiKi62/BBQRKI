@@ -93,7 +93,7 @@ const Progress = () => {
       <Container>
         <Grid container spacing={3}>
           {items.map(({ index, icon }) => (
-            <Grid item key={index} lg={4}>
+            <Grid item key={index} lg={3}>
               <StyledGridItem className="item text-center">
                 {icon}
                 <Title variant="body">{t(`pres.page6.${index}`)}</Title>
@@ -106,7 +106,7 @@ const Progress = () => {
               </StyledGridItem>
             </Grid>
           ))}
-          <StyledGridItem item lg={12}>
+          <StyledGridItem item lg={12} width={"100hv"}>
             <div className="item text-center">
               <GiReceiveMoney style={iconStyle} />
               <Title variant="body">{t("pres.page6.7")}</Title>

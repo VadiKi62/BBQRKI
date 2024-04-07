@@ -187,7 +187,6 @@ export const MainContextProvider = ({
               restData.chat_id,
               (responseData) => {
                 // Success callback
-                console.log(responseData);
                 showModal(messageGot, false, true);
                 setShowInitialHeader(false);
                 setShowInside(false);
@@ -207,7 +206,7 @@ export const MainContextProvider = ({
           updateGeolocation();
           showModal(`${messageInside}`, false, false);
           setTimeout(function () {
-            hideModal(); // Call hideModal function after 10 seconds
+            hideModal();
           }, 30000);
           history?.replaceState({}, document.title, window?.location.pathname);
           // router?.replace(router.asPath, undefined, { shallow: true });

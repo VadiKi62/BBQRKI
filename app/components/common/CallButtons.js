@@ -2,7 +2,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import Button from "@app/components/common/Button";
 import { Element } from "react-scroll";
-// import { useMyContext } from "@MyContext";
 import { useTranslation } from "react-i18next";
 
 export function CallWaiterButton({

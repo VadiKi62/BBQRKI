@@ -50,7 +50,11 @@ const ContactIcon = styled("span")(({ theme }) => ({
 
 const Footer = () => {
   const emails = ["nataliakireewa@gmail.com", "ntf.elcor@gmail.com"];
-  const tels = ["+38 068 100 3771", "+38 050 358 7211", "+30 697 566 1908"];
+  const tels = [
+    "+38 068 100 3771",
+    "+30 697 566 1980",
+    "+30 697 566 1979",
+  ];
 
   const { t } = useTranslation();
 

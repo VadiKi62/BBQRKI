@@ -586,7 +586,7 @@ button:hover {
 }
 
 .particles .cont h1 {
-  font-size: 90px;
+  font-size: 70px;
   font-weight: 800;
 }
 
@@ -1392,7 +1392,7 @@ header.particles.circle-bg.valign {
 
   .showcase-carus .caption h1,
   .showcase-carus .copy-cap h1 {
-    font-size: 60px;
+    font-size: 60px !important;
     left: auto;
     margin-left: 20px;
   }
@@ -1403,8 +1403,8 @@ header.particles.circle-bg.valign {
     -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
     transition: all 0.5s;
-    height: 380px !important;
-    width: 380px !important;
+    height: 550px !important;
+    width: 550px !important;
     margin: auto !important;
   }
 
@@ -1415,7 +1415,8 @@ header.particles.circle-bg.valign {
 
   .showcase-carus.circle-slide .caption h1,
   .showcase-carus.circle-slide .copy-cap h1 {
-    font-size: 65px;
+    font-size: 65px !important;
+    line-height: 70px !important;
   }
 
   .pages-header .cont h1 {
@@ -1546,7 +1547,7 @@ header.particles.circle-bg.valign {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .sm-mb10 {
     margin-bottom: 10px;
   }
@@ -2023,7 +2024,8 @@ header.particles.circle-bg.valign {
 
   .showcase-carus.circle-slide .caption h1,
   .showcase-carus.circle-slide .copy-cap h1 {
-    font-size: 40px;
+    font-size: 33px !important;
+    line-height: 40px !important;
   }
 
   .works-header .capt h2 {

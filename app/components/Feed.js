@@ -23,7 +23,6 @@ function Feed({ children, ...props }) {
   let umbrella = searchParams.get("zont") || "test";
   const dev = searchParams.get("dev") || null;
   const menuOnly = searchParams.get("menuOnly") || null;
-  console.log("menuOnly", menuOnly);
 
   if (dev && !umbrella) {
     umbrella = "test";

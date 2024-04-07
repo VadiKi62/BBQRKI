@@ -10,6 +10,7 @@ import removeSlashFromPagination from "@/common/removeSlashpagination";
 import fadeWhenScroll from "@/common/fadeWhenScroll";
 import { useTranslation } from "react-i18next";
 import "swiper/css";
+import { letterSpacing } from "@mui/system";
 
 const swiperOptions = {
   modules: [Parallax, Navigation, Pagination, Autoplay],
@@ -47,12 +48,16 @@ const swiperOptions = {
 };
 
 function ShowcaseCircleSide() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     removeSlashFromPagination();
     fadeWhenScroll(document.querySelectorAll(".fixed-slider .caption"));
   }, []);
+
+  const { language } = i18n;
+
+  const textStyle = { letterSpacing: "0px" };
 
   const fullScreenData = [
     {
@@ -124,7 +129,7 @@ function ShowcaseCircleSide() {
                 >
                   <div className="caption ontop valign">
                     <div className="o-hidden">
-                      <h1 data-swiper-parallax="-2000">
+                      <h1 data-swiper-parallax="-2000" style={textStyle}>
                         {/* <Link> */}
                         <div className="stroke">{slide.title.first}</div>
                         <div>{slide.title.second}</div>
@@ -134,7 +139,7 @@ function ShowcaseCircleSide() {
                   </div>
                   <div className="copy-cap valign">
                     <div className="cap">
-                      <h1 data-swiper-parallax="-2000">
+                      <h1 data-swiper-parallax="-2000" style={textStyle}>
                         {/* <Link> */}
                         <div className="stroke">{slide.title.first}</div>
                         <div>{slide.title.second}</div>

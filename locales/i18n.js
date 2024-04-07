@@ -5,6 +5,7 @@ import translationsEl from "./el.json";
 import translationsDe from "./de.json";
 import translationsRu from "./ru.json";
 import translationsUa from "./ua.json";
+import translationsSe from "./se.json";
 
 i18n.use(initReactI18next).init({
   lng: "en",
@@ -28,6 +29,9 @@ i18n.use(initReactI18next).init({
     },
     ua: {
       translation: translationsUa,
+    },
+    se: {
+      translation: translationsSe,
     },
   },
 });
