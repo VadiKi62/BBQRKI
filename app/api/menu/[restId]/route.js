@@ -20,6 +20,7 @@ export const GET = async (request, { params }) => {
     }
 
     const categories = generateCategories(menu.menu);
+    console.log("categories :", categories);
 
     const menuUpd = menuWithIds(menu.menu, categories);
     const toReturn = {

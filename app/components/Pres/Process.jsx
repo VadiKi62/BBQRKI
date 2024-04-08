@@ -6,10 +6,9 @@ import {
   IoPersonOutline,
   IoPhonePortraitOutline,
 } from "react-icons/io5";
-import { MdWeb } from "react-icons/md";
-import { BsQrCode } from "react-icons/bs";
-import { FaUmbrellaBeach } from "react-icons/fa";
-import { GiTakeMyMoney } from "react-icons/gi";
+import { CgWebsite } from "react-icons/cg";
+import { AiOutlineQrcode } from "react-icons/ai";
+import { LiaUmbrellaBeachSolid } from "react-icons/lia";
 import { GiReceiveMoney } from "react-icons/gi";
 
 const StyledGridItem = styled(Grid)({
@@ -45,17 +44,22 @@ const iconStyle = {
   border: "0.3px solid #e2b543",
   borderRadius: "50%",
   width: 55,
+  minWidth: 55,
   height: 55,
+  minHeight: 55,
   margin: 5,
   padding: 15,
 };
 
 const items = [
   { index: "3", icon: <IoPhonePortraitOutline style={iconStyle} /> },
-  { index: "4", icon: <MdWeb style={iconStyle} /> },
-  { index: "5", icon: <BsQrCode style={iconStyle} /> },
-  { index: "6", icon: <FaUmbrellaBeach style={iconStyle} /> },
+  { index: "4", icon: <CgWebsite style={iconStyle} /> },
+  { index: "5", icon: <AiOutlineQrcode style={iconStyle} /> },
+  { index: "6", icon: <LiaUmbrellaBeachSolid style={iconStyle} /> },
 ];
+
+console.log(items[1].icon);
+console.dir(items[1].icon);
 
 const Progress = () => {
   const { t } = useTranslation();

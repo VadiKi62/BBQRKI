@@ -36,6 +36,8 @@ export function generateCategories(menu) {
 
   const indexes = Array.from({ length: langKeys.length }, (_, index) => index);
 
+  console.log("indexes", indexes);
+
   // Iterate over all languages and merge subcategories based on ids
 
   indexes.forEach((index) => {

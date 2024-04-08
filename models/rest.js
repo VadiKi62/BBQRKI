@@ -116,6 +116,7 @@ const RestSchema = new Schema({
       },
     },
   },
+  useGeo: { type: Boolean, default: true },
 });
 
 const Rest = models.Rest || model("Rest", RestSchema);

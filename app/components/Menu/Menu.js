@@ -6,7 +6,6 @@ import { Element, Link } from "react-scroll";
 import { useMainContext } from "@app/components/MainContextProvider";
 import MenuItemComponent from "./MenuItemComponent";
 import {
-  menuItems,
   getUniqueCategories,
   getSubcategories,
   filterMenuItemsId,
