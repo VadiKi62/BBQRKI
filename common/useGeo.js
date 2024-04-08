@@ -9,6 +9,8 @@ export default function useGeo(r, restaurant, zont, isHighSeason) {
     distanceToRest: null,
   });
 
+  console.log("isHighSeason", isHighSeason);
+  console.log(restaurant.datesBeachSpot);
   const { startTime, endTime } = restaurant?.workingTimeBeachSpots;
 
   const isWorkingTimeForBeach = workingTimeChecker(startTime, endTime);
