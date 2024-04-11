@@ -9,6 +9,7 @@ import ErrorIcon from "@mui/icons-material/Error";
 import { useMainContext } from "./MainContextProvider";
 import { Suspense } from "react";
 import { unstable_noStore } from "next/cache";
+import Wifi from "@app/components/common/Wifi";
 
 const BoxContainer = styled(Box)(({ theme }) => ({
   marginTop: "-5rem",
@@ -178,6 +179,7 @@ function Dev({ rest }) {
         {/* {wifiData.map((wifi, i) => (
           <p key={i}>{wifi} </p>
         ))} */}
+        <Wifi />
       </StackContainer>
     </Suspense>
   );
