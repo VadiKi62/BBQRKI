@@ -5,6 +5,7 @@ import { styled } from "@mui/system";
 import { useTranslation } from "react-i18next";
 import { scroller } from "react-scroll";
 import { Container, Stack, Typography } from "@mui/material";
+import { unstable_noStore } from "next/cache";
 
 import LoadingScreen from "@app/components/common/Loaders/LoadingScreen";
 import Hero from "./Hero";
@@ -79,6 +80,7 @@ const CallButtonWrapper = styled(Stack)(({ theme }) => ({
 }));
 
 export default function HeroLayout({ rest, wifiData }) {
+  unstable_noStore();
   const { t } = useTranslation();
 
   let isOnlyMenu = false;
@@ -297,20 +299,6 @@ export default function HeroLayout({ rest, wifiData }) {
 }
 
 const ScanInfo = ({ t, isSmallScreen, rest, isJukebox }) => {
-  // const responsiveStyles = () => {
-  //   let returnValues = { mb: 19, mt: 0 };
-
-  //   if (isSmallScreen) {
-  //     if (rest.slogans.length > 0) {
-  //       returnValues.mb = 3;
-  //     } else {
-  //       returnValues.mb = 16;
-  //     }
-  //     returnValues.mt = 0;
-  //   }
-
-  //   return returnValues;
-  // };
   return (
     <TitleContainer>
       <Typography
@@ -342,12 +330,7 @@ const ScanInfo = ({ t, isSmallScreen, rest, isJukebox }) => {
 
 const InsideInfo = ({ isSmallScreen, messageInside, rest }) => {
   return (
-    <TitleContainer
-    // sx={{
-    //   mb: isSmallScreen && rest.slogans.length > 0 ? 3 : 15,
-    //   mt: isSmallScreen && rest.slogans.length > 0 ? -4 : -6,
-    // }}
-    >
+    <TitleContainer>
       <Typography
         color="text.dark"
         align="center"

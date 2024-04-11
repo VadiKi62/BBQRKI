@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { calculateDistance, getRestCoords } from "@common/index";
 import { Box, Stack } from "@mui/material";
 import { styled } from "@mui/system";
@@ -8,6 +8,7 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ErrorIcon from "@mui/icons-material/Error";
 import { useMainContext } from "./MainContextProvider";
 import { Suspense } from "react";
+import { unstable_noStore } from "next/cache";
 
 const BoxContainer = styled(Box)(({ theme }) => ({
   marginTop: "-5rem",
@@ -45,6 +46,7 @@ const Text = styled("h4")(({ theme }) => ({
 }));
 
 function Dev({ rest, wifiData }) {
+  unstable_noStore();
   const { radius } = useMainContext();
   const mainSpot = radius;
   const { beachSpot1 } = rest.radiuses || null;
