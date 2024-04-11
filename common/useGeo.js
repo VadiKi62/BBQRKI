@@ -15,10 +15,12 @@ export default function useGeo(r, restaurant, zont, isHighSeason) {
 
   const [isGeolocationAvailable, setIsGeolocationAvailable] = useState(false);
   const [radius, setRadius] = useState(r || restaurant?.radiuses?.restSpot);
+
   const updateGeolocation = () => {
     if (!restaurant.useGeo) {
       setIsGeolocationAvailable(true);
       setCurrentPosition({ accuracy: 11, distanceToRest: 1 });
+      return;
     }
 
     const [mainSpot, rest] = getRestCoords(restaurant);

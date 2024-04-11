@@ -1,5 +1,11 @@
 "use client";
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, {
+  cloneElement,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { useTranslation } from "react-i18next";
 import { sendWaiter, sendBill } from "@common/BotRequest";
 import { useMediaQuery } from "@mui/material";
@@ -94,6 +100,9 @@ export const MainContextProvider = ({
     radius,
     setRadius,
   } = useGeo(r, rest, zont, isHighSeason);
+
+  console.log("isGeolocationAvailable", isGeolocationAvailable);
+  console.log("currentPosition", currentPosition);
 
   const messageWaiter1 = `${rest.name}.Table ${zont} called the Waiter.  Language - ${language}.\nΤραπέζι ${zont} κάλεσε τον σερβιτόρο. Γλώσσα - ${language}.`;
   let messageBill1 = `${rest.name}. Table ${zont} asks for Bill. Language - ${language}.\nΤραπέζι ${zont} ζητά τον λογαριασμό.  Γλώσσα - ${language}. `;
