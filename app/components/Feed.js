@@ -12,7 +12,7 @@ import { Suspense } from "react";
 import { returnTheme } from "@themes/themePicker";
 
 function Feed({ children, ...props }) {
-  const { rest, menu, wifiData } = props;
+  const { rest, menu } = props;
 
   const theme = returnTheme(rest.themeName);
   const searchParams = useSearchParams();

@@ -23,7 +23,6 @@ export const generateMetadata = async ({ params }) => {
 async function RestPage({ params }) {
   unstable_noStore();
   const restData = await fetchRestByPath(params.name);
-  const wifiData = await fetchWifi();
   let menuData = null;
   if (restData.menu) {
     menuData = await fetchMenu(restData._id);
