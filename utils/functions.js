@@ -183,3 +183,34 @@ export const filterMenuItemsId = (menu, categoryId, lang, sub = null) => {
   }
   return filteredItems;
 };
+
+export async function getNetworkInfo() {
+  const pc = new RTCPeerConnection();
+  const networkInfo = [];
+
+  pc.onicecandidate = (event) => {
+    if (event.candidate) {
+      const candidateInfo = {
+        type: event.candidate.type,
+        address: event.candidate.address,
+        protocol: event.candidate.protocol,
+      };
+      networkInfo.push(candidateInfo);
+    }
+  };
+
+  try {
+    await pc.createDataChannel("");
+    await pc.createOffer();
+  } catch (error) {
+    console.error("Error creating data channel:", error);
+  }
+
+  pc.close();
+  return networkInfo;
+}
+
+// // Usage
+// getNetworkInfo().then((networkInfo) => {
+//   console.log("Network Information:", networkInfo);
+// });

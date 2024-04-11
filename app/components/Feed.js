@@ -18,9 +18,10 @@ function Feed({ children, ...props }) {
   const theme = returnTheme(rest.themeName);
   const searchParams = useSearchParams();
 
-  const r = searchParams.get("r") || rest?.radiuses?.mainSpot;
+  // const r = searchParams.get("r") || rest?.radiuses?.mainSpot;
+  const r = searchParams.get("r") || 11111111;
 
-  let umbrella = searchParams.get("zont") || null;
+  let umbrella = searchParams.get("zont") || 2607;
   const dev = searchParams.get("dev") || null;
   const menuOnly = searchParams.get("menuOnly") || null;
 

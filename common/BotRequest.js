@@ -17,12 +17,12 @@ export const sendWaiter = (
     axios
       .post(`https://button.hopto.org/${endpoint}`, data)
       .then((response) => {
-        console.log(`Table ${data.table} called the waiter`, response.data);
+        console.log("response", response);
         // Call the success callback function if provided
         if (typeof onSuccess === "function") {
           onSuccess();
         }
-        resolve(response.data);
+        resolve(response.data.data);
       })
       .catch((error) => {
         console.error("Error sending Call Waiter:", error);
@@ -48,7 +48,6 @@ export const sendBill = (
       table: zont,
       message: message,
     };
-    console.log("chat_id!!! ", chat_id);
     axios
       .post(`https://button.hopto.org/${endpoint}`, data)
       .then(function (response) {

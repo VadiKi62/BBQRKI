@@ -17,9 +17,9 @@ import { useMainContext } from "../MainContextProvider";
 import ModalComponent from "../common/Modal";
 import SloganRotator from "../Slogans";
 import Dev from "../Dev";
-import LogoGallery from "../common/LogoGallery";
+
 import MenuButton from "./MenuButton";
-import { scrollMore } from "react-scroll/modules/mixins/animate-scroll";
+import ModalPayment from "@app/components/common/ModalPayment";
 
 const Overlay = styled("div")(({ theme }) => ({
   position: "absolute",
@@ -105,10 +105,19 @@ export default function HeroLayout({ rest }) {
     showInside,
     messageInside,
     menuOnly,
+    isPaymentModalOpen,
+    setPaymentModalOpen,
+    onPaymentMethodSelect,
   } = useMainContext();
 
   const [isSticky, setIsSticky] = useState(true);
   const [showLoading, setShowLoading] = useState(true);
+  // const [paymentMethod, setPaymentMethod] = useState(null);
+
+  const handlePaymentMethodSelect = (method) => {
+    onPaymentMethodSelect(method);
+    setPaymentModalOpen(false);
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -210,6 +219,16 @@ export default function HeroLayout({ rest }) {
       sx={{ justifyContent: devel ? "space-around" : "space-evenly" }}
     >
       <Overlay />
+
+      {isPaymentModalOpen && (
+        <ModalPayment
+          content={t("bill.payment")}
+          onClose={() => setPaymentModalOpen(false)}
+          loading={false}
+          run={false}
+          onPaymentMethodSelect={handlePaymentMethodSelect}
+        />
+      )}
 
       {!showLoading && !devel && (
         <TitleContainer

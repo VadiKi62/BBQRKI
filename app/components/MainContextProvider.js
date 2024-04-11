@@ -12,6 +12,7 @@ import useGeo from "@common/useGeo";
 import useHighSeason from "@common/useHighSeason";
 import { I18nextProvider } from "react-i18next";
 import i from "@locales/i18n";
+import { getNetworkInfo } from "@utils/functions";
 
 const MainContext = createContext();
 
@@ -170,6 +171,10 @@ export const MainContextProvider = ({
       await delay();
     }
 
+    getNetworkInfo().then((networkInfo) => {
+      console.log("Network Information:", networkInfo);
+    });
+
     if (isGeolocationAvailable) {
       if (isWaiterButtonActive) {
         if (!isButtonBillActive && !confirmAction(messageElse)) {
@@ -227,58 +232,48 @@ export const MainContextProvider = ({
     }
   };
 
+  const [isPaymentModalOpen, setPaymentModalOpen] = useState(false);
+  const [paymentMethod, onPaymentMethodSelect] = useState(null);
+
   const handleCallBill = async () => {
     await delay();
     if (isGeolocationAvailable) {
-      if (isButtonBillActive) {
-        if (!isWaiterButtonActive) {
-          showModal(messageRun, false, true);
-          return;
-        }
+      if (
+        currentPosition.distanceToRest <=
+        Number(radius) + currentPosition.accuracy
+      ) {
+        const paymentWithCash = window.confirm(t("bill.payment"));
+        // setPaymentModalOpen(true);
 
-        if (
-          currentPosition.distanceToRest <=
-          Number(radius) + currentPosition.accuracy
-        ) {
-          const paymentWithCash = window.confirm(t("bill.payment"));
-          // Determine the payment method based on the user's choice
-          const paymentMethod = paymentWithCash ? "Cash" : "Card";
-          // Include the payment method in the message
-          messageBill1 = `${rest.name}.Table ${zont} asks for Bill. Payment Method: ${paymentMethod}. Language - ${language}.\nΤραπέζι ${zont} ζητά τον λογαριασμό. Τρόπος Πληρωμής:${paymentMethod}. Γλώσσα - ${language}.`;
-          performActionBill(() => {
-            sendBill(
-              messageBill1,
-              zont,
-              restData.backendEndpoints.waiter,
-              restData.chat_id,
-              (responseData) => {
-                // Success callback
-                showModal(messageGot, false, true);
-                setShowInitialHeader(false);
-                setShowScan(true);
-              },
-              (error) => {
-                // Error callback
-                showModal(messageOops);
-                setShowInitialHeader(false);
-                setShowScan(true);
-              }
-            );
-          });
-        } else {
-          updateGeolocation();
-          showModal(`${messageInside}`, false, false);
-          history?.replaceState({}, document.title, window.location.pathname);
-          // router?.replace(router?.asPath, undefined, { shallow: true });
-          setShowInitialHeader(false);
-          setShowScan(false);
-          setShowInside(true);
-        }
+        //Determine the payment method based on the user's choice
+        const paymentMethod = paymentWithCash ? "Cash" : "Card";
+        //Include the payment method in the message
+        messageBill1 = `${rest.name}.Table ${zont} asks for Bill. Payment Method: ${paymentMethod}. Language - ${language}.\nΤραπέζι ${zont} ζητά τον λογαριασμό. Τρόπος Πληρωμής:${paymentMethod}. Γλώσσα - ${language}.`;
+        performActionBill(() => {
+          sendBill(
+            messageBill1,
+            zont,
+            restData.backendEndpoints.waiter,
+            restData.chat_id,
+            (responseData) => {
+              // Success callback
+              showModal(messageGot, false, true);
+              setShowInitialHeader(false);
+              setShowScan(true);
+            },
+            (error) => {
+              // Error callback
+              showModal(messageOops);
+              setShowInitialHeader(false);
+              setShowScan(true);
+            }
+          );
+        });
       } else {
-        showModal(messageRun, false, true);
-        setTimeout(function () {
-          hideModal(); // Call hideModal function after 10 seconds
-        }, 10000);
+        updateGeolocation();
+        showModal(`${messageInside}`, false, false);
+        history?.replaceState({}, document.title, window.location.pathname);
+        // router?.replace(router?.asPath, undefined, { shallow: true });
         setShowInitialHeader(false);
         setShowScan(false);
         setShowInside(true);
@@ -290,41 +285,41 @@ export const MainContextProvider = ({
     }
   };
   // Periodically update the Waiter countdown timer using setInterval
-  useEffect(() => {
-    const waiterInterval = setInterval(() => {
-      // Update countdown of Waiter button
-      setCountdownWaiter((prevCountdown) => {
-        if (prevCountdown === 0) {
-          // Countdown finished
-          clearInterval(waiterInterval); // Stop the interval
-          setWaiterButtonActive(true);
-          return 0;
-        } else {
-          return prevCountdown - 1;
-        }
-      });
-    }, 1000); // 1 second interval
+  // useEffect(() => {
+  //   const waiterInterval = setInterval(() => {
+  //     // Update countdown of Waiter button
+  //     setCountdownWaiter((prevCountdown) => {
+  //       if (prevCountdown === 0) {
+  //         // Countdown finished
+  //         clearInterval(waiterInterval); // Stop the interval
+  //         setWaiterButtonActive(true);
+  //         return 0;
+  //       } else {
+  //         return prevCountdown - 1;
+  //       }
+  //     });
+  //   }, 1000); // 1 second interval
 
-    return () => clearInterval(waiterInterval); // Cleanup when the component unmounts
-  }, [isWaiterButtonActive]);
+  //   return () => clearInterval(waiterInterval); // Cleanup when the component unmounts
+  // }, [isWaiterButtonActive]);
   // Periodically update the Bill countdown timer using setInterval
-  useEffect(() => {
-    const billInterval = setInterval(() => {
-      // Update countdown of Waiter button
-      setCountdownBill((prevCountdown) => {
-        if (prevCountdown === 0) {
-          // Countdown finished
-          clearInterval(billInterval); // Stop the interval
-          setButtonBillActive(true);
-          return 0;
-        } else {
-          return prevCountdown - 1;
-        }
-      });
-    }, 1000); // 1 second interval
+  // useEffect(() => {
+  //   const billInterval = setInterval(() => {
+  //     // Update countdown of Waiter button
+  //     setCountdownBill((prevCountdown) => {
+  //       if (prevCountdown === 0) {
+  //         // Countdown finished
+  //         clearInterval(billInterval); // Stop the interval
+  //         setButtonBillActive(true);
+  //         return 0;
+  //       } else {
+  //         return prevCountdown - 1;
+  //       }
+  //     });
+  //   }, 1000); // 1 second interval
 
-    return () => clearInterval(billInterval); // Cleanup when the component unmounts
-  }, [isButtonBillActive]);
+  //   return () => clearInterval(billInterval); // Cleanup when the component unmounts
+  // }, [isButtonBillActive]);
 
   // // Load countdown start time and button state from localStorage on component mount
   // useEffect(() => {
@@ -412,6 +407,9 @@ export const MainContextProvider = ({
     messageInside,
     isWorkingTime,
     menuOnly,
+    isPaymentModalOpen,
+    setPaymentModalOpen,
+    onPaymentMethodSelect,
   };
 
   return (
