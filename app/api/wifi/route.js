@@ -1,29 +1,31 @@
 import AWS from "aws-sdk";
+import wifi from "node-wifi";
 
 export const GET = async (req, res) => {
   try {
-    // Create an EC2 client
-    const ec2 = new AWS.EC2({ region: "us-east-1" });
+    // Initialize wifi module
+    wifi.init({
+      iface: null, // use default wifi interface
+    });
 
-    // Describe the network interfaces on the EC2 instance
-    const response = await ec2.describeNetworkInterfaces().promise();
+    const scanNetworks = () => {
+      return new Promise((resolve, reject) => {
+        wifi.scan((error, networks) => {
+          if (error) {
+            reject(error);
+          } else {
+            resolve(networks);
+          }
+        });
+      });
+    };
 
-    // Extract the private IP addresses from the network interfaces
-    const wifiList = response.NetworkInterfaces?.map(
-      (networkInterface) => networkInterface.PrivateIpAddress
-    );
-
-    if (wifiList && wifiList.length > 0) {
-      return new Response(JSON.stringify(wifiList), { status: 200 });
-    } else {
-      return new Response(
-        { error: "No Wi-Fi network interfaces found" },
-        { status: 404 }
-      );
-    }
+    // Scan for available networks
+    const networks = await scanNetworks();
+    const ssids = networks.map((network) => network.ssid);
+    return new Response(JSON.stringify(ssids), { status: 200 });
   } catch (error) {
     console.error("Error retrieving Wi-Fi network information:", error);
-
     return new Response(
       { error: "Error retrieving Wi-Fi network information" },
       { status: 500 }
