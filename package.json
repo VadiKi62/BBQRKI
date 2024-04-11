@@ -16,6 +16,7 @@
     "@mui/material": "^5.15.6",
     "@mui/system": "^5.15.6",
     "autoprefixer": "10.4.17",
+    "aws-sdk": "^2.1597.0",
     "axios": "^1.6.7",
     "mongodb": "^6.3.0",
     "mongoose": "^8.0.3",
