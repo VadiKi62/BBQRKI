@@ -1,5 +1,5 @@
 import React from "react";
-import { fetchRestByPath, fetchMenu, fetchWifi } from "@utils/actions";
+import { fetchRestByPath, fetchMenu } from "@utils/actions";
 import Feed from "@app/components/Feed";
 import { Suspense } from "react";
 import { unstable_noStore } from "next/cache";
@@ -30,7 +30,7 @@ async function RestPage({ params }) {
 
   return (
     <Suspense fallback={<Loading restData={restData} />}>
-      <Feed rest={restData} menu={menuData} wifiData={wifiData}>
+      <Feed rest={restData} menu={menuData}>
         {" "}
       </Feed>
     </Suspense>

@@ -80,7 +80,6 @@ const CallButtonWrapper = styled(Stack)(({ theme }) => ({
 }));
 
 export default function HeroLayout({ rest }) {
-  unstable_noStore();
   const { t } = useTranslation();
 
   let isOnlyMenu = false;

@@ -46,7 +46,6 @@ const Text = styled("h4")(({ theme }) => ({
 }));
 
 function Dev({ rest }) {
-  unstable_noStore();
   const { radius } = useMainContext();
   const mainSpot = radius;
   const { beachSpot1 } = rest.radiuses || null;
