@@ -45,7 +45,7 @@ const Text = styled("h4")(({ theme }) => ({
   fontSize: "1rem",
 }));
 
-function Dev({ rest, wifiData }) {
+function Dev({ rest }) {
   unstable_noStore();
   const { radius } = useMainContext();
   const mainSpot = radius;
@@ -135,8 +135,6 @@ function Dev({ rest, wifiData }) {
     else return <CheckCircleIcon color="success" />;
   }
 
-  console.log("wifiDataa", wifiData);
-
   return (
     <Suspense>
       <BoxContainer>
@@ -178,9 +176,9 @@ function Dev({ rest, wifiData }) {
       </BoxContainer>
       <StackContainer>
         <Text>LIST OF WIFIS : </Text>
-        {wifiData.map((wifi, i) => (
+        {/* {wifiData.map((wifi, i) => (
           <p key={i}>{wifi} </p>
-        ))}
+        ))} */}
       </StackContainer>
     </Suspense>
   );

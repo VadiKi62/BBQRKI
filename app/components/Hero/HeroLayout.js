@@ -79,7 +79,7 @@ const CallButtonWrapper = styled(Stack)(({ theme }) => ({
   alignItems: "center",
 }));
 
-export default function HeroLayout({ rest, wifiData }) {
+export default function HeroLayout({ rest }) {
   unstable_noStore();
   const { t } = useTranslation();
 
@@ -284,7 +284,7 @@ export default function HeroLayout({ rest, wifiData }) {
         </InfoContainer>
       )}
 
-      {devel && <Dev rest={rest} wifiData={wifiData} />}
+      {devel && <Dev rest={rest} />}
 
       {modalVisible && (
         <ModalComponent

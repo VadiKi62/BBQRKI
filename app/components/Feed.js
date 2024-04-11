@@ -39,7 +39,7 @@ function Feed({ children, ...props }) {
           menuOnly={menuOnly}
         >
           <Navbar rest={rest} />
-          <MainContent rest={rest} menuData={menu} wifiData={wifiData} />
+          <MainContent rest={rest} menuData={menu} />
           {children}
           <Footer rest={rest} />
           <ScrollButton />
