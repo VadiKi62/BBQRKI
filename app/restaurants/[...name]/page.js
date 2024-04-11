@@ -1,5 +1,5 @@
 import React from "react";
-import { fetchRestByPath, fetchMenu } from "@utils/actions";
+import { fetchRestByPath, fetchMenu, fetchWifi } from "@utils/actions";
 import Feed from "@app/components/Feed";
 import { Suspense } from "react";
 import { unstable_noStore } from "next/cache";
@@ -23,6 +23,7 @@ export const generateMetadata = async ({ params }) => {
 async function RestPage({ params }) {
   unstable_noStore();
   const restData = await fetchRestByPath(params.name);
+  const wifiData = await fetchWifi();
   let menuData = null;
   if (restData.menu) {
     menuData = await fetchMenu(restData._id);
@@ -30,7 +31,7 @@ async function RestPage({ params }) {
 
   return (
     <Suspense fallback={<Loading restData={restData} />}>
-      <Feed rest={restData} menu={menuData}>
+      <Feed rest={restData} menu={menuData} wifiData={wifiData}>
         {" "}
       </Feed>
     </Suspense>

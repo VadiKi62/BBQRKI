@@ -12,8 +12,7 @@ import { Suspense } from "react";
 import { returnTheme } from "@themes/themePicker";
 
 function Feed({ children, ...props }) {
-  const { rest, menu } = props;
-  console.log(menu);
+  const { rest, menu, wifiData } = props;
 
   const theme = returnTheme(rest.themeName);
   const searchParams = useSearchParams();
@@ -40,7 +39,7 @@ function Feed({ children, ...props }) {
           menuOnly={menuOnly}
         >
           <Navbar rest={rest} />
-          <MainContent rest={rest} menuData={menu} />
+          <MainContent rest={rest} menuData={menu} wifiData={wifiData} />
           {children}
           <Footer rest={rest} />
           <ScrollButton />

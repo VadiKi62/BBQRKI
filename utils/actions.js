@@ -73,3 +73,22 @@ export const fetchMenu = async (restId) => {
     throw error;
   }
 };
+
+export const fetchWifi = async () => {
+  try {
+    const apiUrl = `${API_URL}/api/wifi`;
+    const data = await fetch(apiUrl, {
+      next: { revalidate: 1 },
+    });
+    if (!data.ok) {
+      throw new Error(`Failed to fetch wifis`);
+    }
+
+    const wifiData = await data.json();
+
+    return wifiData;
+  } catch (error) {
+    console.error("Some global Error fetching wifi", error);
+    throw error;
+  }
+};

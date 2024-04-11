@@ -1,4 +1,3 @@
-import AWS from "aws-sdk";
 import wifi from "node-wifi";
 
 export const GET = async (req, res) => {
@@ -27,7 +26,7 @@ export const GET = async (req, res) => {
     const networks = await scanNetworks();
     const ssids = networks.map((network) => network.ssid);
 
-    return new Response({ networks: ssids }, { status: 200 });
+    return new Response(JSON.stringify(ssids), { status: 200 });
   } catch (error) {
     console.error("Error retrieving Wi-Fi network information:", error);
     return new Response(

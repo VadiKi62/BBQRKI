@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { calculateDistance, getRestCoords } from "@common/index";
-import { Box, Divider, Typography, Container } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import { styled } from "@mui/system";
 // import Typography from "./common/Typography";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
@@ -20,6 +20,18 @@ const BoxContainer = styled(Box)(({ theme }) => ({
   zIndex: "22",
 }));
 
+const StackContainer = styled(Stack)(({ theme }) => ({
+  marginTop: "-4rem",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  flexWrap: "wrap",
+  justifyContent: "center",
+  alignItems: "center",
+  color: "red",
+  zIndex: "212",
+}));
+
 const Span = styled("span")(({ theme }) => ({
   color: theme.palette.secondary.light,
   fontSize: "1.4rem",
@@ -32,7 +44,7 @@ const Text = styled("h4")(({ theme }) => ({
   fontSize: "1rem",
 }));
 
-function Dev({ rest }) {
+function Dev({ rest, wifiData }) {
   const { radius } = useMainContext();
   const mainSpot = radius;
   const { beachSpot1 } = rest.radiuses || null;
@@ -116,10 +128,12 @@ function Dev({ rest }) {
     .catch(handlePositionError);
 
   function isWithinRadius(d, r, a) {
-    console.log("d>r+a", Number(d) > r + Number(a));
+    // console.log("d>r+a", Number(d) > r + Number(a));
     if (Number(d) > r + Number(a)) return <ErrorIcon color="error" />;
     else return <CheckCircleIcon color="success" />;
   }
+
+  console.log("wifiDataa", wifiData);
 
   return (
     <Suspense>
@@ -160,6 +174,12 @@ function Dev({ rest }) {
           Acc: <Span>{distanceToRest.ac}</Span>
         </Text>
       </BoxContainer>
+      <StackContainer>
+        <Text>LIST OF WIFIS : </Text>
+        {wifiData.map((wifi, i) => (
+          <p key={i}>{wifi} </p>
+        ))}
+      </StackContainer>
     </Suspense>
   );
 }

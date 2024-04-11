@@ -7,7 +7,7 @@ import { Suspense } from "react";
 import Loading from "@app/components/common/Loaders/LoadingScreen";
 import { fetchMenu } from "@utils/actions";
 
-function MainContent({ rest, menuData }) {
+function MainContent({ rest, menuData, wifiData }) {
   unstable_noStore();
   const isMenu = Boolean(rest.menu);
 
@@ -17,7 +17,7 @@ function MainContent({ rest, menuData }) {
   return (
     // <div>
     <Suspense fallback={<Loading restData={rest} />}>
-      <HeroLayout rest={rest} />
+      <HeroLayout rest={rest} wifiData={wifiData} />
       {isMenu && <Menu menuData={menuData} />}
     </Suspense>
     // </div>
