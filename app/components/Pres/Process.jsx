@@ -12,7 +12,7 @@ import { LiaUmbrellaBeachSolid } from "react-icons/lia";
 import { GiReceiveMoney } from "react-icons/gi";
 
 const StyledGridItem = styled(Grid)({
-  height: 335,
+  minHeight: 435,
   width: "100%",
   display: "flex",
   flexDirection: "column",
@@ -32,8 +32,6 @@ const Title = styled(Typography)({
 });
 
 const Description = styled(Typography)({
-  fontSize: "17px",
-  lineHeight: "21px",
   marginTop: 5,
   fontWeight: 500,
   color: "#ffffff",
@@ -70,7 +68,7 @@ const Progress = () => {
           <Grid item lg={7} md={10}>
             <Typography
               variant="h6"
-              align="start"
+              align="left"
               sx={{
                 mb: 2,
                 fontSize: "22px",
@@ -85,7 +83,6 @@ const Progress = () => {
             <Typography
               variant="h4"
               align="left"
-              color="primary.main"
               sx={{ fontWeight: 600, textTransform: "uppercase" }}
               className="color-font"
             >
@@ -101,10 +98,20 @@ const Progress = () => {
               <StyledGridItem className="item text-center">
                 {icon}
                 <Title variant="body">{t(`pres.page6.${index}`)}</Title>
-                <span className="step-number">
+                <Typography
+                  variant="h5"
+                  sx={{
+                    fontWeight: 600,
+                    textTransform: "uppercase",
+                    letterSpacing: "3px",
+                    mb: 4,
+                    mt: 3,
+                  }}
+                  color="primary.red"
+                >
                   {t("pres.page6.2a")} 0{index - 2}
-                </span>
-                <Description variant="body">
+                </Typography>
+                <Description variant="h5">
                   {t(`pres.page6.${index}a`)}
                 </Description>
               </StyledGridItem>
@@ -113,8 +120,10 @@ const Progress = () => {
           <StyledGridItem item lg={12} width={"100hv"}>
             <div className="item text-center">
               <GiReceiveMoney style={iconStyle} />
-              <Title variant="body">{t("pres.page6.7")}</Title>
-              <Description variant="body">{t("pres.page6.7a")}</Description>
+              <Title variant="body" sx={{ mb: 5 }}>
+                {t("pres.page6.7")}
+              </Title>
+              <Description variant="h5">{t("pres.page6.7a")}</Description>
             </div>
           </StyledGridItem>
         </Grid>
