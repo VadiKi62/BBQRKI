@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import { CodingSkills } from "@app/components/Me/Skills";
+import Image from "next/image";
 // import TypingAnimation from "@app/components/Me/TypingAnimation";
 
 import { createSkillsDot, dotResize } from "@app/components/Me/utils";
@@ -94,7 +95,12 @@ export default function Me() {
           <div className="content content-box">
             {/* image */}
             <div className="image">
-              <img src="images/resume.webp" alt="" />
+              <Image
+                src="/assets/pres/resume.webp"
+                alt=""
+                width={140}
+                height={140}
+              />
             </div>
             {/* desc */}
             <div className="desc">
@@ -598,7 +604,7 @@ export default function Me() {
               <div className="team-col">
                 <div className="team-item content-box">
                   <div className="image">
-                    <img src="images/team1.jpg" alt="" />
+                    <Image src="images/team1.jpg" alt="" />
                   </div>
                   <div className="desc">
                     <div className="name">Alejandro Abeyta</div>
@@ -632,7 +638,7 @@ export default function Me() {
               <div className="team-col">
                 <div className="team-item content-box">
                   <div className="image">
-                    <img src="images/team2.jpg" alt="" />
+                    <Image src="images/team2.jpg" alt="" />
                   </div>
                   <div className="desc">
                     <div className="name">Peter Green</div>
@@ -681,28 +687,28 @@ export default function Me() {
                 <div className="clients-col">
                   <div className="clients-item">
                     <a target="_blank" rel="noreferrer" href="#">
-                      <img src="images/client1.png" alt="" />
+                      <Image src="images/client1.png" alt="" />
                     </a>
                   </div>
                 </div>
                 <div className="clients-col">
                   <div className="clients-item">
                     <a target="_blank" rel="noreferrer" href="#">
-                      <img src="images/client3.png" alt="" />
+                      <Image src="images/client3.png" alt="" />
                     </a>
                   </div>
                 </div>
                 <div className="clients-col">
                   <div className="clients-item">
                     <a target="_blank" rel="noreferrer" href="#">
-                      <img src="images/client2.png" alt="" />
+                      <Image src="images/client2.png" alt="" />
                     </a>
                   </div>
                 </div>
                 <div className="clients-col">
                   <div className="clients-item">
                     <a target="_blank" rel="noreferrer" href="#">
-                      <img src="images/client4.png" alt="" />
+                      <Image src="images/client4.png" alt="" />
                     </a>
                   </div>
                 </div>
@@ -838,9 +844,9 @@ export default function Me() {
           <div className="clear" />
         </div>
         {/* Section Started */}
-        <div className="section started section-title" id="section-map">
-          {/* background */}
-          <div className="video-bg">
+        {/* <div className="section started section-title" id="section-map"> */}
+        {/* background */}
+        {/* <div className="video-bg">
             <div className="map" id="map">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d136834.1519573059!2d-74.0154445224086!3d40.7260256534837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1639991650837!5m2!1sen!2sbd"
@@ -852,7 +858,7 @@ export default function Me() {
             <div className="video-bg-mask" />
             <div className="video-bg-texture" id="grained_container" />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

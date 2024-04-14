@@ -25,7 +25,7 @@ const TypingAnimation = ({ typingData, extraClassName }) => {
     return () => {
       typed.destroy();
     };
-  }, []);
+  }, [typingData]);
   return (
     <span
       className={`${extraClassName} typing-subtitle`}

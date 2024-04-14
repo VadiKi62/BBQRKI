@@ -1,8 +1,22 @@
-// import Head from "next/head";
-// import { Fragment } from "react";
-// import "@styles/me.css";
+import { Fragment } from "react";
+import "@styles/me.css";
+import Script from "next/script";
 
-// function MyApp({ Component, pageProps }) {
+export default function MeLayout({ children }) {
+  return (
+    <>
+      {/* <LoadingScreen /> */}
+      {/* <ProgressScroll /> */}
+      {/* <CircleBg /> */}
+      {children}
+      {/*
+        <Header />
+        <MainContent /> */}
+    </>
+  );
+}
+
+// function MeLayout({ Component, pageProps }) {
 //   return (
 //     <Fragment>
 //       <Head>
@@ -30,53 +44,3 @@
 // }
 
 // export default MyApp;
-
-// "use client";
-// import { Fragment, useEffect } from "react";
-// import Footer from "@app/components/Me/Footer";
-// import Header from "@app/components/Me/Header";
-// import Preloader from "@app/components/Me/Preloader";
-// const Layout = ({ children, noHeader }) => {
-//   useEffect(() => {
-//     cursor();
-//   }, []);
-//   useEffect(() => {
-//     window.addEventListener("scroll", stickyNav);
-//   }, []);
-
-//   return (
-//     <Fragment>
-//       {/* <VideoPopup /> */}
-//       {/* <ImageView /> */}
-//       {/* <ImageGallery /> */}
-//       {/* <ContentModal /> */}
-//       <Preloader />
-//       {/* Container */}
-//       <div className="container">
-//         {/* Cursor */}
-//         {/* <div className="cursor-follower" /> */}
-//         {/* Header */}
-//         {!noHeader && <Header />}
-
-//         {/* Wrapper */}
-//         <div className="wrapper">
-//           {/* Section Started */}
-//           {children}
-//         </div>
-//         {/* Footer */}
-//         <Footer />
-//         {/* Lines */}
-//         <div className="lines">
-//           <div className="content">
-//             <div className="line-col" />
-//             <div className="line-col" />
-//             <div className="line-col" />
-//             <div className="line-col" />
-//             <div className="line-col" />
-//           </div>
-//         </div>
-//       </div>
-//     </Fragment>
-//   );
-// };
-// export default Layout;
