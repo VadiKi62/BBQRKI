@@ -1,18 +1,14 @@
 import React from "react";
 import { Container, Grid, Typography, styled } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import {
-  IoCloudDownloadOutline,
-  IoPersonOutline,
-  IoPhonePortraitOutline,
-} from "react-icons/io5";
+import { IoPhonePortraitOutline } from "react-icons/io5";
 import { CgWebsite } from "react-icons/cg";
 import { AiOutlineQrcode } from "react-icons/ai";
 import { LiaUmbrellaBeachSolid } from "react-icons/lia";
 import { GiReceiveMoney } from "react-icons/gi";
 
 const StyledGridItem = styled(Grid)({
-  minHeight: 435,
+  minHeight: "100%",
   width: "100%",
   display: "flex",
   flexDirection: "column",
@@ -64,7 +60,7 @@ const Progress = () => {
   return (
     <section className="app-process">
       <Container>
-        <Grid container justifyContent="start" mt={5} mb={5}>
+        <Grid container justifyContent="start" mt={2} mb={2}>
           <Grid item lg={7} md={10}>
             <Typography
               variant="h6"

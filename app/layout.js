@@ -2,6 +2,7 @@ import "@/styles/main.scss";
 import "./globals.css";
 import "@styles/animations.css";
 import "@styles/slider.css";
+import "@/styles/mobile-app-dark.css";
 import Image from "next/image";
 import Link from "next/link";
 import generateStylesheetObject from "@common/generateStylesheetsObject";
@@ -29,7 +30,7 @@ export default function RootLayout({ children }) {
       <body style={{ position: "relative", minHeight: "100vh" }}>
         {" "}
         {children}{" "}
-        <footer
+        {/* <footer
           style={{
             position: "absolute",
             bottom: 0,
@@ -41,7 +42,7 @@ export default function RootLayout({ children }) {
           <Link href="/about">
             <p id="root-layout">Powered by Nataliaki</p>
           </Link>
-        </footer>
+        </footer> */}
       </body>
     </html>
   );

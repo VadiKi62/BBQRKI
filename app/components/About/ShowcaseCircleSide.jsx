@@ -94,7 +94,7 @@ function ShowcaseCircleSide() {
           <Grid item xs={12} md={8}>
             <Typography
               variant="h6"
-              align="start"
+              align="left"
               sx={{
                 mb: 2,
                 fontSize: "22px",
@@ -108,7 +108,7 @@ function ShowcaseCircleSide() {
             </Typography>
             <Typography
               variant="h4"
-              align="start"
+              align="left"
               color="primary.main"
               sx={{ fontWeight: 700, textTransform: "uppercase" }}
               className="color-font"
