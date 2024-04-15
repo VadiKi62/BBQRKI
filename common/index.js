@@ -52,6 +52,8 @@ export function getLongLanguageName(shortCode) {
     de: "Deutsch",
     ru: "Russian",
     el: "Ελληνικά",
+    sr: "Serbian",
+    ua: "Ukrainian",
   };
   return languageMap[shortCode] || shortCode;
 }
