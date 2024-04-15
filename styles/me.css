@@ -1,6 +1,9 @@
 html {
   scroll-behavior: smooth;
 }
+.text {
+  font-size: 20px;
+}
 .jarallax {
   position: relative;
   z-index: 0;
@@ -17,32 +20,6 @@ html {
   z-index: -1;
 }
 
-/**
-*	Cvio - Resume/CV Template (HTML)
-*	Version: 1.1
-*	Author: beshleyua
-*	Author URL: http://themeforest.net/user/beshleyua
-*	Copyright © Cvio by beshleyua. All Rights Reserved.
-**/
-
-/* TABLE OF CONTENTS
-	- Basic
-	- Preloader
-	- Container
-	- Columns
-	- Typography
-	- Links
-	- Buttons
-	- Forms
-	- Lists
-	- Code
-	- Tables
-	- Alignment
-	- Text Formating
-	- Blockquote
-	- Animations
-*/
-
 /* - Basic */
 html {
   margin-right: 0 !important;
@@ -53,7 +30,7 @@ body {
   padding: 0;
   border: none;
   font-family: "Roboto";
-  font-size: 16px;
+  font-size: 22px;
   line-height: 1.5;
   color: #bbb;
   background: #101010;
@@ -420,7 +397,8 @@ h6 {
 }
 
 p {
-  font-size: 16px;
+  font-size: 23px;
+  line-height: 27px;
   padding: 0;
   margin: 30px 0;
 }
@@ -1074,21 +1052,6 @@ blockquote {
   .desktopHeader {
     display: none;
   }
-}
-
-.cursor-follower.cursor-hover {
-  width: 80px;
-  height: 80px;
-  opacity: 0.1;
-  margin: -43px 0px 0px -43px;
-}
-.cursor-follower {
-  transition: width 0.3s ease-in-out, height 0.3s ease-in-out,
-    margin 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  width: 26px;
-  height: 26px;
-  opacity: 0.4;
-  margin: -13px 0px 0px -13px;
 }
 
 .info.circle:hover {

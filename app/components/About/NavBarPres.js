@@ -2,19 +2,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import {
-  Button,
-  Typography,
-  Stack,
-  Toolbar,
-  Container,
-  IconButton,
-  Popover,
-  MenuItem,
-  Link,
-  Menu,
-  Box,
-} from "@mui/material";
+import { Stack, Toolbar, IconButton, Popover, MenuItem } from "@mui/material";
 import LanguageIcon from "@mui/icons-material/Language";
 import { useTranslation } from "react-i18next";
 import { styled } from "@mui/system";
@@ -110,6 +98,14 @@ function AppAppBar() {
           >
             <LanguageIcon />
           </LanguageSwitcher>
+          <Stack
+            sx={{
+              justifyContent: "flex-end",
+            }}
+          >
+            {" "}
+            <a href="/me">About Me</a>
+          </Stack>
         </Toolbar>
       </TransparentAppBar>
 
