@@ -4,6 +4,7 @@ import "@styles/animations.css";
 import "@styles/slider.css";
 import "@/styles/mobile-app-dark.css";
 import Image from "next/image";
+import Head from "next/head";
 import Link from "next/link";
 import generateStylesheetObject from "@common/generateStylesheetsObject";
 
@@ -26,11 +27,18 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body style={{ position: "relative", minHeight: "100vh" }}>
-        {" "}
-        {children}{" "}
-        {/* <footer
+    <>
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="hmG4CgYtKAr6PmkiwR4-FEvnscd81EMt-CBuV0GfACY"
+        />
+      </Head>
+      <html lang="en">
+        <body style={{ position: "relative", minHeight: "100vh" }}>
+          {" "}
+          {children}{" "}
+          {/* <footer
           style={{
             position: "absolute",
             bottom: 0,
@@ -43,7 +51,8 @@ export default function RootLayout({ children }) {
             <p id="root-layout">Powered by Nataliaki</p>
           </Link>
         </footer> */}
-      </body>
-    </html>
+        </body>
+      </html>
+    </>
   );
 }

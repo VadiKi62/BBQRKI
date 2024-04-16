@@ -103,6 +103,7 @@ export const MainContextProvider = ({
 
   const messageWaiter1 = `${rest.name}.Table ${zont} called the Waiter.  Language - ${language}.\nΤραπέζι ${zont} κάλεσε τον σερβιτόρο. Γλώσσα - ${language}.`;
   let messageBill1 = `${rest.name}. Table ${zont} asks for Bill. Language - ${language}.\nΤραπέζι ${zont} ζητά τον λογαριασμό.  Γλώσσα - ${language}. `;
+  const messageShisha = `${rest.name}.Table ${zont} called Shisha.  Language - ${language}.\nΤραπέζι ${zont} κάλεσε τον shisha. Γλώσσα - ${language}.`;
 
   const [modalVisible, setModalVisible] = useState(false);
   const [loadingModal, setLoading] = useState(true);
@@ -171,11 +172,12 @@ export const MainContextProvider = ({
       );
     }
   };
-  const handleCallWaiter = async () => {
+  const handleCallWaiter = async (isShisha = false) => {
     if (!isGeolocationAvailable) {
       updateGeolocation();
       await delay();
     }
+    const message = isShisha ? messageShisha : messageWaiter1;
 
     if (isGeolocationAvailable) {
       if (isWaiterButtonActive) {
@@ -188,7 +190,7 @@ export const MainContextProvider = ({
         ) {
           performActionWaiter(() => {
             sendWaiter(
-              messageWaiter1,
+              message,
               zont,
               restData.backendEndpoints.waiter,
               restData.chat_id,

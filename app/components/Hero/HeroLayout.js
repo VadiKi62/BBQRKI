@@ -100,6 +100,7 @@ export default function HeroLayout({ rest }) {
     isButtonBillActive,
     handleCallWaiter,
     handleCallBill,
+    handleCallShisha,
     hideModal,
     run,
     showScan,
@@ -209,6 +210,13 @@ export default function HeroLayout({ rest }) {
             isButtonBillActive={isButtonBillActive}
             handleCallBill={handleCallBill}
           />
+          {rest.app?.buttonSisha && (
+            <CallCustomButton
+              showButton={true}
+              onClick={() => handleCallWaiter(true)}
+              label="Call Shisha"
+            />
+          )}
         </CallButtonWrapper>
       </>
     );
@@ -347,14 +355,7 @@ const InsideInfo = ({ isSmallScreen, messageInside, rest }) => {
 
 const Slogan = ({ isSmallScreen, slogan, rest }) => {
   return (
-    <TitleContainer
-      sx={
-        {
-          // mb: isSmallScreen && rest.slogans.length > 0 ? 3 : 2,
-          // mt: isSmallScreen && rest.slogans.length > 0 ? -4 : -10,
-        }
-      }
-    >
+    <TitleContainer>
       <Typography
         color="text.dark"
         align="center"

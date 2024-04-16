@@ -378,7 +378,7 @@ export default function Me() {
                   </div>
 
                   <div className="text">
-                    <a href="mailto:steve-pearson@gmail.com">
+                    <a href="mailto:nataliakireewa@gmail.com">
                       nataliakireewa@gmail.com
                     </a>
                   </div>

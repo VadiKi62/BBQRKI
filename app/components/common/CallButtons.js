@@ -50,13 +50,7 @@ export function CallBillButton({
   );
 }
 
-export function CallCustomButton({
-  showCallWaiterButton,
-  isSticky,
-  isButtonBillActive,
-  handleCallBill,
-  label,
-}) {
+export function CallCustomButton({ showButton, isSticky, handleCall, label }) {
   const { t } = useTranslation();
 
   return (
@@ -64,9 +58,9 @@ export function CallCustomButton({
       <Button
         // bottom={0}
         isSticky={isSticky}
-        disabled={!isButtonBillActive}
-        visibility={showCallWaiterButton}
-        onClick={handleCallBill}
+        disabled={false}
+        visibility={showButton}
+        onClick={handleCall}
         label={label}
       />
     </Element>
