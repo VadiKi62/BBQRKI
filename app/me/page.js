@@ -10,6 +10,7 @@ import { SiYourtraveldottv } from "react-icons/si";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { IoMdMail } from "react-icons/io";
 import MenuDrawer from "@app/components/Me/MenuDrawer";
+import { Button } from "@mui/material";
 
 import { createSkillsDot, dotResize } from "@app/components/Me/utils";
 
@@ -32,9 +33,15 @@ export default function Me() {
       <header className="header">
         <div className="head-top">
           {/* menu button */}
-          <button onClick={toggleDrawer(open)} className="menu-btn ">
+          <Button
+            onClick={toggleDrawer(open)}
+            className="menu-btn"
+            sx={{
+              display: { xs: "block", sm: "block", md: "none" },
+            }}
+          >
             <MenuDrawer toggleDrawer={toggleDrawer} open={open} />
-          </button>
+          </Button>
           {/* logo */}
           <div className="logo hover-masks-logo">
             <a

@@ -38,19 +38,19 @@ export default function RootLayout({ children }) {
         <body style={{ position: "relative", minHeight: "100vh" }}>
           {" "}
           {children}{" "}
-          {/* <footer
-          style={{
-            position: "absolute",
-            bottom: 0,
-            left: "50%",
-            transform: "translateX(-50%)",
-            textAlign: "center",
-          }}
-        >
-          <Link href="/about">
-            <p id="root-layout">Powered by Nataliaki</p>
-          </Link>
-        </footer> */}
+          <footer
+            style={{
+              position: "absolute",
+              bottom: 0,
+              left: "50%",
+              transform: "translateX(-50%)",
+              textAlign: "center",
+            }}
+          >
+            <Link href="/">
+              <p id="root-layout">Powered by Nataliaki</p>
+            </Link>
+          </footer>
         </body>
       </html>
     </>
