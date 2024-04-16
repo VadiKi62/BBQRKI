@@ -27,7 +27,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <div>
+    <>
       <Head>
         <meta
           name="google-site-verification"
@@ -53,6 +53,6 @@ export default function RootLayout({ children }) {
         </footer> */}
         </body>
       </html>
-    </div>
+    </>
   );
 }

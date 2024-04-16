@@ -213,7 +213,7 @@ export default function HeroLayout({ rest }) {
           {rest.app?.buttonSisha && (
             <CallCustomButton
               showButton={true}
-              onClick={() => handleCallWaiter(true)}
+              handleCall={handleCallShisha}
               label="Call Shisha"
             />
           )}

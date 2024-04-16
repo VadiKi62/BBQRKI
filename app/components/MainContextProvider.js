@@ -172,12 +172,13 @@ export const MainContextProvider = ({
       );
     }
   };
-  const handleCallWaiter = async (isShisha = false) => {
+  const handleCallWaiter = async () => {
     if (!isGeolocationAvailable) {
       updateGeolocation();
       await delay();
     }
-    const message = isShisha ? messageShisha : messageWaiter1;
+    console.log("CLICKED! IS SHSISA", isShisha);
+    const message = messageWaiter1;
 
     if (isGeolocationAvailable) {
       if (isWaiterButtonActive) {
@@ -191,6 +192,69 @@ export const MainContextProvider = ({
           performActionWaiter(() => {
             sendWaiter(
               message,
+              zont,
+              restData.backendEndpoints.waiter,
+              restData.chat_id,
+              (responseData) => {
+                // Success callback
+                showModal(messageGot, false, true);
+                setShowInitialHeader(false);
+                setShowInside(false);
+                setShowScan(true);
+              },
+              (error) => {
+                // Error callback
+                console.error(error);
+                showModal(messageOops);
+                setShowInitialHeader(false);
+                setShowInside(false);
+                setShowScan(true);
+              }
+            );
+          });
+        } else {
+          updateGeolocation();
+          showModal(`${messageInside}`, false, false);
+          setTimeout(function () {
+            hideModal();
+          }, 30000);
+          history?.replaceState({}, document.title, window?.location.pathname);
+          // router?.replace(router.asPath, undefined, { shallow: true });
+          setShowInitialHeader(false);
+          setShowScan(false);
+          setShowInside(true);
+        }
+      } else {
+        showModal(messageRun, false, true);
+        setTimeout(function () {
+          hideModal(); // Call hideModal function after 10 seconds
+        }, 10000); // 10 seconds in milliseconds
+      }
+    } else {
+      updateGeolocation();
+      // Handle case where geolocation was rejected
+      showModal(messageEnable, false, false);
+    }
+  };
+
+  const handleCallShisha = async () => {
+    if (!isGeolocationAvailable) {
+      updateGeolocation();
+      await delay();
+    }
+
+    if (isGeolocationAvailable) {
+      if (isWaiterButtonActive) {
+        if (!isButtonBillActive && !confirmAction(messageElse)) {
+          return;
+        }
+        if (
+          currentPosition.distanceToRest <=
+          Number(radius) + currentPosition.accuracy
+        ) {
+          performActionWaiter(() => {
+            sendWaiter(
+              messageShisha,
               zont,
               restData.backendEndpoints.waiter,
               restData.chat_id,
@@ -414,6 +478,7 @@ export const MainContextProvider = ({
     isPaymentModalOpen,
     setPaymentModalOpen,
     onPaymentMethodSelect,
+    handleCallShisha,
   };
 
   return (
