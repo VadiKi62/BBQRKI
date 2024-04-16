@@ -50,14 +50,14 @@ export function CallBillButton({
   );
 }
 
-export function CallCustomButton({ showButton, isSticky, handleCall, label }) {
+export function CallCustomButton({ showButton, handleCall, label }) {
   const { t } = useTranslation();
 
   return (
     <Element name="callCustomButton">
       <Button
         // bottom={0}
-        isSticky={isSticky}
+        // isSticky={isSticky}
         disabled={false}
         visibility={showButton}
         onClick={handleCall}
