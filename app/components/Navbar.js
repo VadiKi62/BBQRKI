@@ -42,6 +42,7 @@ const Logo = styled(Typography)(({ theme }) => ({
   display: "flex",
   fontFamily: theme.typography.h1.fontFamily,
   color: theme.palette.text.red,
+  zIndex: 100,
 }));
 
 const LogoImg = styled(Image)(({ theme }) => ({

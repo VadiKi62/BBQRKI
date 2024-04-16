@@ -401,6 +401,7 @@ p {
   line-height: 27px;
   padding: 0;
   margin: 30px 0;
+  opacity: 1 !important;
 }
 
 strong {
@@ -1726,12 +1727,13 @@ img.mfp-img {
   left: calc(20% + 35px);
   bottom: 50px;
   max-width: 560px;
-  font-size: 20px;
+  font-size: 25px !important;
+  line-height: 30px !important;
   font-weight: 300;
   color: #fff;
-  word-break: break-word;
+  /* word-break: break-word;
   -ms-word-wrap: break-word;
-  word-wrap: break-word;
+  word-wrap: break-word; */
 }
 
 .section.started .started-content .h-title strong {

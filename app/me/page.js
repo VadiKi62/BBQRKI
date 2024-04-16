@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { CodingSkills } from "@app/components/Me/Skills";
 import Image from "next/image";
 import Layout from "@app/components/Me/layout/Layout";
@@ -7,6 +7,9 @@ import TypingAnimation from "@app/components/Me/TypingAnimation";
 import { BiSolidMoviePlay } from "react-icons/bi";
 import { GiYarn } from "react-icons/gi";
 import { SiYourtraveldottv } from "react-icons/si";
+import { BsFillTelephoneFill } from "react-icons/bs";
+import { IoMdMail } from "react-icons/io";
+import MenuDrawer from "@app/components/Me/MenuDrawer";
 
 import { createSkillsDot, dotResize } from "@app/components/Me/utils";
 
@@ -18,14 +21,20 @@ export default function Me() {
     };
   }, []);
 
+  const [open, setOpen] = useState(false);
+
+  const toggleDrawer = (open) => () => {
+    setOpen(!open);
+  };
+
   return (
     <Layout>
       <header className="header">
         <div className="head-top">
           {/* menu button */}
-          <a href="#" className="menu-btn">
-            <span />
-          </a>
+          <button onClick={toggleDrawer(open)} className="menu-btn ">
+            <MenuDrawer toggleDrawer={toggleDrawer} open={open} />
+          </button>
           {/* logo */}
           <div className="logo hover-masks-logo">
             <a
@@ -231,7 +240,7 @@ export default function Me() {
                     <div className="name">
                       Kyiv National Economical University
                     </div>
-                    <div className="text">Masted Degree in Economics.</div>
+                    <div className="text">Master Degree in Economics.</div>
                   </div>
                 </div>
               </div>
@@ -356,18 +365,18 @@ export default function Me() {
               <div className="service-col">
                 <div className="service-item content-box">
                   <div className="icon">
-                    <span className="fas fa-phone" />
+                    <BsFillTelephoneFill />
                   </div>
-                  <div className="name">Phone</div>
+
                   <div className="text">+ (380) 68 100 37 71</div>
                 </div>
               </div>
               <div className="service-col">
                 <div className="service-item content-box">
                   <div className="icon">
-                    <span className="fas fa-envelope" />
+                    <IoMdMail />
                   </div>
-                  <div className="name">Email</div>
+
                   <div className="text">
                     <a href="mailto:steve-pearson@gmail.com">
                       nataliakireewa@gmail.com
@@ -375,7 +384,7 @@ export default function Me() {
                   </div>
                 </div>
               </div>
-              <div className="service-col">
+              {/* <div className="service-col">
                 <div className="service-item content-box">
                   <div className="icon">
                     <span className="fas fa-map-marker-alt" />
@@ -383,8 +392,8 @@ export default function Me() {
                   <div className="name">Address</div>
                   <div className="text">{"This really doesn't matter"}</div>
                 </div>
-              </div>
-              <div className="service-col">
+              </div> */}
+              {/* <div className="service-col">
                 <div className="service-item content-box">
                   <div className="icon">
                     <span className="fas fa-user-tie" />
@@ -392,7 +401,7 @@ export default function Me() {
                   <div className="name">Freelance Available</div>
                   <div className="text">I am available for Freelance hire</div>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="clear" />
           </div>

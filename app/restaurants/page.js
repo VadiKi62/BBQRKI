@@ -9,12 +9,6 @@ import NavBarCommon from "@app/components/common/NavBarCommon";
 async function RestaurantsPage() {
   const rests = await fetchRestaurants();
 
-  const menuRests = [
-    { Argo: "http://dusha-roan.vercel.app/?zont=test" },
-    { Arazo: "https://arazo.netlify.app/?zont=test" },
-    { Pirates: "https://pirates-beach.netlify.app/?zont=test" },
-  ];
-
   return (
     <>
       <NavBarCommon />

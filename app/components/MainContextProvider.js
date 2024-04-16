@@ -177,10 +177,6 @@ export const MainContextProvider = ({
       await delay();
     }
 
-    getNetworkInfo().then((networkInfo) => {
-      console.log("Network Information:", networkInfo);
-    });
-
     if (isGeolocationAvailable) {
       if (isWaiterButtonActive) {
         if (!isButtonBillActive && !confirmAction(messageElse)) {
