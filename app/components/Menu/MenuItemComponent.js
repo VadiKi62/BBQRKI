@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { styled } from "@mui/material/styles";
 import { Paper, Typography } from "@mui/material";
 
@@ -75,14 +75,24 @@ const MenuIngredients = styled("div")(({ theme }) => ({
   marginTop: theme.spacing(1),
 }));
 
-function MenuItemComponent({ item, isSmallScreen }) {
+function MenuItemComponent({ item, isSmallScreen, menu }) {
+  const englishItem = menu
+    .find((langObj) => langObj.langKey === "en")
+    ?.items.find((menuItem) => menuItem.menuNumber === item.menuNumber);
+
+  const defaultImageSrc = "/menu/photo.jpg";
   return (
     <StyledMenuItem>
-      <MenuImage src={item.image} alt={item.title} />
+      <MenuImage
+        src={englishItem.image || defaultImageSrc}
+        alt={item.title || englishItem.title}
+      />
       <MenuContent sx={{ maxWidth: isSmallScreen ? "85px" : "auto" }}>
-        <MenuTitle>{item.title}</MenuTitle>
-        <MenuPrice>€{item.price}</MenuPrice>
-        <MenuIngredients>{item.ingredients}</MenuIngredients>
+        <MenuTitle>{item.title || englishItem.title}</MenuTitle>
+        <MenuPrice>€{englishItem.price}</MenuPrice>
+        <MenuIngredients>
+          {item?.ingredients || englishItem?.ingredients}
+        </MenuIngredients>
       </MenuContent>
     </StyledMenuItem>
   );

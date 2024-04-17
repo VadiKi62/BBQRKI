@@ -148,6 +148,7 @@ function Menu({ menuRef, headerRef, menuData }) {
                   <Grid item xs={12} md={6} key={index}>
                     <MenuItemComponent
                       item={menuItem}
+                      menu={menuData.menuUpd}
                       isSmallScreen={isSmallScreen}
                     />
                   </Grid>

@@ -100,9 +100,9 @@ export default function Me() {
             </div>
           </div>
           {/* mosue button */}
-          {/* <a href="#" className="mouse_btn" style={{ display: "none" }}>
+          <a href="#" className="mouse_btn" style={{ display: "none" }}>
             <span className="icon fas fa-chevron-down" />
-          </a> */}
+          </a>
         </div>
         {/* Section About */}
         <div className="section about" id="section-about">

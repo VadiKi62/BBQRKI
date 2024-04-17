@@ -1,37 +1,37 @@
-import { useEffect, useRef } from "react";
-import Typed from "typed.js";
+import { useEffect, useRef, useState } from "react";
+import Typewriter from "typewriter-effect";
+
 const TypingAnimation = ({ typingData, extraClassName }) => {
-  // Create Ref element.
   const el = useRef(null);
 
-  useEffect(() => {
-    const typed = new Typed(el.current, {
-      strings: typingData
-        ? typingData
-        : [
-            "I develop cool <strong>websites</strong>",
-            "I code <strong>mobile apps</strong>",
-            ,
-          ], // Strings to display
-      typeSpeed: 100,
-      backSpeed: 100,
-      backDelay: 100,
-      smartBackspace: true,
-      loop: true,
-      showCursor: false,
-    });
+  const [loadTypeWriter, setloadTypeWriter] = useState(false);
 
-    // Destropying
-    return () => {
-      typed.destroy();
-    };
-  }, [typingData]);
+  useEffect(() => {
+    setloadTypeWriter(true);
+  }, []);
+
   return (
-    <span
-      className={`${extraClassName} typing-subtitle`}
-      id="subtitle"
-      ref={el}
-    ></span>
+    <>
+      {loadTypeWriter && (
+        <span ref={el} id="subtitle">
+          <Typewriter
+            options={{
+              wrapperClassName: `${extraClassName} typing-subtitle`,
+              strings: typingData
+                ? typingData
+                : [
+                    " I develop  <strong>websites</strong>",
+                    " I code <strong>mobile apps</strong>",
+                  ],
+              autoStart: true,
+              loop: true,
+              smartBackspace: true,
+            }}
+            loop={true}
+          />
+        </span>
+      )}
+    </>
   );
 };
 export default TypingAnimation;

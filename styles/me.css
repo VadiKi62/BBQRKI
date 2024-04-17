@@ -1431,6 +1431,9 @@ img.mfp-img {
   -moz-transform: translateY(0);
   -o-transform: translateY(0);
 }
+a:hover {
+  background-color: transparent !important;
+}
 
 /* header active */
 .header.active {
