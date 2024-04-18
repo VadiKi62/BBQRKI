@@ -177,7 +177,6 @@ export const MainContextProvider = ({
       updateGeolocation();
       await delay();
     }
-    console.log("CLICKED! IS SHSISA", isShisha);
     const message = messageWaiter1;
 
     if (isGeolocationAvailable) {
