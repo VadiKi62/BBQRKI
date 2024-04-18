@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function Wifi() {
   const [ssids, setSsids] = useState([]);
@@ -7,6 +8,8 @@ export default function Wifi() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    // axios
+    //   .get("/api/wifi")
     fetch("/api/wifi")
       .then((response) => {
         if (!response.ok) {
@@ -37,11 +40,9 @@ export default function Wifi() {
 
   return (
     <div>
-      <ul>
-        {ssids.map((ssid, index) => (
-          <p key={index}>{ssid}</p>
-        ))}
-      </ul>
+      {ssids.map((ssid, index) => (
+        <p key={index}>{ssid}</p>
+      ))}
     </div>
   );
 }
