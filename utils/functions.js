@@ -79,7 +79,7 @@ export function generateCategories(menu) {
 export const getLangMenu = (menu, lang = "en") => {
   let menuLang = menu.find((item) => item.langKey === lang);
   if (!menuLang) {
-    return menu.find((item) => item.lang === "en").items;
+    return menu.find((item) => item.langKey === "en").items;
   }
   return menuLang.items;
 };
@@ -110,9 +110,10 @@ export function getCategoryId(categoryStr, categories) {
 
 export const getUniqueCategories = (menu, lang, categories) => {
   // Use Set to collect unique categories
-  const menuInLang = menu.find((item) => {
-    return item.langKey === lang;
-  });
+  const menuInLang =
+    menu.find((item) => item.langKey === lang) ||
+    menu.find((item) => item.langKey === "en");
+
   const categoriesSet = new Set(
     menuInLang.items.map((menuItem) => menuItem.category)
   );

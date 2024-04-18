@@ -11,7 +11,7 @@ export const POST = async (request) => {
     const menuData = justMenu.menu.map((menuItem) => ({
       langKey: menuItem.langKey,
       items: menuItem.items.map((item) => ({
-        menuNumber: item.id,
+        menuNumber: item?.id || item?.menuNumber,
         image: item.image,
         title: item.title,
         price: item.price,
