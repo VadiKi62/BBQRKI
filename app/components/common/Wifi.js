@@ -8,8 +8,6 @@ export default function Wifi() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // axios
-    //   .get("/api/wifi")
     fetch("/api/wifi")
       .then((response) => {
         if (!response.ok) {

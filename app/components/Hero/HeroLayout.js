@@ -150,16 +150,16 @@ export default function HeroLayout({ rest }) {
   }, [rest.menu]);
   const altName = `${rest.name} logo gif`;
 
-  useEffect(() => {
-    if (menuOnly || isOnlyMenu) {
-      scroller.scrollTo("menu", {
-        duration: 800,
-        delay: 0,
-        smooth: "easeInOutQuart",
-        offset: -50,
-      });
-    }
-  });
+  // useEffect(() => {
+  //   if (menuOnly || isOnlyMenu) {
+  //     scroller.scrollTo("menu", {
+  //       duration: 800,
+  //       delay: 0,
+  //       smooth: "easeInOutQuart",
+  //       offset: -50,
+  //     });
+  //   }
+  // });
 
   const renderHeader = () => {
     if (showLoading) {
