@@ -673,7 +673,7 @@ export const justMenu = {
       items: [
         {
           id: 101,
-          image: "/menu/just/photo.jpg",
+          image: "/menu/just/greek.png",
           title: "Greek salad",
           price: "8.5",
           category: "Salads",
