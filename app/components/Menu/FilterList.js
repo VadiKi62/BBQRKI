@@ -4,8 +4,8 @@ import { styled } from "@mui/material/styles";
 import { scroller } from "react-scroll";
 
 const FilterListContainer = styled(List)(({ theme }) => ({
-  height: 50,
-  paddingTop: 0,
+  height: 60,
+  paddingTop: 9,
   position: "sticky",
   top: 0,
   zIndex: 4,
@@ -24,13 +24,14 @@ const FilterListContainer = styled(List)(({ theme }) => ({
 const FilterItem = styled(ListItem)(({ theme, isactive }) => ({
   cursor: "pointer",
   whiteSpace: "normal",
-  padding: theme.spacing(0, 1),
+  textAlign: "center",
+  padding: theme.spacing(1, 1),
   fontSize: isactive == "true" ? "1.4rem" : "1.1rem",
   color:
     isactive == "true" ? theme.palette.text.green : theme.palette.text.light,
   fontWeight: isactive == "true" ? 900 : 400,
-  lineHeight: 0.8,
-  marginBottom: theme.spacing(0),
+  lineHeight: 0.9,
+  margin: theme.spacing(1, 0),
   transition: "color 0.3s, font-size 0.3s",
   textTransform: "uppercase",
   "&::after": {
