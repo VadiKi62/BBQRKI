@@ -43,7 +43,7 @@ export function findPreferredLanguage() {
   }
 
   // If no match is found, return a default language (e.g., 'en' for English).
-  return lastMatchedLanguage || "el";
+  return lastMatchedLanguage || "en";
 }
 
 export function getLongLanguageName(shortCode) {
