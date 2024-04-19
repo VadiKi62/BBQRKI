@@ -6,7 +6,7 @@ import Layout from "@app/components/Me/layout/Layout";
 import TypingAnimation from "@app/components/Me/TypingAnimation";
 import { BiSolidMoviePlay } from "react-icons/bi";
 import { GiYarn } from "react-icons/gi";
-import { SiYourtraveldottv } from "react-icons/si";
+import { MdTravelExplore } from "react-icons/md";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { IoMdMail } from "react-icons/io";
 import MenuDrawer from "@app/components/Me/MenuDrawer";
@@ -340,7 +340,7 @@ export default function Me() {
               <div className="service-col">
                 <div className="service-item content-box">
                   <div className="icon">
-                    <SiYourtraveldottv />
+                    <MdTravelExplore />
                   </div>
                   <div className="name">Travel</div>
                 </div>

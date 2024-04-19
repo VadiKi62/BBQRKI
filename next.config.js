@@ -8,7 +8,6 @@ const nextConfig = {
 
 module.exports = nextConfig;
 
-
 // Injected content via Sentry wizard below
 
 const { withSentryConfig } = require("@sentry/nextjs");
@@ -22,7 +21,7 @@ module.exports = withSentryConfig(
     // Suppresses source map uploading logs during build
     silent: true,
     org: "nataliaki",
-    project: "javascript-nextjs",
+    project: "bbqr",
   },
   {
     // For all available options, see:
