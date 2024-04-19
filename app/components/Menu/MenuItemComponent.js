@@ -80,7 +80,7 @@ function MenuItemComponent({ item, isSmallScreen, menu }) {
     .find((langObj) => langObj.langKey === "en")
     ?.items.find((menuItem) => menuItem.menuNumber === item.menuNumber);
 
-  const defaultImageSrc = "/menu/photo.jpg";
+  const defaultImageSrc = "/menu/photo.png";
   return (
     <StyledMenuItem>
       <MenuImage
