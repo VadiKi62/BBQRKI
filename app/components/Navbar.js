@@ -35,13 +35,12 @@ const AppStyling = styled("div")(({ theme }) => ({
 const Logo = styled(Typography)(({ theme }) => ({
   // marginBottom: "-5px",
   // marginTop: "-4px",
-
   marginLeft: "16px",
   lineHeight: "1.2rem",
   fontWeight: theme.typography.h1?.fontWeight || 400,
   display: "flex",
   fontFamily: theme.typography.h1.fontFamily,
-  color: theme.palette.text.red,
+  // color: theme.palette.text.red,
   zIndex: 100,
 }));
 
@@ -86,6 +85,7 @@ export default function App() {
   const isJukebox = restData.name === "Jukebox";
   const isGelissimo = restData.name === "Gelissimo";
   const isBelvedere = restData.name === "Belvedere";
+  const isWaves = restData.name === "Coffee Waves";
   const appMenu = Boolean(restData.menu);
   const lang = i18n.language;
   let width, h;
@@ -172,7 +172,10 @@ export default function App() {
               priority
             ></LogoImg>
           ) : (
-            <Logo fontSize={scrolled ? "3rem" : "3.5rem"}>
+            <Logo
+              fontSize={scrolled ? "3rem" : "3.5rem"}
+              color={isWaves ? "text.light" : "text.red"}
+            >
               {restData?.name}
             </Logo>
           )}

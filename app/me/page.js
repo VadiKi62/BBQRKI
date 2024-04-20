@@ -184,32 +184,51 @@ export default function Me() {
                     </div>
                   </div>
                   <div className="resume-item content-box">
-                    <div className="date">2012 - 2020</div>
+                    <div className="date">2017-2020</div>
                     <div className="name">
-                      Video Production Producer - EuroMedia
+                      Video Production Producer - Freelance Contractor
                     </div>
                     <div className="text">
-                      Oversees the entire video production process, from
-                      conceptualization to final delivery, for both commercial
-                      and digital advertising projects.
+                      Planned, budgeted, communicated, and handled emergencies
+                      within pre-production, post production, and production
+                      processes.
+                    </div>
+                  </div>
+                  <div className="resume-item content-box">
+                    <div className="date">7/2018-12/2018</div>
+                    <div className="name">
+                      Digital Producer - Prodigy Agency Dubai
+                    </div>
+                    <div className="text">
                       <ul>
                         <li>
-                          Collaborated with clients, creative directors, and
-                          production teams to develop engaging video content
-                          that aligns with brand objectives and digital
-                          marketing strategies.
+                          Assisted with the creation of new designs, preparation
+                          of reports, and estimating costs.
                         </li>
                         <li>
-                          Managed the pre-production, production, and
-                          post-production phases, ensuring efficient
-                          coordination, adherence to schedules, and the delivery
-                          of high-quality video assets.
+                          Supervised the creation of web advertisements, videos,
+                          and other media.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="resume-item content-box">
+                    <div className="date">2015-2019</div>
+                    <div className="name">
+                      Venue & Broadcast Producer - Sports Production
+                    </div>
+                    <div className="text">
+                      <ul>
+                        <li>
+                          Contributed to 4 projects, including 2nd European
+                          Games in Baku, World Weightlifting Championship in
+                          Ashgabat, 4th Islamic Solidarity Games in Baku, Judo
+                          Grand Slam in Baku.
                         </li>
                         <li>
-                          Demonstrated strong project management skills,
-                          effective communication, and the ability to lead
-                          cross-functional teams in a dynamic, creative
-                          environment.
+                          Managed all aspects of sports presentation, including
+                          pre-production, logistics planning, timeline creation,
+                          and scheduling teams.
                         </li>
                       </ul>
                     </div>
@@ -232,12 +251,17 @@ export default function Me() {
                       Course included abstraction, algorithms, data structures,
                       encapsulation, resource management, security, software
                       engineering, and web development. Languages include C,
-                      Python, SQL, and JavaScript.
+                      Python, JavaScript + SQL.
                     </div>
                   </div>
                   <div className="resume-item content-box">
                     <div className="date">2022 - 2023</div>
-                    <div className="name">Parcity CodeAcademy - USA</div>
+                    <div className="name">
+                      Parsity Software Engineering School - USA
+                    </div>
+                    <div className="text">
+                      Certificate in Full Stack Web Development.
+                    </div>
                     <div className="text">
                       Coursework - Javascript, Node, React, Redux, MongoDB, Git.
                     </div>
@@ -245,9 +269,13 @@ export default function Me() {
                   <div className="resume-item content-box">
                     <div className="date">2004 - 2009</div>
                     <div className="name">
-                      Kyiv National Economical University
+                      Kyiv National Economics University
                     </div>
-                    <div className="text">Master Degree in Economics.</div>
+                    <div className="text">
+                      {
+                        "Master's degree of international economics and management"
+                      }
+                    </div>
                   </div>
                 </div>
               </div>

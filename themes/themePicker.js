@@ -9,6 +9,7 @@ import twinsTheme from "@themes/twinsTheme";
 import saharaTheme from "@themes/saharaTheme";
 import justTheme from "@themes/justTheme";
 import bloomTheme from "@themes/bloomTheme";
+import coffeewavesTheme from "@themes/coffeewavesTheme";
 
 export const returnTheme = (themeName) => {
   if (themeName === "themeBelvedere") return createTheme(belvedereTheme);
@@ -20,5 +21,6 @@ export const returnTheme = (themeName) => {
   if (themeName === "saharaTheme") return createTheme(saharaTheme);
   if (themeName === "justTheme") return createTheme(justTheme);
   if (themeName === "bloomTheme") return createTheme(bloomTheme);
+  if (themeName === "coffeewavesTheme") return createTheme(coffeewavesTheme);
   return createTheme(argoTheme);
 };

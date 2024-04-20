@@ -9,7 +9,8 @@ import ErrorIcon from "@mui/icons-material/Error";
 import { useMainContext } from "./MainContextProvider";
 import { Suspense } from "react";
 import { unstable_noStore } from "next/cache";
-import Wifi from "@app/components/common/Wifi";
+import Wifi from "@app/components/Wifi";
+// import Cellid from "@app/components/Cellid";
 
 const BoxContainer = styled(Box)(({ theme }) => ({
   marginTop: "-5rem",
@@ -175,7 +176,7 @@ function Dev({ rest }) {
         </Text>
       </BoxContainer>
       <StackContainer>
-        <Text>LIST OF WIFIS : </Text>
+        <Text>YOUR ARE WITHIN 3 TOWERS </Text>
         {/* {wifiData.map((wifi, i) => (
           <p key={i}>{wifi} </p>
         ))} */}
