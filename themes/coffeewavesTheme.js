@@ -15,6 +15,8 @@ export default createTheme({
       beige: "#aec3b0",
       background:
         "-webkit-radial-gradient(bottom, rgba(165,191,208, 0.85), rgba(187,187,187, 0.95),rgba(41,55,82, 0.85))",
+      background1:
+        "-webkit-radial-gradient(top, rgba(165,191,208, 0.85), rgba(187,187,187, 0.95),rgba(41,55,82, 0.85))",
       complement: "#aec3b0",
     },
     text: {
