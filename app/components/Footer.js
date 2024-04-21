@@ -32,7 +32,7 @@ const Section = styled("section")(({ theme }) => ({
 
 const SectionTitle = styled(Typography)(({ theme }) => ({
   fontFamily: theme.typography.h1.fontFamily,
-  lineHeight: "2rem",
+  lineHeight: "2.6rem",
   fontSize: "2.9rem",
   marginBottom: theme.spacing(2),
 }));
@@ -124,7 +124,7 @@ function Footer({ rest }) {
             <ContactIcon>
               <EmailIcon />
             </ContactIcon>
-            <a style={{ fontSize: "1.3rem" }} href={`mailto:${email}`}>
+            <a style={{ fontSize: "1.02rem" }} href={`mailto:${email}`}>
               {email}
             </a>
           </Grid>

@@ -36,7 +36,7 @@ const Logo = styled(Typography)(({ theme }) => ({
   // marginBottom: "-5px",
   // marginTop: "-4px",
   marginLeft: "16px",
-  lineHeight: "1.2rem",
+  // lineHeight: "1.2rem",
   fontWeight: theme.typography.h1?.fontWeight || 400,
   display: "flex",
   fontFamily: theme.typography.h1.fontFamily,
@@ -152,7 +152,7 @@ export default function App() {
       ref={headerRef}
       style={{
         backgroundColor: determineBackgroundColor(),
-        height: scrolled === "true" && appMenu ? "55px" : "57px",
+        height: scrolled === "true" && appMenu ? "55px" : "58px",
       }}
     >
       <Container>
@@ -173,8 +173,9 @@ export default function App() {
             ></LogoImg>
           ) : (
             <Logo
-              fontSize={scrolled ? "3rem" : "3.5rem"}
+              fontSize={isWaves ? "2.2rem" : "3.2rem"}
               color={isWaves ? "text.light" : "text.red"}
+              lineHeight={isWaves ? "1.9rem" : "1.2rem"}
             >
               {restData?.name}
             </Logo>
