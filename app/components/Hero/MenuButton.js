@@ -18,7 +18,7 @@ function MenuButton() {
         relative={true}
         size="large"
         onClick={handleOnClickMenu}
-        minWidth={900}
+        minWidth={300}
       >
         To Menu
       </DefaultButton>
