@@ -475,8 +475,51 @@ export const POST = async (request) => {
       languages: { eng: true, el: true },
     },
   };
+
+  const mangataData = {
+    name: "Coffee & Waves",
+    slogan: "Uncork Tranquility by the Aegean",
+    slogans: ["Uncork Tranquility by the Aegean"],
+    workingTimeBeachSpots: {
+      startTime: "03:00",
+      endTime: "02:00",
+    },
+    tel: "+3010001000",
+    email: "mangata@mangata.com",
+    schedule: "Mon-Sat: 11AM - 23PM",
+    address: "Nea Kallikratia 63080, Halchidiki, Greece",
+    coords: {
+      mainSpot: { latitude: 40.310434866939566, longitude: 23.06235701312798 },
+      beachSpot1: { latitude: 40.3100075, longitude: 23.0628176 },
+      beachSpot2: { latitude: 40.3100075, longitude: 23.0628176 },
+      beachSpot3: { latitude: 40.3100075, longitude: 23.0628176 },
+    },
+    radiuses: {
+      mainSpot: 12,
+      beachSpot1: 12,
+      beachSpot2: 12,
+      beachSpot3: 12,
+    },
+    datesBeachSpot: {
+      start: new Date(currentYear, 3 - 1, 1),
+      end: new Date(currentYear, 10 - 1, 30),
+    },
+    chat_id: "-1002106355061",
+    backendEndpoints: { waiter: "/button2607", bill: "/button2607" },
+    pathName: "mangata",
+    themeName: "mangataTheme",
+    app: {
+      menu: false,
+      about: false,
+      buttonWaiter: true,
+      buttonBill: true,
+      buttonSisha: false,
+      numberOfTables: { inside: 6, outside: 14 },
+      languages: { eng: true, el: true },
+    },
+  };
   //   const rest = (await request.json());
-  const rest = wavesData;
+  const rest = mangataData;
   try {
     await connectToDB();
     const { name, pathName } = rest;

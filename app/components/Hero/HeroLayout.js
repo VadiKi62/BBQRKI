@@ -310,10 +310,10 @@ const ScanInfo = ({ t, isSmallScreen, rest, isJukebox }) => {
     <TitleContainer>
       <Typography
         align="center"
-        color="primary.main"
+        color="primary.red"
         sx={{
           fontSize: isSmallScreen ? "1.4rem" : "2.5rem",
-          fontWeight: 900,
+          fontWeight: 700,
           lineHeight: isSmallScreen ? "1.4rem" : "2.5rem",
           zIndex: 111,
         }}

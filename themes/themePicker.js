@@ -10,6 +10,7 @@ import saharaTheme from "@themes/saharaTheme";
 import justTheme from "@themes/justTheme";
 import bloomTheme from "@themes/bloomTheme";
 import coffeewavesTheme from "@themes/coffeewavesTheme";
+import mangataTheme from "@themes/mangataTheme";
 
 export const returnTheme = (themeName) => {
   if (themeName === "themeBelvedere") return createTheme(belvedereTheme);
@@ -22,5 +23,6 @@ export const returnTheme = (themeName) => {
   if (themeName === "justTheme") return createTheme(justTheme);
   if (themeName === "bloomTheme") return createTheme(bloomTheme);
   if (themeName === "coffeewavesTheme") return createTheme(coffeewavesTheme);
-  return createTheme(argoTheme);
+  if (themeName === "mangataTheme") return createTheme(mangataTheme);
+  return createTheme(themeName);
 };
