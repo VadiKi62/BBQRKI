@@ -1,12 +1,12 @@
 import { Rest } from "@models/rest";
 import { Menu } from "@models/menu";
 import { connectToDB } from "@utils/database";
-import { justItemsToAdd } from "@utils/initialMenus";
+import { justItemsToAdd, justItemsToAddDe } from "@utils/initialMenus";
 
 export const GET = async (req, res) => {
   // const { restId, itemsToAdd } = req.body;
   const restId = "66094de341b392ba037d29c5";
-  const itemsToAdd = justItemsToAdd;
+  const itemsToAdd = justItemsToAddDe;
 
   try {
     await connectToDB();
