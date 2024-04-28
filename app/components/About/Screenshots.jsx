@@ -8,11 +8,11 @@ import Image from "next/image";
 import { useTranslation } from "react-i18next";
 const screenshots = [
   "/assets/pres/screens/1.png",
-  "/assets/pres/screens/2.png",
+  // "/assets/pres/screens/2.png",
   "/assets/pres/screens/3.png",
   "/assets/pres/screens/4.png",
   "/assets/pres/screens/5.png",
-  "/assets/pres/screens/6.png",
+  // "/assets/pres/screens/6.png",
   "/assets/pres/screens/7.png",
   "/assets/pres/screens/8.png",
   "/assets/pres/screens/9.png",
