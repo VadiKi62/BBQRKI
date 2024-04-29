@@ -238,6 +238,10 @@ export default function App() {
             {" "}
             Српски
           </MenuItem>
+          <MenuItem onClick={() => handleLanguageSelect("ro")}>
+            {" "}
+            Română
+          </MenuItem>
         </LanguagePopover>
         {/* </Toolbar> */}
       </Container>

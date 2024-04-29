@@ -98,14 +98,6 @@ function AppAppBar() {
           >
             <LanguageIcon />
           </LanguageSwitcher>
-          <Stack
-            sx={{
-              justifyContent: "flex-end",
-            }}
-          >
-            {" "}
-            <a href="/me">About Me</a>
-          </Stack>
         </Toolbar>
       </TransparentAppBar>
 
