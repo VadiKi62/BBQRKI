@@ -84,7 +84,7 @@ function Footer({ rest }) {
 
   return (
     <Section>
-      <FooterContainer>
+      <FooterContainer mb={4}>
         <SectionTitle variant="h3">{name}</SectionTitle>
         <Slogan>{slogan}</Slogan>
         <SocialLinks>

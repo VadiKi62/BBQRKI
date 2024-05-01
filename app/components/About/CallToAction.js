@@ -37,6 +37,7 @@ function CallToAction() {
                       backgroundColor: "primary.main",
                       color: "white",
                       px: 1,
+                      fontSize: "4rem",
                       "&:hover": {
                         backgroundColor: "primary.green",
                       },

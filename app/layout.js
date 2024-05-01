@@ -5,6 +5,7 @@ import "@styles/slider.css";
 import "@/styles/mobile-app-dark.css";
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 import generateStylesheetObject from "@common/generateStylesheetsObject";
 
 export const metadata = {
@@ -41,14 +42,21 @@ export default function RootLayout({ children }) {
           <footer
             style={{
               position: "absolute",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "space-around",
               bottom: 0,
               left: "50%",
+
               transform: "translateX(-50%)",
               textAlign: "center",
+              zIndex: 100,
             }}
           >
-            <Link href="/">
-              <p id="root-layout">Powered by Nataliaki</p>
+            <Link className="link-hover-effect" href="/">
+              <Image width={40} height={40} src="/logo.gif" alt="logo-gif" />
+              <div>Powered by Nataliaki</div>
             </Link>
           </footer>
         </body>

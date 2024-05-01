@@ -56,7 +56,7 @@ const Footer = () => {
 
   return (
     <Section>
-      <FooterContainer>
+      <FooterContainer mb={4}>
         <Logo>
           <Image src="/logo_white1.png" alt="logo" width={113} height={70} />{" "}
         </Logo>
@@ -107,9 +107,7 @@ const Footer = () => {
         </ContactInfo>
 
         <CopyRight>
-          <p>
-            © 2023. Made with passion by <a href="/me">Nataliaki</a>.
-          </p>
+          <p>© 2023. All rights reserved.</p>
         </CopyRight>
       </FooterContainer>
     </Section>
