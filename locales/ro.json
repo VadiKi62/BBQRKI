@@ -18,7 +18,7 @@
     "about": "Cu o bucătărie rafinată făcută din bogățiile mării și vederi panoramice ale apelor albastre fără sfârșit, Ara...zo promite o experiență de dining pe malul oceanului de neuitat."
   },
   "bill": {
-    "payment": "Plata este cu numerar?"
+    "payment": "Plata este în numerar?\nOK - numerar\nAnulare - card"
   },
   "header": {
     "table": "Masa dumneavoastră este",

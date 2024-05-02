@@ -5,12 +5,14 @@ import {
   justItemsToAdd,
   justItemsToAddDe,
   justItemsToAddEl,
+  justItemsToAddRu,
+  justItemsToAddRo,
 } from "@utils/initialMenus";
 
 export const GET = async (req, res) => {
   // const { restId, itemsToAdd } = req.body;
   const restId = "66094de341b392ba037d29c5";
-  const itemsToAdd = justItemsToAddEl;
+  const itemsToAdd = justItemsToAddRu;
 
   try {
     await connectToDB();

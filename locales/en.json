@@ -19,7 +19,7 @@
     "about": "With exquisite cuisine made from the bounty of the sea and panoramic views of endless blue waters, Ara...zo promises an unforgettable oceanfront dining experience."
   },
   "bill": {
-    "payment": "Is the payment with cash?"
+    "payment": "Is the payment in cash?\nOK - cash\nCancel - card"
   },
   "header": {
     "table": "Your table is",

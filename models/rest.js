@@ -1,11 +1,27 @@
 import { Schema, model, models } from "mongoose";
 import { MenuSchema } from "./menu";
 
+const TableChatSchema = new Schema({
+  tableFrom: {
+    type: Number,
+    required: true,
+  },
+  tableTill: {
+    type: Number,
+    required: true,
+  },
+  chatId: {
+    type: String,
+    required: true,
+  },
+});
+
 const RestSchema = new Schema({
   name: {
     type: String,
     required: true,
   },
+  waiterTableMap: { type: [TableChatSchema], default: null },
   slogans: [{ type: String }],
   logoSrc: { type: String, default: null },
   address: {

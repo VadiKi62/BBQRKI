@@ -19,7 +19,7 @@
     "about": "З вишуканою кухнею, приготовленою з дарів моря, та панорамним видом на нескінченні блакитні води, ми обіцяємо незабутній досвід харчування біля океану."
   },
   "bill": {
-    "payment": "Чи оплата буде готівкою?"
+    "payment": "Оплата готівкою?\nОК - готівка\nСкасувати - картка"
   },
   "header": {
     "table": "Ваш стіл",
@@ -34,7 +34,6 @@
     "else": "Чи не бажаєте ще щось замовити, замість рахунку?",
     "enableLoc": "Будь ласка, увімкніть послуги геолокації (АБО ПЕРЕЗАВАНТАЖТЕ СТОРІНКУ), щоб мати змогу викликати офіціанта. Нашому додатку потрібно перевірити, чи ви всередині ресторану, інакше ви не зможете викликати офіціанта."
   },
-
   "pres": {
     "page1": {
       "1": "REVOLUTIONIZING THE BEACH BAR EXPERIENCE",
@@ -94,92 +93,6 @@
       "3": "Increase sales and order sizes.",
       "4": "Reduce waiters needed through automation.",
       "5": "Save costs and boost efficiency."
-    }
-  },
-  "pres": {
-    "page1": {
-      "1": "REVOLUTIONIZING ",
-      "1a": "THE BEACH BAR",
-      "1b": "EXPERIENCE",
-      "2": "QR Codes for Beach Bars: Increasing Profits and Customer Satisfaction",
-      "3": "QR Codes - The Future of Beach Bar Service"
-    },
-    "page2": {
-      "1": "HOW IT LOOKS",
-      "2": "CLIENT PRESS THE BUTTON - WAITER GET IT. JUST AS EASY AS IT IS.",
-      "3": "Client",
-      "3a": " Scans QR-code.",
-      "4": "Client",
-      "4a": " Opens app.",
-      "6": "Client",
-      "6a": "Presses Button.",
-      "7": "Waiter",
-      "7a": "Gets it.",
-      "8": "Just",
-      "8a": "Like that",
-      "9": "It is",
-      "9a": "win-win!"
-    },
-    "page3": {
-      "1": "Application Features",
-      "2": "UNIQUE QR-CODE FOR EACH UMBRELLA/TABLE.",
-      "3": "Call the waiter.",
-      "3a": "Client can directly call waiter with only clicking one button.",
-      "4": "Request the bill.",
-      "4a": "Client can request bill doing just 2 actions - scanning code and pressing button.",
-      "6": "Repeat last drink.",
-      "6a": "Client can instantly reorder the last drink, pressing one button.",
-      "7": "Get cash info upfront.",
-      "7a": "Skip the back and forth: know if they're paying by card upfront. Less running around for the waiters!",
-      "8": "Order shisha.",
-      "8a": "You do not need to come to the customer first, then call the shisha guy. Waiters run fewer kilometers, clients wait less.",
-      "9": "Get the client's language immediately.",
-      "9a": "And send a waiter who speaks it like a pro!",
-      "10": "No spam messages.",
-      "10a": "Client could only call the waiter once they're inside the restaurant.",
-      "11": "Quick and effortless setup.",
-      "11a": "No complex installation needed. Each waiter simply receives their unique QR code, leading them directly to the app."
-    },
-    "page4": {
-      "1": "APP SCREENSHOWTS",
-      "2": "SCREENSHORTS"
-    },
-    "page5": {
-      "1": "And ",
-      "2": "This is what you get ... ",
-      "3": "More",
-      "3a": "Orders",
-      "4": "Less",
-      "4a": "Rush",
-      "5": "More",
-      "5a": "Tips",
-      "6": "Less",
-      "6a": "Wait",
-      "7": "More",
-      "7a": "Clients"
-    },
-    "page6": {
-      "1": "Easy setup",
-      "2": "4 steps ",
-      "2a": "Step",
-      "3": "Download App",
-      "3a": "Simply download the app to your smartphone using the link we provide.",
-      "4": "Get Your Fully Customized Webpage",
-      "4a": "We will create a fully customized webpage for your beach bar,tailored to your specific needs.",
-      "5": "Get Printed QR Codes",
-      "5a": "We will print all the QR codes you need for your tables and umbrellas. Just let us know the quantity required.",
-      "6": "Affix the QR Codes to Tables",
-      "6a": "Attach the QR codes to your tables and/or menus. Your customers just need to scan them to access the service.",
-      "7": "Get results",
-      "7a": "Enjoy satisfied clients, happy waitstaff, and increased orders!"
-    },
-    "callToAct": {
-      "1": "Let us Talk",
-      "2": "about your",
-      "3": "Beach Bar New Experience"
-    },
-    "footer": {
-      "1": "write us"
     }
   }
 }

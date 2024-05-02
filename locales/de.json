@@ -19,7 +19,7 @@
     "about": "Mit exquisiter Küche aus den Schätzen des Meeres und panoramischem Blick auf endlose blaue Gewässer verspricht Ara...zo ein unvergessliches Erlebnis beim Meeresfrüchte-Essen."
   },
   "bill": {
-    "payment": "Wird bar bezahlt?"
+    "payment": "Ist die Zahlung bar?\nOK - Bargeld\nAbbrechen - Karte"
   },
   "header": {
     "table": "Ihr Tisch ist",

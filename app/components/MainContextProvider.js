@@ -19,6 +19,7 @@ import useHighSeason from "@common/useHighSeason";
 import { I18nextProvider } from "react-i18next";
 import i from "@locales/i18n";
 import { getNetworkInfo } from "@utils/functions";
+import { getChatIdForTable } from "@common/getChatIdForTable";
 
 const MainContext = createContext();
 
@@ -303,6 +304,7 @@ export const MainContextProvider = ({
   const [paymentMethod, onPaymentMethodSelect] = useState(null);
 
   const handleCallBill = async () => {
+    let chatNumber;
     await delay();
     if (isGeolocationAvailable) {
       if (
@@ -316,12 +318,14 @@ export const MainContextProvider = ({
         const paymentMethod = paymentWithCash ? "Cash" : "Card";
         //Include the payment method in the message
         messageBill1 = `${rest.name}.Table ${zont} asks for Bill. Payment Method: ${paymentMethod}. Language - ${language}.\nΤραπέζι ${zont} ζητά τον λογαριασμό. Τρόπος Πληρωμής:${paymentMethod}. Γλώσσα - ${language}.`;
+        chatNumber = getChatIdForTable(rest, zont);
+        console.log(chatNumber);
         performActionBill(() => {
           sendBill(
             messageBill1,
             zont,
             restData.backendEndpoints.waiter,
-            restData.chat_id,
+            chatNumber,
             (responseData) => {
               // Success callback
               showModal(messageGot, false, true);

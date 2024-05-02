@@ -32,7 +32,7 @@ const MenuContent = styled("div")(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "flex-end",
-  justifyContent: "flex-start",
+  justifyContent: "flex-end",
 }));
 
 const MenuTitle = styled(Typography)(({ theme }) => ({
@@ -58,7 +58,7 @@ const MenuPrice = styled("span")(({ theme }) => ({
   position: "relative",
   fontSize: "22px",
   zIndex: 1,
-  padding: theme.spacing(2, 2),
+  padding: theme.spacing(2, 0),
   fontWeight: 600,
   color: theme.palette.primary.main,
   "&:hover": {
@@ -81,13 +81,14 @@ function MenuItemComponent({ item, isSmallScreen, menu }) {
     ?.items.find((menuItem) => menuItem.menuNumber === item.menuNumber);
 
   const defaultImageSrc = "/menu/photo.png";
+
   return (
     <StyledMenuItem>
       <MenuImage
         src={englishItem.image || defaultImageSrc}
         alt={item.title || englishItem.title}
       />
-      <MenuContent sx={{ maxWidth: isSmallScreen ? "85px" : "auto" }}>
+      <MenuContent sx={{ maxWidth: isSmallScreen ? "100%" : "auto" }}>
         <MenuIngredients>{item.menuNumber}</MenuIngredients>
         <MenuTitle>{item.title || englishItem.title}</MenuTitle>
         <MenuPrice>€{englishItem.price}</MenuPrice>
