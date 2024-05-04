@@ -1,11 +1,5 @@
 "use client";
-import React, {
-  cloneElement,
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { sendWaiter, sendBill } from "@common/BotRequest";
 import { useMediaQuery } from "@mui/material";
@@ -174,6 +168,7 @@ export const MainContextProvider = ({
     }
   };
   const handleCallWaiter = async () => {
+    let chatNumber;
     if (!isGeolocationAvailable) {
       updateGeolocation();
       await delay();
@@ -189,12 +184,14 @@ export const MainContextProvider = ({
           currentPosition.distanceToRest <=
           Number(radius) + currentPosition.accuracy
         ) {
+          chatNumber = getChatIdForTable(rest, zont);
+          console.log(chatNumber);
           performActionWaiter(() => {
             sendWaiter(
               message,
               zont,
               restData.backendEndpoints.waiter,
-              restData.chat_id,
+              chatNumber,
               (responseData) => {
                 // Success callback
                 showModal(messageGot, false, true);

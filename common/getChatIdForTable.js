@@ -2,8 +2,9 @@ export function getChatIdForTable(rest, tableNumber) {
   console.log(rest);
   console.log(tableNumber);
   console.log("map", rest.waiterTableMap);
+  console.log("map length", rest.waiterTableMap.length);
   // Check if tableChats exists and has entries
-  if (rest.waiterTableMap && rest.waiterTableMap.length > 0) {
+  if (rest.waiterTableMap) {
     // Iterate over each tableChat entry to find the correct range
     for (let chat of rest.waiterTableMap) {
       // Check if the table number is within the tableFrom and tableTill range
