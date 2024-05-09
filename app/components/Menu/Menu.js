@@ -14,6 +14,7 @@ import {
 import { useTranslation } from "react-i18next";
 import FilterList from "./FilterList";
 import SubFilter from "./SubFilter";
+import ClickableMenuItem from "./ClickableMenuItem";
 
 const SectionTitle = styled(Typography)(({ theme }) => ({
   cursor: "pointer",
@@ -146,7 +147,7 @@ function Menu({ menuRef, headerRef, menuData }) {
               <Grid container spacing={2} ref={gridRef}>
                 {filteredMenuItems.map((menuItem, index) => (
                   <Grid item xs={12} md={6} key={index}>
-                    <MenuItemComponent
+                    <ClickableMenuItem
                       item={menuItem}
                       menu={menuData.menuUpd}
                       isSmallScreen={isSmallScreen}

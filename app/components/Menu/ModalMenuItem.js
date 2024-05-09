@@ -10,9 +10,12 @@ import {
   useMediaQuery,
   Grid,
   useTheme,
+  Typography,
+  Stack,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
+import CloseIcon from "@mui/icons-material/Close";
 
 const Image = styled("img")(({ theme }) => ({
   maxWidth: "100%",
@@ -21,31 +24,51 @@ const Image = styled("img")(({ theme }) => ({
   width: "405px",
 }));
 
-const StyledTypography = styled(Typography)(({ theme }) => ({
-  // Responsive styles based on screen size
+const Price = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
     textAlign: "center",
   },
   [theme.breakpoints.up("sm")]: {
-    textAlign: "left",
+    textAlign: "center",
+  },
+  color: theme.palette.primary.red,
+  "&::after": {
+    content: '"€"',
+  },
+  margin: 1,
+}));
+
+const Ingredients = styled(Typography)(({ theme }) => ({
+  fontStyle: "italic",
+  // whiteSpace: "normal",
+  // marginLeft: theme.spacing(2),
+  marginTop: 25,
+  fontSize: "1.2rem",
+  transition: "transform 0.3s",
+  textAlign: "right",
+  "&:hover": {
+    color: theme.palette.primary.red,
+  },
+  [theme.breakpoints.up("xs")]: {
+    textAlign: "center",
+    marginTop: 5,
   },
 }));
 
-const fetchProductDataById = (productId) => {
-  const product = ModalItems.find((item) => item.id === productId);
-  return product || null;
-};
+function ModalMenuItem({ menu, item, onClose }) {
+  const handleDialogContentClick = (event) => {
+    // Stops the click event from propagating up to other elements
+    event.stopPropagation();
+    onClose();
+  };
 
-function ModalMenuItem({ productId, onClose }) {
-  const [product, setProduct] = useState(null);
+  const [menuItem, setmenuItem] = useState(item);
+  const englishItem = menu
+    .find((langObj) => langObj.langKey === "en")
+    ?.items.find((menuItem) => menuItem.id === item.id);
   const { t, i18n } = useTranslation();
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
-
-  useEffect(() => {
-    const fetchedproduct = fetchProductDataById(productId);
-    setProduct(fetchedproduct);
-  }, [productId]);
 
   const [imageLoading, setImageLoading] = useState(true);
 
@@ -63,35 +86,36 @@ function ModalMenuItem({ productId, onClose }) {
   };
 
   return (
-    <Dialog open={!!product} onClose={onClose} maxWidth="md" fullWidth>
+    <Dialog open={!!menuItem} onClose={onClose} maxWidth="md" fullWidth>
       <DialogTitle
         bgcolor="primary.main"
-        color="primary.light"
+        color="text.light"
         mb={2}
         variant={isSmallScreen ? "h6" : "h4"}
         component={isSmallScreen ? "h4" : "h2"}
         align="center"
       >
-        {product ? product?.title : ""}
+        {menuItem.menuNumber} {menuItem ? menuItem?.title : ""}
       </DialogTitle>
-      <DialogContent>
-        <Grid container sx={{ display: "flex", flexdirection: "column" }}>
+      <DialogContent onClick={handleDialogContentClick}>
+        <Grid container>
           <Grid
             item
             xs={12}
             sm={6}
             sx={{
               direction: "flex",
-              textAlign: "center",
             }}
           >
-            <Image
-              src={product?.url}
-              alt={product?.title}
-              onLoad={handleImageLoad}
-            />
+            {menuItem?.image && (
+              <Image
+                src={menuItem?.image}
+                alt={menuItem?.title}
+                onLoad={handleImageLoad}
+              />
+            )}
           </Grid>
-          <Grid item xs={12} sm={6} sx={{ pl: 2 }}>
+          <Grid item xs={12} sm={6} sx={{ py: 1, pl: 1 }}>
             <Grid
               container
               sx={{
@@ -99,22 +123,42 @@ function ModalMenuItem({ productId, onClose }) {
                 flexDirection: "column",
                 flexWrap: "nowrap",
                 justifyContent: "flex-start",
-                alignItems: "stretch",
-                alignContent: "stretch",
               }}
             >
-              {product?.subTitle && (
-                <StyledTypography variant="h6">
-                  {product.subTitle}
-                </StyledTypography>
+              <Price variant="h5">{menuItem.price}</Price>
+              {menuItem?.per && <Ingredients> for {menuItem.per}</Ingredients>}
+              {menuItem?.weight && (
+                <Ingredients>
+                  {" "}
+                  {menuItem.weight} {returnMesurements(menuItem.category)}
+                </Ingredients>
+              )}
+              {menuItem?.ingredients && (
+                <Ingredients>{menuItem.ingredients}</Ingredients>
               )}
             </Grid>
+          </Grid>
+          <Grid container sx={{ mt: 1 }}>
+            {/* // If this items is only for restaurant, show this message in Modal window
+          {!englishItem.beachMenu && (
+            <Stack
+              direction={"row"}
+              justifyContent="space-evenly"
+              alignItems="center"
+              spacing={1}
+            >
+              <SmsFailedIcon />
+              <Typography variant="body1" color="primary.red">
+                We are serving this item only inside of the restaurant.
+              </Typography>
+            </Stack>
+          )} */}
           </Grid>
         </Grid>
       </DialogContent>
       <DialogActions>
-        <Button onClick={onClose} color="primary">
-          {t("modal.close")}
+        <Button onClick={onClose} color="secondary">
+          <CloseIcon />
         </Button>
       </DialogActions>
     </Dialog>

@@ -33,6 +33,8 @@ const MenuContent = styled("div")(({ theme }) => ({
   flexDirection: "column",
   alignItems: "flex-end",
   justifyContent: "flex-end",
+  textWrap: "pretty",
+  wordWrap: "normal",
 }));
 
 const MenuTitle = styled(Typography)(({ theme }) => ({
@@ -88,7 +90,7 @@ function MenuItemComponent({ item, isSmallScreen, menu }) {
         src={englishItem.image || defaultImageSrc}
         alt={item.title || englishItem.title}
       />
-      <MenuContent sx={{ maxWidth: isSmallScreen ? "100%" : "auto" }}>
+      <MenuContent sx={{ maxWidth: isSmallScreen ? "170px" : "auto" }}>
         <MenuIngredients>{item.menuNumber}</MenuIngredients>
         <MenuTitle>{item.title || englishItem.title}</MenuTitle>
         <MenuPrice>€{englishItem.price}</MenuPrice>
