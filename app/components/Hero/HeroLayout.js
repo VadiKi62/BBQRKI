@@ -31,6 +31,14 @@ const Overlay = styled("div")(({ theme }) => ({
   height: "100%",
   background: theme.palette.secondary.background,
 }));
+const Overlay1 = styled("div")(({ theme }) => ({
+  position: "absolute",
+  zIndex: 2,
+  top: 0,
+  left: 0,
+  width: "100%",
+  height: "100%",
+}));
 
 const HeroSection = styled("section")(({ theme }) => ({
   width: "100%",
@@ -189,6 +197,7 @@ export default function HeroLayout({ rest }) {
         </InfoContainer>
       );
     }
+    console.log(rest.patternOverlay);
 
     return (
       <>
@@ -222,6 +231,8 @@ export default function HeroLayout({ rest }) {
     );
   };
 
+  console.log(rest.patternOverlay);
+
   return (
     <HeroSection
       id="hero"
@@ -229,6 +240,9 @@ export default function HeroLayout({ rest }) {
     >
       <Overlay />
 
+      {rest.patternOverlay && (
+        <Overlay1 sx={{ backgroundImage: `url(${rest.patternOverlay})` }} />
+      )}
       {isPaymentModalOpen && (
         <ModalPayment
           content={t("bill.payment")}
