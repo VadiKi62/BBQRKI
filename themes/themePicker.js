@@ -11,6 +11,7 @@ import justTheme from "@themes/justTheme";
 import bloomTheme from "@themes/bloomTheme";
 import coffeewavesTheme from "@themes/coffeewavesTheme";
 import mangataTheme from "@themes/mangataTheme";
+import bakalisTheme from "@themes/bakalisTheme";
 
 export const returnTheme = (themeName) => {
   if (themeName === "themeBelvedere") return createTheme(belvedereTheme);
@@ -24,5 +25,6 @@ export const returnTheme = (themeName) => {
   if (themeName === "bloomTheme") return createTheme(bloomTheme);
   if (themeName === "coffeewavesTheme") return createTheme(coffeewavesTheme);
   if (themeName === "mangataTheme") return createTheme(mangataTheme);
+  if (themeName === "bakalisTheme") return createTheme(bakalisTheme);
   return createTheme(themeName);
 };

@@ -475,7 +475,6 @@ export const POST = async (request) => {
       languages: { eng: true, el: true },
     },
   };
-
   const mangataData = {
     name: "Coffee & Waves",
     slogan: "Uncork Tranquility by the Aegean",
@@ -518,8 +517,56 @@ export const POST = async (request) => {
       languages: { eng: true, el: true },
     },
   };
+
+  const bakalisData = {
+    name: "Bakalis",
+    slogan: "Dining by the Sea, Perfected by Bakalis",
+    slogans: [
+      "Kassandra's Seafood Gem",
+      "Seaside Dining Perfected",
+      "Salt-Kissed Seafood Specialties",
+    ],
+    workingTimeBeachSpots: {
+      startTime: "03:00",
+      endTime: "02:00",
+    },
+    tel: "+3010001000",
+    email: "bakalis@bakalis.com",
+    schedule: "Mon-Sat: 11AM - 23PM",
+    address: "Pefkohori, Chalcidice, Tk 63085, Greece",
+    coords: {
+      mainSpot: { latitude: 40.310434866939566, longitude: 23.06235701312798 },
+      beachSpot1: { latitude: 40.3100075, longitude: 23.0628176 },
+      beachSpot2: { latitude: 40.3100075, longitude: 23.0628176 },
+      beachSpot3: { latitude: 40.3100075, longitude: 23.0628176 },
+    },
+    radiuses: {
+      mainSpot: 12,
+      beachSpot1: 12,
+      beachSpot2: 12,
+      beachSpot3: 12,
+    },
+    datesBeachSpot: {
+      start: new Date(currentYear, 3 - 1, 1),
+      end: new Date(currentYear, 10 - 1, 30),
+    },
+    chat_id: "-1002124116163",
+    backendEndpoints: { waiter: "/button2607", bill: "/button2607" },
+    pathName: "bakalis",
+    themeName: "bakalisTheme",
+    app: {
+      menu: false,
+      about: false,
+      buttonWaiter: true,
+      buttonBill: true,
+      buttonSisha: false,
+      numberOfTables: { inside: 6, outside: 14 },
+      languages: { eng: true, el: true },
+    },
+  };
+
   //   const rest = (await request.json());
-  const rest = mangataData;
+  const rest = bakalisData;
   try {
     await connectToDB();
     const { name, pathName } = rest;
