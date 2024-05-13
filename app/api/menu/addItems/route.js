@@ -1,16 +1,21 @@
 import { Rest } from "@models/rest";
 import { Menu } from "@models/menu";
 import { connectToDB } from "@utils/database";
-import { justItems } from "@utils/initialMenus";
+import { justItems, justItemsLANGS } from "@utils/initialMenus";
 
+//function to add new Items in ENG
 export const GET = async (req, res) => {
   // const { restId, itemsToAdd } = req.body;
   const restId = "66094de341b392ba037d29c5";
-  const itemsToAdd = justItems;
+  const itemsToAdd = justItemsLANGS;
+
+  console.log("HITTED THE ROUTE");
 
   try {
     await connectToDB();
+    console.log("ROUTE IS CONNECTED TO DB");
     const existingMenu = await Menu.findOne({ restId });
+    console.log("menu exists");
     if (!existingMenu || existingMenu.menu.length === 0) {
       return new Response(
         "This menu  in Eng is not found OR this Restaurant not found",
@@ -22,6 +27,7 @@ export const GET = async (req, res) => {
 
     // Find the English menu
     const engMenu = existingMenu.menu.find((menu) => menu.langKey === "en");
+    console.log("engMenu exist");
     if (!engMenu) {
       return new Response("English menu not found", { status: 404 });
     }

@@ -231,8 +231,6 @@ export default function HeroLayout({ rest }) {
     );
   };
 
-  console.log(rest.patternOverlay);
-
   return (
     <HeroSection
       id="hero"

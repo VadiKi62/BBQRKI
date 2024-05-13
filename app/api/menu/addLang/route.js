@@ -2,7 +2,7 @@ import { Rest } from "@models/rest";
 import { Menu } from "@models/menu";
 import { connectToDB } from "@utils/database";
 import {
-  justItemsToAdd,
+  justItemsToAddSe,
   justItemsToAddDe,
   justItemsToAddEl,
   justItemsToAddRu,
@@ -12,14 +12,14 @@ import {
 export const GET = async (req, res) => {
   // const { restId, itemsToAdd } = req.body;
   const restId = "66094de341b392ba037d29c5";
-  const itemsToAdd = justItemsToAddRu;
+  const itemsToAdd = justItemsToAddDe;
 
   try {
     await connectToDB();
     const existingMenu = await Menu.findOne({ restId });
     if (!existingMenu || existingMenu.menu.length === 0) {
       return new Response(
-        "This menu  in Eng is not found OR this Restaurant not found",
+        "This menu  in Eng is not found OR this Restaurant not found. Please add first End variant of Menu and then the rest translations",
         {
           status: 404,
         }

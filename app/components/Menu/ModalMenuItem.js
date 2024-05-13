@@ -107,10 +107,10 @@ function ModalMenuItem({ menu, item, onClose }) {
               direction: "flex",
             }}
           >
-            {menuItem?.image && (
+            {englishItem?.image && (
               <Image
-                src={menuItem?.image}
-                alt={menuItem?.title}
+                src={englishItem?.image}
+                alt={englishItem?.title}
                 onLoad={handleImageLoad}
               />
             )}
@@ -125,12 +125,14 @@ function ModalMenuItem({ menu, item, onClose }) {
                 justifyContent: "flex-start",
               }}
             >
-              <Price variant="h5">{menuItem.price}</Price>
-              {menuItem?.per && <Ingredients> for {menuItem.per}</Ingredients>}
-              {menuItem?.weight && (
+              <Price variant="h5">{englishItem.price}</Price>
+              {englishItem?.per && (
+                <Ingredients> for {englishItem.per}</Ingredients>
+              )}
+              {englishItem?.weight && (
                 <Ingredients>
                   {" "}
-                  {menuItem.weight} {returnMesurements(menuItem.category)}
+                  {englishItem.weight} {returnMesurements(englishItem.category)}
                 </Ingredients>
               )}
               {menuItem?.ingredients && (
