@@ -905,13 +905,13 @@ export const de = [
   {
     menuNumber: 1231,
     title: "Campari",
-    category: "Wein-Gin-Rum",
+    category: "Weine-Gin-Rum",
     ingredients: "60ml",
   },
   {
     menuNumber: 1232,
     title: "Malibu",
-    category: "Wein-Gin-Rum",
+    category: "Weine-Gin-Rum",
     ingredients: "60ml",
   },
   {

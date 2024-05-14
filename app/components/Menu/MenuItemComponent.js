@@ -77,19 +77,12 @@ const MenuIngredients = styled("div")(({ theme }) => ({
   marginTop: theme.spacing(1),
 }));
 
-function MenuItemComponent({ item, isSmallScreen, menu }) {
-  const englishItem = menu
-    .find((langObj) => langObj.langKey === "en")
-    ?.items.find((menuItem) => menuItem.menuNumber === item.menuNumber);
-
+function MenuItemComponent({ item, isSmallScreen, menu, englishItem }) {
   const defaultImageSrc = "/menu/photo.png";
 
   return (
     <StyledMenuItem>
-      <MenuImage
-        src={englishItem.image || defaultImageSrc}
-        alt={item.title || englishItem.title}
-      />
+      <MenuImage src={englishItem.image} alt={englishItem.title} />
       <MenuContent sx={{ maxWidth: isSmallScreen ? "170px" : "auto" }}>
         <MenuIngredients>{item.menuNumber}</MenuIngredients>
         <MenuTitle>{item.title || englishItem.title}</MenuTitle>

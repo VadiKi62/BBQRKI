@@ -8,6 +8,11 @@ const ClickableMenuItem = ({ item, menu, isSmallScreen }) => {
     event.stopPropagation();
     onClose();
   };
+
+  const englishItem = menu
+    .find((langObj) => langObj.langKey === "en")
+    ?.items.find((menuItem) => menuItem.menuNumber === item.menuNumber);
+  console.log("englishItem FROM PARENT! : ", englishItem);
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
@@ -25,10 +30,16 @@ const ClickableMenuItem = ({ item, menu, isSmallScreen }) => {
           item={item}
           menu={menu}
           isSmallScreen={isSmallScreen}
+          englishItem={englishItem}
         />
       </div>
       {isOpen && (
-        <ModalMenuItem menu={menu} item={item} onClose={handleClose} />
+        <ModalMenuItem
+          menu={menu}
+          item={item}
+          onClose={handleClose}
+          englishItem={englishItem}
+        />
       )}
     </>
   );

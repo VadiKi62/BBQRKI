@@ -55,7 +55,7 @@ const Ingredients = styled(Typography)(({ theme }) => ({
   },
 }));
 
-function ModalMenuItem({ menu, item, onClose }) {
+function ModalMenuItem({ menu, item, onClose, englishItem }) {
   const handleDialogContentClick = (event) => {
     // Stops the click event from propagating up to other elements
     event.stopPropagation();
@@ -63,9 +63,7 @@ function ModalMenuItem({ menu, item, onClose }) {
   };
 
   const [menuItem, setmenuItem] = useState(item);
-  const englishItem = menu
-    .find((langObj) => langObj.langKey === "en")
-    ?.items.find((menuItem) => menuItem.id === item.id);
+
   const { t, i18n } = useTranslation();
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
