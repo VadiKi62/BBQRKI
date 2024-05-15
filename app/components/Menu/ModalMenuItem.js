@@ -12,6 +12,7 @@ import {
   useTheme,
   Typography,
   Stack,
+  CircularProgress,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
@@ -70,17 +71,18 @@ function ModalMenuItem({ menu, item, onClose, englishItem }) {
 
   const [imageLoading, setImageLoading] = useState(true);
 
-  const [progress, setProgress] = useState(0);
+  const [showProgress, setShowProgress] = useState(true);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setProgress((prev) => (prev + 5) % 100);
-    }, 100);
-    return () => clearInterval(timer);
+    const timer = setTimeout(() => {
+      setShowProgress(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const handleImageLoad = () => {
-    setImageLoading(false);
+    setShowProgress(false);
   };
 
   return (
@@ -102,10 +104,13 @@ function ModalMenuItem({ menu, item, onClose, englishItem }) {
             xs={12}
             sm={6}
             sx={{
-              direction: "flex",
+              position: "relative",
+              textAlign: "center",
             }}
           >
-            {englishItem?.image && (
+            {showProgress ? (
+              <CircularProgress sx={{ padding: 10 }} />
+            ) : (
               <Image
                 src={englishItem?.image}
                 alt={englishItem?.title}

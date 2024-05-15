@@ -19,7 +19,7 @@ export const GET = async (req, res) => {
     const existingMenu = await Menu.findOne({ restId });
     if (!existingMenu || existingMenu.menu.length === 0) {
       return new Response(
-        "This menu  in Eng is not found OR this Restaurant not found. Please add first End variant of Menu and then the rest translations",
+        "This menu in Eng is not found OR this Restaurant not found. Please add first Eng variant of Menu and then the rest translations",
         {
           status: 404,
         }
@@ -46,12 +46,14 @@ export const GET = async (req, res) => {
         const existingLanguageIndex = existingMenu.menu.findIndex(
           (item) => item.langKey === langKey
         );
+        console.log("2a", existingLanguageIndex);
         if (existingLanguageIndex !== -1) {
           // Language key already exists, delete its object from the array
           existingMenu.menu.splice(existingLanguageIndex, 1);
         }
       });
     };
+
     checkAndUpdateLangKeys();
     //function to check if in justItemsToAdd (that is array of objects), in each lang version there is the same items with menuNumber as in engItems, if so add them and if not then to add items from engItems
     // const newItems = engItems;

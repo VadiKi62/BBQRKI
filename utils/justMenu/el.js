@@ -31,70 +31,70 @@ export const el = [
   },
   {
     menuNumber: 201,
-    title: "ΧΑΜΠΟΥΡΓΚΕΡ",
+    title: "Hamburger",
     category: "ΧΑΜΠΟΥΡΓΚΕΡ",
     ingredients: "Με ντομάτα, μαρούλι, αγγούρι, μαγιονέζα, κέτσαπ",
   },
   {
     menuNumber: 202,
-    title: "Τσίζμπουργκερ",
+    title: "Cheeseburger",
     category: "ΧΑΜΠΟΥΡΓΚΕΡ",
     ingredients: "Με ντομάτα, μαρούλι, αγγούρι, μαγιονέζα, κέτσαπ",
   },
   {
     menuNumber: 203,
-    title: "Τυρί και μπέικον",
+    title: "Cheese & Bacon",
     category: "ΧΑΜΠΟΥΡΓΚΕΡ",
     ingredients: "Με ντομάτα, μαρούλι, αγγούρι, μαγιονέζα, κέτσαπ",
   },
   {
     menuNumber: 204,
-    title: "Κοτόπουλο μπέργκερ",
+    title: "Chicken burger",
     category: "ΧΑΜΠΟΥΡΓΚΕΡ",
     ingredients: "Με ντομάτα, μαρούλι, αγγούρι, μαγιονέζα, κέτσαπ",
   },
   {
     menuNumber: 205,
-    title: "ΧΑΜΠΟΥΡΓΚΕΡ με αυγό και μπέικον",
+    title: "Egg & bacon burger",
     category: "ΧΑΜΠΟΥΡΓΚΕΡ",
     ingredients:
       "Με φρέσκια κρέμα τυριού, ντομάτα, μαρούλι, αγγούρι, μαγιονέζα, κέτσαπ",
   },
   {
     menuNumber: 206,
-    title: "ΧΑΜΠΟΥΡΓΚΕΡ με τυρί και κοτόπουλο",
+    title: "Cheese chicken burger",
     category: "ΧΑΜΠΟΥΡΓΚΕΡ",
     ingredients:
       "Με καραμελωμένα κρεμμύδια και ντομάτα, μαρούλι, αγγούρι, μαγιονέζα, κέτσαπ",
   },
   {
     menuNumber: 301,
-    title: "Τσίζμπουργκερ + Τηγανητές πατάτες",
+    title: "Cheesburger + potatoes",
     category: "ΜΕΡΙΔΕΣ ΜΠΕΡΓΚΕΡ",
     ingredients: "Με ντομάτα, μαρούλι, αγγούρι, μαγιονέζα, κέτσαπ",
   },
   {
     menuNumber: 302,
-    title: "Τυρί και μπέικον + Τηγανητές πατάτες",
+    title: "Cheese & Bacon  + potatoes",
     category: "ΜΕΡΙΔΕΣ ΜΠΕΡΓΚΕΡ",
     ingredients: "Με ντομάτα, μαρούλι, αγγούρι, μαγιονέζα, κέτσαπ",
   },
   {
     menuNumber: 303,
-    title: "Κοτόπουλο μπέργκερ + Τηγανητές πατάτες",
+    title: "Chicken burger + potatoes",
     category: "ΜΕΡΙΔΕΣ ΜΠΕΡΓΚΕΡ",
     ingredients: "Με ντομάτα, μαρούλι, αγγούρι, μαγιονέζα, κέτσαπ",
   },
   {
     menuNumber: 304,
-    title: "Αυγό και μπέικον + Τηγανητές πατάτες",
+    title: "Egg & bacon + potatoes",
     category: "ΜΕΡΙΔΕΣ ΜΠΕΡΓΚΕΡ",
     ingredients:
       "Με φρέσκια κρέμα τυριού, ντομάτα, μαρούλι, αγγούρι, μαγιονέζα, κέτσαπ",
   },
   {
     menuNumber: 305,
-    title: "Τυρί και κοτόπουλο + Τηγανητές πατάτες",
+    title: "Cheese chicken  + potatoes",
     category: "ΜΕΡΙΔΕΣ ΜΠΕΡΓΚΕΡ",
     ingredients:
       "Με καραμελωμένα κρεμμύδια και ντομάτα, μαρούλι, αγγούρι, μαγιονέζα, κέτσαπ",
@@ -113,13 +113,13 @@ export const el = [
   },
   {
     menuNumber: 403,
-    title: "CLUB SANDWICHES κοτόπουλου",
+    title: "Chicken club sandwich ",
     category: "CLUB SANDWICHES",
     ingredients: "",
   },
   {
     menuNumber: 404,
-    title: "Μερίδα γύρο χοιρινό με πίτα &amp; τζατζικι",
+    title: " Μερίδα γύρο χοιρινό με πίτα & τζατζικι ",
     category: "CLUB SANDWICHES",
     ingredients: "",
   },
@@ -131,7 +131,7 @@ export const el = [
   },
   {
     menuNumber: 406,
-    title: "Focaccia Vegeterian(360γρ)",
+    title: "Focaccia Vegeterian (360γρ)",
     category: "CLUB SANDWICHES",
     ingredients: "Με τηγανητές πατάτες και σάλτσα κοκτέιλ",
   },
@@ -143,7 +143,7 @@ export const el = [
   },
   {
     menuNumber: 408,
-    title: "Focaccia με γύρο κοτοπουλο(360γρ)",
+    title: "Focaccia με γύρο κοτοπουλο (360γρ)",
     category: "CLUB SANDWICHES",
     ingredients: "Με τηγανητές πατάτες και σάλτσα κοκτέιλ",
   },
@@ -179,7 +179,7 @@ export const el = [
   },
   {
     menuNumber: 414,
-    title: "Τηγανητές πατάτες",
+    title: "Τηγανητές πατάτες με μπεικο",
     category: "CLUB SANDWICHES",
     ingredients:
       "Με μπέικον, τριμμένη παρμεζάνα, σάλτσα τσέντερ και φρέσκια κρέμα τυριού",
@@ -502,7 +502,7 @@ export const el = [
     category: "ΜΠΥΡΕΣ",
     ingredients: "",
   },
-  { menuNumber: 1006, title: "Mythos", category: "Μπίρα", ingredients: "" },
+  { menuNumber: 1006, title: "Mythos", category: "ΜΠΥΡΕΣ", ingredients: "" },
   {
     menuNumber: 1007,
     title: "Stella Artois",
@@ -533,7 +533,7 @@ export const el = [
   {
     menuNumber: 1013,
     title: "Μηλοκλέφτης Μήλο",
-    category: "Μπίρα",
+    category: "ΜΠΥΡΕΣ",
     ingredients: "",
   },
   {
@@ -950,14 +950,14 @@ export const el = [
   },
   {
     menuNumber: 207,
-    title: "Μπέργκερ με χοιρινό γύρο",
+    title: "Burger with giros pork",
     category: "ΧΑΜΠΟΥΡΓΚΕΡ",
     ingredients:
       "Με ψωμί μπριός, ντομάτα, κρεμμύδι, πράσινη σαλάτα, κέτσαπ, μουστάρδα και χοιρινό γύρο με πατάτες",
   },
   {
     menuNumber: 208,
-    title: "Μπέργκερ με κοτόπουλο γύρο",
+    title: "Burger with giros chicken",
     category: "ΧΑΜΠΟΥΡΓΚΕΡ",
     ingredients:
       "Με ψωμί μπριός, ντομάτα, κρεμμύδι, πράσινη σαλάτα, κέτσαπ, μουστάρδα και κοτόπουλο γύρο με πατάτες",

@@ -1214,4 +1214,30 @@ export const en = [
     category: "Wines-Jin-Rum",
     ingredients: "60ml",
   },
+  {
+    menuNumber: 207,
+    title: "Burger with giros pork",
+    category: "Hamburgers",
+    ingredients:
+      "With brioche bread, tomatoe, onion, green salad, ketchup, mustard & giros pork with potatoes",
+  },
+  {
+    menuNumber: 208,
+    title: "Burger with giros chicken",
+    category: "Hamburgers",
+    ingredients:
+      "With brioche bread, tomatoe, onion, green salad, ketchup, mustard & giros chicken with potatoes",
+  },
+  {
+    menuNumber: 415,
+    title: "Club sandwich giros pork",
+    category: "Sandwiches",
+    ingredients: "With pita, tzatziki, tomatoe, onion, green salad",
+  },
+  {
+    menuNumber: 416,
+    title: " Club sandwich giros chicken",
+    category: "Sandwiches",
+    ingredients: "With pita, tzatziki, tomatoe, onion, green salad",
+  },
 ];
