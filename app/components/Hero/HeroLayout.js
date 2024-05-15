@@ -197,7 +197,6 @@ export default function HeroLayout({ rest }) {
         </InfoContainer>
       );
     }
-    console.log(rest.patternOverlay);
 
     return (
       <>

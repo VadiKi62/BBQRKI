@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, animateScroll, scroller } from "react-scroll";
+import { scroller } from "react-scroll";
 import DefaultButton from "../common/DefaultButton";
 
 function MenuButton() {

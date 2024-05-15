@@ -12,7 +12,7 @@ import {
 export const GET = async (req, res) => {
   // const { restId, itemsToAdd } = req.body;
   const restId = "66094de341b392ba037d29c5";
-  const itemsToAdd = justItemsToAddDe;
+  const itemsToAdd = justItemsToAddEl;
 
   try {
     await connectToDB();

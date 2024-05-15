@@ -185,7 +185,7 @@ export const MainContextProvider = ({
           Number(radius) + currentPosition.accuracy
         ) {
           chatNumber = getChatIdForTable(rest, zont);
-          console.log(chatNumber);
+
           performActionWaiter(() => {
             sendWaiter(
               message,

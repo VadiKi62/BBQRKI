@@ -42,7 +42,7 @@ function Feed({ children, ...props }) {
           <MainContent rest={rest} menuData={menu} />
           {children}
           <Footer rest={rest} />
-          <ScrollButton />
+          <ScrollButton menuOnly={menuOnly} />
         </MainContextProvider>
       </Suspense>
     </ThemeProvider>

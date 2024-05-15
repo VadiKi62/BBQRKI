@@ -12,20 +12,22 @@ const ScrollTop = styled(Fab)(({ theme }) => ({
   right: theme.spacing(1),
 }));
 
-export default function ScrollButton({ onClick }) {
+export default function ScrollButton({ onClick, menuOnly }) {
   const trigger = useScrollTrigger({
-    // target: window || null,
     disableHysteresis: true,
     threshold: 100,
   });
   const handleScroll = () => {
-    if (onClick) {
+    if (menuOnly) {
       // If an onClick callback is provided, call it
-      onClick();
+      scroll.scrollTo("menu", {
+        smooth: "easeInOutQuart",
+        offset: -50,
+      });
     } else {
       // If no onClick callback is provided, scroll to the top
       scroll.scrollToTop({
-        smooth: true,
+        smooth: "easeInOutQuart",
       });
     }
   };
