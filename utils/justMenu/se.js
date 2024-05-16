@@ -33,71 +33,78 @@ export const se = [
     menuNumber: 201,
     title: "Hamburger",
     category: "Hamburgeri",
-    ingredients: "Sa paradajzom, salatom, krastavcima, majonezom, kečapom",
+    ingredients:
+      "Sa paradajzom, zelenom salatom, krastavcima, majonezom, kečapom",
   },
   {
     menuNumber: 202,
-    title: "Čizburgel",
+    title: "Čizburger",
     category: "Hamburgeri",
-    ingredients: "Sa paradajzom, salatom, krastavcima, majonezom, kečapom",
+    ingredients:
+      "Sa paradajzom, zelenom zelenom salatom, krastavcima, majonezom, kečapom",
   },
   {
     menuNumber: 203,
     title: "Sir i slanina",
     category: "Hamburgeri",
-    ingredients: "Sa paradajzom, salatom, krastavcima, majonezom, kečapom",
+    ingredients:
+      "Sa paradajzom, zelenom zelenom salatom, krastavcima, majonezom, kečapom",
   },
   {
     menuNumber: 204,
     title: "Pileći hamburger",
     category: "Hamburgeri",
-    ingredients: "Sa paradajzom, salatom, krastavcima, majonezom, kečapom",
+    ingredients:
+      "Sa paradajzom, zelenom zelenom salatom, krastavcima, majonezom, kečapom",
   },
   {
     menuNumber: 205,
     title: "Hamburger sa jajima i slaninom",
     category: "Hamburgeri",
     ingredients:
-      "Sa kremnim sirom, paradajzom, salatom, krastavcima, majonezom, kečapom",
+      "Sa krem sirom, paradajzom, zelenom salatom, krastavcima, majonezom, kečapom",
   },
   {
     menuNumber: 206,
     title: "Hamburger sa sirom i piletinom",
     category: "Hamburgeri",
     ingredients:
-      "Sa karamelizovanim lukom i paradajzom, salatom, krastavcima, majonezom, kečapom",
+      "Sa karamelizovanim lukom i paradajzom, zelenom salatom, krastavcima, majonezom, kečapom",
   },
   {
     menuNumber: 301,
     title: "Čizburger + krompir",
     category: "Set hamburgera",
-    ingredients: "Sa paradajzom, salatom, krastavcima, majonezom, kečapom",
+    ingredients:
+      "Sa paradajzom, zelenom salatom, krastavcima, majonezom, kečapom",
   },
   {
     menuNumber: 302,
     title: "Sir i slanina + krompir",
     category: "Set hamburgera",
-    ingredients: "Sa paradajzom, salatom, krastavcima, majonezom, kečapom",
+    ingredients:
+      "Sa paradajzom, zelenom salatom, krastavcima, majonezom, kečapom",
   },
   {
     menuNumber: 303,
     title: "Pileći hamburger + krompir",
     category: "Set hamburgera",
-    ingredients: "Sa paradajzom, salatom, krastavcima, majonezom, kečapom",
+    ingredients:
+      "Sa paradajzom, zelenom salatom, krastavcima, majonezom, kečapom",
   },
   {
     menuNumber: 304,
     title: "Jaja i slanina + krompir",
     category: "Set hamburgera",
     ingredients:
-      "Sa kremnim sirom, paradajzom, salatom, krastavcima, majonezom, kečapom",
+      "Sa krem sirom, paradajzom, zelenom salatom, krastavcima, majonezom, kečapom",
   },
   {
     menuNumber: 305,
     title: "Sir i piletina + krompir",
     category: "Set hamburgera",
     ingredients:
-      "Sa karamelizovanim lukom i paradajzom, salatom, krastavcima, majonezom, kečapom",
+      "Sa karamelizovanim lukom i paradajzom, zelenom salatom, krastavcima, majonezom, kečapom",
   },
   {
     menuNumber: 401,
@@ -201,13 +208,13 @@ export const se = [
     title: "Palačinke",
     category: "Slatko",
     ingredients:
-      "Sa šunkom i sirom, dvostruko slaninom, jajima i sosom od kremskog sira",
+      "Sa šunkom i sirom, dvostrukom duplom, jajima i sosom od kremskog sira",
   },
   {
     menuNumber: 504,
     title: "Čokoladne vajfle",
     category: "Slatko",
-    ingredients: "Sa rendanim orasima, vanilijom i čokoladnim sladoledom",
+    ingredients: "Sa rendanim orasima, Vanilom i čokoladnim sladoledom",
   },
   {
     menuNumber: 505,
@@ -369,7 +376,7 @@ export const se = [
   },
   {
     menuNumber: 711,
-    title: "Topla čaj",
+    title: "Topli čaj",
     category: "Kafe",
     ingredients: "Zeleni, crni",
   },
@@ -429,13 +436,12 @@ export const se = [
   },
   {
     menuNumber: 809,
-    title: "Domaća limonada",
+    title: "Domaća limunada",
     category: "Sokovi",
     ingredients: "",
   },
   {
     menuNumber: 810,
-    image: "/menu/just/photo.jpg",
     title: "Sveža pomorandža sa grejpfrutom",
     category: "Sokovi",
     ingredients: "",
@@ -913,85 +919,85 @@ export const se = [
   },
   {
     menuNumber: 1301,
-    title: "Smudi 01",
-    category: "Smudi",
+    title: "Smuti 01",
+    category: "Smuti",
     subCategory: null,
     ingredients: "Jagoda, breskva, banana",
   },
   {
     menuNumber: 1302,
-    title: "Smudi 02",
-    category: "Smudi",
+    title: "Smuti 02",
+    category: "Smuti",
     subCategory: null,
     ingredients: "Jagoda, mango, dinja",
   },
   {
     menuNumber: 1303,
-    title: "Smudi 03",
-    category: "Smudi",
+    title: "Smuti 03",
+    category: "Smuti",
     subCategory: null,
     ingredients: "Kruška, mango, ananas",
   },
   {
     menuNumber: 1304,
-    title: "Smudi 04",
-    category: "Smudi",
+    title: "Smuti 04",
+    category: "Smuti",
     subCategory: null,
     ingredients: "Borovnica, kupina, banana",
   },
   {
     menuNumber: 1305,
-    title: "Smudi 05",
-    category: "Smudi",
+    title: "Smuti 05",
+    category: "Smuti",
     subCategory: null,
     ingredients: "Strastveno voće, breskva, mango",
   },
   {
     menuNumber: 1306,
-    title: "Smudi 06",
-    category: "Smudi",
+    title: "Smuti 06",
+    category: "Smuti",
     subCategory: null,
     ingredients: "Malina, mango, jabuka, borovnica",
   },
   {
     menuNumber: 1307,
-    title: "Smudi 07",
-    category: "Smudi",
+    title: "Smuti 07",
+    category: "Smuti",
     subCategory: null,
     ingredients: "Limun, šargarepa, jabuka, spanać, đumbir",
   },
   {
     menuNumber: 1308,
-    title: "Smudi 08",
-    category: "Smudi",
+    title: "Smuti 08",
+    category: "Smuti",
     subCategory: null,
     ingredients: "Avokado, kelj, ceder limuna, banana",
   },
   {
     menuNumber: 1309,
-    title: "Smudi 09",
-    category: "Smudi",
+    title: "Smuti 09",
+    category: "Smuti",
     subCategory: null,
     ingredients: "Pitahaja, limun, banana, mango",
   },
   {
     menuNumber: 1310,
-    title: "Smudi 10",
-    category: "Smudi",
+    title: "Smuti 10",
+    category: "Smuti",
     subCategory: null,
     ingredients: "Sladoled, ananas, mango, banana",
   },
   {
     menuNumber: 1311,
-    title: "Smudi 11",
-    category: "Smudi",
+    title: "Smuti 11",
+    category: "Smuti",
     subCategory: null,
     ingredients: "Biskvit, vegan krema",
   },
   {
     menuNumber: 1312,
-    title: "Smudi 12",
-    category: "Smudi",
+    title: "Smuti 12",
+    category: "Smuti",
     subCategory: null,
     ingredients: "Sladoled, banana, jagoda",
   },
@@ -1000,27 +1006,27 @@ export const se = [
     title: "Burger sa giros svinjetinom",
     category: "Hamburgeri",
     ingredients:
-      "Sa brioš hlebom, paradajzom, lukom, zelenom salatom, kečapom, senfom i giros svinjetinom sa krompirom",
+      "Sa brioš hlebom, paradajzom, lukom, zelenom zelenom salatom, kečapom, senfom i giros svinjetinom sa krompirom",
   },
   {
     menuNumber: 208,
     title: "Burger sa giros piletinom",
     category: "Hamburgeri",
     ingredients:
-      "Sa brioš hlebom, paradajzom, lukom, zelenom salatom, kečapom, senfom i giros piletinom sa krompirom",
+      "Sa brioš hlebom, paradajzom, lukom, zelenom zelenom salatom, kečapom, senfom i giros piletinom sa krompirom",
   },
   {
     menuNumber: 415,
     title: "Klub sendvič sa giros svinjetinom",
     category: "Sendviči",
     ingredients:
-      "Sa pita hlebom, cacakijem, paradajzom, lukom, zelenom salatom",
+      "Sa pita hlebom, cacakijem, paradajzom, lukom, zelenom zelenom salatom",
   },
   {
     menuNumber: 416,
     title: "Klub sendvič sa giros piletinom",
     category: "Sendviči",
     ingredients:
-      "Sa pita hlebom, cacakijem, paradajzom, lukom, zelenom salatom",
+      "Sa pita hlebom, cacakijem, paradajzom, lukom, zelenom zelenom salatom",
   },
 ];

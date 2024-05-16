@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { styled } from "@mui/material/styles";
 import { Paper, Typography } from "@mui/material";
+import { CircularProgress } from "@mui/material";
 
 const StyledMenuItem = styled(Paper)(({ theme }) => ({
   // margin: theme.spacing(0, 0),
@@ -80,9 +81,24 @@ const MenuIngredients = styled("div")(({ theme }) => ({
 function MenuItemComponent({ item, isSmallScreen, menu, englishItem }) {
   const defaultImageSrc = "/menu/photo.png";
 
+  const [imageLoading, setImageLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setImageLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <StyledMenuItem>
-      <MenuImage src={englishItem.image} alt={englishItem.title} />
+      {imageLoading ? (
+        <CircularProgress size={100} thickness={40} />
+      ) : (
+        <MenuImage src={englishItem.image} alt={englishItem.title} />
+      )}
+
       <MenuContent sx={{ maxWidth: isSmallScreen ? "170px" : "auto" }}>
         <MenuIngredients>{item.menuNumber}</MenuIngredients>
         <MenuTitle>{item.title || englishItem.title}</MenuTitle>

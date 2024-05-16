@@ -69,8 +69,6 @@ function ModalMenuItem({ menu, item, onClose, englishItem }) {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const [imageLoading, setImageLoading] = useState(true);
-
   const [showProgress, setShowProgress] = useState(true);
 
   useEffect(() => {
@@ -109,7 +107,7 @@ function ModalMenuItem({ menu, item, onClose, englishItem }) {
             }}
           >
             {showProgress ? (
-              <CircularProgress sx={{ padding: 10 }} />
+              <CircularProgress sx={{ py: 10 }} size={75} />
             ) : (
               <Image
                 src={englishItem?.image}
