@@ -16,6 +16,7 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
+import PriorityHighIcon from "@mui/icons-material/PriorityHigh";
 import CloseIcon from "@mui/icons-material/Close";
 
 const Image = styled("img")(({ theme }) => ({
@@ -40,7 +41,6 @@ const Price = styled(Typography)(({ theme }) => ({
 }));
 
 const Ingredients = styled(Typography)(({ theme }) => ({
-  fontStyle: "italic",
   // whiteSpace: "normal",
   // marginLeft: theme.spacing(2),
   marginTop: 25,
@@ -142,20 +142,18 @@ function ModalMenuItem({ menu, item, onClose, englishItem }) {
             </Grid>
           </Grid>
           <Grid container sx={{ mt: 1 }}>
-            {/* // If this items is only for restaurant, show this message in Modal window
-          {!englishItem.beachMenu && (
             <Stack
               direction={"row"}
-              justifyContent="space-evenly"
+              justifyContent="center"
               alignItems="center"
               spacing={1}
             >
-              <SmsFailedIcon />
-              <Typography variant="body1" color="primary.red">
-                We are serving this item only inside of the restaurant.
+              <PriorityHighIcon />
+
+              <Typography variant="body2" color="grey" lineHeight={1}>
+                {t("menu.differ")}
               </Typography>
             </Stack>
-          )} */}
           </Grid>
         </Grid>
       </DialogContent>

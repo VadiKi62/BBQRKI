@@ -5,7 +5,8 @@
     "call2": "Call the bill",
     "table": "Table",
     "run": "The Waiter is running to you!",
-    "About": "About"
+    "About": "About",
+    "differ": "The dish in the photo may differ slightly from reality."
   },
   "hero": {
     "wellcome": "Welcome to",

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { styled } from "@mui/material/styles";
 import { Paper, Typography } from "@mui/material";
-import { CircularProgress } from "@mui/material";
+import { Skeleton } from "@mui/material";
 
 const StyledMenuItem = styled(Paper)(({ theme }) => ({
   // margin: theme.spacing(0, 0),
@@ -94,7 +94,12 @@ function MenuItemComponent({ item, isSmallScreen, menu, englishItem }) {
   return (
     <StyledMenuItem>
       {imageLoading ? (
-        <CircularProgress size={100} thickness={40} />
+        <Skeleton
+          variant="circular"
+          width={150}
+          height={150}
+          sx={{ bgcolor: "secondary.complement" }}
+        />
       ) : (
         <MenuImage src={englishItem.image} alt={englishItem.title} />
       )}
