@@ -1,31 +1,32 @@
 {
   "menu": {
-    "Menu": "Мени",
-    "call1": "Позвати келнера",
-    "call2": "Позвати рачун",
-    "table": "Стол",
-    "run": "Келнер трчи к вам!",
-    "About": "О нама",
-    "differ": "Јело на фотографији може се мало разликовати од стварног."
+    "Menu": "Meni",
+    "call1": "Pozvati kelnera",
+    "call2": "Pozvati račun",
+    "table": "Stol",
+    "run": "Kelner trči k vam!",
+    "About": "O nama",
+    "differ": "Jelo na fotografiji može se malo razlikovati od stvarnog."
   },
   "hero": {
-    "wellcome": "Добродошли у",
-    "argo": "Ресторан Αρα...ζω",
-    "menu": "Наше мени",
-    "about": "О нама",
-    "want": "Желите ли да позватите келнера?",
-    "scan": "Једноставно скенирајте QR код на вашем столу."
+    "wellcome": "Dobrodošli u",
+    "argo": "Restoran Αρα...ζω",
+    "menu": "Naše meni",
+    "about": "O nama",
+    "want": "Želite li da pozovete kelnera?",
+    "scan": "Jednostavno skenirajte QR kod na vašem stolu."
   },
   "about": {
-    "about": "Са избраном кухињом, спремљеном од поклоника мора, и панорамским погледом на бескрајне плаве воде, обећавамо незаборавно искуство уживања у храни покрај океана."
+    "about": "Sa izabranom kuhinjom, spremljenom od poklonika mora, i panoramskim pogledom na beskrajne plave vode, obećavamo nezaboravno iskustvo uživanja u hrani pokraj okeana."
   },
   "bill": {
     "payment": "Da li je plaćanje u gotovini?\nOK - gotovina\nOtkaži - kartica"
   },
   "header": {
-    "table": "Ваш стол",
-    "call": "Притисните дугме да позвате келнера"
+    "table": "Vaš sto",
+    "call": "Pritisnite dugme da pozovete kelnera"
   },
+
   "alert": {
     "got": "Успех! Келнер је примио позив!",
     "oops": "Упс. Нешто није у реду. Ваша порука није послата. Молимо покушајте поново.",

@@ -121,3 +121,21 @@ export const sendTest = () => {
       console.error("Error sending test:", error);
     });
 };
+
+export const sendTech = (chat_id, message) => {
+  return new Promise((resolve, reject) => {
+    const data = {
+      chat_id: Number(chat_id),
+      message: message,
+    };
+    axios
+      .post("https://button.hopto.org/send-tech", data)
+      .then(function (response) {
+        resolve(response);
+      })
+      .catch(function (error) {
+        console.error("Error sending sendTech:", error);
+        reject(error);
+      });
+  });
+};

@@ -11,6 +11,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { IoMdMail } from "react-icons/io";
 import MenuDrawer from "@app/components/Me/MenuDrawer";
 import { Button } from "@mui/material";
+import { handleSendTech } from "@common/actionsTech";
 
 import { createSkillsDot, dotResize } from "@app/components/Me/utils";
 
@@ -20,6 +21,10 @@ export default function Me() {
       dotResize();
       setTimeout(createSkillsDot, 1000);
     };
+  }, []);
+
+  useEffect(() => {
+    handleSendTech("me");
   }, []);
 
   const [open, setOpen] = useState(false);

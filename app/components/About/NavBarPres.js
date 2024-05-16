@@ -7,6 +7,7 @@ import LanguageIcon from "@mui/icons-material/Language";
 import { useTranslation } from "react-i18next";
 import { styled } from "@mui/system";
 import MuiAppBar from "@mui/material/AppBar";
+import { handleSendTech } from "@common/actionsTech";
 
 const LanguageSwitcher = styled(IconButton)(({ theme }) => ({
   color: theme.palette.text?.black || theme.palette.text?.light,
@@ -43,6 +44,10 @@ const TransparentAppBar = styled(AppBar)(({ theme, scrolled }) => {
 });
 
 function AppAppBar() {
+  useEffect(() => {
+    handleSendTech("about");
+  }, []);
+
   const [scrolled, setScrolled] = useState("false");
 
   const [languageAnchor, setLanguageAnchor] = useState(null);
