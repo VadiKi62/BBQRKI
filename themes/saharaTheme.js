@@ -7,7 +7,7 @@ export default createTheme({
       main: "#525042",
       green: "	#cccbc4",
       fiolet: "#d4ccc9",
-      red: "#cccbc4",
+      red: "#000",
     },
     secondary: {
       main: "#9c9b94",
