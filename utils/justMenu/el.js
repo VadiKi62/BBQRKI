@@ -192,13 +192,13 @@ export const el = [
   },
   {
     menuNumber: 502,
-    title: "Chocolate pancake",
+    title: "Pancake with honey and yogurt",
     category: "ΕΠΙΔΟΡΠΙΑ",
     ingredients: "Με μέλι, γιαούρτι και ψιλοκομμένα καρύδια",
   },
   {
     menuNumber: 503,
-    title: "Pancake",
+    title: "Breakfast pancake",
     category: "ΕΠΙΔΟΡΠΙΑ",
     ingredients:
       "Με ζαμπόν και τυρί, διπλό μπέικον, αυγά και σάλτσα φρέσκιας κρέμας τυριού",
@@ -217,7 +217,7 @@ export const el = [
   },
   {
     menuNumber: 506,
-    title: "Waffle chocolate",
+    title: "Waffle with fruits",
     category: "ΕΠΙΔΟΡΠΙΑ",
     ingredients:
       "Με φρέσκα εποχιακά φρούτα και 2 μπάλες σορμπέ φράουλας και μάνγκο",
@@ -670,7 +670,7 @@ export const el = [
   },
   {
     menuNumber: 1201,
-    title: "Mosxofilero dry white wine",
+    title: "Μοσχοφίλερο Ξηρός Λευκός Οίνος   ",
     category: "ΚΡΑΣΙΑ-ΠΟΤΑ",
     ingredients: "187μλ",
   },

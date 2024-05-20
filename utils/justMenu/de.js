@@ -234,77 +234,77 @@ export const de = [
   {
     menuNumber: 601,
     title: "Buena ferrera",
-    category: "Blendissimo",
+    category: "Chocolate",
     ingredients: "Perfekte Harmonie aus knusprigem Keks und Milchschokolade",
   },
   {
     menuNumber: 602,
     title: "Capricciosa",
-    category: "Blendissimo",
+    category: "Chocolate",
     ingredients: "Unglaubliches Schokoladenaroma",
   },
   {
     menuNumber: 603,
     title: "Oreo",
-    category: "Blendissimo",
+    category: "Chocolate",
     ingredients: "Weiße Schokolade mit geriebenem OREO-Keks",
   },
   {
     menuNumber: 604,
     title: "Alato",
-    category: "Blendissimo",
+    category: "Chocolate",
     ingredients:
       "Reichhaltiger Geschmack von Milchschokolade, bestreut mit Meersalz",
   },
   {
     menuNumber: 605,
     title: "Viennua",
-    category: "Blendissimo",
+    category: "Chocolate",
     ingredients:
       "Authentisches aromatisches Schokoladenrezept mit 40% Kakao und Sahne, genau wie in Wien",
   },
   {
     menuNumber: 606,
     title: "Classica",
-    category: "Blendissimo",
+    category: "Chocolate",
     ingredients:
       "Klassischer Schokoladengeschmack aus tropischen Kakaosorten aus Afrika",
   },
   {
     menuNumber: 607,
     title: "Ohne Zucker",
-    category: "Blendissimo",
+    category: "Chocolate",
     ingredients:
       "Eine andere Version der klassischen Schokolade ohne Zucker, mit Stevia",
   },
   {
     menuNumber: 608,
     title: "Bitter Aztec",
-    category: "Blendissimo",
+    category: "Chocolate",
     ingredients: "Bittere Schokolade mit kräftigem Geschmack und Aroma",
   },
   {
     menuNumber: 609,
     title: "Fragola",
-    category: "Blendissimo",
+    category: "Chocolate",
     ingredients: "Schokolade mit Erdbeer- und Vanillegeschmack",
   },
   {
     menuNumber: 610,
     title: "Banane",
-    category: "Blendissimo",
+    category: "Chocolate",
     ingredients: "Schokolade mit Bananengeschmack",
   },
   {
     menuNumber: 611,
     title: "Kokos",
-    category: "Blendissimo",
+    category: "Chocolate",
     ingredients: "Schokolade mit Kokosmilchgeschmack",
   },
   {
     menuNumber: 612,
     title: "Cafelatta",
-    category: "Blendissimo",
+    category: "Chocolate",
     ingredients:
       "Schokolade mit wunderbar mildem Kaffee-Haselnuss-Geschmack und schaumiger Milch",
   },

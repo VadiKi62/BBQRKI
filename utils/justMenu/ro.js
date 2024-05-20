@@ -238,76 +238,76 @@ export const ro = [
   {
     menuNumber: 601,
     title: "Buena Ferrera",
-    category: "Blending",
+    category: "Chocolate",
     ingredients: "Armonie perfectă de biscuit crocant și lapte de ciocolată",
   },
   {
     menuNumber: 602,
     title: "Capricciosa",
-    category: "Blending",
+    category: "Chocolate",
     ingredients: "Gust incredibil de ciocolată",
   },
   {
     menuNumber: 603,
     title: "Oreo",
-    category: "Blending",
+    category: "Chocolate",
     ingredients: "Ciocolată albă cu biscuiți Oreo mărunțiți",
   },
   {
     menuNumber: 604,
     title: "Salt",
-    category: "Blending",
+    category: "Chocolate",
     ingredients:
       "Gust bogat de lapte de ciocolată, cu un strop de sare de mare",
   },
   {
     menuNumber: 605,
     title: "Viena",
-    category: "Blending",
+    category: "Chocolate",
     ingredients:
       "Rețetă autentică aromatică de ciocolată cu 40% cacao și cremă de lapte, exact ca în Viena",
   },
   {
     menuNumber: 606,
     title: "Clasic",
-    category: "Blending",
+    category: "Chocolate",
     ingredients:
       "Gust clasic de ciocolată din soiuri tropicale de cacao din Africa",
   },
   {
     menuNumber: 607,
     title: "Fără zahăr",
-    category: "Blending",
+    category: "Chocolate",
     ingredients: "O altă versiune a ciocolatei clasice fără zahăr, cu stevia",
   },
   {
     menuNumber: 608,
     title: "Amărui Aztec",
-    category: "Blending",
+    category: "Chocolate",
     ingredients: "Ciocolată amară cu un gust intens și aromă",
   },
   {
     menuNumber: 609,
     title: "Căpșuni",
-    category: "Blending",
+    category: "Chocolate",
     ingredients: "Ciocolată cu gust de căpșuni și vanilie",
   },
   {
     menuNumber: 610,
     title: "Banana",
-    category: "Blending",
+    category: "Chocolate",
     ingredients: "Ciocolată cu gust de banană",
   },
   {
     menuNumber: 611,
     title: "Cocos",
-    category: "Blending",
+    category: "Chocolate",
     ingredients: "Ciocolată cu gust de lapte de cocos",
   },
   {
     menuNumber: 612,
     title: "Cafelată",
-    category: "Blending",
+    category: "Chocolate",
     ingredients: "Ciocolată cu un gust minunat de cafea-avelă și lapte spumos",
   },
   {

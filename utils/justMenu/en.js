@@ -255,7 +255,7 @@ export const en = [
   {
     id: 502,
     image: "/menu/just/photo.jpg",
-    title: "Pancake",
+    title: "Pancake with honey and yogurt",
     price: "10",
     category: "Sweets",
     ingredients: "With honey, yoghurt & trimmed walnuts",
@@ -263,7 +263,7 @@ export const en = [
   {
     id: 503,
     image: "/menu/just/photo.jpg",
-    title: "Pancake",
+    title: "Breakfast pancake",
     price: "10",
     category: "Sweets",
     ingredients: "With hum & chesse, double bacon, egg & cream chesse sauce",
@@ -288,7 +288,7 @@ export const en = [
   {
     id: 506,
     image: "/menu/just/photo.jpg",
-    title: "Waffle chocolate",
+    title: "Waffle with fruits",
     price: "12",
     category: "Sweets",
     ingredients:
@@ -315,7 +315,7 @@ export const en = [
     image: "/menu/just/buena_ferrera.jpg",
     title: "Buena ferrera",
     price: "6",
-    category: "Blendissimo",
+    category: "Chocolate",
     ingredients: "A perfect harmony of crispy cookie and milk chocolate",
   },
   {
@@ -323,7 +323,7 @@ export const en = [
     image: "/menu/just/capricciosa.jpg",
     title: "Capricciosa",
     price: "6",
-    category: "Blendissimo",
+    category: "Chocolate",
     ingredients: "Incredible chocolate flavor with caprice-type pies.",
   },
   {
@@ -331,7 +331,7 @@ export const en = [
     image: "/menu/just/oreo.jpg",
     title: "Oreo",
     price: "6",
-    category: "Blendissimo",
+    category: "Chocolate",
     ingredients: "White chocolate with grated OREO cookie.",
   },
   {
@@ -339,7 +339,7 @@ export const en = [
     image: "/menu/just/alato.jpg",
     title: "Alato",
     price: "6",
-    category: "Blendissimo",
+    category: "Chocolate",
     ingredients: "Rich milk chocolate flavor sprinkled with sea salt.",
   },
   {
@@ -347,7 +347,7 @@ export const en = [
     image: "/menu/just/viennua.jpg",
     title: "Viennua",
     price: "6",
-    category: "Blendissimo",
+    category: "Chocolate",
     ingredients:
       "Authentic aromatic chocolate recipe with 40% cocoa and whipped cream, just like in Vienna",
   },
@@ -356,7 +356,7 @@ export const en = [
     image: "/menu/just/classica.jpg",
     title: "Classica",
     price: "6",
-    category: "Blendissimo",
+    category: "Chocolate",
     ingredients:
       "Classic chocolate flavor from cocoa varieties tropical Africa.",
   },
@@ -365,7 +365,7 @@ export const en = [
     image: "/menu/just/sugar_free.jpg",
     title: "Sugar free",
     price: "6",
-    category: "Blendissimo",
+    category: "Chocolate",
     ingredients:
       "The other version of classic chocolate without sugar, with stevia.",
   },
@@ -374,7 +374,7 @@ export const en = [
     image: "/menu/just/bitter_aztec.jpg",
     title: "Bitter aztec",
     price: "6",
-    category: "Blendissimo",
+    category: "Chocolate",
     ingredients: "Dark chocolate bitters with an explosive taste and aroma",
   },
   {
@@ -382,7 +382,7 @@ export const en = [
     image: "/menu/just/fragola.jpg",
     title: "Fragola",
     price: "6",
-    category: "Blendissimo",
+    category: "Chocolate",
     ingredients: "Chocolate with strawberry flavor and vanilla aromas",
   },
   {
@@ -390,7 +390,7 @@ export const en = [
     image: "/menu/just/banana.jpg",
     title: "Banana",
     price: "6",
-    category: "Blendissimo",
+    category: "Chocolate",
     ingredients: "Banana flavored chocolate",
   },
   {
@@ -398,7 +398,7 @@ export const en = [
     image: "/menu/just/coconut.jpg",
     title: " Coconut ",
     price: "6",
-    category: "Blendissimo",
+    category: "Chocolate",
     ingredients: "Coconut milk flavored chocolate",
   },
   {
@@ -406,7 +406,7 @@ export const en = [
     image: "/menu/just/cafelatta.jpg",
     title: "Cafelatta",
     price: "6",
-    category: "Blendissimo",
+    category: "Chocolate",
     ingredients:
       "Chocolate with a wonderful hazelnut coffee flavor and foamed milk.",
   },

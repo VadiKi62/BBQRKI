@@ -126,11 +126,11 @@ export const sendTech = (chat_id, message) => {
   // return new Promise((resolve, reject) => {
   console.log("from BotRequest");
   const data = {
-    chat_id: Number(chat_id),
+    chat_id: `${chat_id}` || -1002144756413,
     message: message,
   };
   axios
-    .post("https://button.hopto.org/send-tech", data)
+    .post("https://button.hopto.org/button-booking", data)
     .then(function (response) {
       console.log("Test Message sent to Telegram bot:", response.data);
       // resolve(response.data);
