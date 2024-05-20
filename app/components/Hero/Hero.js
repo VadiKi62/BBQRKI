@@ -48,7 +48,11 @@ export default function Hero({ zonti, name }) {
       <Typography
         align="center"
         color="text.red"
-        sx={{ fontSize: "1.3rem", fontWeight: 900, lineHeight: "1.4rem" }}
+        sx={{
+          fontSize: "1.3rem",
+          fontWeight: 900,
+          lineHeight: "1.4rem",
+        }}
       >
         {`${t("header.table")} ${zonti}`}
       </Typography>

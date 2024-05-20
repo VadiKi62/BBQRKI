@@ -1,7 +1,7 @@
 export const el = [
   {
     menuNumber: 101,
-    title: "Ελληνική σαλάτα",
+    title: "Χωριάτικη",
     category: "ΣΑΛΑΤΕΣ",
     ingredients: "",
   },
@@ -13,19 +13,19 @@ export const el = [
   },
   {
     menuNumber: 103,
-    title: "Ειδική σαλάτα",
+    title: "Σπέσιαλ Σαλάτα",
     category: "ΣΑΛΑΤΕΣ",
     ingredients: "",
   },
   {
     menuNumber: 104,
-    title: "Σαλάτα τόνου",
+    title: "Τονοσαλατα",
     category: "ΣΑΛΑΤΕΣ",
     ingredients: "",
   },
   {
     menuNumber: 105,
-    title: "Σαλάτα φρούτων",
+    title: "Φρουτοσαλάτα",
     category: "ΣΑΛΑΤΕΣ",
     ingredients: "",
   },
@@ -137,7 +137,7 @@ export const el = [
   },
   {
     menuNumber: 407,
-    title: "407:Focaccia με μοτσαρελα (360γρ)",
+    title: "Focaccia με μοτσαρελα (360γρ)",
     category: "CLUB SANDWICHES",
     ingredients: "Με τηγανητές πατάτες και σάλτσα κοκτέιλ",
   },
@@ -318,7 +318,7 @@ export const el = [
   { menuNumber: 702, title: "Φραπέ", category: "Καφές", ingredients: "" },
   {
     menuNumber: 703,
-    title: "Φραπέ με παγωτο    ",
+    title: "Φραπέ με παγωτο",
     category: "Καφές",
     ingredients: "",
   },
@@ -395,7 +395,7 @@ export const el = [
   },
   {
     menuNumber: 808,
-    title: "Φυσικός χυμός πορτοκαλι    ",
+    title: "Φυσικός χυμός πορτοκαλι",
     category: "ΧΥΜΟΙ",
     ingredients: "",
   },
@@ -419,7 +419,7 @@ export const el = [
   },
   {
     menuNumber: 812,
-    title: "Κρύο τσαι    ",
+    title: "Κρύο τσαι",
     category: "ΧΥΜΟΙ",
     ingredients: "Πράσινο, λεμόνι, ροδάκινο",
   },
@@ -431,7 +431,7 @@ export const el = [
   },
   {
     menuNumber: 901,
-    title: "Βίκος κόλα    ",
+    title: "Βίκος κόλα",
     category: "ΑΝΑΨΥΚΤΙΚΑ",
     ingredients: "",
   },

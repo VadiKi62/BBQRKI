@@ -327,8 +327,9 @@ const ScanInfo = ({ t, isSmallScreen, rest, isJukebox, isBloom }) => {
         sx={{
           fontSize: isSmallScreen ? "1.4rem" : "2.5rem",
           fontWeight: 700,
-          lineHeight: isSmallScreen ? "1.4rem" : "2.5rem",
+          lineHeight: isSmallScreen ? "1.6rem" : "2.7rem",
           zIndex: 111,
+          mb: 3,
         }}
       >
         {t("hero.want")}
@@ -338,7 +339,7 @@ const ScanInfo = ({ t, isSmallScreen, rest, isJukebox, isBloom }) => {
         align="center"
         sx={{
           fontSize: isSmallScreen ? "1.1rem" : "2.2rem",
-          lineHeight: isSmallScreen ? "1.2rem" : "2.3rem",
+          lineHeight: isSmallScreen ? "1.4rem" : "2.5rem",
           zIndex: 111,
         }}
       >
