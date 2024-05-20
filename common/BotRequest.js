@@ -1,17 +1,9 @@
 import axios from "axios";
 
-export const sendWaiter = (
-  message,
-  zont,
-  endpoint,
-  chat_id,
-  onSuccess,
-  onError
-) => {
+export const sendWaiter = (message, endpoint, chat_id, onSuccess, onError) => {
   return new Promise((resolve, reject) => {
     const data = {
       chat_id: `${chat_id}`,
-      table: zont,
       message: message,
     };
     axios
@@ -56,18 +48,10 @@ export const sendWaiter = (
   });
 };
 
-export const sendBill = (
-  message,
-  zont,
-  endpoint,
-  chat_id,
-  onSuccess,
-  onError
-) => {
+export const sendBill = (message, endpoint, chat_id, onSuccess, onError) => {
   return new Promise((resolve, reject) => {
     const data = {
       chat_id: `${chat_id}`,
-      table: zont,
       message: message,
     };
     axios
@@ -80,7 +64,7 @@ export const sendBill = (
         resolve(response.data);
       })
       .catch((error) => {
-        console.error("Error sending Call Bill:", error);
+        console.error("Error sending Call Bill/Shisha:", error);
         // Check if the error is due to network issues
         if (error.response) {
           // Server responded with a status code outside of 2xx range
@@ -89,13 +73,61 @@ export const sendBill = (
             error.response.status
           );
           reject(
-            "Server responded with an error. Please try again later. Call Bill"
+            "Server responded with an error. Please try again later. Bill/Shisha"
           );
         } else if (error.request) {
           // Request made but no response received
           console.error("No response received from server:", error.request);
           reject(
-            "No response received from server. Please check your internet connection. Call Bill"
+            "No response received from server. Please check your internet connection. Bill/Shisha"
+          );
+        } else {
+          // Something happened in setting up the request
+          console.error("Error setting up request:", error.message);
+          reject("An error occurred while setting up the request.");
+        }
+        // Call the error callback function if provided
+        if (typeof onError === "function") {
+          onError();
+        }
+        reject(error);
+      });
+  });
+};
+
+export const sendShisha = (message, endpoint, chats_id, onSuccess, onError) => {
+  return new Promise((resolve, reject) => {
+    const data = {
+      chat_id: `${chats_id[0]}`,
+      chat_id1: `${chats_id[1]}`,
+      message: message,
+    };
+    axios
+      .post(`https://button.hopto.org/${endpoint}`, data)
+      .then(function (response) {
+        // Call the success callback function if provided
+        if (typeof onSuccess === "function") {
+          onSuccess();
+        }
+        resolve(response.data);
+      })
+      .catch((error) => {
+        console.error("Error sending Call Bill/Shisha:", error);
+        // Check if the error is due to network issues
+        if (error.response) {
+          // Server responded with a status code outside of 2xx range
+          console.error(
+            "Server responded with error status:",
+            error.response.status
+          );
+          reject(
+            "Server responded with an error. Please try again later. Bill/Shisha"
+          );
+        } else if (error.request) {
+          // Request made but no response received
+          console.error("No response received from server:", error.request);
+          reject(
+            "No response received from server. Please check your internet connection. Bill/Shisha"
           );
         } else {
           // Something happened in setting up the request

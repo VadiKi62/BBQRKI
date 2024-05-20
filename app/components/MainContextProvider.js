@@ -1,7 +1,7 @@
 "use client";
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { sendWaiter, sendBill } from "@common/BotRequest";
+import { sendWaiter, sendBill, sendShisha } from "@common/BotRequest";
 import { useMediaQuery } from "@mui/material";
 import {
   getLongLanguageName,
@@ -189,7 +189,6 @@ export const MainContextProvider = ({
           performActionWaiter(() => {
             sendWaiter(
               message,
-              zont,
               restData.backendEndpoints.waiter,
               chatNumber,
               (responseData) => {
@@ -240,60 +239,58 @@ export const MainContextProvider = ({
       await delay();
     }
 
+    const getChatIds = (tableMap) => {
+      console.log(tableMap);
+      return tableMap?.map((item) => item.chatId);
+    };
+
+    // const chats_id = getChatIds(restData?.waiterTableMap);
+    const chats_id = ["-4098065128", "-1002123939465"];
+
     if (isGeolocationAvailable) {
-      if (isWaiterButtonActive) {
-        if (!isButtonBillActive && !confirmAction(messageElse)) {
-          return;
-        }
-        if (
-          currentPosition.distanceToRest <=
-          Number(radius) + currentPosition.accuracy
-        ) {
-          performActionWaiter(() => {
-            sendWaiter(
-              messageShisha,
-              zont,
-              restData.backendEndpoints.waiter,
-              restData.chat_id,
-              (responseData) => {
-                // Success callback
-                showModal(messageGot, false, true);
-                setShowInitialHeader(false);
-                setShowInside(false);
-                setShowScan(true);
-              },
-              (error) => {
-                // Error callback
-                console.error(error);
-                showModal(messageOops);
-                setShowInitialHeader(false);
-                setShowInside(false);
-                setShowScan(true);
-              }
-            );
-          });
-        } else {
-          updateGeolocation();
-          showModal(`${messageInside}`, false, false);
-          setTimeout(function () {
-            hideModal();
-          }, 30000);
-          history?.replaceState({}, document.title, window?.location.pathname);
-          // router?.replace(router.asPath, undefined, { shallow: true });
-          setShowInitialHeader(false);
-          setShowScan(false);
-          setShowInside(true);
-        }
+      if (
+        currentPosition.distanceToRest <=
+        Number(radius) + currentPosition.accuracy
+      ) {
+        performActionWaiter(() => {
+          sendShisha(
+            messageShisha,
+            restData.backendEndpoints?.shisha || "/shisha",
+            chats_id,
+            (responseData) => {
+              // Success callback
+              showModal(messageGot, false, true);
+              setShowInitialHeader(false);
+              setShowInside(false);
+              setShowScan(true);
+            },
+            (error) => {
+              // Error callback
+              console.error(error);
+              showModal(messageOops);
+              setShowInitialHeader(false);
+              setShowInside(false);
+              setShowScan(true);
+            }
+          );
+        });
       } else {
-        showModal(messageRun, false, true);
+        updateGeolocation();
+        showModal(`${messageInside}`, false, false);
         setTimeout(function () {
-          hideModal(); // Call hideModal function after 10 seconds
-        }, 10000); // 10 seconds in milliseconds
+          hideModal();
+        }, 30000);
+        history?.replaceState({}, document.title, window?.location.pathname);
+        // router?.replace(router.asPath, undefined, { shallow: true });
+        setShowInitialHeader(false);
+        setShowScan(false);
+        setShowInside(true);
       }
     } else {
-      updateGeolocation();
-      // Handle case where geolocation was rejected
-      showModal(messageEnable, false, false);
+      showModal(messageRun, false, true);
+      setTimeout(function () {
+        hideModal(); // Call hideModal function after 10 seconds
+      }, 10000); // 10 seconds in milliseconds
     }
   };
 
@@ -320,7 +317,6 @@ export const MainContextProvider = ({
         performActionBill(() => {
           sendBill(
             messageBill1,
-            zont,
             restData.backendEndpoints.waiter,
             chatNumber,
             (responseData) => {

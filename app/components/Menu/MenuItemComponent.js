@@ -78,7 +78,7 @@ const MenuIngredients = styled("div")(({ theme }) => ({
   marginTop: theme.spacing(1),
 }));
 
-function MenuItemComponent({ item, isSmallScreen, menu, englishItem }) {
+function MenuItemComponent({ item, isSmallScreen, englishItem }) {
   const defaultImageSrc = "/menu/photo.png";
 
   const [imageLoading, setImageLoading] = useState(true);

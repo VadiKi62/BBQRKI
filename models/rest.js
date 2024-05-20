@@ -114,7 +114,11 @@ const RestSchema = new Schema({
   },
   menu: { type: Schema.Types.ObjectId, ref: "Menu", default: null },
   backendEndpoints: {
-    type: { waiter: { type: String }, bill: { type: String } },
+    type: {
+      waiter: { type: String },
+      bill: { type: String },
+      shisha: { type: String, default: null },
+    },
     required: true,
   },
   chat_id: { type: String, required: true },

@@ -28,9 +28,9 @@ export default function Hero({ zonti, name }) {
   const { isSmallScreen } = useMainContext();
 
   const { t } = useTranslation();
-  const isGenesis = name === "Genesis";
+  const isMangata = name === "Mangata";
 
-  const iconSRC = isGenesis
+  const iconSRC = isMangata
     ? "/assets/icons/down4.png"
     : "/assets/icons/down1.png";
   return (

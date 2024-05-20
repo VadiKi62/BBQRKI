@@ -56,7 +56,7 @@ const Ingredients = styled(Typography)(({ theme }) => ({
   },
 }));
 
-function ModalMenuItem({ menu, item, onClose, englishItem }) {
+function ModalMenuItem({ item, onClose, englishItem }) {
   const handleDialogContentClick = (event) => {
     // Stops the click event from propagating up to other elements
     event.stopPropagation();

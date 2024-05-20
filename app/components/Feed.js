@@ -15,9 +15,9 @@ import { handleSendTech } from "@common/actionsTech";
 function Feed({ children, ...props }) {
   const { rest, menu } = props;
 
-  // useEffect(() => {
-  //   handleSendTech(`restauranst/${rest.name}`);
-  // }, []);
+  useEffect(() => {
+    handleSendTech(`restauranst/${rest.name}`);
+  }, []);
 
   const theme = returnTheme(rest.themeName);
   const searchParams = useSearchParams();
