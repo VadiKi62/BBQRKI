@@ -20,7 +20,6 @@ import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import { useTheme } from "@mui/material/styles";
 
 const AppStyling = styled("div")(({ theme }) => ({
-  backgroundColor: theme.palette.primary.main,
   display: "flex",
   alignContent: "center",
   justifyContent: "center",
@@ -84,7 +83,7 @@ export default function App() {
   const { i18n, t } = useTranslation();
   const isJukebox = restData.name === "Jukebox";
   const isGelissimo = restData.name === "Gelissimo";
-  const isBelvedere = restData.name === "Belvedere";
+  const isBloom = restData.name === "Bloom";
   const isWaves = restData.name === "Coffee Waves";
   const appMenu = Boolean(restData.menu);
   const lang = i18n.language;
@@ -113,8 +112,7 @@ export default function App() {
       return "black";
     } else if (isGelissimo) {
       return theme.palette.secondary.dark;
-    }
-
+    } else if (isBloom) return theme.palette.secondary.complement;
     return theme.palette.primary.main;
   }
 

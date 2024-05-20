@@ -167,6 +167,25 @@ export const MainContextProvider = ({
       );
     }
   };
+  const performActionShisha = async (action) => {
+    try {
+      handleButtonSpecificLogic(
+        setWaiterButtonActive,
+        setCountdownWaiter,
+        countTimer,
+        "Shisha"
+      );
+      await action();
+      hideModal();
+      showModal();
+    } catch (error) {
+      showModal(
+        `${messageOops}.Error in performActionShisha: ${JSON.stringify(error)}`,
+        false,
+        true
+      );
+    }
+  };
   const handleCallWaiter = async () => {
     let chatNumber;
     if (!isGeolocationAvailable) {
@@ -244,7 +263,9 @@ export const MainContextProvider = ({
       return tableMap?.map((item) => item.chatId);
     };
 
-    // const chats_id = getChatIds(restData?.waiterTableMap);
+    const chats = getChatIds(restData?.waiterTableMap);
+    console.log(chats);
+    console.log(restData);
     const chats_id = ["-4098065128", "-1002123939465"];
 
     if (isGeolocationAvailable) {
@@ -252,7 +273,7 @@ export const MainContextProvider = ({
         currentPosition.distanceToRest <=
         Number(radius) + currentPosition.accuracy
       ) {
-        performActionWaiter(() => {
+        performActionShisha(() => {
           sendShisha(
             messageShisha,
             restData.backendEndpoints?.shisha || "/shisha",
@@ -313,7 +334,7 @@ export const MainContextProvider = ({
         //Include the payment method in the message
         messageBill1 = `${rest.name}.Table ${zont} asks for Bill. Payment Method: ${paymentMethod}. Language - ${language}.\nΤραπέζι ${zont} ζητά τον λογαριασμό. Τρόπος Πληρωμής:${paymentMethod}. Γλώσσα - ${language}.`;
         chatNumber = getChatIdForTable(rest, zont);
-        console.log(chatNumber);
+        console.log("chatNumber", chatNumber);
         performActionBill(() => {
           sendBill(
             messageBill1,

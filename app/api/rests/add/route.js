@@ -397,7 +397,13 @@ export const POST = async (request) => {
   };
   const bloomData = {
     name: "Bloom",
-    slogan: "Just Bar : Where Every Moment is Just Right.",
+    slogan: "Blossom by the Beach",
+    slogans: [
+      "Blossom by the Beach",
+      "Άνθη δίπλα στη θάλασσα",
+      "Blüte am Strand",
+      "Цвет на плажи",
+    ],
     workingTimeBeachSpots: {
       startTime: "03:00",
       endTime: "02:00",
@@ -423,7 +429,11 @@ export const POST = async (request) => {
       end: new Date(currentYear, 10 - 1, 30),
     },
     chat_id: "-4098065128",
-    backendEndpoints: { waiter: "/button2607", bill: "/button2607" },
+    backendEndpoints: {
+      waiter: "/button2607",
+      bill: "/button2607",
+      shisha: "/shisha",
+    },
     pathName: "bloom",
     themeName: "bloomTheme",
     app: {
@@ -435,6 +445,19 @@ export const POST = async (request) => {
       numberOfTables: { inside: 10, outside: 50 },
       languages: { eng: true, el: true },
     },
+    useGeo: false,
+    waiterTableMap: [
+      {
+        tableFrom: "1",
+        tableTill: "25",
+        chatId: "-4098065128",
+      },
+      {
+        tableFrom: "26",
+        tableTill: "50",
+        chatId: "-1002123939465",
+      },
+    ],
   };
 
   const wavesData = {
@@ -566,7 +589,7 @@ export const POST = async (request) => {
   };
 
   //   const rest = (await request.json());
-  const rest = bakalisData;
+  const rest = bloomData;
   try {
     await connectToDB();
     const { name, pathName } = rest;

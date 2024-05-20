@@ -29,10 +29,12 @@ export default function Hero({ zonti, name }) {
 
   const { t } = useTranslation();
   const isMangata = name === "Mangata";
+  const isBloom = name === "Bloom";
 
-  const iconSRC = isMangata
-    ? "/assets/icons/down4.png"
-    : "/assets/icons/down1.png";
+  const iconSRC =
+    isMangata || isBloom
+      ? "/assets/icons/down4.png"
+      : "/assets/icons/down1.png";
   return (
     <Container
       sx={{

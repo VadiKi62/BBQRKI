@@ -14,16 +14,16 @@ export default createTheme({
       light: "#aec3b0",
       beige: "#d70c6a",
       background:
-        "-webkit-radial-gradient(top, rgba(89, 131, 146, 0.9),rgba(18, 69, 89, 0.9))",
+        "-webkit-radial-gradient(top,rgba(18, 69, 89, 0.95),rgba(18, 69, 89, 0.9),rgba(18, 69, 89, 0.85),  rgba(89, 131, 146, 0.9))",
       background1:
-        "-webkit-radial-gradient(bottom, rgba(89, 131, 146, 0.9),rgba(18, 69, 89, 0.9))",
+        "-webkit-radial-gradient(bottom,rgba(18, 69, 89, 0.95),rgba(18, 69, 89, 0.9),rgba(18, 69, 89, 0.85),  rgba(89, 131, 146, 0.9))",
       complement: "#d70c6a",
     },
     text: {
       light: "#eff6e0",
       dark: "#eff6e0",
-      main: "#aa3560",
-      red: "#aa3560",
+      main: "#eff6e0",
+      red: "#eff6e0",
       blue: "#d70c6a",
     },
   },

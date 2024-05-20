@@ -73,9 +73,9 @@ const HeroTitle = styled(Typography)(({ theme }) => ({
 const HighlightedText = styled("span")(({ theme }) => ({
   fontWeight: 800,
   lineHeight: "2.5rem",
-  fontFamily: theme.typography.fontFamily,
+  // fontFamily: theme.typography.fontFamily,
   fontSize: theme.typography.h1.fontSize,
-  textTransform: "uppercase",
+  // textTransform: "uppercase",
 }));
 
 const CallButtonWrapper = styled(Stack)(({ theme }) => ({
@@ -96,6 +96,7 @@ export default function HeroLayout({ rest }) {
   const isGenesis = rest.name === "Genesis";
   const isGelissimo = rest.name === "Gelissimo";
   const isJukebox = rest.name === "Jukebox";
+  const isBloom = rest.name === "Bloom";
   const {
     devel,
     isSmallScreen,
@@ -185,6 +186,7 @@ export default function HeroLayout({ rest }) {
               isSmallScreen={isSmallScreen}
               rest={rest}
               isJukebox={isJukebox}
+              isBloom={isBloom}
             />
           )}
           {showInside && (
@@ -316,12 +318,12 @@ export default function HeroLayout({ rest }) {
   );
 }
 
-const ScanInfo = ({ t, isSmallScreen, rest, isJukebox }) => {
+const ScanInfo = ({ t, isSmallScreen, rest, isJukebox, isBloom }) => {
   return (
     <TitleContainer>
       <Typography
         align="center"
-        color={isJukebox ? "white" : "primary.red"}
+        color={isJukebox || isBloom ? "white" : "primary.red"}
         sx={{
           fontSize: isSmallScreen ? "1.4rem" : "2.5rem",
           fontWeight: 700,
