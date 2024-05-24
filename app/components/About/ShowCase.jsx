@@ -13,7 +13,7 @@ const swiperOptions = {
   slidesPerView: 4,
   autoPlay: true,
   spaceBetween: 0,
-  //   loop: true,
+  loop: true,
   navigation: {
     prevEl: ".swiper-button-prev",
     nextEl: ".swiper-button-next",
@@ -26,9 +26,11 @@ const swiperOptions = {
   breakpoints: {
     320: {
       slidesPerView: 1,
+      centeredSlides: true,
     },
     640: {
       slidesPerView: 2,
+      centeredSlides: false,
     },
     767: {
       slidesPerView: 2,
@@ -44,6 +46,13 @@ function Works3() {
   const { i18n, t } = useTranslation();
 
   const fullScreenData = [
+    {
+      id: 6,
+      title: "No Heil Hitler anymore!",
+      sub: "No vawing hands for waste!",
+      image: "/assets/pres/grid/7.jpeg",
+    },
+
     {
       id: 1,
       title: t("pres.page2.3"),
@@ -80,6 +89,24 @@ function Works3() {
       sub: t("pres.page2.9a"),
       image: "/assets/pres/grid/6.png",
     },
+    // {
+    //   id: 6,
+    //   title: "No Heil Hitler anymore!",
+    //   sub: "No vawing hands for waste!",
+    //   image: "/assets/pres/grid/7.jpeg",
+    // },
+    // {
+    //   id: 7,
+    //   title: "Refill, Please!",
+    //   sub: "Never let client's glass run dry again!",
+    //   image: "/assets/pres/grid/7a.jpeg",
+    // },
+    // {
+    //   id: 8,
+    //   title: "The Bat-Signal for Service",
+    //   sub: "Summon your caped server crusader with a single tap!",
+    //   image: "/assets/pres/grid/7a.jpeg",
+    // },
   ];
   return (
     <div>
@@ -130,8 +157,8 @@ function Works3() {
                             <Image
                               src={slide.image}
                               alt=""
-                              width={240}
-                              height={455}
+                              width={295}
+                              height={530}
                             />
                           </span>
                         </div>

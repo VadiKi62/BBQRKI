@@ -3,6 +3,7 @@ import { Menu } from "@models/menu";
 import { connectToDB } from "@utils/database";
 import {
   justItemsToAddSe,
+  justItemsToAddUa,
   justItemsToAddDe,
   justItemsToAddEl,
   justItemsToAddRu,
@@ -12,7 +13,7 @@ import {
 export const GET = async (req, res) => {
   // const { restId, itemsToAdd } = req.body;
   const restId = "66094de341b392ba037d29c5";
-  const itemsToAdd = justItemsToAddEl;
+  const itemsToAdd = justItemsToAddDe;
 
   try {
     await connectToDB();

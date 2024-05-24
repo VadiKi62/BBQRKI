@@ -177,7 +177,7 @@ export const de = [
   },
   {
     menuNumber: 414,
-    title: "Pommes frites",
+    title: "Pommes frites mit Speck",
     category: "Sandwiches",
     ingredients: "Mit Speck, geriebenem Parmesan, Cheddar-Sauce und Frischkäse",
   },
@@ -189,13 +189,13 @@ export const de = [
   },
   {
     menuNumber: 502,
-    title: "Pfannkuchen",
+    title: "Pfannkuchen mit Honig und Joghurt",
     category: "Desserts",
     ingredients: "Mit Honig, Joghurt und gehackten Walnüssen",
   },
   {
     menuNumber: 503,
-    title: "Pfannkuchen",
+    title: "Frühstückspfannkuchen",
     category: "Desserts",
     ingredients:
       "Mit Schinken und Käse, doppeltem Speck, Eiern und Frischkäsesoße",

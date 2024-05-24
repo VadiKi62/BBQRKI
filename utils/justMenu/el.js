@@ -107,7 +107,7 @@ export const el = [
   },
   {
     menuNumber: 402,
-    title: "Chicken Club Sandwich",
+    title: "Club Sandwich",
     category: "CLUB SANDWICHES",
     ingredients: "",
   },
@@ -173,13 +173,13 @@ export const el = [
   },
   {
     menuNumber: 413,
-    title: "Τηγανητές πατάτες με μπεικον",
+    title: "Τηγανιτές πατάτες",
     category: "CLUB SANDWICHES",
     ingredients: "",
   },
   {
     menuNumber: 414,
-    title: "Τηγανητές πατάτες με μπεικο",
+    title: "Τηγανιτές πατάτες με μπέικον",
     category: "CLUB SANDWICHES",
     ingredients:
       "Με μπέικον, τριμμένη παρμεζάνα, σάλτσα τσέντερ και φρέσκια κρέμα τυριού",

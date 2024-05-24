@@ -179,7 +179,7 @@ export const ro = [
   },
   {
     menuNumber: 414,
-    title: "Cartofi prăjiți",
+    title: "Cartofi prăjiți cu bacon",
     category: "Sandvișuri",
     ingredients:
       "Cu bacon, parmezan ras, sos cheddar și cremă proaspătă de brânză",
@@ -192,13 +192,13 @@ export const ro = [
   },
   {
     menuNumber: 502,
-    title: "Clătite",
+    title: "Clătite cu miere și iaurt",
     category: "Deserturi",
     ingredients: "Cu miere, iaurt și nuci tocate mărunt",
   },
   {
     menuNumber: 503,
-    title: "Clătite",
+    title: "Clătite de mic dejun",
     category: "Deserturi",
     ingredients:
       "Cu șuncă și brânză, bacon dublu, ouă și sos de cremă proaspătă de brânză",

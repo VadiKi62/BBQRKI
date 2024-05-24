@@ -432,19 +432,19 @@ export const ru = [
   },
   {
     menuNumber: 809,
-    title: "Свежевыжатый сок апельсин-грейфрут",
+    title: "Домашний лимонад",
     category: "Соки",
     ingredients: "",
   },
   {
     menuNumber: 810,
-    title: " Свежевыжатый сок апельсин-лимон",
+    title: "Свежевыжатый сок апельсин-грейпфрут",
     category: "Соки",
     ingredients: "",
   },
   {
     menuNumber: 811,
-    title: " Свежевыжатый сок апельсина с лимоном",
+    title: "Свежевыжатый сок апельсин-лимон",
     category: "Соки",
     ingredients: "",
   },
@@ -612,7 +612,7 @@ export const ru = [
   },
   {
     menuNumber: 1101,
-    title: "Клубничный мохито",
+    title: "Мохито",
     category: "Коктейли",
     ingredients: "",
   },

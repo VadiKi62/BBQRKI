@@ -186,7 +186,7 @@ export const se = [
   },
   {
     menuNumber: 414,
-    title: "Pomfrit",
+    title: "Pomfrit sa slaninom",
     category: "Sendviči",
     ingredients:
       "Sa slaninom, rendanim parmezan sirom, sosom od čedara i kremskim sirom",
@@ -199,13 +199,13 @@ export const se = [
   },
   {
     menuNumber: 502,
-    title: "Palačinke",
+    title: "Palačinke sa medom i jogurtom",
     category: "Slatko",
     ingredients: "Sa medom, jogurtom i rendanim orasima",
   },
   {
     menuNumber: 503,
-    title: "Palačinke",
+    title: "Palačinke za doručak",
     category: "Slatko",
     ingredients:
       "Sa šunkom i sirom, dvostrukom duplom, jajima i sosom od kremskog sira",

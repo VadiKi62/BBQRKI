@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { styled } from "@mui/system";
 import { Grid, ButtonBase, Link as MuiLink, Typography } from "@mui/material";
 import DefaultButton from "@app/components/common/DefaultButton";

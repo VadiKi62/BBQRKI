@@ -1470,7 +1470,7 @@ header.particles.circle-bg.valign {
   .about .content,
   .skills-box,
   .about-ar .img .hero-bg {
-    margin-bottom: 50px;
+    margin-bottom: 10px;
   }
 
   .min-area .content,
@@ -1747,10 +1747,10 @@ header.particles.circle-bg.valign {
     text-align: center;
   }
 
-  .freelancre .img {
+  /* .freelancre .img {
     margin-left: auto;
     margin-right: auto;
-  }
+  } */
 
   .freelancre:after,
   .freelancre .states ul.flex .mail-us {
@@ -1839,10 +1839,10 @@ header.particles.circle-bg.valign {
     margin-top: 0;
   }
 
-  .about-us .img .stauts .item {
+  /* .about-us .img .stauts .item {
     padding: 25px 15px;
     margin-right: 20px;
-  }
+  } */
 
   .about-us .img .stauts .item:last-of-type {
     margin-right: 0;

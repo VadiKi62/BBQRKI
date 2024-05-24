@@ -915,3 +915,9 @@ export const justItemsToAddRu = [
     items: ru,
   },
 ];
+export const justItemsToAddUa = [
+  {
+    langKey: "ua",
+    items: ua,
+  },
+];

@@ -22,6 +22,7 @@ const Header = ({ sliderRef }) => {
             <StyledDiv>
               <Typography
                 variant="h1"
+                color="white"
                 fontSize={{ xs: "2rem", sm: "3rem", md: "4rem" }}
               >
                 <span className="color-font">{t("pres.page1.1")}</span>{" "}

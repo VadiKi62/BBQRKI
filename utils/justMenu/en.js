@@ -166,7 +166,7 @@ export const en = [
   {
     id: 405,
     image: "/menu/just/photo.jpg",
-    title: "Chicken giros portion with pita",
+    title: "Chicken giros portion with pita and tzatziki",
     price: "10",
     category: "Sandwiches",
     ingredients: "",
@@ -238,7 +238,7 @@ export const en = [
   {
     id: 414,
     image: "/menu/just/photo.jpg",
-    title: "French fries",
+    title: "French fries with bacon",
     price: "7,5",
     category: "Sandwiches",
     ingredients:
