@@ -30,6 +30,9 @@ const menuItemSchema = new Schema({
   category: { type: String, required: true },
   subCategory: { type: String, default: null },
   ingredients: { type: String },
+  beachMenu: { type: Boolean, default: false },
+  restaurantMenu: { type: Boolean, default: false },
+  beachPrice: { type: String, default: null },
 });
 
 const itemsSchema = new Schema({

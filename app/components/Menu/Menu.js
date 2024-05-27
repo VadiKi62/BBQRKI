@@ -41,7 +41,13 @@ const FilterListContainer = styled("div")(({ showCallWaiterButton }) => ({
 
 function Menu({ menuRef, headerRef, menuData }) {
   const gridRef = useRef(null);
-  const { lang, showInitialHeader, isSmallScreen } = useMainContext();
+  const {
+    lang,
+    showInitialHeader,
+    isSmallScreen,
+    onlyMenuFromParams,
+    setOnlyMenu,
+  } = useMainContext();
   const { t, i18n } = useTranslation();
 
   const menu = getLangMenu(menuData.menuUpd, i18n.language);
@@ -63,17 +69,23 @@ function Menu({ menuRef, headerRef, menuData }) {
       const filteredItemsId = filterMenuItemsId(
         menuData.menuUpd,
         activeFilterId,
-        i18n.language
+        i18n.language,
+        null,
+        onlyMenuFromParams
       );
+      console.log("22222------", filteredItemsId);
+      setFilteredMenuItems(filteredItemsId);
+
       const subcategoriesResult = getSubcategories(
         menuData.menuUpd,
         menuData.categories,
         activeFilterId,
         i18n.language
       );
-      const subCategories = subcategoriesResult.name;
-      const subCategoriesIds = subcategoriesResult.ids;
-      setFilteredMenuItems(filteredItemsId);
+
+      const subCategories = subcategoriesResult?.name;
+      const subCategoriesIds = subcategoriesResult?.ids;
+
       setSubCategoriesId(subCategoriesIds);
       setSubCategories(subCategories);
     }
@@ -86,11 +98,19 @@ function Menu({ menuRef, headerRef, menuData }) {
   ]);
 
   const [subCatLen, setSubCatLen] = useState(subCategories?.length || 0);
-  const uniqueCategories = getUniqueCategories(
-    menuData.menuUpd,
-    i18n.language,
-    menuData.categories
-  );
+
+  const [filteredCats, setFilteredCats] = useState(null);
+  useEffect(() => {
+    const uniqueCategories = getUniqueCategories(
+      menuData.menuUpd,
+      i18n.language,
+      menuData.categories,
+      onlyMenuFromParams,
+      filteredMenuItems
+    );
+    setFilteredCats(uniqueCategories);
+    // eslint-disable-next-line
+  }, [lang]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -121,12 +141,14 @@ function Menu({ menuRef, headerRef, menuData }) {
         <Element name="menu-list">
           <FilterListContainer>
             <FilterList
-              uniqueCategories={uniqueCategories}
+              uniqueCategories={filteredCats}
               setActiveFilter={setActiveFilter}
               setActiveFilterId={setActiveFilterId}
               gridRef={gridRef}
               showCallWaiterButton={showInitialHeader}
               activeFilterId={activeFilterId}
+              menu={menuData.menuUpd}
+              onlyMenuFromParams={onlyMenuFromParams}
             />
             <SubFilter
               menu={menuData.menuUpd}

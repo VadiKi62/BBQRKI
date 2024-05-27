@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { styled } from "@mui/material/styles";
 import { Paper, Typography } from "@mui/material";
 import { Skeleton } from "@mui/material";
+import { useMainContext } from "@app/components/MainContextProvider";
 
 const StyledMenuItem = styled(Paper)(({ theme }) => ({
   // margin: theme.spacing(0, 0),
@@ -80,6 +81,7 @@ const MenuIngredients = styled("div")(({ theme }) => ({
 
 function MenuItemComponent({ item, isSmallScreen, englishItem }) {
   const defaultImageSrc = "/menu/photo.png";
+  const { onlyMenuFromParams, setOnlyMenu } = useMainContext();
 
   const [imageLoading, setImageLoading] = useState(true);
 
@@ -107,7 +109,13 @@ function MenuItemComponent({ item, isSmallScreen, englishItem }) {
       <MenuContent sx={{ maxWidth: isSmallScreen ? "170px" : "auto" }}>
         <MenuIngredients>{item.menuNumber}</MenuIngredients>
         <MenuTitle>{item.title || englishItem.title}</MenuTitle>
-        <MenuPrice>€{englishItem.price}</MenuPrice>
+        {onlyMenuFromParams == 2 && (
+          <MenuPrice>€{englishItem.beachPrice || englishItem.price}</MenuPrice>
+        )}
+        {(onlyMenuFromParams == 1 || !onlyMenuFromParams) && (
+          <MenuPrice>€{englishItem.price}</MenuPrice>
+        )}
+        {/* <MenuPrice>€{englishItem.price}</MenuPrice> */}
         <MenuIngredients>
           {item?.ingredients || englishItem?.ingredients}
         </MenuIngredients>

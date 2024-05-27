@@ -2,6 +2,10 @@ import React, { useRef } from "react";
 import { List, ListItem } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { scroller } from "react-scroll";
+import {
+  hasBeachMenuItemsInCategory,
+  hasRestMenuItemsInCategory,
+} from "@utils/functions";
 
 const FilterListContainer = styled(List)(({ theme }) => ({
   height: 60,
@@ -65,6 +69,8 @@ function FilterList({
   gridRef,
   setActiveFilterId,
   activeFilterId,
+  menu,
+  onlyMenuFromParams,
 }) {
   const containerRef = useRef(null);
   const handleFilterClick = (category, id) => {
@@ -105,20 +111,68 @@ function FilterList({
     }
   };
 
-  const filterButtons = uniqueCategories.ids.map((category, index) => {
+  // const filterButtons = uniqueCategories?.ids?.map((category, index) => {
+  //   const categoryId = Object.keys(category)[0];
+  //   const categoryName = category[categoryId];
+  //   const hasBeachItems = hasBeachMenuItemsInCategory(categoryId);
+  //   const hasRestItems = hasRestMenuItemsInCategory(categoryId);
+
+  //   return (
+  //     <FilterItem
+  //       key={index}
+  //       isactive={(categoryId === activeFilterId).toString()}
+  //       onClick={() => handleFilterClick(categoryName, categoryId)}
+  //       data-filter={categoryName}
+  //     >
+  //       {categoryName}
+  //     </FilterItem>
+  //   );
+  // });
+
+  const filterButtons = uniqueCategories?.ids?.map((category, index) => {
     const categoryId = Object.keys(category)[0];
     const categoryName = category[categoryId];
-
-    return (
-      <FilterItem
-        key={index}
-        isactive={(categoryId === activeFilterId).toString()}
-        onClick={() => handleFilterClick(categoryName, categoryId)}
-        data-filter={categoryName}
-      >
-        {categoryName}
-      </FilterItem>
-    );
+    const hasBeachItems = hasBeachMenuItemsInCategory(categoryId, menu);
+    const hasRestItems = hasRestMenuItemsInCategory(categoryId, menu);
+    // eslint-disable-next-line
+    if (onlyMenuFromParams == 1 && hasRestItems) {
+      return (
+        <FilterItem
+          key={index}
+          isactive={(categoryId === activeFilterId).toString()}
+          onClick={() => handleFilterClick(categoryName, categoryId)}
+          data-filter={categoryName}
+        >
+          {categoryName}
+        </FilterItem>
+      );
+    }
+    // eslint-disable-next-line
+    if (onlyMenuFromParams == 2 && hasBeachItems) {
+      return (
+        <FilterItem
+          key={index}
+          isactive={(categoryId === activeFilterId).toString()}
+          onClick={() => handleFilterClick(categoryName, categoryId)}
+          data-filter={categoryName}
+        >
+          {categoryName}
+        </FilterItem>
+      );
+    }
+    if (!onlyMenuFromParams) {
+      return (
+        <FilterItem
+          key={index}
+          isactive={(categoryId === activeFilterId).toString()}
+          onClick={() => handleFilterClick(categoryName, categoryId)}
+          data-filter={categoryName}
+        >
+          {categoryName}
+        </FilterItem>
+      );
+    }
+    return null;
   });
 
   return (

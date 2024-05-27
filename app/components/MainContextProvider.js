@@ -29,6 +29,7 @@ export const MainContextProvider = ({
   dev,
   menuOnly,
 }) => {
+  const [onlyMenuFromParams, setOnlyMenu] = useState(menuOnly);
   const { i18n, t } = useTranslation();
   const [lang, setLang] = useState(i18n.language);
   useEffect(() => {
@@ -491,7 +492,7 @@ export const MainContextProvider = ({
     showInside,
     messageInside,
     isWorkingTime,
-    menuOnly,
+    onlyMenuFromParams,
     isPaymentModalOpen,
     setPaymentModalOpen,
     onPaymentMethodSelect,

@@ -169,12 +169,52 @@ export function getSubcategories(menu, categories, categoryId, lang) {
   return { name: subCategoriesArray, ids: subCategoriesObjectsArray };
 }
 
-export const filterMenuItemsId = (menu, categoryId, lang, sub = null) => {
+export const filterMenuItemsId = (
+  menu,
+  categoryId,
+  lang,
+  sub = null,
+  onlyMenuFromParams = null
+) => {
   const menuLang = getLangMenu(menu, lang);
-  const filteredItems = menuLang.filter((item) => {
+  const menuEn = getLangMenu(menu, "en");
+  console.log(menuLang);
+  console.log(menuEn);
+
+  let filteredItems = menuLang.filter((item) => {
     if (categoryId === "*") return true;
-    return item.category_id == categoryId;
+    return item.category_id === categoryId;
   });
+
+  if (onlyMenuFromParams == 1 && lang === "en") {
+    filteredItems = filteredItems.filter(
+      (item) => item.restaurantMenu === true
+    );
+  }
+  if (onlyMenuFromParams == 2 && lang === "en") {
+    filteredItems = filteredItems.filter((item) => item.beachMenu === true);
+  }
+
+  if (onlyMenuFromParams == 1 && lang !== "en") {
+    const arrayToReturn = filteredItems.filter((item) => {
+      const enItem = menuEn.find(
+        (enItem) => enItem.menuNumber === item.menuNumber
+      );
+      return item;
+    });
+
+    filteredItems = arrayToReturn;
+  }
+
+  if (onlyMenuFromParams == 2 && lang !== "en") {
+    const arrayToReturn = filteredItems.filter((item) => {
+      const enItem = menuEn.find((enItem) => enItem.id === item.id);
+      return item;
+    });
+
+    filteredItems = arrayToReturn;
+  }
+
   if (sub === null) {
     return filteredItems;
   } else if (sub === "others") {
@@ -182,7 +222,28 @@ export const filterMenuItemsId = (menu, categoryId, lang, sub = null) => {
   } else if (typeof sub === "string") {
     return filteredItems.filter((item) => item.subCategory === sub);
   }
+
   return filteredItems;
+};
+
+export const hasBeachMenuItemsInCategory = (categoryId, menu) => {
+  const enMenu = menu.find(({ langKey }) => langKey === "en");
+  //   const category = enMenu.items.find((cat) => cat.category_id === categoryId);
+  //   console.log(category);
+
+  return enMenu.items.some(
+    (item) => item.beachMenu === true && item.category_id === categoryId
+  );
+};
+
+export const hasRestMenuItemsInCategory = (categoryId, menu) => {
+  const enMenu = menu.find(({ langKey }) => langKey === "en");
+  //   const category = enMenu.items.find((cat) => cat.category_id === categoryId);
+  //   console.log(category);
+
+  return enMenu.items.some(
+    (item) => item.restaurantMenu === true && item.category_id === categoryId
+  );
 };
 
 export async function getNetworkInfo() {
@@ -210,8 +271,3 @@ export async function getNetworkInfo() {
   pc.close();
   return networkInfo;
 }
-
-// // Usage
-// getNetworkInfo().then((networkInfo) => {
-//   console.log("Network Information:", networkInfo);
-// });
