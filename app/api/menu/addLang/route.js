@@ -62,6 +62,7 @@ export const GET = async (req, res) => {
     let idsOfnotTranslated = [];
     const addNewItemsToLanguages = async () => {
       try {
+        console.log(itemsToAdd);
         itemsToAdd.forEach(({ items, langKey }) => {
           const engIndex = existingMenu.menu.findIndex(
             (item) => item.langKey === "en"

@@ -1,14 +1,14 @@
 import { Rest } from "@models/rest";
 import { Menu } from "@models/menu";
 import { generateCategories } from "@utils/functions";
-import { initialMenu, justMenu } from "@utils/initialMenus";
+import { initialMenu, justMenu, bloomMenuEn } from "@utils/initialMenus";
 import { connectToDB } from "@utils/database";
 
 export const POST = async (request) => {
   try {
     await connectToDB();
 
-    const menuData = justMenu.menu.map((menuItem) => ({
+    const menuData = bloomMenuEn.menu.map((menuItem) => ({
       langKey: menuItem.langKey,
       items: menuItem.items.map((item) => ({
         menuNumber: item?.id || item?.menuNumber,
@@ -23,7 +23,7 @@ export const POST = async (request) => {
 
     const data = {
       menu: menuData,
-      restId: "66094de341b392ba037d29c5",
+      restId: "664bafcc5f663ca962e83bb9",
     };
 
     console.log("data.restId:", data.restId);
@@ -31,7 +31,7 @@ export const POST = async (request) => {
     const isRestExist = await Rest.findById(data.restId);
     if (!isRestExist) {
       console.log("this rest doesn't exist");
-      return new Response("this menu doesn't exist", {
+      return new Response("this rest doesn't exist", {
         status: 400,
       });
     }
@@ -41,11 +41,13 @@ export const POST = async (request) => {
     const isMenuForRestexist = await Menu.findOne({ restId: data.restId });
     if (isMenuForRestexist) {
       console.log("this menu seems to exist");
-      return new Response("this menu exist", {
+      return new Response("this menu exists", {
         status: 300,
       });
     }
+    console.log(data);
     const createdMenu = new Menu(data);
+    console.log(createdMenu.menu[0].items[107]);
     isRestExist.menu = createdMenu._id;
     await createdMenu.save();
     await isRestExist.save();

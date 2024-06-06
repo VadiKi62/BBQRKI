@@ -5,6 +5,7 @@ import { el } from "./justMenu/el";
 import { de } from "./justMenu/de";
 import { se } from "./justMenu/se";
 import { en } from "./justMenu/en";
+import { enBloom } from "./bloomMenu/en";
 
 export const initialMenu = {
   menu: [
@@ -873,6 +874,16 @@ export const justItemsLANGS = [
     ],
   },
 ];
+
+//eng MENU Bloom
+export const bloomMenuEn = {
+  menu: [
+    {
+      langKey: "en",
+      items: enBloom,
+    },
+  ],
+};
 
 //eng MENU
 export const justMenuEn = {

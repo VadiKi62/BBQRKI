@@ -49,6 +49,7 @@ function Menu({ menuRef, headerRef, menuData }) {
     setOnlyMenu,
   } = useMainContext();
   const { t, i18n } = useTranslation();
+  const { restName } = menuData.menu;
 
   const menu = getLangMenu(menuData.menuUpd, i18n.language);
 
@@ -173,6 +174,7 @@ function Menu({ menuRef, headerRef, menuData }) {
                       item={menuItem}
                       menu={menuData.menuUpd}
                       isSmallScreen={isSmallScreen}
+                      restName={restName}
                     />
                   </Grid>
                 ))}

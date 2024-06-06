@@ -79,9 +79,10 @@ const MenuIngredients = styled("div")(({ theme }) => ({
   marginTop: theme.spacing(1),
 }));
 
-function MenuItemComponent({ item, isSmallScreen, englishItem }) {
+function MenuItemComponent({ item, isSmallScreen, englishItem, restName }) {
   const defaultImageSrc = "/menu/photo.png";
   const { onlyMenuFromParams, setOnlyMenu } = useMainContext();
+  const isBloom = restName === "Bloom";
 
   const [imageLoading, setImageLoading] = useState(true);
 

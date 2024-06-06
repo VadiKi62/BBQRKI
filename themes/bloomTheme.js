@@ -25,6 +25,7 @@ export default createTheme({
       main: "#eff6e0",
       red: "#eff6e0",
       blue: "#d70c6a",
+      menutitle: "#d70c6a",
     },
   },
 
