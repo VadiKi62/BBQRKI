@@ -27,17 +27,37 @@ const Image = styled("img")(({ theme }) => ({
 }));
 
 const Price = styled(Typography)(({ theme }) => ({
+  fontSize: "2rem",
+  color: theme.palette.primary.main,
   [theme.breakpoints.down("sm")]: {
     textAlign: "center",
   },
   [theme.breakpoints.up("sm")]: {
     textAlign: "center",
   },
-  color: theme.palette.primary.red,
-  "&::after": {
+  "&::before": {
     content: '"€"',
   },
+  "&:hover": {
+    color: theme.palette.primary.red,
+  },
   margin: 1,
+}));
+
+const PriceBottle = styled("span")(({ theme }) => ({
+  // background: theme.palette.secondary.main,
+  fontSize: "2rem",
+  color: theme.palette.primary.main,
+  "&:hover": {
+    color: theme.palette.primary.red,
+  },
+  "&:before": { content: '"/ €"' },
+}));
+const PriceContainer = styled("div")(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: theme.spacing(1),
 }));
 
 const Ingredients = styled(Typography)(({ theme }) => ({
@@ -106,17 +126,24 @@ function ModalMenuItem({ item, onClose, englishItem }) {
               textAlign: "center",
             }}
           >
-            {showProgress ? (
-              <CircularProgress sx={{ py: 10 }} size={75} />
-            ) : (
-              <Image
-                src={englishItem?.image}
-                alt={englishItem?.title}
-                onLoad={handleImageLoad}
-              />
-            )}
+            {englishItem?.image ? (
+              showProgress ? (
+                <CircularProgress sx={{ py: 10 }} size={75} />
+              ) : (
+                <Image
+                  src={englishItem?.image}
+                  alt={englishItem?.title}
+                  onLoad={handleImageLoad}
+                />
+              )
+            ) : null}
           </Grid>
-          <Grid item xs={12} sm={6} sx={{ py: 1, pl: 1 }}>
+          <Grid
+            item
+            xs={12}
+            sm={englishItem?.image ? 6 : 12}
+            sx={{ py: 1, pl: 1 }}
+          >
             <Grid
               container
               sx={{
@@ -126,7 +153,12 @@ function ModalMenuItem({ item, onClose, englishItem }) {
                 justifyContent: "flex-start",
               }}
             >
-              <Price variant="h5">{englishItem.price}</Price>
+              <PriceContainer>
+                <Price variant="h5">{englishItem.price}</Price>
+                {englishItem.price1 && (
+                  <PriceBottle>{englishItem.price1}</PriceBottle>
+                )}
+              </PriceContainer>
               {englishItem?.per && (
                 <Ingredients> for {englishItem.per}</Ingredients>
               )}

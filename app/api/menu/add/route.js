@@ -15,6 +15,7 @@ export const POST = async (request) => {
         image: item.image,
         title: item.title,
         price: item.price,
+        price1: item.price1,
         category: item.category,
         subCategory: item?.subCategory,
         ingredients: item.ingredients,

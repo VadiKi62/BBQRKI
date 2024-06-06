@@ -27,6 +27,7 @@ const menuItemSchema = new Schema({
   image: { type: String },
   title: { type: String, required: true },
   price: { type: String },
+  price1: { type: String, default: null },
   category: { type: String, required: true },
   subCategory: { type: String, default: null },
   ingredients: { type: String },

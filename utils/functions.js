@@ -178,8 +178,6 @@ export const filterMenuItemsId = (
 ) => {
   const menuLang = getLangMenu(menu, lang);
   const menuEn = getLangMenu(menu, "en");
-  console.log(menuLang);
-  console.log(menuEn);
 
   let filteredItems = menuLang.filter((item) => {
     if (categoryId === "*") return true;
@@ -200,7 +198,7 @@ export const filterMenuItemsId = (
       const enItem = menuEn.find(
         (enItem) => enItem.menuNumber === item.menuNumber
       );
-      return item;
+      return enItem;
     });
 
     filteredItems = arrayToReturn;
