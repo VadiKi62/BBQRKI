@@ -40,7 +40,7 @@ export function CallBillButton({
       <Button
         // bottom={0}
 
-        isSticky={isSticky}
+        // isSticky={isSticky}
         disabled={!isButtonBillActive}
         visibility={showCallWaiterButton}
         onClick={handleCallBill}

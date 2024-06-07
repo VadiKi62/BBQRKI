@@ -9,6 +9,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import Slogans from "./Slogans";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CallIcon from "@mui/icons-material/Call";
 import EmailIcon from "@mui/icons-material/Email";
@@ -73,7 +74,7 @@ const CopyrightInfo = styled("div")(({ theme }) => ({
 function Footer({ rest }) {
   const { t } = useTranslation();
   // const { contacts } = useMyContext();
-  const { name, slogan, tel, email, address, coords } = rest;
+  const { name, slogan, tel, email, address, coords, socialLinks } = rest;
   const loc = coords.mainSpot;
   const router = useRouter();
 
@@ -88,18 +89,30 @@ function Footer({ rest }) {
         <SectionTitle variant="h3">{name}</SectionTitle>
         <Slogan>{slogan}</Slogan>
         <SocialLinks>
-          <MuiLink href="#" color="inherit" target="_blank">
+          <MuiLink
+            href={socialLinks?.fb || "www.bbqr.site"}
+            color="inherit"
+            target="_blank"
+          >
             <FacebookIcon fontSize="large" />
           </MuiLink>
-          {/* <MuiLink href="#" color="inherit" target="_blank">
-            <TwitterIcon fontSize="large" />
-          </MuiLink> */}
-          <MuiLink href="#" color="inherit" target="_blank">
+          <MuiLink
+            href={socialLinks?.youtube || "www.bbqr.site"}
+            color="inherit"
+            target="_blank"
+          >
+            <YouTubeIcon fontSize="large" />
+          </MuiLink>
+          <MuiLink
+            href={socialLinks?.insta || "www.bbqr.site"}
+            color="inherit"
+            target="_blank"
+          >
             <InstagramIcon fontSize="large" />
           </MuiLink>
-          <MuiLink href="#" color="inherit" target="_blank">
+          {/* <MuiLink href="#" color="inherit" target="_blank">
             <LinkedInIcon fontSize="large" />
-          </MuiLink>
+          </MuiLink> */}
           {/* <MuiLink href="#" color="inherit" target="_blank">
             <GitHubIcon fontSize="large" />
           </MuiLink> */}

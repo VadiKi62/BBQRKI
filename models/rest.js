@@ -24,6 +24,13 @@ const RestSchema = new Schema({
   waiterTableMap: { type: [TableChatSchema], default: null },
   slogans: [{ type: String }],
   logoSrc: { type: String, default: null },
+  socialLinks: {
+    type: {
+      fb: { type: String, default: "www.bbqr.site" },
+      insta: { type: String, default: "www.bbqr.site" },
+      youtube: { type: String, default: "www.bbqr.site" },
+    },
+  },
   address: {
     type: String,
     required: true,
