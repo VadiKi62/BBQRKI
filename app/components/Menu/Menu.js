@@ -48,6 +48,7 @@ function Menu({ menuRef, headerRef, menuData }) {
     onlyMenuFromParams,
     setOnlyMenu,
   } = useMainContext();
+
   const { t, i18n } = useTranslation();
   const { restName } = menuData.menu;
 
@@ -110,8 +111,9 @@ function Menu({ menuRef, headerRef, menuData }) {
       filteredMenuItems
     );
     setFilteredCats(uniqueCategories);
+    console.log(uniqueCategories);
     // eslint-disable-next-line
-  }, [lang]);
+  }, [i18n.language]);
 
   useEffect(() => {
     const handleScroll = () => {

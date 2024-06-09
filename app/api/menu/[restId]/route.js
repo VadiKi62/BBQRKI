@@ -14,13 +14,13 @@ export const GET = async (request, { params }) => {
     await connectToDB();
 
     const menu = await Menu.findOne({ restId: params.restId });
+    console.log("frim endpoint  !!!!! menu", menu.menu);
 
     if (!menu) {
       return new Response("Rest Not Found", { status: 404 });
     }
 
     const categories = generateCategories(menu.menu);
-    console.log("categories :", categories);
 
     const menuUpd = menuWithIds(menu.menu, categories);
     const toReturn = {

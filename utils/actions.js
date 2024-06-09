@@ -60,12 +60,14 @@ export const fetchMenu = async (restId) => {
   try {
     const apiUrl = `${API_URL}/api/menu/${restId}`;
     const data = await fetch(apiUrl, {
-      next: { revalidate: 1 },
+      next: { revalidate: 10 },
     });
+    console.log("data from Actions", data);
     if (!data.ok) {
       throw new Error(`Failed to fetch menu of the rest with id ${restId}`);
     }
     const menuData = await data.json();
+    console.log("fromACTIONS MENU", menuData);
 
     return menuData;
   } catch (error) {

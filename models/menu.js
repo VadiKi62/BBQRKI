@@ -31,8 +31,8 @@ const menuItemSchema = new Schema({
   category: { type: String, required: true },
   subCategory: { type: String, default: null },
   ingredients: { type: String },
-  beachMenu: { type: Boolean, default: false },
-  restaurantMenu: { type: Boolean, default: false },
+  beachMenu: { type: Boolean, default: true },
+  restaurantMenu: { type: Boolean, default: true },
   beachPrice: { type: String, default: null },
 });
 

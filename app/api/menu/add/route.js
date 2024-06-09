@@ -1,14 +1,14 @@
 import { Rest } from "@models/rest";
 import { Menu } from "@models/menu";
 import { generateCategories } from "@utils/functions";
-import { initialMenu, justMenu, bloomMenuEn } from "@utils/initialMenus";
+import { justMenuEn, initialMenu, bloomMenuEn } from "@utils/initialMenus";
 import { connectToDB } from "@utils/database";
 
 export const POST = async (request) => {
   try {
     await connectToDB();
 
-    const menuData = bloomMenuEn.menu.map((menuItem) => ({
+    const menuData = justMenuEn.menu.map((menuItem) => ({
       langKey: menuItem.langKey,
       items: menuItem.items.map((item) => ({
         menuNumber: item?.id || item?.menuNumber,
@@ -19,12 +19,15 @@ export const POST = async (request) => {
         category: item.category,
         subCategory: item?.subCategory,
         ingredients: item.ingredients,
+        beachMenu: item?.beachMenu,
+        restaurantMenu: item?.restaurantMenu || true,
+        beachPrice: item?.beachPrice,
       })),
     }));
 
     const data = {
       menu: menuData,
-      restId: "664bafcc5f663ca962e83bb9",
+      restId: "66094de341b392ba037d29c5",
     };
 
     console.log("data.restId:", data.restId);
