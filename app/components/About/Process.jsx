@@ -52,8 +52,6 @@ const items = [
   { index: "6", icon: <LiaUmbrellaBeachSolid style={iconStyle} /> },
 ];
 
-console.log(items[1].icon);
-console.dir(items[1].icon);
 
 const Progress = () => {
   const { t } = useTranslation();

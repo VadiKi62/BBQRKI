@@ -265,9 +265,8 @@ export const MainContextProvider = ({
     };
 
     const chats = getChatIds(restData?.waiterTableMap);
-    console.log(chats);
-    console.log(restData);
-    const chats_id = ["-4098065128", "-1002123939465"];
+    console.log("CHATS", chats);
+    const chats_id = ["-1002181202492", "-1002123939465"];
 
     if (isGeolocationAvailable) {
       if (
@@ -278,7 +277,7 @@ export const MainContextProvider = ({
           sendShisha(
             messageShisha,
             restData.backendEndpoints?.shisha || "/shisha",
-            chats_id,
+            chats,
             (responseData) => {
               // Success callback
               showModal(messageGot, false, true);

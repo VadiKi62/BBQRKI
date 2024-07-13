@@ -8,13 +8,18 @@ import {
   justItemsToAddEl,
   justItemsToAddRu,
   justItemsToAddRo,
+  bloomMenuEl,
+  bloomMenuDe,
+  bloomMenuRo,
+  bloomMenuRu,
+  bloomMenuSe,
+  bloomMenuUa,
 } from "@utils/initialMenus";
 
 export const GET = async (req, res) => {
   // const { restId, itemsToAdd } = req.body;
-  const restId = "66094de341b392ba037d29c5";
-  const itemsToAdd = justItemsToAddDe;
-
+  const restId = "664bafcc5f663ca962e83bb9";
+  const itemsToAdd = bloomMenuSe;
   try {
     await connectToDB();
     const existingMenu = await Menu.findOne({ restId });
@@ -26,7 +31,7 @@ export const GET = async (req, res) => {
         }
       );
     }
-
+    console.log("hello from add menu1");
     const engItems = existingMenu.menu
       .find((item) => item.langKey === "en")
       .items.map((item) => {
@@ -40,14 +45,16 @@ export const GET = async (req, res) => {
           ingredients,
         };
       });
-
+    console.log("hello from add menu2");
     // Function to check langKeys in incoming items and if they already exist in existingMenu then delete them and substitute with new ones
     const checkAndUpdateLangKeys = () => {
+      console.log("hello from add menu3");
       itemsToAdd.forEach(({ items, langKey }) => {
+        console.log("4", items);
         const existingLanguageIndex = existingMenu.menu.findIndex(
           (item) => item.langKey === langKey
         );
-        console.log("2a", existingLanguageIndex);
+        console.log("2a");
         if (existingLanguageIndex !== -1) {
           // Language key already exists, delete its object from the array
           existingMenu.menu.splice(existingLanguageIndex, 1);

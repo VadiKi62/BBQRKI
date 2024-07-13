@@ -6,6 +6,109 @@ import { de } from "./justMenu/de";
 import { se } from "./justMenu/se";
 import { en } from "./justMenu/en";
 import { enBloom } from "./bloomMenu/en";
+import { elBloom } from "./bloomMenu/el";
+import { roBloom } from "./bloomMenu/ro";
+import { seBloom } from "./bloomMenu/se";
+import { deBloom } from "./bloomMenu/de";
+import { ruBloom } from "./bloomMenu/ru";
+import { uaBloom } from "./bloomMenu/ua";
+
+//eng MENU Bloom
+export const bloomMenuEn = [
+  {
+    langKey: "en",
+    items: enBloom,
+  },
+];
+
+export const bloomMenuUa = [
+  {
+    langKey: "ua",
+    items: uaBloom,
+  },
+];
+
+export const bloomMenuEl = [
+  {
+    langKey: "el",
+    items: elBloom,
+  },
+];
+
+export const bloomMenuRo = [
+  {
+    langKey: "ro",
+    items: roBloom,
+  },
+];
+
+export const bloomMenuRu = [
+  {
+    langKey: "ru",
+    items: ruBloom,
+  },
+];
+
+export const bloomMenuSe = [
+  {
+    langKey: "se",
+    items: seBloom,
+  },
+];
+
+export const bloomMenuDe = [
+  {
+    langKey: "de",
+    items: deBloom,
+  },
+];
+
+//eng MENU
+export const justMenuEn = {
+  menu: [
+    {
+      langKey: "en",
+      items: en,
+    },
+  ],
+};
+//serbian menu
+export const justItemsToAddSe = [
+  {
+    langKey: "se",
+    items: se,
+  },
+];
+export const justItemsToAddDe = [
+  {
+    langKey: "de",
+    items: de,
+  },
+];
+export const justItemsToAddEl = [
+  {
+    langKey: "el",
+    items: el,
+  },
+];
+export const justItemsToAddRo = [
+  {
+    langKey: "ro",
+    items: ro,
+  },
+];
+export const justItemsToAddRu = [
+  {
+    langKey: "ru",
+    items: ru,
+  },
+];
+export const justItemsToAddUa = [
+  {
+    langKey: "ua",
+    items: ua,
+  },
+];
 
 export const initialMenu = {
   menu: [
@@ -674,261 +777,3 @@ export const initialMenu = {
   ],
   restId: "65f99151a749ec66638925cf",
 };
-
-//items for adding to addItems endpoint
-export const justItems = [
-  {
-    menuNumber: 207,
-    image: "/menu/burger_with_giro.jpg",
-    title: "Burger with giros pork",
-    price: "13",
-    category: "Hamburgers",
-    ingredients:
-      "With brioche bread, tomatoe, onion, green salad, ketchup, mustard & giros pork with potatoes",
-    sorting: "02",
-  },
-  {
-    menuNumber: 208,
-    image: "/menu/burger_with_giro.jpg",
-    title: "Burger with giros chicken",
-    price: "13",
-    category: "Hamburgers",
-    ingredients:
-      "With brioche bread, tomatoe, onion, green salad, ketchup, mustard & giros chicken with potatoes",
-    sorting: "02",
-  },
-  {
-    menuNumber: 415,
-    image: "/menu/club_sandwich_giros.jpg",
-    title: "Club sandwich giros pork",
-    price: "13",
-    category: "Sandwiches",
-    ingredients: "With pita, tzatziki, tomatoe, onion, green salad",
-    sorting: "04",
-  },
-  {
-    menuNumber: 416,
-    image: "/menu/club_sandwich_giros.jpg",
-    title: " Club sandwich giros chicken",
-    price: "13",
-    category: "Sandwiches",
-    ingredients: "With pita, tzatziki, tomatoe, onion, green salad",
-    sorting: "04",
-  },
-];
-
-export const justItemsLANGS = [
-  {
-    langKey: "se",
-    items: [
-      {
-        menuNumber: 207,
-        title: "Burger with giros pork",
-        category: "Hamburgers",
-        ingredients:
-          "With brioche bread, tomatoe, onion, green salad, ketchup, mustard & giros pork with potatoes",
-      },
-      {
-        menuNumber: 208,
-        title: "Burger with giros chicken",
-        category: "Hamburgers",
-        ingredients:
-          "With brioche bread, tomatoe, onion, green salad, ketchup, mustard & giros chicken with potatoes",
-      },
-      {
-        menuNumber: 415,
-        title: "Club sandwich giros pork",
-        category: "Sandwiches",
-        ingredients: "With pita, tzatziki, tomatoe, onion, green salad",
-      },
-      {
-        menuNumber: 416,
-        title: " Club sandwich giros chicken",
-        category: "Sandwiches",
-        ingredients: "With pita, tzatziki, tomatoe, onion, green salad",
-      },
-    ],
-  },
-  {
-    langKey: "el",
-    items: [
-      {
-        menuNumber: 207,
-        title: "Burger with giros pork",
-        category: "Hamburgers",
-        ingredients:
-          "With brioche bread, tomatoe, onion, green salad, ketchup, mustard & giros pork with potatoes",
-      },
-      {
-        menuNumber: 208,
-        title: "Burger with giros chicken",
-        category: "Hamburgers",
-        ingredients:
-          "With brioche bread, tomatoe, onion, green salad, ketchup, mustard & giros chicken with potatoes",
-      },
-      {
-        menuNumber: 415,
-        title: "Club sandwich giros pork",
-        category: "Sandwiches",
-        ingredients: "With pita, tzatziki, tomatoe, onion, green salad",
-      },
-      {
-        menuNumber: 416,
-        title: " Club sandwich giros chicken",
-        category: "Sandwiches",
-        ingredients: "With pita, tzatziki, tomatoe, onion, green salad",
-      },
-    ],
-  },
-  {
-    langKey: "de",
-    items: [
-      {
-        menuNumber: 207,
-        title: "Burger with giros pork",
-        category: "Hamburgers",
-        ingredients:
-          "With brioche bread, tomatoe, onion, green salad, ketchup, mustard & giros pork with potatoes",
-      },
-      {
-        menuNumber: 208,
-        title: "Burger with giros chicken",
-        category: "Hamburgers",
-        ingredients:
-          "With brioche bread, tomatoe, onion, green salad, ketchup, mustard & giros chicken with potatoes",
-      },
-      {
-        menuNumber: 415,
-        title: "Club sandwich giros pork",
-        category: "Sandwiches",
-        ingredients: "With pita, tzatziki, tomatoe, onion, green salad",
-      },
-      {
-        menuNumber: 416,
-        title: " Club sandwich giros chicken",
-        category: "Sandwiches",
-        ingredients: "With pita, tzatziki, tomatoe, onion, green salad",
-      },
-    ],
-  },
-  {
-    langKey: "ro",
-    items: [
-      {
-        menuNumber: 207,
-        title: "Burger with giros pork",
-        category: "Hamburgers",
-        ingredients:
-          "With brioche bread, tomatoe, onion, green salad, ketchup, mustard & giros pork with potatoes",
-      },
-      {
-        menuNumber: 208,
-        title: "Burger with giros chicken",
-        category: "Hamburgers",
-        ingredients:
-          "With brioche bread, tomatoe, onion, green salad, ketchup, mustard & giros chicken with potatoes",
-      },
-      {
-        menuNumber: 415,
-        title: "Club sandwich giros pork",
-        category: "Sandwiches",
-        ingredients: "With pita, tzatziki, tomatoe, onion, green salad",
-      },
-      {
-        menuNumber: 416,
-        title: " Club sandwich giros chicken",
-        category: "Sandwiches",
-        ingredients: "With pita, tzatziki, tomatoe, onion, green salad",
-      },
-    ],
-  },
-  {
-    langKey: "ru",
-    items: [
-      {
-        menuNumber: 207,
-        title: "Бургер с гиросом из свинины",
-        category: "Гамбургеры",
-        ingredients:
-          "С булочкой бриош, помидором, луком, зелёным салатом, кетчупом, горчицей и гиросом из свинины, а также ртофелем",
-      },
-      {
-        menuNumber: 208,
-        title: "Бургер с гиросом из курицы",
-        category: "Гамбургеры",
-        ingredients:
-          "С булочкой бриош, помидором, луком, зелёным салатом, кетчупом, горчицей и гиросом из курицы,  а также картофелем",
-      },
-      {
-        menuNumber: 415,
-        title: "Клубный сэндвич с гиросом из свинины",
-        category: "Сэндвичи",
-        ingredients: "С питой, дзадзыки, помидором, луком, зелёным салатом",
-      },
-      {
-        menuNumber: 416,
-        title: "Клубный сэндвич с гиросом из курицы",
-        category: "Сэндвичи",
-        ingredients: "С питой, дзадзыки, помидором, луком, зелёным салатом",
-      },
-    ],
-  },
-];
-
-//eng MENU Bloom
-export const bloomMenuEn = {
-  menu: [
-    {
-      langKey: "en",
-      items: enBloom,
-    },
-  ],
-};
-
-//eng MENU
-export const justMenuEn = {
-  menu: [
-    {
-      langKey: "en",
-      items: en,
-    },
-  ],
-};
-
-//serbian menu
-export const justItemsToAddSe = [
-  {
-    langKey: "se",
-    items: se,
-  },
-];
-export const justItemsToAddDe = [
-  {
-    langKey: "de",
-    items: de,
-  },
-];
-export const justItemsToAddEl = [
-  {
-    langKey: "el",
-    items: el,
-  },
-];
-export const justItemsToAddRo = [
-  {
-    langKey: "ro",
-    items: ro,
-  },
-];
-export const justItemsToAddRu = [
-  {
-    langKey: "ru",
-    items: ru,
-  },
-];
-export const justItemsToAddUa = [
-  {
-    langKey: "ua",
-    items: ua,
-  },
-];

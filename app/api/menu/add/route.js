@@ -7,8 +7,9 @@ import { connectToDB } from "@utils/database";
 export const POST = async (request) => {
   try {
     await connectToDB();
+    console.log("1");
 
-    const menuData = justMenuEn.menu.map((menuItem) => ({
+    const menuData = bloomMenuEn.menu.map((menuItem) => ({
       langKey: menuItem.langKey,
       items: menuItem.items.map((item) => ({
         menuNumber: item?.id || item?.menuNumber,
@@ -24,12 +25,12 @@ export const POST = async (request) => {
         beachPrice: item?.beachPrice,
       })),
     }));
-
+    console.log("2");
     const data = {
       menu: menuData,
-      restId: "66094de341b392ba037d29c5",
+      restId: "664bafcc5f663ca962e83bb9",
     };
-
+    console.log("3");
     console.log("data.restId:", data.restId);
 
     const isRestExist = await Rest.findById(data.restId);

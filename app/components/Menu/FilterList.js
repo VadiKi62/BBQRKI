@@ -134,8 +134,8 @@ function FilterList({
     const categoryName = category[categoryId];
     const hasBeachItems = hasBeachMenuItemsInCategory(categoryId, menu);
     const hasRestItems = hasRestMenuItemsInCategory(categoryId, menu);
-    console.log("hasRestItems", hasRestItems);
-    console.log("hasBeachItems", hasBeachItems);
+    // console.log("hasRestItems", hasRestItems);
+    // console.log("hasBeachItems", hasBeachItems);
     // eslint-disable-next-line
     if (onlyMenuFromParams == 1 && hasRestItems) {
       return (

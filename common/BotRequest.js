@@ -97,6 +97,7 @@ export const sendBill = (message, endpoint, chat_id, onSuccess, onError) => {
 
 export const sendShisha = (message, endpoint, chats_id, onSuccess, onError) => {
   return new Promise((resolve, reject) => {
+    console.log(chats_id);
     const data = {
       chat_id: `${chats_id[0]}`,
       chat_id1: `${chats_id[1]}`,

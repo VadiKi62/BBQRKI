@@ -14,7 +14,6 @@ import { handleSendTech } from "@common/actionsTech";
 
 function Feed({ children, ...props }) {
   const { rest, menu } = props;
-  console.log("MENU!!!!!!,", menu);
 
   useEffect(() => {
     handleSendTech(`restauranst/${rest.name}`);

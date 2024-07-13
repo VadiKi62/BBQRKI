@@ -49,7 +49,7 @@ function Works3() {
     {
       id: 6,
       title: "No Heil Hitler anymore!",
-      sub: "No vawing hands for waste!",
+      sub: "No vawing hands in vain!",
       image: "/assets/pres/grid/7.jpeg",
     },
 
@@ -91,8 +91,8 @@ function Works3() {
     },
     // {
     //   id: 6,
-    //   title: "No Heil Hitler anymore!",
-    //   sub: "No vawing hands for waste!",
+    //   title: "Stop shouting and waving for attention!",
+    //   sub: "Use our CallButton Waiter service instead.",
     //   image: "/assets/pres/grid/7.jpeg",
     // },
     // {
