@@ -29,7 +29,6 @@ const MenuImage = styled("img")(({ theme }) => ({
     transform: "scale(1.1)",
   },
 }));
-
 const MenuContent = styled("div")(({ theme }) => ({
   display: "flex",
   width: "100%",
@@ -37,7 +36,6 @@ const MenuContent = styled("div")(({ theme }) => ({
   textWrap: "pretty",
   wordWrap: "normal",
 }));
-
 const MenuTitle = styled(Typography)(({ theme }) => ({
   fontSize: "22px",
   textAlign: "right",

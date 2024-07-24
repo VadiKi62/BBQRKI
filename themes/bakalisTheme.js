@@ -21,7 +21,7 @@ export default createTheme({
     },
     text: {
       light: "white",
-      dark: "white",
+      dark: "linear-gradient(36deg, rgba(1,31,75,0.7), rgba(3,57,108,0.7))",
       red: "white",
       main: "	#b3cde0",
       green: "#b3cde0",
