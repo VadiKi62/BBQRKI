@@ -102,6 +102,7 @@ function MenuItemComponent({ item, isSmallScreen, englishItem, restName }) {
   const defaultImageSrc = "/menu/photo.png";
   const { onlyMenuFromParams, setOnlyMenu } = useMainContext();
   const isBloom = restName === "Bloom";
+  const isAk = restName === "АКАЦИЯ";
 
   const [imageLoading, setImageLoading] = useState(true);
 
@@ -149,7 +150,9 @@ function MenuItemComponent({ item, isSmallScreen, englishItem, restName }) {
             </MenuPrice>
           )}
           {(onlyMenuFromParams == 1 || !onlyMenuFromParams) && (
-            <MenuPrice>€{englishItem.price}</MenuPrice>
+            <MenuPrice>
+              {!isAk ? `€${englishItem.price}` : `₽${englishItem.price}`}
+            </MenuPrice>
           )}
           {englishItem.price1 && (
             <MenuPriceBottle>€{englishItem.price1}</MenuPriceBottle>

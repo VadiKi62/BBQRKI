@@ -1,22 +1,28 @@
 import { Rest } from "@models/rest";
 import { Menu } from "@models/menu";
 import { generateCategories } from "@utils/functions";
-import { justMenuEn, initialMenu, bloomMenuEn } from "@utils/initialMenus";
+import {
+  justMenuEn,
+  initialMenu,
+  bloomMenuEn,
+  akMenuEn,
+} from "@utils/initialMenus";
 import { connectToDB } from "@utils/database";
 
 export const POST = async (request) => {
   try {
     await connectToDB();
     console.log("1");
+    console.log(akMenuEn);
 
-    const menuData = bloomMenuEn.menu.map((menuItem) => ({
+    const menuData = akMenuEn.map((menuItem) => ({
       langKey: menuItem.langKey,
       items: menuItem.items.map((item) => ({
         menuNumber: item?.id || item?.menuNumber,
         image: item.image,
         title: item.title,
         price: item.price,
-        price1: item.price1,
+        price1: item?.price1,
         category: item.category,
         subCategory: item?.subCategory,
         ingredients: item.ingredients,
@@ -28,10 +34,9 @@ export const POST = async (request) => {
     console.log("2");
     const data = {
       menu: menuData,
-      restId: "664bafcc5f663ca962e83bb9",
+      restId: "669d82813bac9f7716c49614",
     };
     console.log("3");
-    console.log("data.restId:", data.restId);
 
     const isRestExist = await Rest.findById(data.restId);
     if (!isRestExist) {
@@ -50,7 +55,7 @@ export const POST = async (request) => {
         status: 300,
       });
     }
-    console.log(data);
+
     const createdMenu = new Menu(data);
     console.log(createdMenu.menu[0].items[107]);
     isRestExist.menu = createdMenu._id;

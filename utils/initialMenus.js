@@ -12,6 +12,7 @@ import { seBloom } from "./bloomMenu/se";
 import { deBloom } from "./bloomMenu/de";
 import { ruBloom } from "./bloomMenu/ru";
 import { uaBloom } from "./bloomMenu/ua";
+import { enAk } from "./akMenu/en";
 
 //eng MENU Bloom
 export const bloomMenuEn = [
@@ -777,3 +778,10 @@ export const initialMenu = {
   ],
   restId: "65f99151a749ec66638925cf",
 };
+
+export const akMenuEn = [
+  {
+    langKey: "en",
+    items: enAk,
+  },
+];

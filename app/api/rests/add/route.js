@@ -588,8 +588,60 @@ export const POST = async (request) => {
     },
   };
 
+  const akData = {
+    name: "АКАЦИЯ",
+    slogan: "Кафе, Доставка еды и обедов, Быстрое питание",
+    slogans: ["Вкусно", "Уютно", "Приятные цены"],
+    workingTimeBeachSpots: {
+      startTime: "09:00",
+      endTime: "23:00",
+    },
+    tel: "+7(918)004-08-96",
+    email: "akatsija@akatsija.com",
+    schedule: "Mon-Sat: 09AM - 23PM",
+    address: "Республика Крым, Ялта, улица Ломоносова, 7А",
+    coords: {
+      mainSpot: { latitude: 44.490985093491624, longitude: 34.151321604336786 },
+      beachSpot1: {
+        latitude: 44.490985093491624,
+        longitude: 34.151321604336786,
+      },
+      beachSpot2: {
+        latitude: 44.490985093491624,
+        longitude: 34.151321604336786,
+      },
+      beachSpot3: {
+        latitude: 44.490985093491624,
+        longitude: 34.151321604336786,
+      },
+    },
+    radiuses: {
+      mainSpot: 25,
+      beachSpot1: 12,
+      beachSpot2: 12,
+      beachSpot3: 12,
+    },
+    datesBeachSpot: {
+      start: new Date(currentYear, 3 - 1, 1),
+      end: new Date(currentYear, 10 - 1, 30),
+    },
+    chat_id: "-1002124116163",
+    backendEndpoints: { waiter: "/button2607", bill: "/button2607" },
+    pathName: "akatsija",
+    themeName: "bakalisTheme",
+    app: {
+      menu: true,
+      about: false,
+      buttonWaiter: true,
+      buttonBill: true,
+      buttonSisha: false,
+      numberOfTables: { inside: 6, outside: 14 },
+      languages: { eng: true, el: true },
+    },
+  };
+
   //   const rest = (await request.json());
-  const rest = bloomData;
+  const rest = akData;
   try {
     await connectToDB();
     const { name, pathName } = rest;

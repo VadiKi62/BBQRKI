@@ -29,6 +29,7 @@ const ClickableMenuItem = ({ item, menu, isSmallScreen, restName }) => {
       </div>
       {isOpen && (
         <ModalMenuItem
+          restName={restName}
           item={item}
           onClose={handleClose}
           englishItem={englishItem}

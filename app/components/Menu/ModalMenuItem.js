@@ -35,9 +35,9 @@ const Price = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.up("sm")]: {
     textAlign: "center",
   },
-  "&::before": {
-    content: '"€"',
-  },
+  // "&::before": {
+  //   content: '"€"',
+  // },
   "&:hover": {
     color: theme.palette.primary.red,
   },
@@ -76,7 +76,8 @@ const Ingredients = styled(Typography)(({ theme }) => ({
   },
 }));
 
-function ModalMenuItem({ item, onClose, englishItem }) {
+function ModalMenuItem({ item, onClose, englishItem, restName }) {
+  const isAk = restName === "АКАЦИЯ";
   const handleDialogContentClick = (event) => {
     // Stops the click event from propagating up to other elements
     event.stopPropagation();
@@ -154,7 +155,10 @@ function ModalMenuItem({ item, onClose, englishItem }) {
               }}
             >
               <PriceContainer>
-                <Price variant="h5">{englishItem.price}</Price>
+                <Price variant="h5">
+                  {" "}
+                  {!isAk ? `€${englishItem.price}` : `₽${englishItem.price}`}
+                </Price>
                 {englishItem.price1 && (
                   <PriceBottle>{englishItem.price1}</PriceBottle>
                 )}
