@@ -6,7 +6,7 @@ const Footer = () => {
   const email = "nataliakireewa@gmail.com";
   return (
     <footer className="footer">
-      <div className="copy">
+      {/* <div className="copy">
         <div>
           {" "}
           <a href={`mailto:${email}`}>{email}</a>
@@ -15,7 +15,7 @@ const Footer = () => {
           {" "}
           <a href={`tel:${tel}`}>{tel}</a>
         </div>
-      </div>
+      </div> */}
       <div className="soc-box">
         <div className="follow-label">Follow Me</div>
         <div className="soc">

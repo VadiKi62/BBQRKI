@@ -2,7 +2,8 @@ html {
   scroll-behavior: smooth;
 }
 .text {
-  font-size: 20px;
+  font-size: 17px;
+  line-height: 24px;
 }
 .jarallax {
   position: relative;
@@ -2511,6 +2512,20 @@ a:hover {
     margin: 40px 0 0 0;
   }
 }
+@media (min-width: 1200px) {
+  .container {
+    flex-direction: row; /* Align items in a row */
+    justify-content: center; /* Center items horizontally */
+  }
+
+  .row {
+    justify-content: center; /* Center columns within the row */
+  }
+
+  .col {
+    max-width: 500px; /* Set a max-width for columns */
+  }
+}
 
 /* section resume mobile */
 @media (max-width: 720px) {
@@ -4861,6 +4876,19 @@ object {
   .footer .copy {
     display: none;
   }
+  .footer .follow-label {
+    display: block;
+    position: static;
+    padding-right: 0;
+    color: #bbb;
+    font-size: 14px;
+    line-height: 24px;
+    height: auto;
+    white-space: nowrap;
+    transform: none;
+    text-align: center;
+    margin: 20px 0; /* Adjust margin as needed for spacing */
+  }
 
   .footer .follow-label {
     display: none;
@@ -5279,6 +5307,11 @@ object {
   -moz-transition: all 0.7s cubic-bezier(0.165, 0.85, 0.45, 1) 0s;
   -webkit-transition: all 0.7s cubic-bezier(0.165, 0.85, 0.45, 1) 0s;
   -o-transition: all 0.7s cubic-bezier(0.165, 0.85, 0.45, 1) 0s;
+}
+
+.name {
+  font-size: 19px;
+  line-height: 25px;
 }
 
 .blog-items .blog-item .category,
