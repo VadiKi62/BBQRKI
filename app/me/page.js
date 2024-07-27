@@ -55,7 +55,7 @@ export default function Me() {
               className="mask-lnk"
             >
               <span className="mask-lnk">
-                Natalia <strong>Ki/Bu</strong>
+                Natalia <strong>Ki</strong>
               </span>
               <span className="mask-lnk mask-lnk-hover">
                 Download <strong>CV</strong>
