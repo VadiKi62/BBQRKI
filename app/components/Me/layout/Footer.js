@@ -1,5 +1,6 @@
 import { BsLinkedin } from "react-icons/bs";
 import { BsGithub } from "react-icons/bs";
+import Link from "next/link";
 
 const Footer = () => {
   const tel = "+30 (68) 100 37 71";
@@ -16,7 +17,7 @@ const Footer = () => {
           <a href={`tel:${tel}`}>{tel}</a>
         </div>
       </div> */}
-      <div className="soc-box">
+      {/* <div className="soc-box">
         <div className="follow-label">Follow Me</div>
         <div className="soc">
           <a
@@ -34,7 +35,7 @@ const Footer = () => {
             <BsGithub />
           </a>
         </div>
-      </div>
+      </div> */}
       <div className="clear" />
     </footer>
   );

@@ -12,6 +12,9 @@ import { IoMdMail } from "react-icons/io";
 import MenuDrawer from "@app/components/Me/MenuDrawer";
 import { Button } from "@mui/material";
 import { handleSendTech } from "@common/actionsTech";
+import { BsLinkedin } from "react-icons/bs";
+import { BsGithub } from "react-icons/bs";
+import Link from "next/link";
 
 import { createSkillsDot, dotResize } from "@app/components/Me/utils";
 
@@ -421,6 +424,42 @@ export default function Me() {
                     <a href="mailto:nataliakireewa@gmail.com">
                       nataliakireewa@gmail.com
                     </a>
+                  </div>
+                </div>
+              </div>
+              <div className="service-col">
+                <div className="service-item content-box">
+                  <div className="icon">
+                    <BsGithub />
+                  </div>
+
+                  <div className="text">
+                    {" "}
+                    <Link
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://github.com/nataliakii"
+                    >
+                      GitHub
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="service-col">
+                <div className="service-item content-box">
+                  <div className="icon">
+                    <BsLinkedin />
+                  </div>
+
+                  <div className="text">
+                    {" "}
+                    <Link
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://www.linkedin.com/in/natalia-kirejeva/"
+                    >
+                      LinkedIn
+                    </Link>
                   </div>
                 </div>
               </div>
