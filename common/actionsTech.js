@@ -21,3 +21,25 @@ export const handleSendTech = async (param) => {
     console.error(err);
   }
 };
+
+export const handleSendBloom = async (param) => {
+  try {
+    const message = `Меню Bloom было открыто. `;
+    const chat_id = -1002188495977;
+    // Call the sendTech function
+    sendTech(
+      chat_id,
+      message,
+      (responseData) => {
+        // Success callback
+        console.log("SUCCESSFROM handleSendBloom", responseData);
+      },
+      (error) => {
+        // Error callback
+        console.error(error);
+      }
+    );
+  } catch (err) {
+    console.error(err);
+  }
+};

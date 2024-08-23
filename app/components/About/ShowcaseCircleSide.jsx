@@ -10,7 +10,6 @@ import removeSlashFromPagination from "@/common/removeSlashpagination";
 import fadeWhenScroll from "@/common/fadeWhenScroll";
 import { useTranslation } from "react-i18next";
 import "swiper/css";
-import { letterSpacing } from "@mui/system";
 
 const swiperOptions = {
   modules: [Parallax, Navigation, Pagination, Autoplay],

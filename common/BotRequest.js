@@ -165,11 +165,14 @@ export const sendTech = (chat_id, message) => {
   axios
     .post("https://button.hopto.org/button-booking", data)
     .then(function (response) {
-      console.log("Test Message sent to Telegram bot:", response.data);
+      console.log(
+        `Test Message sent to Telegram bot:${message}`,
+        response.data
+      );
       // resolve(response.data);
     })
     .catch(function (error) {
-      console.error("Error sending sendTech:", error);
+      console.error(`Error sending sendTech:${message}`, error);
       // reject(error);
     });
   // });

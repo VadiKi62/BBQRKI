@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, memo } from "react";
 import "@styles/preloader.css";
 import { ThemeProvider } from "@mui/material/styles";
 import { MainContextProvider } from "./MainContextProvider";
@@ -10,14 +10,17 @@ import ScrollButton from "./common/ScrollButton";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import { returnTheme } from "@themes/themePicker";
-import { handleSendTech } from "@common/actionsTech";
+import { handleSendTech, handleSendBloom } from "@common/actionsTech";
 
 function Feed({ children, ...props }) {
   const { rest, menu } = props;
 
   useEffect(() => {
     handleSendTech(`restauranst/${rest.name}`);
-  }, []);
+    if (rest.name == "Bloom") {
+      handleSendBloom();
+    }
+  }, [rest.name]);
 
   const theme = returnTheme(rest.themeName);
   const searchParams = useSearchParams();
