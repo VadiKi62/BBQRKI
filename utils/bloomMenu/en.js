@@ -1,7 +1,7 @@
 export const enBloom = [
   {
     menuNumber: 1,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "TORTILLA",
     price: "8.50",
     category: "FOOD",
@@ -11,7 +11,7 @@ export const enBloom = [
   },
   {
     menuNumber: 2,
-    image: "",
+    image: "/menu/bloom/2.png",
     title: "CHICKEN NUGGETS",
     price: "7.50",
     category: "FOOD",
@@ -20,7 +20,7 @@ export const enBloom = [
   },
   {
     menuNumber: 3,
-    image: "",
+    image: "/menu/bloom/3.png",
     title: "CHEESE BURGER",
     price: "9.00",
     category: "FOOD",
@@ -30,7 +30,7 @@ export const enBloom = [
   },
   {
     menuNumber: 4,
-    image: "",
+    image: "/menu/bloom/4.png",
     title: "CHICKEN BURGER",
     price: "9.50",
     category: "FOOD",
@@ -40,7 +40,7 @@ export const enBloom = [
   },
   {
     menuNumber: 5,
-    image: "",
+    image: "/menu/bloom/5.png",
     title: "CHICKEN CLUB",
     price: "9.00",
     category: "FOOD",
@@ -50,7 +50,7 @@ export const enBloom = [
   },
   {
     menuNumber: 6,
-    image: "",
+    image: "/menu/bloom/6.png",
     title: "PIZZA SPECIAL 830gr",
     price: "11.00",
     category: "FOOD",
@@ -59,7 +59,7 @@ export const enBloom = [
   },
   {
     menuNumber: 7,
-    image: "",
+    image: "/menu/bloom/7.png",
     title: "PIZZA MARGARITA 730gr",
     price: "10.00",
     category: "FOOD",
@@ -68,7 +68,7 @@ export const enBloom = [
   },
   {
     menuNumber: 8,
-    image: "",
+    image: "/menu/bloom/8.png",
     title: "CAESAR SALAD",
     price: "8.00",
     category: "FOOD",
@@ -78,7 +78,7 @@ export const enBloom = [
   },
   {
     menuNumber: 9,
-    image: "",
+    image: "/menu/bloom/9.png",
     title: "FRUITSALAD",
     price: "8.00",
     category: "FOOD",
@@ -87,7 +87,7 @@ export const enBloom = [
   },
   {
     menuNumber: 10,
-    image: "",
+    image: "/menu/bloom/10.png",
     title: "TOAST CAESAR",
     price: "5.00",
     category: "FOOD",
@@ -96,7 +96,7 @@ export const enBloom = [
   },
   {
     menuNumber: 101,
-    image: "",
+    image: "/menu/bloom/10photo.png",
     title: "FREDDO ESPRESSO",
     price: "5.00",
     category: "COFFEE",
@@ -105,7 +105,7 @@ export const enBloom = [
   },
   {
     menuNumber: 102,
-    image: "",
+    image: "/menu/bloom/12.png",
     title: "FREDDO CAPPUCHINO",
     price: "5.00",
     category: "COFFEE",
@@ -114,7 +114,7 @@ export const enBloom = [
   },
   {
     menuNumber: 103,
-    image: "",
+    image: "/menu/bloom/13.png",
     title: "FRAPPE",
     price: "5.00",
     category: "COFFEE",
@@ -123,7 +123,7 @@ export const enBloom = [
   },
   {
     menuNumber: 104,
-    image: "",
+    image: "/menu/bloom/14.png",
     title: "DECAFFEINE",
     price: "5.00",
     category: "COFFEE",
@@ -132,7 +132,7 @@ export const enBloom = [
   },
   {
     menuNumber: 105,
-    image: "",
+    image: "/menu/bloom/15.png",
     title: "CHOCOLATE",
     price: "5.00",
     category: "COFFEE",
@@ -141,7 +141,7 @@ export const enBloom = [
   },
   {
     menuNumber: 201,
-    image: "",
+    image: "/menu/bloom/16.png",
     title: "VIENNOIS",
     price: "5.50",
     category: "CHOCOLATE",
@@ -150,7 +150,7 @@ export const enBloom = [
   },
   {
     menuNumber: 202,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "ESPRESSO",
     price: "4.50",
     category: "CHOCOLATE",
@@ -159,7 +159,7 @@ export const enBloom = [
   },
   {
     menuNumber: 203,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "DOUBLE ESPRESSO",
     price: "5.00",
     category: "CHOCOLATE",
@@ -168,7 +168,7 @@ export const enBloom = [
   },
   {
     menuNumber: 204,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "CAPPUCHINO",
     price: "5.00",
     category: "CHOCOLATE",
@@ -177,7 +177,7 @@ export const enBloom = [
   },
   {
     menuNumber: 205,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "DOUBLE CAPPUCCINO",
     price: "5.50",
     category: "CHOCOLATE",
@@ -186,7 +186,7 @@ export const enBloom = [
   },
   {
     menuNumber: 206,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "NESCAFE",
     price: "5.00",
     category: "CHOCOLATE",
@@ -195,7 +195,7 @@ export const enBloom = [
   },
   {
     menuNumber: 207,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "GREEK COFFEE",
     price: "4.50",
     category: "CHOCOLATE",
@@ -204,7 +204,7 @@ export const enBloom = [
   },
   {
     menuNumber: 208,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "DOUBLE GREEK COFFEE",
     price: "5.00",
     category: "CHOCOLATE",
@@ -213,7 +213,7 @@ export const enBloom = [
   },
   {
     menuNumber: 209,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "AMERICANO",
     price: "4.50",
     category: "CHOCOLATE",
@@ -222,7 +222,7 @@ export const enBloom = [
   },
   {
     menuNumber: 210,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "DOUBLE AMERICANO",
     price: "5.00",
     category: "CHOCOLATE",
@@ -231,7 +231,7 @@ export const enBloom = [
   },
   {
     menuNumber: 301,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "FRESH ORANGE JUICE",
     price: "5.50",
     category: "JUCES",
@@ -240,7 +240,7 @@ export const enBloom = [
   },
   {
     menuNumber: 302,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "ORANGE JUICE",
     price: "5.00",
     category: "JUCES",
@@ -249,7 +249,7 @@ export const enBloom = [
   },
   {
     menuNumber: 303,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "CHERRY JUICE",
     price: "5.00",
     category: "JUCES",
@@ -258,7 +258,7 @@ export const enBloom = [
   },
   {
     menuNumber: 304,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "BANANA JUICE",
     price: "5.00",
     category: "JUCES",
@@ -267,7 +267,7 @@ export const enBloom = [
   },
   {
     menuNumber: 305,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "PINEAPPLE JUICE",
     price: "5.00",
     category: "JUCES",
@@ -276,7 +276,7 @@ export const enBloom = [
   },
   {
     menuNumber: 306,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "PEACH JUICE",
     price: "5.00",
     category: "JUCES",
@@ -285,7 +285,7 @@ export const enBloom = [
   },
   {
     menuNumber: 307,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "MIXED JUICE",
     price: "5.00",
     category: "JUCES",
@@ -294,7 +294,7 @@ export const enBloom = [
   },
   {
     menuNumber: 308,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "COLD TEA PEACH",
     price: "5.00",
     category: "JUCES",
@@ -303,7 +303,7 @@ export const enBloom = [
   },
   {
     menuNumber: 309,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "COLD TEA LEMON",
     price: "5.00",
     category: "JUCES",
@@ -312,7 +312,7 @@ export const enBloom = [
   },
   {
     menuNumber: 310,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "COLD TEA GREEN",
     price: "5.00",
     category: "JUCES",
@@ -321,7 +321,7 @@ export const enBloom = [
   },
   {
     menuNumber: 401,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "COCA COLA",
     price: "5.00",
     category: "REFRESHMENTS",
@@ -330,7 +330,7 @@ export const enBloom = [
   },
   {
     menuNumber: 402,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "COCA COLA ZERO",
     price: "5.00",
     category: "REFRESHMENTS",
@@ -339,7 +339,7 @@ export const enBloom = [
   },
   {
     menuNumber: 403,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "COCA COLA LIGHT",
     price: "5.00",
     category: "REFRESHMENTS",
@@ -348,7 +348,7 @@ export const enBloom = [
   },
   {
     menuNumber: 404,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "LEMONADA",
     price: "5.00",
     category: "REFRESHMENTS",
@@ -357,7 +357,7 @@ export const enBloom = [
   },
   {
     menuNumber: 405,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "PORTOKALA",
     price: "5.00",
     category: "REFRESHMENTS",
@@ -366,7 +366,7 @@ export const enBloom = [
   },
   {
     menuNumber: 406,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "SPRITE",
     price: "5.00",
     category: "REFRESHMENTS",
@@ -375,7 +375,7 @@ export const enBloom = [
   },
   {
     menuNumber: 407,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "PERRIER",
     price: "5.00",
     category: "REFRESHMENTS",
@@ -384,7 +384,7 @@ export const enBloom = [
   },
   {
     menuNumber: 408,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "THREE CENTS PINK",
     price: "5.00",
     category: "REFRESHMENTS",
@@ -393,7 +393,7 @@ export const enBloom = [
   },
   {
     menuNumber: 409,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "SOUROTI ",
     price: "5.00",
     category: "REFRESHMENTS",
@@ -402,7 +402,7 @@ export const enBloom = [
   },
   {
     menuNumber: 409,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "SOUROTI",
     price: "5.00",
     category: "REFRESHMENTS",
@@ -411,7 +411,7 @@ export const enBloom = [
   },
   {
     menuNumber: 501,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "STRAWBERRY",
     price: "5.00",
     category: "GRANITE",
@@ -420,7 +420,7 @@ export const enBloom = [
   },
   {
     menuNumber: 502,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "LEMON",
     price: "5.00",
     category: "GRANITE",
@@ -429,7 +429,7 @@ export const enBloom = [
   },
   {
     menuNumber: 503,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "WATERLEMON",
     price: "5.00",
     category: "GRANITE",
@@ -438,7 +438,7 @@ export const enBloom = [
   },
   {
     menuNumber: 601,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "RED BULL",
     price: "5.00",
     category: "RTD",
@@ -447,7 +447,7 @@ export const enBloom = [
   },
   {
     menuNumber: 602,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "SMIRNOFF ICE",
     price: "5.00",
     category: "RTD",
@@ -456,7 +456,7 @@ export const enBloom = [
   },
   {
     menuNumber: 603,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "GORDON`S SPACE",
     price: "5.00",
     category: "RTD",
@@ -465,7 +465,7 @@ export const enBloom = [
   },
   {
     menuNumber: 604,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "BREEZER (LEMON/WATERLEMON) ",
     price: "5.00",
     category: "RTD",
@@ -474,7 +474,7 @@ export const enBloom = [
   },
   {
     menuNumber: 701,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "FIX SMALL DRAUGHT BEER",
     price: "5.50",
     category: "BEERS",
@@ -483,7 +483,7 @@ export const enBloom = [
   },
   {
     menuNumber: 702,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "FIX BIG DRAUGHT BEER",
     price: "6.00",
     category: "BEERS",
@@ -492,7 +492,7 @@ export const enBloom = [
   },
   {
     menuNumber: 703,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "CORONA",
     price: "5.50",
     category: "BEERS",
@@ -501,7 +501,7 @@ export const enBloom = [
   },
   {
     menuNumber: 704,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "SOL",
     price: "5.50",
     category: "BEERS",
@@ -510,7 +510,7 @@ export const enBloom = [
   },
   {
     menuNumber: 705,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "MYTHOS",
     price: "5.50",
     category: "BEERS",
@@ -519,7 +519,7 @@ export const enBloom = [
   },
   {
     menuNumber: 706,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "ALPHA",
     price: "5.50",
     category: "BEERS",
@@ -528,7 +528,7 @@ export const enBloom = [
   },
   {
     menuNumber: 707,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "KAISER",
     price: "5.50",
     category: "BEERS",
@@ -537,7 +537,7 @@ export const enBloom = [
   },
   {
     menuNumber: 708,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "HEINEKEN",
     price: "5.50",
     category: "BEERS",
@@ -546,7 +546,7 @@ export const enBloom = [
   },
   {
     menuNumber: 709,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "HEINEKEN ZERO",
     price: "5.50",
     category: "BEERS",
@@ -555,7 +555,7 @@ export const enBloom = [
   },
   {
     menuNumber: 801,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "WHITE SEMI SWEET",
     price: "6.00",
     category: "WINES",
@@ -564,7 +564,7 @@ export const enBloom = [
   },
   {
     menuNumber: 802,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "RED SEMI SWEET",
     price: "6.00",
     category: "WINES",
@@ -573,7 +573,7 @@ export const enBloom = [
   },
   {
     menuNumber: 803,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "RED SANGRIA",
     price: "6.00",
     category: "WINES",
@@ -582,7 +582,7 @@ export const enBloom = [
   },
   {
     menuNumber: 804,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "WHITE SANGRIA",
     price: "6.00",
     category: "WINES",
@@ -591,7 +591,7 @@ export const enBloom = [
   },
   {
     menuNumber: 805,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "MALAGOUZIA",
     price: "40.00",
     category: "WINES",
@@ -600,7 +600,7 @@ export const enBloom = [
   },
   {
     menuNumber: 806,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "TECHNI ALEPIAS",
     price: "40.00",
     category: "WINES",
@@ -609,7 +609,7 @@ export const enBloom = [
   },
   {
     menuNumber: 901,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "PLOMARY",
     price: "8.00",
     category: "APERITIF",
@@ -618,7 +618,7 @@ export const enBloom = [
   },
   {
     menuNumber: 902,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "IDONIKO WITHOUT",
     price: "9.00",
     category: "APERITIF",
@@ -627,7 +627,7 @@ export const enBloom = [
   },
   {
     menuNumber: 903,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "SHOT",
     price: "3.00",
     category: "APERITIF",
@@ -636,7 +636,7 @@ export const enBloom = [
   },
   {
     menuNumber: 904,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "SUBMARINE",
     price: "4.00",
     category: "APERITIF",
@@ -645,7 +645,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1001,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "SMIRNOFF",
     price: "8.00",
     price1: "80.00",
@@ -655,7 +655,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1002,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "ABSOLUT",
     price: "8.00",
     price1: "80.00",
@@ -665,7 +665,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1003,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "SERKOVA",
     price: "8.00",
     price1: "80.00",
@@ -675,7 +675,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1004,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "STOLICHNAYA",
     price: "8.00",
     price1: "80.00",
@@ -685,7 +685,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1005,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "GREY GOOSE",
     price: "10.00",
     price1: "100.00",
@@ -695,7 +695,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1006,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "BELUGA",
     price: "10.00",
     price1: "100.00",
@@ -705,7 +705,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1007,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "BELVEDERE",
     price: "10.00",
     price1: "100.00",
@@ -715,7 +715,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1008,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "CIROC",
     price: "10.00",
     price1: "100.00",
@@ -725,7 +725,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1101,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "GORDONS",
     price: "8.00",
     price1: "80.00",
@@ -735,7 +735,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1102,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "GORDONS PINK",
     price: "9.00",
     price1: "90.00",
@@ -745,7 +745,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1103,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "TANGUERAY",
     price: "8.00",
     price1: "80.00",
@@ -755,7 +755,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1104,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "TANGUERAY",
     price: "9.00",
     price1: "90.00",
@@ -765,7 +765,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1105,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "BEEFEATER",
     price: "8.00",
     price1: "80.00",
@@ -775,7 +775,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1106,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "BOMBAY BLUE",
     price: "9.00",
     price1: "90.00",
@@ -785,7 +785,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1107,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "HENDRICKS",
     price: "10.00",
     price1: "100.00",
@@ -795,7 +795,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1201,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "CUERVO SILVER",
     price: "8.00",
     price1: "80.00",
@@ -805,7 +805,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1202,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "CUERVO REPASADO",
     price: "8.00",
     price1: "80.00",
@@ -815,7 +815,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1203,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "DON JULIO REPASADO",
     price: "10.00",
     price1: "100.00",
@@ -825,7 +825,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1204,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "DON JULIO BLANCO",
     price: "10.00",
     price1: "100.00",
@@ -835,7 +835,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1301,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "JAMESON",
     price: "8.00",
     price1: "80.00",
@@ -845,7 +845,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1302,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "JOHNNIE RED",
     price: "8.00",
     price1: "80.00",
@@ -855,7 +855,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1303,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "JOHNNIE BLACK",
     price: "9.00",
     price1: "90.00",
@@ -865,7 +865,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1304,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "CHIVAS 12",
     price: "9.00",
     price1: "90.00",
@@ -875,7 +875,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1305,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "CARDHU",
     price: "9.00",
     price1: "90.00",
@@ -885,7 +885,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1306,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "HAIG",
     price: "8.00",
     price1: "80.00",
@@ -895,7 +895,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1307,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "JACK DANIELS",
     price: "9.00",
     price1: "90.00",
@@ -905,7 +905,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1308,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "FAMOUS",
     price: "8.00",
     price1: "80.00",
@@ -915,7 +915,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1401,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "BACARDI",
     price: "8.00",
     price1: "80.00",
@@ -925,7 +925,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1402,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "BACARDI BLACK",
     price: "9.00",
     price1: "90.00",
@@ -935,7 +935,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1403,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "HAVANA 3*",
     price: "8.00",
     price1: "80.00",
@@ -945,7 +945,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1404,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "HAVANA 7*",
     price: "9.00",
     price1: "90.00",
@@ -955,7 +955,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1405,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "HAVANA BLACK",
     price: "9.00",
     price1: "90.00",
@@ -965,7 +965,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1406,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "ZACAPA 23",
     price: "10.00",
     price1: "100.00",
@@ -975,7 +975,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1407,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "CAPTAIN MORGAN",
     price: "8.00",
     price1: "80.00",
@@ -985,7 +985,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1501,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "MASTIHA",
     price: "8.00",
     price1: "80.00",
@@ -995,7 +995,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1502,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "COINTREAU",
     price: "8.00",
     price1: "80.00",
@@ -1005,7 +1005,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1503,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "Liquor",
     price: "8.00",
     price1: "80.00",
@@ -1015,7 +1015,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1504,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "Liquor",
     price: "8.00",
     price1: "80.00",
@@ -1025,7 +1025,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1505,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "Liquor",
     price: "8.00",
     price1: "80.00",
@@ -1035,7 +1035,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1506,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "Liquor",
     price: "8.00",
     price1: "80.00",
@@ -1045,7 +1045,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1507,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "Liquor",
     price: "8.00",
     price1: "80.00",
@@ -1055,7 +1055,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1508,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "Liquor",
     price: "8.00",
     price1: "80.00",
@@ -1065,7 +1065,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1509,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "Liquor",
     price: "8.00",
     price1: "80.00",
@@ -1075,7 +1075,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1510,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "Liquor",
     price: "8.00",
     price1: "80.00",
@@ -1085,7 +1085,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1511,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "Liquor",
     price: "8.00",
     price1: "80.00",
@@ -1095,7 +1095,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1512,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "Liquor",
     price: "8.00",
     price1: "80.00",
@@ -1105,7 +1105,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1513,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "Liquor",
     price: "8.00",
     price1: "80.00",
@@ -1115,7 +1115,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1514,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "Liquor",
     price: "8.00",
     price1: "80.00",
@@ -1125,7 +1125,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1515,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "Liquor",
     price: "8.00",
     price1: "80.00",
@@ -1135,7 +1135,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1601,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "METAXA 3*",
     price: "8.00",
     price1: "80.00",
@@ -1145,7 +1145,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1602,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "METAXA 5*",
     price: "9.00",
     price1: "90.00",
@@ -1155,7 +1155,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1603,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "HENESSY",
     price: "9.00",
     price1: "90.00",
@@ -1165,7 +1165,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1701,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "MOSCHATO D'ASTI",
     price: "6.00",
     price1: "50.00",
@@ -1175,7 +1175,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1702,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "MOSCHATO ROZE ASTI",
     price: "6.00",
     price1: "50.00",
@@ -1185,7 +1185,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1703,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "MARTINI ASTIN",
     price: "6.00",
     price1: "50.00",
@@ -1195,7 +1195,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1704,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "BOTTEGA PROSSECCO",
     price: "6.00",
     price1: "50.00",
@@ -1205,7 +1205,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1705,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "MOET ICE",
     price: "150.00",
     price1: "",
@@ -1215,7 +1215,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1706,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "MOET ROZE",
     price: "150.00",
     price1: "",
@@ -1225,7 +1225,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1801,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "SMALL BOTTLED WATER",
     price: "0.50",
     price1: "",
@@ -1235,7 +1235,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1802,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "LARGE BOTTLED WATER",
     price: "0.50",
     price1: "",
@@ -1245,7 +1245,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1901,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "MOJITO",
     price: "10.00",
     price1: "",
@@ -1255,7 +1255,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1902,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "MARAGARITA",
     price: "10.00",
     price1: "",
@@ -1265,7 +1265,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1903,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "DAIQUIRI",
     price: "10.00",
     price1: "",
@@ -1275,7 +1275,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1904,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "SEX ON THE BEACH",
     price: "10.00",
     price1: "",
@@ -1285,7 +1285,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1905,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "PORN STAR MARTINI",
     price: "10.00",
     price1: "",
@@ -1295,7 +1295,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1906,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "ZOMBIE",
     price: "10.00",
     price1: "",
@@ -1305,7 +1305,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1907,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "GIN BASIL SMASH",
     price: "10.00",
     price1: "",
@@ -1315,7 +1315,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1908,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "OLD FASHIONED",
     price: "10.00",
     price1: "",
@@ -1325,7 +1325,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1909,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "MAI TAI",
     price: "10.00",
     price1: "",
@@ -1335,7 +1335,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1910,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "PINA COLADA",
     price: "10.00",
     price1: "",
@@ -1345,7 +1345,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1911,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "TEQUILA SUNRISE",
     price: "10.00",
     price1: "",
@@ -1355,7 +1355,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1912,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "APEROL SPRITZ",
     price: "10.00",
     price1: "",
@@ -1365,7 +1365,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1913,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "COSMOPOLITAN",
     price: "10.00",
     price1: "",
@@ -1375,7 +1375,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1914,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "CUBA LIBRE",
     price: "10.00",
     price1: "",
@@ -1385,7 +1385,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1915,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "BLOOM",
     price: "12.00",
     price1: "",
@@ -1396,7 +1396,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1916,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "LOST IN GREECE",
     price: "12.00",
     price1: "",
@@ -1407,7 +1407,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1917,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "BETTER TOGETHER",
     price: "12.00",
     price1: "",
@@ -1418,7 +1418,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1918,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "ROMEO & JULIET",
     price: "12.00",
     price1: "",
@@ -1429,7 +1429,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1919,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "THE GREEK KISS",
     price: "12.00",
     price1: "",
@@ -1440,7 +1440,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1920,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "WELCOME TO PARADISE",
     price: "12.00",
     price1: "",
@@ -1451,7 +1451,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1921,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "IT'S ALL GREEK TO ME",
     price: "12.00",
     price1: "",
@@ -1462,7 +1462,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1922,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "YOU & ME",
     price: "8.00",
     price1: "",
@@ -1473,7 +1473,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1923,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "SUMMER BLOOMER",
     price: "8.00",
     price1: "",
@@ -1484,7 +1484,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1924,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "SWEET ON YOU",
     price: "8.00",
     price1: "",
@@ -1495,7 +1495,7 @@ export const enBloom = [
   },
   {
     menuNumber: 1925,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "NOJITO",
     price: "8.00",
     price1: "",
@@ -1506,7 +1506,7 @@ export const enBloom = [
   },
   {
     menuNumber: 2001,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: " SMOOTHIES  01",
     price: "5.50",
     price1: "",
@@ -1516,7 +1516,7 @@ export const enBloom = [
   },
   {
     menuNumber: 2002,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: " SMOOTHIES  02",
     price: "5.50",
     price1: "",
@@ -1526,7 +1526,7 @@ export const enBloom = [
   },
   {
     menuNumber: 2003,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: " SMOOTHIES  03",
     price: "5.50",
     price1: "",
@@ -1536,7 +1536,7 @@ export const enBloom = [
   },
   {
     menuNumber: 2004,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: " SMOOTHIES  08",
     price: "5.50",
     price1: "",
@@ -1546,7 +1546,7 @@ export const enBloom = [
   },
   {
     menuNumber: 2005,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: " SMOOTHIES  09",
     price: "5.50",
     price1: "",
@@ -1556,7 +1556,7 @@ export const enBloom = [
   },
   {
     menuNumber: 2006,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: " SMOOTHIES  11",
     price: "6.00",
     price1: "",
@@ -1566,7 +1566,7 @@ export const enBloom = [
   },
   {
     menuNumber: 2007,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: " SMOOTHIES  12",
     price: "6.00",
     price1: "",
@@ -1576,7 +1576,7 @@ export const enBloom = [
   },
   {
     menuNumber: 2101,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "AFRICA QUIN",
     price: "20.00",
     price1: "10.00",
@@ -1586,7 +1586,7 @@ export const enBloom = [
   },
   {
     menuNumber: 2102,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "GREEN APPLE",
     price: "20.00",
     price1: "10.00",
@@ -1596,7 +1596,7 @@ export const enBloom = [
   },
   {
     menuNumber: 2103,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "GPAPE MINT",
     price: "20.00",
     price1: "10.00",
@@ -1606,7 +1606,7 @@ export const enBloom = [
   },
   {
     menuNumber: 2104,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "ICE CACTUS",
     price: "20.00",
     price1: "10.00",
@@ -1616,7 +1616,7 @@ export const enBloom = [
   },
   {
     menuNumber: 2105,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "BUBBLEGUN",
     price: "20.00",
     price1: "10.00",
@@ -1626,7 +1626,7 @@ export const enBloom = [
   },
   {
     menuNumber: 2106,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "WATERMELON",
     price: "20.00",
     price1: "10.00",
@@ -1636,7 +1636,7 @@ export const enBloom = [
   },
   {
     menuNumber: 2107,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "BLUEBERRY",
     price: "20.00",
     price1: "10.00",
@@ -1646,7 +1646,7 @@ export const enBloom = [
   },
   {
     menuNumber: 2108,
-    image: "",
+    image: "/menu/bloom/photo.png",
     title: "MELON",
     price: "20.00",
     price1: "10.00",

@@ -24,7 +24,7 @@ export const handleSendTech = async (param) => {
 
 export const handleSendBloom = async (param) => {
   try {
-    const message = `Меню Bloom было открыто. `;
+    const message = `Меню Bloom было открыто на пляже. `;
     const chat_id = -1002188495977;
     // Call the sendTech function
     sendTech(

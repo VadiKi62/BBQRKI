@@ -12,10 +12,8 @@ import { connectToDB } from "@utils/database";
 export const POST = async (request) => {
   try {
     await connectToDB();
-    console.log("1");
-    console.log(akMenuEn);
 
-    const menuData = akMenuEn.map((menuItem) => ({
+    const menuData = bloomMenuEn.map((menuItem) => ({
       langKey: menuItem.langKey,
       items: menuItem.items.map((item) => ({
         menuNumber: item?.id || item?.menuNumber,
@@ -34,7 +32,7 @@ export const POST = async (request) => {
     console.log("2");
     const data = {
       menu: menuData,
-      restId: "669d82813bac9f7716c49614",
+      restId: "664bafcc5f663ca962e83bb9",
     };
     console.log("3");
 
@@ -48,13 +46,13 @@ export const POST = async (request) => {
 
     data.restName = isRestExist.name;
 
-    const isMenuForRestexist = await Menu.findOne({ restId: data.restId });
-    if (isMenuForRestexist) {
-      console.log("this menu seems to exist");
-      return new Response("this menu exists", {
-        status: 300,
-      });
-    }
+    // const isMenuForRestexist = await Menu.findOne({ restId: data.restId });
+    // if (isMenuForRestexist) {
+    //   console.log("this menu seems to exist");
+    //   return new Response("this menu exists", {
+    //     status: 300,
+    //   });
+    // }
 
     const createdMenu = new Menu(data);
     console.log(createdMenu.menu[0].items[107]);

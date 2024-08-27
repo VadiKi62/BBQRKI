@@ -19,7 +19,7 @@ import {
 export const GET = async (req, res) => {
   // const { restId, itemsToAdd } = req.body;
   const restId = "664bafcc5f663ca962e83bb9";
-  const itemsToAdd = bloomMenuSe;
+  const itemsToAdd = bloomMenuUa;
   try {
     await connectToDB();
     const existingMenu = await Menu.findOne({ restId });
