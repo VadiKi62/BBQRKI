@@ -20,7 +20,7 @@ export const enBloom = [
   },
   {
     menuNumber: 3,
-    image: "/menu/bloom/3.png",
+    image: "/menu/bloom/cheese_burger.jpg",
     title: "CHEESE BURGER",
     price: "9.00",
     category: "FOOD",
@@ -30,7 +30,7 @@ export const enBloom = [
   },
   {
     menuNumber: 4,
-    image: "/menu/bloom/4.png",
+    image: "/menu/bloom/chicken_burger.jpg",
     title: "CHICKEN BURGER",
     price: "9.50",
     category: "FOOD",
