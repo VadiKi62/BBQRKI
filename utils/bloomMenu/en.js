@@ -1,7 +1,7 @@
 export const enBloom = [
   {
     menuNumber: 1,
-    image: "/menu/bloom/photo.png",
+    image: "/menu/bloom/tortilla.jpg",
     title: "TORTILLA",
     price: "8.50",
     category: "FOOD",
@@ -11,7 +11,7 @@ export const enBloom = [
   },
   {
     menuNumber: 2,
-    image: "/menu/bloom/2.png",
+    image: "/menu/bloom/chicken_nuggets.jpg",
     title: "CHICKEN NUGGETS",
     price: "7.50",
     category: "FOOD",
