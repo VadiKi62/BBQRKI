@@ -40,7 +40,7 @@ export const enBloom = [
   },
   {
     menuNumber: 5,
-    image: "/menu/bloom/5.png",
+    image: "/menu/bloom/chicken_club_sandwich.jpg",
     title: "CHICKEN CLUB",
     price: "9.00",
     category: "FOOD",
@@ -50,7 +50,7 @@ export const enBloom = [
   },
   {
     menuNumber: 6,
-    image: "/menu/bloom/6.png",
+    image: "/menu/bloom/pizza_margarita.jpg",
     title: "PIZZA SPECIAL 830gr",
     price: "11.00",
     category: "FOOD",
@@ -59,7 +59,7 @@ export const enBloom = [
   },
   {
     menuNumber: 7,
-    image: "/menu/bloom/7.png",
+    image: "/menu/bloom/pizza_margarita.jpg",
     title: "PIZZA MARGARITA 730gr",
     price: "10.00",
     category: "FOOD",
@@ -68,7 +68,7 @@ export const enBloom = [
   },
   {
     menuNumber: 8,
-    image: "/menu/bloom/8.png",
+    image: "/menu/bloom/caesar_salad",
     title: "CAESAR SALAD",
     price: "8.00",
     category: "FOOD",
@@ -78,8 +78,8 @@ export const enBloom = [
   },
   {
     menuNumber: 9,
-    image: "/menu/bloom/9.png",
-    title: "FRUITSALAD",
+    image: "/menu/bloom/fruit_salad.jpg",
+    title: "FRUIT SALAD",
     price: "8.00",
     category: "FOOD",
     subCategory: null,
@@ -87,7 +87,7 @@ export const enBloom = [
   },
   {
     menuNumber: 10,
-    image: "/menu/bloom/10.png",
+    image: "/menu/bloom/toast_caesar.jpg",
     title: "TOAST CAESAR",
     price: "5.00",
     category: "FOOD",
@@ -96,7 +96,7 @@ export const enBloom = [
   },
   {
     menuNumber: 101,
-    image: "/menu/bloom/10photo.png",
+    image: "/menu/bloom/coffee_freddo_espresso.jpg",
     title: "FREDDO ESPRESSO",
     price: "5.00",
     category: "COFFEE",
@@ -105,7 +105,7 @@ export const enBloom = [
   },
   {
     menuNumber: 102,
-    image: "/menu/bloom/12.png",
+    image: "/menu/bloom/coffee_freddo_cappuccino.jpg",
     title: "FREDDO CAPPUCHINO",
     price: "5.00",
     category: "COFFEE",
@@ -114,7 +114,7 @@ export const enBloom = [
   },
   {
     menuNumber: 103,
-    image: "/menu/bloom/13.png",
+    image: "/menu/bloom/coffee_frappe.jpg",
     title: "FRAPPE",
     price: "5.00",
     category: "COFFEE",
@@ -123,7 +123,7 @@ export const enBloom = [
   },
   {
     menuNumber: 104,
-    image: "/menu/bloom/14.png",
+    image: "/menu/bloom/coffee_decaffeine.jpg",
     title: "DECAFFEINE",
     price: "5.00",
     category: "COFFEE",
@@ -132,7 +132,7 @@ export const enBloom = [
   },
   {
     menuNumber: 105,
-    image: "/menu/bloom/15.png",
+    image: "/menu/bloom/coffee_chocolate.jpg",
     title: "CHOCOLATE",
     price: "5.00",
     category: "COFFEE",
@@ -141,7 +141,7 @@ export const enBloom = [
   },
   {
     menuNumber: 201,
-    image: "/menu/bloom/16.png",
+    image: "/menu/bloom/chocolate_viennois.jpg",
     title: "VIENNOIS",
     price: "5.50",
     category: "CHOCOLATE",
@@ -150,7 +150,7 @@ export const enBloom = [
   },
   {
     menuNumber: 202,
-    image: "/menu/bloom/photo.png",
+    image: "/menu/bloom/chocolate_espresso.jpg",
     title: "ESPRESSO",
     price: "4.50",
     category: "CHOCOLATE",
@@ -159,7 +159,7 @@ export const enBloom = [
   },
   {
     menuNumber: 203,
-    image: "/menu/bloom/photo.png",
+    image: "/menu/bloom/chocolate_espresso.jpg",
     title: "DOUBLE ESPRESSO",
     price: "5.00",
     category: "CHOCOLATE",
@@ -168,7 +168,7 @@ export const enBloom = [
   },
   {
     menuNumber: 204,
-    image: "/menu/bloom/photo.png",
+    image: "/menu/bloom/chocolate_cappuccino.jpg",
     title: "CAPPUCHINO",
     price: "5.00",
     category: "CHOCOLATE",
@@ -177,7 +177,7 @@ export const enBloom = [
   },
   {
     menuNumber: 205,
-    image: "/menu/bloom/photo.png",
+    image: "/menu/bloom/chocolate_cappuccino.jpg",
     title: "DOUBLE CAPPUCCINO",
     price: "5.50",
     category: "CHOCOLATE",
@@ -186,7 +186,7 @@ export const enBloom = [
   },
   {
     menuNumber: 206,
-    image: "/menu/bloom/photo.png",
+    image: "/menu/bloom/chocolate_nescafe.jpg",
     title: "NESCAFE",
     price: "5.00",
     category: "CHOCOLATE",
@@ -195,7 +195,7 @@ export const enBloom = [
   },
   {
     menuNumber: 207,
-    image: "/menu/bloom/photo.png",
+    image: "/menu/bloom/chocolate_greek_coffee.jpg",
     title: "GREEK COFFEE",
     price: "4.50",
     category: "CHOCOLATE",
@@ -204,7 +204,7 @@ export const enBloom = [
   },
   {
     menuNumber: 208,
-    image: "/menu/bloom/photo.png",
+    image: "/menu/bloom/chocolate_double_greek_coffee.jpg",
     title: "DOUBLE GREEK COFFEE",
     price: "5.00",
     category: "CHOCOLATE",
@@ -213,7 +213,7 @@ export const enBloom = [
   },
   {
     menuNumber: 209,
-    image: "/menu/bloom/photo.png",
+    image: "/menu/bloom/chocolate_americano.jpg",
     title: "AMERICANO",
     price: "4.50",
     category: "CHOCOLATE",
@@ -222,7 +222,7 @@ export const enBloom = [
   },
   {
     menuNumber: 210,
-    image: "/menu/bloom/photo.png",
+    image: "/menu/bloom/chocolate_americano.jpg",
     title: "DOUBLE AMERICANO",
     price: "5.00",
     category: "CHOCOLATE",
@@ -231,8 +231,8 @@ export const enBloom = [
   },
   {
     menuNumber: 301,
-    image: "/menu/bloom/photo.png",
-    title: "FRESH ORANGE JUICE",
+    image: "/menu/bloom/fresh_orange_juice.jpg",
+    title "FRESH ORANGE JUICE",
     price: "5.50",
     category: "JUCES",
     subCategory: null,
