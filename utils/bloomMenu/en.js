@@ -232,7 +232,7 @@ export const enBloom = [
   {
     menuNumber: 301,
     image: "/menu/bloom/fresh_orange_juice.jpg",
-    title "FRESH ORANGE JUICE",
+    title: "FRESH ORANGE JUICE",
     price: "5.50",
     category: "JUCES",
     subCategory: null,

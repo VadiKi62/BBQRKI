@@ -9,7 +9,7 @@ import {
 } from "@utils/initialMenus";
 import { connectToDB } from "@utils/database";
 
-export const POST = async (request) => {
+export const GET = async (request) => {
   try {
     await connectToDB();
 
@@ -68,20 +68,20 @@ export const POST = async (request) => {
   }
 };
 
-export const GET = async () => {
-  try {
-    await connectToDB();
-    const menu = await Menu.findById("65d08cf6a4f11da6ca9efa1e").exec();
-    if (!menu) {
-      return new Response("menu wasn't found", { status: 404 });
-    }
+// export const GET = async () => {
+//   try {
+//     await connectToDB();
+//     const menu = await Menu.findById("65d08cf6a4f11da6ca9efa1e").exec();
+//     if (!menu) {
+//       return new Response("menu wasn't found", { status: 404 });
+//     }
 
-    const result = generateCategories(menu.menu);
+//     const result = generateCategories(menu.menu);
 
-    return new Response(JSON.stringify(result), { status: 200 });
-  } catch (error) {
-    return new Response(`Internal Server Error: ${JSON.stringify(error)} `, {
-      status: 500,
-    });
-  }
-};
+//     return new Response(JSON.stringify(result), { status: 200 });
+//   } catch (error) {
+//     return new Response(`Internal Server Error: ${JSON.stringify(error)} `, {
+//       status: 500,
+//     });
+//   }
+// };
